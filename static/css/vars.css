@@ -1,0 +1,13 @@
+:root {
+  --main-color: 43, 67, 146;
+  --secondary-color: 255, 188, 19;
+  --badge-danger-color: 238, 63, 67;
+  --badge-success-color: 17, 150, 73;
+  --dead-footer-color: 10, 21, 43;
+  --main-text-color: 10, 22, 47;
+  --secondary-text-color: 106, 126, 156;
+  --regular: "OpenSans-Regular";
+  --light: "OpenSans-Light";
+  --semiBold: "OpenSans-SemiBold";
+  --bold: "OpenSans-Bold";
+}

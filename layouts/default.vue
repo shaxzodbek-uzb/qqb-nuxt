@@ -1,55 +1,72 @@
 <template>
-  <div>
-    <Nuxt />
+  <div id="app" class="app d-flex f-column">
+    <TheHeader />
+    <TheFeedback />
+    <Nuxt class="app-router f-fill" />
+    <TheCurrencyRates />
+
+    <div v-if="isMobileContent" class="mobile-content">
+      <TheFooter />
+    </div>
   </div>
 </template>
 
+<script>
+import TheHeader from '~/components/layout/Header'
+import TheFooter from '~/components/layout/Footer'
+import TheCurrencyRates from '~/components/layout/CurrencyRates'
+import TheFeedback from '~/components/layout/Feedback'
+import { /*setVH,*/ dropdown } from '~/utils/frontend'
+
+export default {
+  data() {
+    return {
+      isMobileContent: false,
+    }
+  },
+  components: {
+    TheHeader,
+    TheFooter,
+    TheCurrencyRates,
+    TheFeedback,
+  },
+  watch: {
+    $route() {
+      document.querySelector('body').classList.remove('dark-side')
+    },
+  },
+  mounted() {
+    // Initialize functions
+    // setVH()
+    dropdown()
+
+    this.isMobile()
+    window.addEventListener(
+      'orientationchange',
+      () => {
+        setTimeout(() => {
+          this.isMobile()
+        }, 50)
+      },
+      false
+    )
+  },
+  methods: {
+    isMobile() {
+      const _bodyWidth = document.querySelector('body').clientWidth
+
+      if (_bodyWidth < 1025) {
+        this.isMobileContent = true
+      } else {
+        this.isMobileContent = false
+      }
+    },
+  },
+}
+</script>
+
 <style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.app {
+  min-height: 100vh;
 }
 </style>

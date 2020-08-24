@@ -29,12 +29,17 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['@/static/css/main.css'],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [],
+  plugins: [
+    {
+      src: '~/plugins/vue-slider-component.js',
+      ssr: false,
+    },
+  ],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
