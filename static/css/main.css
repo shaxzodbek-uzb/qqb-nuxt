@@ -105,7 +105,7 @@ body {
 }
 
 .header-top .header-navigation ul > li:first-child {
-  padding-left: calc(8px + 0.632vw);
+  padding-left: calc(8px + 0.432vw);
 }
 
 .header-navigation-dropdown img {

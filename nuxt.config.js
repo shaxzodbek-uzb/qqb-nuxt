@@ -39,6 +39,9 @@ export default {
       src: '~/plugins/vue-slider-component.js',
       ssr: false,
     },
+    // {
+    //   src: '~/plugins/index.js',
+    // },
   ],
   /*
    ** Auto import components

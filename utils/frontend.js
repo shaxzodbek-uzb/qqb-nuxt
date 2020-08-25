@@ -1,49 +1,45 @@
-export function setVH() {
-  if (process.client) {
-    let vh = window.innerHeight * 0.01
-    document.documentElement.style.setProperty(`--vh`, `${vh}px`)
-  }
-}
+// export function setVH() {
+//   if (process.client) {
+//     let vh = window.innerHeight * 0.01
+//     document.documentElement.style.setProperty(`--vh`, `${vh}px`)
+//   }
+// }
 
 // window.addEventListener(`resize`, setVH)
 // // Tab With Slick Carousel
-// export function tabCarousel() {
-//   const $items = document.querySelectorAll('[data-items="slick"]')
-//   const $contentItems = document.querySelectorAll('[data-items="tabContent"]')
+export function tabCarousel() {
+  const $items = document.querySelectorAll('[data-items="slick"]')
+  const $contentItems = document.querySelectorAll('[data-items="tabContent"]')
 
-//   $contentItems[0].classList.add('active')
+  $contentItems[0].classList.add('active')
 
-//   $items.forEach((el) => {
-//     el.addEventListener('click', function () {
-//       const _id = el.dataset.id
+  $items.forEach((el) => {
+    el.addEventListener('click', function () {
+      const _id = el.dataset.id
 
-//       $contentItems.forEach((el) => {
-//         el.classList.remove('active')
-//       })
+      $contentItems.forEach((el) => {
+        el.classList.remove('active')
+      })
 
-//       $contentItems[_id].classList.add('active')
-//     })
-//   })
-// }
+      $contentItems[_id].classList.add('active')
+    })
+  })
+}
 
 // // Set offset
 export function setOffset() {
   const $offsetItems = document.querySelectorAll('[data-set="offset"]')
   const $header = document.querySelector('.header').clientHeight
   const $footer = document.querySelector('.currency-wrap').clientHeight
-
   $offsetItems.forEach((el) => {
     const dataset = el.dataset.offset
-
     if (dataset === 'top bottom') {
       el.style.marginTop = `${$header}px`
       el.style.marginBottom = `${$footer}px`
     }
-
     if (dataset === 'top') {
       el.style.paddingTop = `${$header}px`
     }
-
     if (dataset === 'bottom') {
       el.style.paddingBottom = `${$footer}px`
     }
@@ -54,19 +50,15 @@ export function setOffset() {
 export function tabNavigation() {
   const $tabItems = document.querySelectorAll('[data-toggle="tab"]')
   const $tabPanels = document.querySelectorAll('[role="tabpanel"]')
-
   $tabItems.forEach((el, index) => {
     el.addEventListener('click', function () {
       $tabPanels.forEach((el) => {
         el.style.display = 'none'
       })
-
       $tabItems.forEach((el) => {
         el.classList.remove('active')
       })
-
       el.classList.add('active')
-
       $tabPanels[index].style.display = 'block'
     })
   })
@@ -74,69 +66,66 @@ export function tabNavigation() {
 
 // // Dropdown
 export function dropdown() {
-  let $button = document.querySelectorAll('[data-toggle="dropdown"]')
-  let $dropdown = document.querySelectorAll('[ data-label="content"]')
-
-  $button.forEach((el) => {
-    el.addEventListener('click', function () {
-      let $currentDropdown = el
-        .closest('.dropdown')
-        .querySelector('[ data-label="content"]')
-
-      $dropdown.forEach((el) => {
-        el.classList.remove('active')
-      })
-
-      $currentDropdown.classList.toggle('active')
-    })
-  })
+  // let $button = document.querySelectorAll('[data-toggle="dropdown"]')
+  // let $dropdown = document.querySelectorAll('[ data-label="content"]')
+  // $button.forEach((el) => {
+  //   el.addEventListener('click', function () {
+  //     let $currentDropdown = el
+  //       .closest('.dropdown')
+  //       .querySelector('[ data-label="content"]')
+  //     $dropdown.forEach((el) => {
+  //       el.classList.remove('active')
+  //     })
+  //     $currentDropdown.classList.toggle('active')
+  //   })
+  // })
 }
 
 // // Accardion
-// export function accardion(ref) {
-//   ref.addEventListener('click', change)
+export function accardion(ref) {
+  ref.addEventListener('click', change)
 
-//   function change(event) {
-//     var target = event.target.closest('.tab-arrow')
+  function change(event) {
+    var target = event.target.closest('.tab-arrow')
 
-//     if (!target) return
+    if (!target) return
 
-//     if (target.classList.contains('active')) {
-//       hideAll()
-//     } else {
-//       hideAll()
-//       target.classList.add('active')
-//       showText(target.closest('.accordion-header').nextElementSibling)
-//     }
-//   }
+    if (target.classList.contains('active')) {
+      hideAll()
+    } else {
+      hideAll()
+      target.classList.add('active')
+      showText(target.closest('.accordion-header').nextElementSibling)
+    }
+  }
 
-//   function hideAll() {
-//     let arrow = ref.querySelectorAll('.tab-arrow')
-//     let content = ref.querySelectorAll('.accordion-content')
+  function hideAll() {
+    let arrow = ref.querySelectorAll('.tab-arrow')
+    let content = ref.querySelectorAll('.accordion-content')
 
-//     for (let i = 0; i < arrow.length; i++) {
-//       arrow[i].classList.remove('active')
-//     }
+    for (let i = 0; i < arrow.length; i++) {
+      arrow[i].classList.remove('active')
+    }
 
-//     for (let i = 0; i < content.length; i++) {
-//       content[i].style.height = '0'
-//     }
-//   }
+    for (let i = 0; i < content.length; i++) {
+      content[i].style.height = '0'
+    }
+  }
 
-//   function showText(textEl) {
-//     textEl.style.height = textEl.scrollHeight + 'px'
-//   }
-// }
+  function showText(textEl) {
+    textEl.style.height = textEl.scrollHeight + 'px'
+  }
+}
 
-// // Header Search
-// export function search(searchButton, searchContent) {
-//   const $body = document.querySelector('body')
+// Header Search
+export function search(searchButton, searchContent) {
+  const $body = document.querySelector('body')
 
-//   searchButton.addEventListener('click', function () {
-//     $body.classList.toggle('search-enabled')
-//     searchContent.classList.toggle('active')
-//   })
-// }
+  searchButton.addEventListener('click', function () {
+    $body.classList.toggle('search-enabled')
+    searchContent.classList.toggle('active')
+  })
+}
 
 export function getLeftSideClientRect() {
   const $target = document.querySelector('[data-resize="resize"]')
@@ -144,7 +133,6 @@ export function getLeftSideClientRect() {
   const $offsetContainer = document.querySelectorAll(
     '[data-offset="setLeftOffset"]'
   )
-
   $offsetContainer.forEach((el) => {
     el.style.marginLeft = `${rectLeft}px`
   })
