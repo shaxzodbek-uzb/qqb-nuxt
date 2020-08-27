@@ -110,7 +110,7 @@
                 </div>
 
                 <img
-                  class="ml-auto pointer"
+                  class="slide-angle-icon ml-auto pointer"
                   src="/img/svg/angle-down.png"
                   alt
                 />
@@ -561,6 +561,180 @@
               <h1 class="title-50">Новости</h1>
 
               <div
+                class="tabs card-tab-navigation tab-navigation--credit no-tab-border d-flex"
+              >
+                <a
+                  @click="activetab = '1'"
+                  class="tab-items p-relative pointer"
+                  :class="[activetab === '1' ? 'active' : '']"
+                  >Новости</a
+                >
+                <a
+                  @click="activetab = '2'"
+                  class="tab-items p-relative pointer"
+                  :class="[activetab === '2' ? 'active' : '']"
+                  >Мероприятия</a
+                >
+                <a
+                  @click="activetab = '3'"
+                  class="tab-items p-relative pointer"
+                  :class="[activetab === '3' ? 'active' : '']"
+                  >Тендеры
+                </a>
+                <a
+                  @click="activetab = '4'"
+                  class="tab-items p-relative pointer"
+                  :class="[activetab === '4' ? 'active' : '']"
+                  >Почему</a
+                >
+              </div>
+
+              <div class="content">
+                <div v-if="activetab === '1'" class="tabcontent">
+                  <div class="slide-first-content p-relative">
+                    <div class="nested-hooper-arrow">
+                      <div class="container">
+                        <div class="arrow-slot-container d-flex">
+                          <div
+                            class="custom-arrow-slot arrow-slot--left child-center"
+                            @click.prevent="slidePrev"
+                          >
+                            <img src="/img/svg/arrow-left.png" alt />
+                          </div>
+
+                          <div
+                            class="custom-arrow-slot arrow-slot--right child-center"
+                            @click.prevent="slideNext"
+                          >
+                            <img src="/img/svg/arrow-right.png" alt />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <hooper
+                      class="nested-hooper"
+                      ref="hooperNested"
+                      :settings="newsHooper"
+                    >
+                      <slide>
+                        <nuxt-link
+                          :to="{ to: 'NewsShow' }"
+                          class="news-items-2 transition rounded d-block"
+                        >
+                          <div class="embed-news">
+                            <div class="embed-news__date d-flex align-center">
+                              <img src="/img/svg/calendar.png" alt />
+                              <span>23.01.2020</span>
+                            </div>
+
+                            <h1>
+                              Новая акция от Кишлок курилиш банк: "Оламшумул"
+                            </h1>
+
+                            <p>
+                              Акционерный коммерческий банк «Qishloq Qurilish
+                              Bank» объявляет акцию «Olamshumul»
+                            </p>
+                          </div>
+                        </nuxt-link>
+                      </slide>
+                      <slide>
+                        <nuxt-link
+                          :to="{ to: 'NewsShow' }"
+                          class="news-items-2 transition rounded d-block"
+                        >
+                          <div class="embed-news">
+                            <div class="embed-news__date d-flex align-center">
+                              <img src="/img/svg/calendar.png" alt />
+                              <span>23.01.2020</span>
+                            </div>
+
+                            <h1>
+                              Новая акция от Кишлок курилиш банк: "Оламшумул"
+                            </h1>
+
+                            <p>
+                              Акционерный коммерческий банк «Qishloq Qurilish
+                              Bank» объявляет акцию «Olamshumul»
+                            </p>
+                          </div>
+                        </nuxt-link>
+                      </slide>
+                      <slide>
+                        <nuxt-link
+                          :to="{ to: 'NewsShow' }"
+                          class="news-items-2 transition rounded d-block"
+                        >
+                          <div class="embed-news">
+                            <div class="embed-news__date d-flex align-center">
+                              <img src="/img/svg/calendar.png" alt />
+                              <span>23.01.2020</span>
+                            </div>
+
+                            <h1>
+                              Новая акция от Кишлок курилиш банк: "Оламшумул"
+                            </h1>
+
+                            <p>
+                              Акционерный коммерческий банк «Qishloq Qurilish
+                              Bank» объявляет акцию «Olamshumul»
+                            </p>
+                          </div>
+                        </nuxt-link>
+                      </slide>
+                      <slide>
+                        <nuxt-link
+                          :to="{ to: 'NewsShow' }"
+                          class="news-items-2 transition rounded d-block"
+                        >
+                          <div class="embed-news">
+                            <div class="embed-news__date d-flex align-center">
+                              <img src="/img/svg/calendar.png" alt />
+                              <span>23.01.2020</span>
+                            </div>
+
+                            <h1>
+                              Новая акция от Кишлок курилиш банк: "Оламшумул"
+                            </h1>
+
+                            <p>
+                              Акционерный коммерческий банк «Qishloq Qurilish
+                              Bank» объявляет акцию «Olamshumul»
+                            </p>
+                          </div>
+                        </nuxt-link>
+                      </slide>
+                      <slide>
+                        <nuxt-link
+                          :to="{ to: 'NewsShow' }"
+                          class="news-items-2 transition rounded d-block"
+                        >
+                          <div class="embed-news">
+                            <div class="embed-news__date d-flex align-center">
+                              <img src="/img/svg/calendar.png" alt />
+                              <span>23.01.2020</span>
+                            </div>
+
+                            <h1>
+                              Новая акция от Кишлок курилиш банк: "Оламшумул"
+                            </h1>
+
+                            <p>
+                              Акционерный коммерческий банк «Qishloq Qurilish
+                              Bank» объявляет акцию «Olamshumul»
+                            </p>
+                          </div>
+                        </nuxt-link>
+                      </slide>
+                    </hooper>
+                  </div>
+                </div>
+                <div v-if="activetab === '2'" class="tabcontent">2</div>
+                <div v-if="activetab === '3'" class="tabcontent">3</div>
+                <div v-if="activetab === '4'" class="tabcontent">4</div>
+              </div>
+
+              <!-- <div
                 class="card-tab-navigation tab-navigation--credit no-tab-border"
               >
                 <div class="card-tab-header">
@@ -611,10 +785,7 @@
                       <hooper
                         class="nested-hooper"
                         ref="hooperNested"
-                        :infiniteScroll="true"
-                        :itemsToShow="3.5"
-                        :wheelControl="false"
-                        :mouseDrag="false"
+                        :settings="newsHooper"
                       >
                         <slide>
                           <nuxt-link
@@ -730,11 +901,10 @@
                     </div>
                   </div>
                   <div role="tabpanel">
-                    <!-- <ForeignCurrency /> -->
                     1234aaa
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -794,6 +964,7 @@
                       <hooper
                         ref="serviceHooper"
                         :wheelControl="false"
+                        :touchDrag="false"
                         class="service-hooper h-100"
                       >
                         <slide>
@@ -900,6 +1071,7 @@ export default {
   data() {
     return {
       value: 0,
+      activetab: '1',
       optionsRangeSlider: {
         dotSize: [9, 17],
         tooltip: 'none',
@@ -918,6 +1090,23 @@ export default {
         slidesToShow: 1,
         slidesToScroll: 1,
       },
+      newsHooper: {
+        draggable: false,
+        infiniteScroll: true,
+        wheelControl: false,
+        mouseDrag: false,
+        breakpoints: {
+          1370: {
+            itemsToShow: 3.5,
+          },
+          1023: {
+            itemsToShow: 2.5,
+          },
+          768: {
+            itemsToShow: 2,
+          },
+        },
+      },
       nestedSettings: {
         speed: 500,
         draggable: false,
@@ -930,6 +1119,20 @@ export default {
             breakpoint: 1370,
             settings: {
               slidesToShow: 2.5,
+              variableWidth: false,
+            },
+          },
+          {
+            breakpoint: 1025,
+            settings: {
+              slidesToShow: 1.5,
+              variableWidth: false,
+            },
+          },
+          {
+            breakpoint: 769,
+            settings: {
+              slidesToShow: 1,
               variableWidth: false,
             },
           },

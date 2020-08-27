@@ -16,6 +16,59 @@
 
     <div class="search-wrap__field p-fixed w-100" ref="searchContent">
       <div class="container">
+        <div class="mobile-user-tools align-center">
+          <div class="mobile-qqb-online">
+            <button
+              class="d-flex align-center btn btn-border rounded pointer transition"
+            >
+              <span style="margin-right: 1rem;">QQB-Онлайн</span>
+            </button>
+          </div>
+          <div class="user-bank">
+            <div class="my-bank-button dropdown-init pointer p-relative">
+              <button
+                class="d-flex align-center btn rounded pointer transition"
+              >
+                <span style="margin-right: 1rem;">Мой банк</span>
+                <img
+                  src="~/static/img/svg/user-icon.png"
+                  class="default-icon-1"
+                  alt="User Icon"
+                />
+                <img
+                  src="~/static/img/svg/user-white.png"
+                  class="white-icon-4 p-absolute"
+                  alt="User Icon"
+                />
+              </button>
+
+              <div class="dropdown--content">
+                <a
+                  href="http://qishloqqurilishbank.uz/uz/internet-banking/index.php"
+                  target="_blank"
+                  class="dropdown--content-items"
+                  >InternetBank физ.</a
+                >
+                <a
+                  href="http://qishloqqurilishbank.uz/uz/internet-banking/index.php"
+                  target="_blank"
+                  class="dropdown--content-items"
+                  >InternetBank юр.</a
+                >
+                <a
+                  href="https://client.qqb.uz:9994/PersonalCabinet/"
+                  target="_blank"
+                  class="dropdown--content-items"
+                  >Персоналный кабинет</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="mobile-lang">
+            <Language />
+          </div>
+        </div>
+
         <div class="search-form d-flex align-center rounded">
           <img src="/img/svg/search.png" alt="Search Icon" class="d-block" />
           <input type="text" placeholder="Искать..." class="f-fill" />
@@ -35,12 +88,14 @@
         </div>
 
         <div class="row search-block-row">
-          <div class="col-xl-3">
-            <div class="search-block-aside">
+          <div class="col-xl-3" data-toggle="slideToggle">
+            <div class="search-block-aside d-flex align-center f-between">
               <h1>О БАНКЕ</h1>
+
+              <div class="mobile-slide-arrow"></div>
             </div>
           </div>
-          <div class="col-xl-9">
+          <div class="col-xl-9 mobile-slide-content">
             <div class="search-items-wrap">
               <nuxt-link to="/" class="anchor-items d-block"
                 >История банка</nuxt-link
@@ -104,12 +159,13 @@
         </div>
 
         <div class="row search-block-row">
-          <div class="col-xl-3">
-            <div class="search-block-aside">
+          <div class="col-xl-3" data-toggle="slideToggle">
+            <div class="search-block-aside d-flex align-center f-between">
               <h1>Частным лицам</h1>
+              <div class="mobile-slide-arrow"></div>
             </div>
           </div>
-          <div class="col-xl-9">
+          <div class="col-xl-9 mobile-slide-content">
             <div class="search-items-wrap">
               <nuxt-link to="/" class="anchor-items d-block"
                 >Денежные переводы</nuxt-link
@@ -157,12 +213,14 @@
         </div>
 
         <div class="row search-block-row">
-          <div class="col-xl-3">
-            <div class="search-block-aside">
+          <div class="col-xl-3" data-toggle="slideToggle">
+            <div class="search-block-aside d-flex align-center f-between">
               <h1>КОРПОРАТИВНЫМ КЛИЕНТАМ</h1>
+
+              <div class="mobile-slide-arrow"></div>
             </div>
           </div>
-          <div class="col-xl-9">
+          <div class="col-xl-9 mobile-slide-content">
             <div class="search-items-wrap">
               <nuxt-link to="/" class="anchor-items d-block"
                 >Денежные переводы</nuxt-link
@@ -210,12 +268,14 @@
         </div>
 
         <div class="row search-block-row">
-          <div class="col-xl-3">
-            <div class="search-block-aside">
+          <div class="col-xl-3" data-toggle="slideToggle">
+            <div class="search-block-aside d-flex align-center f-between">
               <h1>ИНТЕРАКТИВНЫЕ УСЛУГИ</h1>
+
+              <div class="mobile-slide-arrow"></div>
             </div>
           </div>
-          <div class="col-xl-9">
+          <div class="col-xl-9 mobile-slide-content">
             <div class="search-items-wrap">
               <nuxt-link to="/" class="anchor-items d-block"
                 >Расчетно-кассовое обслуживание</nuxt-link
@@ -269,13 +329,58 @@
 </template>
 
 <script>
-// import { search } from '@/utils/frontend'
+import { search } from '@/utils/frontend'
+import Language from './Language'
 
 export default {
+  components: {
+    Language,
+  },
   mounted() {
-    // const { searchButton, searchContent } = this.$refs
+    const { searchButton, searchContent } = this.$refs
     // Initialize header search function
-    // search(searchButton, searchContent)
+    search(searchButton, searchContent)
+
+    const $bodyWidth = document.querySelector('body').clientWidth
+
+    if ($bodyWidth < 600) {
+      var $toggleButtons = document.querySelectorAll(
+        '[data-toggle="slideToggle"]'
+      )
+
+      $toggleButtons.forEach((el) => {
+        el.addEventListener('click', function () {
+          event.preventDefault()
+
+          if (!el.nextElementSibling.classList.contains('active')) {
+            el.nextElementSibling.classList.add('active')
+            el.classList.add('active')
+            el.nextElementSibling.style.height = 'auto'
+
+            var height = el.nextElementSibling.clientHeight + 'px'
+
+            el.nextElementSibling.style.height = '0px'
+
+            setTimeout(function () {
+              el.nextElementSibling.style.height = height
+            }, 0)
+          } else {
+            el.nextElementSibling.style.height = '0px'
+
+            el.nextElementSibling.addEventListener(
+              'transitionend',
+              function () {
+                el.nextElementSibling.classList.remove('active')
+                el.classList.remove('active')
+              },
+              {
+                once: true,
+              }
+            )
+          }
+        })
+      })
+    }
   },
 }
 </script>

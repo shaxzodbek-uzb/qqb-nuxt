@@ -13,7 +13,7 @@
 
       <div class="gallery-container">
         <div class="row gallery-items">
-          <div class="col-xl-4 gallery-left">
+          <div class="col-xl-3 gallery-left">
             <h1>“BANKEXPO-2019”</h1>
 
             <div class="news-badge">
@@ -21,91 +21,13 @@
               <span>23.01.2020</span>
             </div>
           </div>
-          <div class="col-xl-8 gallery-right">
-            <div id="grid-gallery" class="grid-gallery">
-              <div class="gallery-cell-wrap grid-wrap d-flex">
-                <span class="gallery-photo-count">13 ФОТО</span>
-
-                <ul class="gallery-items-wrap grid d-flex f-wrap f-fill">
-                  <li class="gallery-items-cell p-relative rounded">
-                    <div class="gallery-aspect">
-                      <img src="~/static/img/img-18.png" class="d-block" alt />
-                    </div>
-                  </li>
-                  <li class="gallery-items-cell p-relative rounded">
-                    <div class="gallery-aspect">
-                      <img src="~/static/img/img-19.png" class="d-block" alt />
-                    </div>
-                  </li>
-                  <li class="gallery-items-cell p-relative rounded">
-                    <div class="gallery-aspect">
-                      <img src="~/static/img/img-20.png" class="d-block" alt />
-                    </div>
-                  </li>
-                  <li class="gallery-items-cell p-relative rounded">
-                    <div class="gallery-aspect">
-                      <img src="~/static/img/img-21.png" class="d-block" alt />
-                    </div>
-                  </li>
-                </ul>
-              </div>
-
-              <section class="slideshow">
-                <div class="slideshow-header">
-                  <div>
-                    <p>“BANKEXPO-2019”</p>
-                  </div>
-                  <span class="icon nav-close pointer">
-                    <img src="~/static/img/svg/times-icon.png" alt />
-                  </span>
-                </div>
-                <ul>
-                  <li>
-                    <figure>
-                      <img src="~/static/img/img-18.png" alt="img01" />
-                    </figure>
-                  </li>
-                  <li>
-                    <figure>
-                      <img src="~/static/img/img-19.png" alt="img02" />
-                    </figure>
-                  </li>
-                  <li>
-                    <figure>
-                      <img src="~/static/img/img-20.png" alt="img03" />
-                    </figure>
-                  </li>
-                  <li>
-                    <figure>
-                      <img src="~/static/img/img-21.png" alt="img03" />
-                    </figure>
-                  </li>
-                </ul>
-                <nav>
-                  <span class="icon nav-prev">
-                    <div class="icon-circle">
-                      <img src="~/static/img/svg/arrow-left.png" alt />
-                    </div>
-                  </span>
-                  <span class="icon nav-next">
-                    <div class="icon-circle">
-                      <img src="~/static/img/svg/arrow-right.png" alt />
-                    </div>
-                  </span>
-                </nav>
-                <div class="gallery-counter">
-                  <div class="gallery-counter__items count-start"></div>
-                  <div class="counter-separator color-primary mx-1">/</div>
-                  <div class="gallery-counter__items count-length"></div>
-                </div>
-                <!-- <div class="info-keys icon">Navigate with arrow keys</div> -->
-              </section>
-            </div>
+          <div class="col-xl-9 gallery-right">
+            <lightbox :items="images"> </lightbox>
           </div>
         </div>
 
         <div class="row gallery-items">
-          <div class="col-xl-4 gallery-left">
+          <div class="col-xl-3 gallery-left">
             <h1>“BANKEXPO-2019”</h1>
 
             <div class="news-badge">
@@ -113,71 +35,8 @@
               <span>23.01.2020</span>
             </div>
           </div>
-          <div class="col-xl-8 gallery-right">
-            <div id="grid-gallery-2" class="grid-gallery">
-              <div class="gallery-cell-wrap grid-wrap d-flex">
-                <span class="gallery-photo-count">13 ФОТО</span>
-
-                <ul class="gallery-items-wrap grid d-flex f-wrap f-fill">
-                  <li class="gallery-items-cell p-relative rounded">
-                    <div class="gallery-aspect">
-                      <img src="~/static/img/img-21.png" class="d-block" alt />
-                    </div>
-                  </li>
-                  <li class="gallery-items-cell p-relative rounded">
-                    <div class="gallery-aspect">
-                      <img src="~/static/img/img-22.png" class="d-block" alt />
-                    </div>
-                  </li>
-                  <li class="gallery-items-cell p-relative rounded">
-                    <div class="gallery-aspect">
-                      <img src="~/static/img/img-23.png" class="d-block" alt />
-                    </div>
-                  </li>
-                  <li class="gallery-items-cell p-relative rounded">
-                    <div class="gallery-aspect">
-                      <img src="~/static/img/img-24.png" class="d-block" alt />
-                    </div>
-                  </li>
-                </ul>
-              </div>
-
-              <section class="slideshow">
-                <ul>
-                  <li>
-                    <figure>
-                      <img src="~/static/img/img-21.png" alt="img01" />
-                    </figure>
-                  </li>
-                  <li>
-                    <figure>
-                      <img src="~/static/img/img-22.png" alt="img02" />
-                    </figure>
-                  </li>
-                  <li>
-                    <figure>
-                      <img src="~/static/img/img-23.png" alt="img03" />
-                    </figure>
-                  </li>
-                  <li>
-                    <figure>
-                      <img src="~/static/img/img-24.png" alt="img03" />
-                    </figure>
-                  </li>
-                </ul>
-                <nav>
-                  <span class="icon nav-prev"></span>
-                  <span class="icon nav-next"></span>
-                  <span class="icon nav-close"></span>
-                </nav>
-                <div class="gallery-counter">
-                  <div class="gallery-counter__items count-start"></div>
-                  <div class="counter-separator color-primary mx-1">/</div>
-                  <div class="gallery-counter__items count-length"></div>
-                </div>
-                <!-- <div class="info-keys icon">Navigate with arrow keys</div> -->
-              </section>
-            </div>
+          <div class="col-xl-9 gallery-right">
+            <lightbox :items="images"> </lightbox>
           </div>
         </div>
       </div>
@@ -191,7 +50,17 @@ import { setOffset } from '~/utils/frontend'
 
 export default {
   data() {
-    return {}
+    return {
+      images: [
+        'https://images.unsplash.com/photo-1558980394-4c7c9299fe96?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=750&amp;q=80',
+        'https://images.unsplash.com/photo-1593642532400-2682810df593?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80',
+        'https://images.unsplash.com/photo-1558980394-4c7c9299fe96?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=750&amp;q=80',
+        'https://images.unsplash.com/photo-1593642532400-2682810df593?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80',
+        'https://images.unsplash.com/photo-1558980394-4c7c9299fe96?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=750&amp;q=80',
+        'https://images.unsplash.com/photo-1593642532400-2682810df593?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80',
+        'https://images.unsplash.com/photo-1558980394-4c7c9299fe96?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=750&amp;q=80',
+      ],
+    }
   },
   mounted() {
     setOffset()

@@ -126,7 +126,11 @@
               </div>
             </div>
             <div class="converter-datepicker">
-              <!-- <Datepicker :inline="true" :value="date" /> -->
+              <date-picker
+                v-model="time1"
+                valueType="format"
+                :inline="true"
+              ></date-picker>
             </div>
           </div>
           <span class="converter-date">07.05.2020 13:13:27</span>
@@ -137,18 +141,19 @@
 </template>
 
 <script>
-// import Datepicker from 'vuejs-datepicker'
+import DatePicker from 'vue2-datepicker'
+import 'vue2-datepicker/index.css'
 
 export default {
   data() {
     return {
       options: ['UZS', 'UZD', 'EURO'],
       year: ['2000', '2001', '2002', '2003', '2004'],
-      date: new Date(2016, 9, 16),
+      time1: null,
     }
   },
   components: {
-    // Datepicker,
+    DatePicker,
   },
 }
 </script>

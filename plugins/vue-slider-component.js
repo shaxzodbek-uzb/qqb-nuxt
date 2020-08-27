@@ -7,10 +7,12 @@ import vSelect from 'vue-select'
 import 'vue-select/dist/vue-select.css'
 Vue.component('v-select', vSelect)
 
-// import VueSlider from 'vue-slider-component'
 import 'vue-slider-component/theme/default.css'
-// Vue.component('VueSlider', VueSlider)
 
-import Datepicker from 'vuejs-datepicker'
+import '@morioh/v-lightbox/dist/lightbox.css'
 
-Vue.component('date-picker', Datepicker)
+// import '@morioh/v-lightbox/dist/lightbox.css'
+import Lightbox from '@morioh/v-lightbox'
+
+// global register
+Vue.use(Lightbox)

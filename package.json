@@ -12,13 +12,14 @@
     "test": "jest"
   },
   "dependencies": {
+    "@morioh/v-lightbox": "^1.0.3",
     "@nuxtjs/axios": "^5.12.0",
     "hooper": "^0.3.4",
     "nuxt": "^2.14.0",
     "vue-select": "^3.10.8",
     "vue-slick-carousel": "^1.0.6",
     "vue-slider-component": "^3.2.5",
-    "vuejs-datepicker": "^1.6.2"
+    "vue2-datepicker": "^3.6.2"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.1.0",
