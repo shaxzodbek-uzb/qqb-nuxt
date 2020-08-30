@@ -239,15 +239,11 @@
                     >
                       <div class="card-items__top">
                         <div class="card-items__header">
-                          <h1>
-                            Рассчитайте доходность вклада
-                          </h1>
+                          <h1>Рассчитайте доходность вклада</h1>
 
                           <div class="card-top-text">
                             <p>До 22% годовых с Мультикартой QQB</p>
-                            <p>
-                              Проценты начисляются на ежедневный остаток
-                            </p>
+                            <p>Проценты начисляются на ежедневный остаток</p>
                             <p>
                               Снятие и пополнение — без ограничений и без потери
                               %
@@ -579,8 +575,8 @@
                   @click="activetab = '3'"
                   class="tab-items p-relative pointer"
                   :class="[activetab === '3' ? 'active' : '']"
-                  >Тендеры
-                </a>
+                  >Тендеры</a
+                >
                 <a
                   @click="activetab = '4'"
                   class="tab-items p-relative pointer"
@@ -619,8 +615,18 @@
                       <slide>
                         <nuxt-link
                           :to="{ to: 'NewsShow' }"
-                          class="news-items-2 transition rounded d-block"
+                          class="news-items-2 transition rounded d-block p-relative"
                         >
+                          <div class="card-background p-absolute w-100 h-100">
+                            <img
+                              src="~/static/img/img-15.png"
+                              class="img-cover d-block"
+                              alt
+                            />
+                            <div
+                              class="card-background__overlay p-absolute w-100 h-100"
+                            ></div>
+                          </div>
                           <div class="embed-news">
                             <div class="embed-news__date d-flex align-center">
                               <img src="/img/svg/calendar.png" alt />
@@ -641,8 +647,18 @@
                       <slide>
                         <nuxt-link
                           :to="{ to: 'NewsShow' }"
-                          class="news-items-2 transition rounded d-block"
+                          class="news-items-2 transition rounded d-block p-relative"
                         >
+                          <div class="card-background p-absolute w-100 h-100">
+                            <img
+                              src="~/static/img/img-15.png"
+                              class="img-cover d-block"
+                              alt
+                            />
+                            <div
+                              class="card-background__overlay p-absolute w-100 h-100"
+                            ></div>
+                          </div>
                           <div class="embed-news">
                             <div class="embed-news__date d-flex align-center">
                               <img src="/img/svg/calendar.png" alt />
@@ -663,8 +679,18 @@
                       <slide>
                         <nuxt-link
                           :to="{ to: 'NewsShow' }"
-                          class="news-items-2 transition rounded d-block"
+                          class="news-items-2 transition rounded d-block p-relative"
                         >
+                          <div class="card-background p-absolute w-100 h-100">
+                            <img
+                              src="~/static/img/img-15.png"
+                              class="img-cover d-block"
+                              alt
+                            />
+                            <div
+                              class="card-background__overlay p-absolute w-100 h-100"
+                            ></div>
+                          </div>
                           <div class="embed-news">
                             <div class="embed-news__date d-flex align-center">
                               <img src="/img/svg/calendar.png" alt />
@@ -685,8 +711,18 @@
                       <slide>
                         <nuxt-link
                           :to="{ to: 'NewsShow' }"
-                          class="news-items-2 transition rounded d-block"
+                          class="news-items-2 transition rounded d-block p-relative"
                         >
+                          <div class="card-background p-absolute w-100 h-100">
+                            <img
+                              src="~/static/img/img-15.png"
+                              class="img-cover d-block"
+                              alt
+                            />
+                            <div
+                              class="card-background__overlay p-absolute w-100 h-100"
+                            ></div>
+                          </div>
                           <div class="embed-news">
                             <div class="embed-news__date d-flex align-center">
                               <img src="/img/svg/calendar.png" alt />
@@ -707,7 +743,7 @@
                       <slide>
                         <nuxt-link
                           :to="{ to: 'NewsShow' }"
-                          class="news-items-2 transition rounded d-block"
+                          class="news-items-2 transition rounded d-block p-relative"
                         >
                           <div class="embed-news">
                             <div class="embed-news__date d-flex align-center">
@@ -904,7 +940,7 @@
                     1234aaa
                   </div>
                 </div>
-              </div> -->
+              </div>-->
             </div>
           </div>
         </div>

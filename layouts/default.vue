@@ -2,7 +2,10 @@
   <div id="app" class="app d-flex f-column">
     <TheHeader />
     <TheFeedback />
-    <Nuxt class="app-router f-fill" />
+    <transition name="fade">
+      <Nuxt class="app-router f-fill" />
+    </transition>
+
     <TheCurrencyRates />
 
     <div v-if="isMobileContent" class="mobile-content">

@@ -10,6 +10,11 @@ body {
   color: rgba(var(--main-text-color), 1);
   min-height: 100vh;
   line-height: 1.5;
+  transition: all 350ms;
+}
+
+.grayscale-mode {
+    filter: grayscale(100%);
 }
 
 .header {
@@ -3508,6 +3513,14 @@ body {
   padding: 12.5px 20px;
 }
 
+.special-facilities .checkbox-group .checkbox-wrap img {
+    opacity: 0;
+}
+
+.special-facilities .checkbox-group input:checked + .checkbox-wrap img {
+    opacity: 1;
+}
+
 .special-facilities > span,
 .facilities-font > span {
   font-size: 14px;
@@ -3753,6 +3766,37 @@ body {
 
 .tabs {
     overflow-x: auto;
+}
+
+.card-background {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 350ms;
+}
+
+.card-background,
+.card-background__overlay  {
+    top: 0;
+    left: 0;
+}
+
+.card-background__overlay {
+    background: rgba(var(--main-color), .5);
+}
+
+.card-background + .embed-news {
+    position: relative;
+    left: 0;
+    bottom: 0;
+}
+
+.news-items-2:hover .card-background {
+    opacity: 1;
+    visibility: visible;
+}
+
+.news-items-2:hover .card-background + .embed-news * {
+    color: #fff;
 }
 
 /***************** MEDIA ***************/
