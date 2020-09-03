@@ -86,7 +86,7 @@ export function accardion(ref) {
   ref.addEventListener('click', change)
 
   function change(event) {
-    var target = event.target.closest('.tab-arrow')
+    var target = event.target.closest('.accordion-header')
 
     if (!target) return
 
@@ -95,12 +95,12 @@ export function accardion(ref) {
     } else {
       hideAll()
       target.classList.add('active')
-      showText(target.closest('.accordion-header').nextElementSibling)
+      showText(target.nextElementSibling)
     }
   }
 
   function hideAll() {
-    let arrow = ref.querySelectorAll('.tab-arrow')
+    let arrow = ref.querySelectorAll('.accordion-header')
     let content = ref.querySelectorAll('.accordion-content')
 
     for (let i = 0; i < arrow.length; i++) {

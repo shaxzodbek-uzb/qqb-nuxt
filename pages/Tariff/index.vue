@@ -98,7 +98,7 @@
             <div class="accordion-header d-flex align-center">
               <div class="item-text f-fill">
                 <h1>
-                  Открытие и ведение банковских счетов, счетов по вкладам 123
+                  Открытие и ведение банковских счетов, счетов по вкладам 1223
                 </h1>
               </div>
               <div class="tab-arrow">
@@ -115,67 +115,65 @@
             </div>
 
             <div class="accordion-content">
-              <div class="accordion-box">
-                <div class="tariff-table">
-                  <div class="tariff-table-items d-flex">
-                    <b>1.1</b>
-                    <div class="f-fill">
-                      <p>
-                        Открытие, ведение, закрытие банковского счета, вкладов
-                        до востребования, срочных.
-                      </p>
-                    </div>
-                    <span>комиссия не взимается</span>
+              <div class="tariff-table">
+                <div class="tariff-table-items d-flex">
+                  <b>1.1</b>
+                  <div class="f-fill">
+                    <p>
+                      Открытие, ведение, закрытие банковского счета, вкладов до
+                      востребования, срочных.
+                    </p>
                   </div>
-                  <div class="tariff-table-items d-flex">
-                    <b>1.2</b>
-                    <div class="f-fill">
-                      <p>
-                        Предоставление выписки по текущему банковскому счету,
-                        вкладу (по требованию Клиента)
-                      </p>
-                    </div>
-                    <span>комиссия не взимается</span>
+                  <span>комиссия не взимается</span>
+                </div>
+                <div class="tariff-table-items d-flex">
+                  <b>1.2</b>
+                  <div class="f-fill">
+                    <p>
+                      Предоставление выписки по текущему банковскому счету,
+                      вкладу (по требованию Клиента)
+                    </p>
                   </div>
-                  <div class="tariff-table-items d-flex">
-                    <b>1.3</b>
-                    <div class="f-fill">
-                      <p>
-                        Выписка по счету по просьбе клиента (повторная) и выдача
-                        справки о состоянии счета
-                      </p>
-                    </div>
-                    <span>10% БРВ</span>
+                  <span>комиссия не взимается</span>
+                </div>
+                <div class="tariff-table-items d-flex">
+                  <b>1.3</b>
+                  <div class="f-fill">
+                    <p>
+                      Выписка по счету по просьбе клиента (повторная) и выдача
+                      справки о состоянии счета
+                    </p>
                   </div>
-                  <div class="tariff-table-items d-flex">
-                    <b>1.4</b>
-                    <div class="f-fill">
-                      <p>
-                        Выдача вкладной книжки при открытии счета
-                      </p>
-                    </div>
-                    <span>комиссия не взимается</span>
+                  <span>10% БРВ</span>
+                </div>
+                <div class="tariff-table-items d-flex">
+                  <b>1.4</b>
+                  <div class="f-fill">
+                    <p>
+                      Выдача вкладной книжки при открытии счета
+                    </p>
                   </div>
-                  <div class="tariff-table-items d-flex">
-                    <b>1.5</b>
-                    <div class="f-fill">
-                      <p>
-                        Выдача вкладной книжки взамен утраченной
-                      </p>
-                    </div>
-                    <span>10% БРВ</span>
+                  <span>комиссия не взимается</span>
+                </div>
+                <div class="tariff-table-items d-flex">
+                  <b>1.5</b>
+                  <div class="f-fill">
+                    <p>
+                      Выдача вкладной книжки взамен утраченной
+                    </p>
                   </div>
-                  <div class="tariff-table-items d-flex">
-                    <b>1.6</b>
-                    <div class="f-fill">
-                      <p>
-                        Розыск вкладов владельцем или наследниками по одному
-                        отделению, включая подведомственные филиалы АО
-                        "Национальный банк"
-                      </p>
-                    </div>
-                    <span>комиссия не взимается</span>
+                  <span>10% БРВ</span>
+                </div>
+                <div class="tariff-table-items d-flex">
+                  <b>1.6</b>
+                  <div class="f-fill">
+                    <p>
+                      Розыск вкладов владельцем или наследниками по одному
+                      отделению, включая подведомственные филиалы АО
+                      "Национальный банк"
+                    </p>
                   </div>
+                  <span>комиссия не взимается</span>
                 </div>
               </div>
             </div>

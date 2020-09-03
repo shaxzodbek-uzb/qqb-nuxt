@@ -280,20 +280,26 @@
                     href="http://qishloqqurilishbank.uz/uz/internet-banking/index.php"
                     target="_blank"
                     class="dropdown--content-items"
-                    >InternetBank физ.</a
                   >
+                    <span>InternetBank физ.</span>
+                    <img src="~static/img/svg/arrow-r2.png" alt="" />
+                  </a>
                   <a
                     href="http://qishloqqurilishbank.uz/uz/internet-banking/index.php"
                     target="_blank"
                     class="dropdown--content-items"
-                    >InternetBank юр.</a
                   >
+                    <span>InternetBank юр.</span>
+                    <img src="~static/img/svg/arrow-r2.png" alt="" />
+                  </a>
                   <a
                     href="https://client.qqb.uz:9994/PersonalCabinet/"
                     target="_blank"
                     class="dropdown--content-items"
-                    >Персоналный кабинет</a
                   >
+                    <span>Персоналный кабинет</span>
+                    <img src="~static/img/svg/arrow-r2.png" alt="" />
+                  </a>
                 </div>
               </div>
             </div>

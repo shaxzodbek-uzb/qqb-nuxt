@@ -2,7 +2,6 @@
   <div
     class="subscribe-slide-wrap p-relative h-100 d-flex f-column"
     data-set="offset"
-    data-offset="bottom"
   >
     <div class="subscribe-slide-header p-relative">
       <div class="content-overlay-4 p-absolute w-100"></div>
@@ -55,14 +54,36 @@
               </div>
 
               <div class="subscribe-bottom d-flex align-center f-between w-100">
-                <div class="data-update">
-                  <span>
-                    Последнее обновление сайта:
-                    <b>07.05.2020 13:13:27</b>
-                  </span>
+                <div class="data-update d-flex f-fill">
+                  <a href="#" class="data-update__items">
+                    <img src="~static/img/icon/f-icon-4.png" alt="" />
+                  </a>
+                  <a href="#" class="data-update__items">
+                    <img src="~static/img/icon/f-icon-2.png" alt="" />
+                  </a>
+                  <a href="#" class="data-update__items">
+                    <img src="~static/img/icon/f-icon-1.png" alt="" />
+                  </a>
+                  <a href="#" class="data-update__items">
+                    <img src="~static/img/icon/f-icon-5.png" alt="" />
+                  </a>
+                  <a href="#" class="data-update__items">
+                    <img src="~static/img/icon/f-icon-3.png" alt="" />
+                  </a>
                 </div>
 
-                <div class="socials-meta d-flex">
+                <div class="socials-meta">
+                  <div class="social-wrap d-flex">
+                    <nuxt-link to="/" class="social-items child-center">
+                      <img src="/img/svg/white-fb.png" alt />
+                    </nuxt-link>
+                    <nuxt-link to="/" class="social-items child-center">
+                      <img src="/img/svg/white-gp.png" alt />
+                    </nuxt-link>
+                    <nuxt-link to="/" class="social-items child-center">
+                      <img src="/img/svg/white-tw.png" alt />
+                    </nuxt-link>
+                  </div>
                   <div class="symbols-wrap d-flex">
                     <nuxt-link
                       to="/"
@@ -84,18 +105,6 @@
                     >
                       <img src="/img/svg/symbol-3.png" alt />
                       <span>ГИМН</span>
-                    </nuxt-link>
-                  </div>
-
-                  <div class="social-wrap d-flex">
-                    <nuxt-link to="/" class="social-items child-center">
-                      <img src="/img/svg/white-fb.png" alt />
-                    </nuxt-link>
-                    <nuxt-link to="/" class="social-items child-center">
-                      <img src="/img/svg/white-gp.png" alt />
-                    </nuxt-link>
-                    <nuxt-link to="/" class="social-items child-center">
-                      <img src="/img/svg/white-tw.png" alt />
                     </nuxt-link>
                   </div>
                 </div>
@@ -124,21 +133,21 @@
                 <img src="/img/svg/phone-white-2.png" alt />
                 <span>Факс</span>
               </div>
-              <p>+998 (78) 150 10 01</p>
+              <p>+998 (78) 150 93 39</p>
             </div>
             <div class="col-lg-3 col-sm-6 col-6 footer-phone-cell">
               <div class="d-flex align-center">
                 <img src="/img/svg/email-white.png" alt />
                 <span>Эл. почта</span>
               </div>
-              <p>+998 (78) 150 10 01</p>
+              <p>info.toshkent@qqb.uz</p>
             </div>
             <div class="col-lg-3 col-sm-6 col-6 footer-phone-cell">
               <div class="d-flex align-center">
                 <img src="/img/svg/loc-white.png" alt />
                 <span>Адрес</span>
               </div>
-              <p>+998 (78) 150 10 01</p>
+              <p>100011, г. Ташкент, ул А. Навои, 18А</p>
             </div>
           </div>
         </div>
@@ -154,9 +163,6 @@
               <nuxt-link to="/" class="footer-item-anchor d-block"
                 >Годовые отчеты</nuxt-link
               >
-              <nuxt-link to="/" class="footer-item-anchor d-block">
-                Подведомственные организации
-              </nuxt-link>
               <nuxt-link to="/" class="footer-item-anchor d-block"
                 >Филиалы</nuxt-link
               >
@@ -174,19 +180,10 @@
               <nuxt-link to="/" class="footer-item-anchor d-block"
                 >Форум</nuxt-link
               >
-              <nuxt-link to="/" class="footer-item-anchor d-block">
-                Правительственный портал
-              </nuxt-link>
             </div>
             <div class="footer-box-items">
               <nuxt-link to="/" class="footer-item-anchor d-block"
                 >Открытые данные</nuxt-link
-              >
-              <nuxt-link to="/" class="footer-item-anchor d-block">
-                Порядок работы АО "НБ ВЭД РУз"
-              </nuxt-link>
-              <nuxt-link to="/" class="footer-item-anchor d-block"
-                >Работа в АО "НБ ВЭД РУз"</nuxt-link
               >
             </div>
             <div class="footer-box-items">
@@ -206,8 +203,11 @@
 
       <div class="footer-bottom">
         <div class="container">
-          <div class="row">
-            <div class="col-xl-9">
+          <div class="row align-center">
+            <div class="col-xl-8 footer-bottom__left">
+              <span
+                >Последнее обновление сайта: <b>07.05.2020 13:13:27</b></span
+              >
               <p>
                 1994-2020 ©
                 <nuxt-link
@@ -219,17 +219,34 @@
                 нажмите
                 <b>Ctrl+Enter</b>
               </p>
-            </div>
-
-            <div class="col-xl-3">
               <a
                 href="https://goodone.uz/"
                 target="_blank"
-                class="owner-develope d-block text-white"
+                class="owner-develope"
               >
                 Разработка сайта -
                 <b>GOODONE</b>
               </a>
+            </div>
+
+            <div class="col-xl-4">
+              <div class="f-icon-wrap d-flex">
+                <a href="#" class="f-icon-items">
+                  <img src="~static/img/icon/f-1.png" alt="" class="d-block" />
+                </a>
+                <a href="#" class="f-icon-items">
+                  <img src="~static/img/icon/f-2.png" alt="" class="d-block" />
+                </a>
+                <a href="#" class="f-icon-items">
+                  <img src="~static/img/icon/f-3.png" alt="" class="d-block" />
+                </a>
+                <a href="#" class="f-icon-items">
+                  <img src="~static/img/icon/f-4.png" alt="" class="d-block" />
+                </a>
+                <a href="#" class="f-icon-items">
+                  <img src="~static/img/icon/f-5.png" alt="" class="d-block" />
+                </a>
+              </div>
             </div>
           </div>
         </div>

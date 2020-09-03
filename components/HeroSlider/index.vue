@@ -257,7 +257,7 @@
                           <span>Сумма вклада</span>
 
                           <div class="form-group-range">
-                            <p>{{ value }} UZS</p>
+                            <p>{{ value }} мес.</p>
                             <vue-slider
                               v-model="value"
                               v-bind="optionsRangeSlider"
@@ -265,8 +265,8 @@
                           </div>
 
                           <div class="form-range-field d-flex f-between">
-                            <span>200 000 сум.</span>
-                            <span>100 000 000 сум.</span>
+                            <span>1 год.</span>
+                            <span>30 лет.</span>
                           </div>
                         </div>
 
@@ -325,7 +325,7 @@
       <!-- Parent Slide 3 -->
       <slide class="hooper-slide-items hooper-slide-3">
         <div
-          class="set-offset-slide d-flex f-column"
+          class="set-offset-slide d-flex f-columne"
           data-set="offset"
           data-offset="top bottom"
         >
@@ -383,11 +383,52 @@
                       :to="{ to: 'CardsShow' }"
                       class="card-items rounded transition d-flex f-column h-100"
                     >
-                      <div class="card-items__header mb-auto">
+                      <div
+                        class="card-items__header card-header-animate mb-auto"
+                      >
                         <h1>
                           Kobeydjing
                           <br />(UnionPay)
                         </h1>
+                      </div>
+
+                      <div class="card-hidden-content">
+                        <div class="hidden-content-items d-flex">
+                          <div class="hidden-content-left">
+                            <img
+                              src="~static/img/slide-images/card-icon-1.png"
+                              alt=""
+                            />
+                          </div>
+                          <div>
+                            <span>Банковские услуги по открытию карты:</span>
+                            <b>Бесплатно</b>
+                          </div>
+                        </div>
+                        <div class="hidden-content-items d-flex">
+                          <div class="hidden-content-left">
+                            <img
+                              src="~static/img/slide-images/card-icon-2.png"
+                              alt=""
+                            />
+                          </div>
+                          <div>
+                            <span>Срок действия:</span>
+                            <b>3 года</b>
+                          </div>
+                        </div>
+                        <div class="hidden-content-items d-flex">
+                          <div class="hidden-content-left">
+                            <img
+                              src="~static/img/slide-images/card-icon-3.png"
+                              alt=""
+                            />
+                          </div>
+                          <div>
+                            <span>Необходимые документы:</span>
+                            <b>Оригинал паспорта; ИНН; Применение; контракт</b>
+                          </div>
+                        </div>
                       </div>
 
                       <div class="card-items-img d-flex p-relative f-center">
@@ -412,11 +453,52 @@
                       :to="{ to: 'CardsShow' }"
                       class="card-items rounded transition d-flex f-column h-100"
                     >
-                      <div class="card-items__header mb-auto">
+                      <div
+                        class="card-items__header card-header-animate mb-auto"
+                      >
                         <h1>
                           Kobeydjing
                           <br />(UnionPay)
                         </h1>
+                      </div>
+
+                      <div class="card-hidden-content">
+                        <div class="hidden-content-items d-flex">
+                          <div class="hidden-content-left">
+                            <img
+                              src="~static/img/slide-images/card-icon-1.png"
+                              alt=""
+                            />
+                          </div>
+                          <div>
+                            <span>Банковские услуги по открытию карты:</span>
+                            <b>Бесплатно</b>
+                          </div>
+                        </div>
+                        <div class="hidden-content-items d-flex">
+                          <div class="hidden-content-left">
+                            <img
+                              src="~static/img/slide-images/card-icon-2.png"
+                              alt=""
+                            />
+                          </div>
+                          <div>
+                            <span>Срок действия:</span>
+                            <b>3 года</b>
+                          </div>
+                        </div>
+                        <div class="hidden-content-items d-flex">
+                          <div class="hidden-content-left">
+                            <img
+                              src="~static/img/slide-images/card-icon-3.png"
+                              alt=""
+                            />
+                          </div>
+                          <div>
+                            <span>Необходимые документы:</span>
+                            <b>Оригинал паспорта; ИНН; Применение; контракт</b>
+                          </div>
+                        </div>
                       </div>
 
                       <div class="card-items-img d-flex p-relative f-center">
@@ -441,11 +523,52 @@
                       :to="{ to: 'CardsShow' }"
                       class="card-items rounded transition d-flex f-column h-100"
                     >
-                      <div class="card-items__header mb-auto">
+                      <div
+                        class="card-items__header card-header-animate mb-auto"
+                      >
                         <h1>
                           Kobeydjing
                           <br />(UnionPay)
                         </h1>
+                      </div>
+
+                      <div class="card-hidden-content">
+                        <div class="hidden-content-items d-flex">
+                          <div class="hidden-content-left">
+                            <img
+                              src="~static/img/slide-images/card-icon-1.png"
+                              alt=""
+                            />
+                          </div>
+                          <div>
+                            <span>Банковские услуги по открытию карты:</span>
+                            <b>Бесплатно</b>
+                          </div>
+                        </div>
+                        <div class="hidden-content-items d-flex">
+                          <div class="hidden-content-left">
+                            <img
+                              src="~static/img/slide-images/card-icon-2.png"
+                              alt=""
+                            />
+                          </div>
+                          <div>
+                            <span>Срок действия:</span>
+                            <b>3 года</b>
+                          </div>
+                        </div>
+                        <div class="hidden-content-items d-flex">
+                          <div class="hidden-content-left">
+                            <img
+                              src="~static/img/slide-images/card-icon-3.png"
+                              alt=""
+                            />
+                          </div>
+                          <div>
+                            <span>Необходимые документы:</span>
+                            <b>Оригинал паспорта; ИНН; Применение; контракт</b>
+                          </div>
+                        </div>
                       </div>
 
                       <div class="card-items-img d-flex p-relative f-center">
@@ -506,6 +629,7 @@
                   </template>
                 </VueSlickCarousel>
                 <!-- End Begin Nested Slider -->
+                <!-- <div class="background-overlay"></div> -->
               </div>
             </div>
           </div>
@@ -769,178 +893,6 @@
                 <div v-if="activetab === '3'" class="tabcontent">3</div>
                 <div v-if="activetab === '4'" class="tabcontent">4</div>
               </div>
-
-              <!-- <div
-                class="card-tab-navigation tab-navigation--credit no-tab-border"
-              >
-                <div class="card-tab-header">
-                  <div class="d-flex">
-                    <div
-                      class="tab-items p-relative pointer active"
-                      data-toggle="tab"
-                    >
-                      <span>Новости</span>
-                    </div>
-                    <div class="tab-items p-relative pointer" data-toggle="tab">
-                      <span>Мероприятия</span>
-                    </div>
-                    <div class="tab-items p-relative pointer" data-toggle="tab">
-                      <span>Тендеры</span>
-                    </div>
-                    <div class="tab-items p-relative pointer" data-toggle="tab">
-                      <span>Объявления</span>
-                    </div>
-                    <div class="tab-items p-relative pointer" data-toggle="tab">
-                      <span>Почему</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="card-tab-content">
-                  <div role="tabpanel">
-                    <div class="slide-first-content p-relative">
-                      <div class="nested-hooper-arrow">
-                        <div class="container">
-                          <div class="arrow-slot-container d-flex">
-                            <div
-                              class="custom-arrow-slot arrow-slot--left child-center"
-                              @click.prevent="slidePrev"
-                            >
-                              <img src="/img/svg/arrow-left.png" alt />
-                            </div>
-
-                            <div
-                              class="custom-arrow-slot arrow-slot--right child-center"
-                              @click.prevent="slideNext"
-                            >
-                              <img src="/img/svg/arrow-right.png" alt />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <hooper
-                        class="nested-hooper"
-                        ref="hooperNested"
-                        :settings="newsHooper"
-                      >
-                        <slide>
-                          <nuxt-link
-                            :to="{ to: 'NewsShow' }"
-                            class="news-items-2 transition rounded d-block"
-                          >
-                            <div class="embed-news">
-                              <div class="embed-news__date d-flex align-center">
-                                <img src="/img/svg/calendar.png" alt />
-                                <span>23.01.2020</span>
-                              </div>
-
-                              <h1>
-                                Новая акция от Кишлок курилиш банк: "Оламшумул"
-                              </h1>
-
-                              <p>
-                                Акционерный коммерческий банк «Qishloq Qurilish
-                                Bank» объявляет акцию «Olamshumul»
-                              </p>
-                            </div>
-                          </nuxt-link>
-                        </slide>
-                        <slide>
-                          <nuxt-link
-                            :to="{ to: 'NewsShow' }"
-                            class="news-items-2 transition rounded d-block"
-                          >
-                            <div class="embed-news">
-                              <div class="embed-news__date d-flex align-center">
-                                <img src="/img/svg/calendar.png" alt />
-                                <span>23.01.2020</span>
-                              </div>
-
-                              <h1>
-                                Новая акция от Кишлок курилиш банк: "Оламшумул"
-                              </h1>
-
-                              <p>
-                                Акционерный коммерческий банк «Qishloq Qurilish
-                                Bank» объявляет акцию «Olamshumul»
-                              </p>
-                            </div>
-                          </nuxt-link>
-                        </slide>
-                        <slide>
-                          <nuxt-link
-                            :to="{ to: 'NewsShow' }"
-                            class="news-items-2 transition rounded d-block"
-                          >
-                            <div class="embed-news">
-                              <div class="embed-news__date d-flex align-center">
-                                <img src="/img/svg/calendar.png" alt />
-                                <span>23.01.2020</span>
-                              </div>
-
-                              <h1>
-                                Новая акция от Кишлок курилиш банк: "Оламшумул"
-                              </h1>
-
-                              <p>
-                                Акционерный коммерческий банк «Qishloq Qurilish
-                                Bank» объявляет акцию «Olamshumul»
-                              </p>
-                            </div>
-                          </nuxt-link>
-                        </slide>
-                        <slide>
-                          <nuxt-link
-                            :to="{ to: 'NewsShow' }"
-                            class="news-items-2 transition rounded d-block"
-                          >
-                            <div class="embed-news">
-                              <div class="embed-news__date d-flex align-center">
-                                <img src="/img/svg/calendar.png" alt />
-                                <span>23.01.2020</span>
-                              </div>
-
-                              <h1>
-                                Новая акция от Кишлок курилиш банк: "Оламшумул"
-                              </h1>
-
-                              <p>
-                                Акционерный коммерческий банк «Qishloq Qurilish
-                                Bank» объявляет акцию «Olamshumul»
-                              </p>
-                            </div>
-                          </nuxt-link>
-                        </slide>
-                        <slide>
-                          <nuxt-link
-                            :to="{ to: 'NewsShow' }"
-                            class="news-items-2 transition rounded d-block"
-                          >
-                            <div class="embed-news">
-                              <div class="embed-news__date d-flex align-center">
-                                <img src="/img/svg/calendar.png" alt />
-                                <span>23.01.2020</span>
-                              </div>
-
-                              <h1>
-                                Новая акция от Кишлок курилиш банк: "Оламшумул"
-                              </h1>
-
-                              <p>
-                                Акционерный коммерческий банк «Qishloq Qurilish
-                                Bank» объявляет акцию «Olamshumul»
-                              </p>
-                            </div>
-                          </nuxt-link>
-                        </slide>
-                      </hooper>
-                    </div>
-                  </div>
-                  <div role="tabpanel">
-                    1234aaa
-                  </div>
-                </div>
-              </div>-->
             </div>
           </div>
         </div>
@@ -1190,6 +1142,24 @@ export default {
     setTimeout(() => {
       document.querySelector('.hooper-container').classList.add('scrolled')
     }, 2000)
+
+    const $cardItems = document.querySelectorAll('.card-items')
+    const $bodyWidth = document.querySelector('body').clientWidth
+
+    if ($bodyWidth <= 1025) {
+      $cardItems.forEach((el) => {
+        el.classList.add('card-active')
+      })
+    }
+
+    $cardItems.forEach((el) => {
+      el.addEventListener('mouseenter', function () {
+        el.classList.add('card-active')
+      })
+      el.addEventListener('mouseleave', function () {
+        el.classList.remove('card-active')
+      })
+    })
   },
   methods: {
     slidePrev() {

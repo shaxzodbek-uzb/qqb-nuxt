@@ -14,22 +14,55 @@
         </div>
 
         <div class="card-items-container d-flex f-wrap">
-          <nuxt-link to="/Cards/1" class="card-items rounded transition">
-            <div class="card-items__header mb-auto">
+          <nuxt-link
+            :to="{ to: 'CardsShow' }"
+            class="card-items rounded transition d-flex f-column h-100"
+          >
+            <div class="card-items__header card-header-animate mb-auto">
               <h1>
                 Kobeydjing
                 <br />(UnionPay)
               </h1>
             </div>
 
+            <div class="card-hidden-content">
+              <div class="hidden-content-items d-flex">
+                <div class="hidden-content-left">
+                  <img src="~static/img/slide-images/card-icon-1.png" alt="" />
+                </div>
+                <div>
+                  <span>Банковские услуги по открытию карты:</span>
+                  <b>Бесплатно</b>
+                </div>
+              </div>
+              <div class="hidden-content-items d-flex">
+                <div class="hidden-content-left">
+                  <img src="~static/img/slide-images/card-icon-2.png" alt="" />
+                </div>
+                <div>
+                  <span>Срок действия:</span>
+                  <b>3 года</b>
+                </div>
+              </div>
+              <div class="hidden-content-items d-flex">
+                <div class="hidden-content-left">
+                  <img src="~static/img/slide-images/card-icon-3.png" alt="" />
+                </div>
+                <div>
+                  <span>Необходимые документы:</span>
+                  <b>Оригинал паспорта; ИНН; Применение; контракт</b>
+                </div>
+              </div>
+            </div>
+
             <div class="card-items-img d-flex p-relative f-center">
               <img
-                src="~/static/img/slide-images/card-back.png"
+                src="/img/slide-images/card-back.png"
                 class="card-back d-block p-absolute"
                 alt
               />
               <img
-                src="~/static/img/slide-images/card-front.png"
+                src="/img/slide-images/card-front.png"
                 class="card-front d-block p-relative"
                 alt
               />
@@ -153,6 +186,24 @@ import { setOffset } from '~/utils/frontend'
 export default {
   mounted() {
     setOffset()
+
+    const $cardItems = document.querySelectorAll('.card-items')
+    const $bodyWidth = document.querySelector('body').clientWidth
+
+    if ($bodyWidth <= 1025) {
+      $cardItems.forEach((el) => {
+        el.classList.add('card-active')
+      })
+    }
+
+    $cardItems.forEach((el) => {
+      el.addEventListener('mouseenter', function () {
+        el.classList.add('card-active')
+      })
+      el.addEventListener('mouseleave', function () {
+        el.classList.remove('card-active')
+      })
+    })
   },
 }
 </script>
