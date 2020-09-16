@@ -43,6 +43,25 @@ export default {
     // setVH()
     dropdown()
 
+    function iOS() {
+      return (
+        [
+          'iPad Simulator',
+          'iPhone Simulator',
+          'iPod Simulator',
+          'iPad',
+          'iPhone',
+          'iPod',
+        ].includes(navigator.platform) ||
+        // iPad on iOS 13 detection
+        (navigator.userAgent.includes('Mac') && 'ontouchend' in document)
+      )
+    }
+
+    if (iOS()) {
+      document.querySelector('body').classList.add('is-ios')
+    }
+
     function setVH() {
       let vh = window.innerHeight * 0.01
       document.documentElement.style.setProperty(`--vh`, `${vh}px`)
@@ -65,11 +84,7 @@ export default {
     isMobile() {
       const _bodyWidth = document.querySelector('body').clientWidth
 
-      if (_bodyWidth < 1025) {
-        this.isMobileContent = true
-      } else {
-        this.isMobileContent = false
-      }
+      this.isMobileContent = _bodyWidth < 1025
     },
   },
 }

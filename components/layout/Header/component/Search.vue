@@ -17,17 +17,17 @@
     <div class="search-wrap__field p-fixed w-100" ref="searchContent">
       <div class="container">
         <div class="mobile-user-tools align-center">
-          <div class="mobile-qqb-online">
+          <!-- <div class="mobile-qqb-online">
             <button
               class="d-flex align-center btn btn-border rounded pointer transition"
             >
               <span style="margin-right: 1rem;">QQB-Онлайн</span>
             </button>
-          </div>
+          </div> -->
           <div class="user-bank">
             <div class="my-bank-button dropdown-init pointer p-relative">
               <button
-                class="d-flex align-center btn rounded pointer transition"
+                class="d-flex align-center btn btn-border rounded pointer transition"
               >
                 <span style="margin-right: 1rem;">Мой банк</span>
                 <img
