@@ -23,7 +23,7 @@
             >
               <span style="margin-right: 1rem;">QQB-Онлайн</span>
             </button>
-          </div> -->
+          </div>-->
           <div class="user-bank">
             <div class="my-bank-button dropdown-init pointer p-relative">
               <button
@@ -97,63 +97,25 @@
           </div>
           <div class="col-xl-9 mobile-slide-content">
             <div class="search-items-wrap">
-              <nuxt-link to="/" class="anchor-items d-block"
-                >История банка</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Функции банка</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Структура банка</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Совет банка</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Правление банка</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Филиалы банка</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Функции управления</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Внутренный аудит</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Ревизионная комиссия</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Реквизиты банка</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Вакансии</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Финансовые показатели</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Обращение Председателя Правления</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Лицензии</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Существенные факты</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Устав банка</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Банки-корреспонденты</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Политика системы менеджмента качества</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Совет лидеров Союз молодёжа банка</nuxt-link
-              >
+              <!-- <nuxt-link to="/" class="anchor-items d-block">История банка</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Функции банка</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Структура банка</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Совет банка</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Правление банка</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Филиалы банка</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Функции управления</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Внутренный аудит</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Ревизионная комиссия</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Реквизиты банка</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Вакансии</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Финансовые показатели</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Обращение Председателя Правления</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Лицензии</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Существенные факты</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Устав банка</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Банки-корреспонденты</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Политика системы менеджмента качества</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Совет лидеров Союз молодёжа банка</nuxt-link>-->
             </div>
           </div>
         </div>
@@ -167,47 +129,27 @@
           </div>
           <div class="col-xl-9 mobile-slide-content">
             <div class="search-items-wrap">
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Денежные переводы</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >MoneyGram</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Western Union</nuxt-link
-              >
+              <!-- <nuxt-link to="/" class="anchor-items d-block">Денежные переводы</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">MoneyGram</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Western Union</nuxt-link>
               <nuxt-link to="/" class="anchor-items d-block">Контакт</nuxt-link>
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Золотая корона</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Пластиковые карточки</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Международные пластиковые карты “VISA CLASSIC”</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Кобейджинговая карта</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Банкоматы</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Инфокиоски</nuxt-link
-              >
+              <nuxt-link to="/" class="anchor-items d-block">Золотая корона</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Пластиковые карточки</nuxt-link>
+              <nuxt-link
+                to="/"
+                class="anchor-items d-block"
+              >Международные пластиковые карты “VISA CLASSIC”</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Кобейджинговая карта</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Банкоматы</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Инфокиоски</nuxt-link>
               <nuxt-link to="/" class="anchor-items d-block">Вклады</nuxt-link>
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Кредитование</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Ипотечные кредиты по ТПСМ</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Ипотечные кредиты в рамках нового порядка</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Валютно-обменные пункты</nuxt-link
-              >
+              <nuxt-link to="/" class="anchor-items d-block">Кредитование</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Ипотечные кредиты по ТПСМ</nuxt-link>
+              <nuxt-link
+                to="/"
+                class="anchor-items d-block"
+              >Ипотечные кредиты в рамках нового порядка</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Валютно-обменные пункты</nuxt-link>-->
             </div>
           </div>
         </div>
@@ -222,47 +164,27 @@
           </div>
           <div class="col-xl-9 mobile-slide-content">
             <div class="search-items-wrap">
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Денежные переводы</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >MoneyGram</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Western Union</nuxt-link
-              >
+              <!-- <nuxt-link to="/" class="anchor-items d-block">Денежные переводы</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">MoneyGram</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Western Union</nuxt-link>
               <nuxt-link to="/" class="anchor-items d-block">Контакт</nuxt-link>
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Золотая корона</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Пластиковые карточки</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Международные пластиковые карты “VISA CLASSIC”</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Кобейджинговая карта</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Банкоматы</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Инфокиоски</nuxt-link
-              >
+              <nuxt-link to="/" class="anchor-items d-block">Золотая корона</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Пластиковые карточки</nuxt-link>
+              <nuxt-link
+                to="/"
+                class="anchor-items d-block"
+              >Международные пластиковые карты “VISA CLASSIC”</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Кобейджинговая карта</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Банкоматы</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Инфокиоски</nuxt-link>
               <nuxt-link to="/" class="anchor-items d-block">Вклады</nuxt-link>
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Кредитование</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Ипотечные кредиты по ТПСМ</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Ипотечные кредиты в рамках нового порядка</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Валютно-обменные пункты</nuxt-link
-              >
+              <nuxt-link to="/" class="anchor-items d-block">Кредитование</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Ипотечные кредиты по ТПСМ</nuxt-link>
+              <nuxt-link
+                to="/"
+                class="anchor-items d-block"
+              >Ипотечные кредиты в рамках нового порядка</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Валютно-обменные пункты</nuxt-link>-->
             </div>
           </div>
         </div>
@@ -277,42 +199,22 @@
           </div>
           <div class="col-xl-9 mobile-slide-content">
             <div class="search-items-wrap">
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Расчетно-кассовое обслуживание</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Интернет банкинг/ Банк-клиент</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Кредитование</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Международные операции</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Документарные операции</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Международные договоры</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Корпоративные пластиковые карты</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Депозиты</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Депозитные сертификаты</nuxt-link
-              >
-              <nuxt-link to="/" class="anchor-items d-block"
-                >Invitation Page</nuxt-link
-              >
+              <!-- <nuxt-link to="/" class="anchor-items d-block">Расчетно-кассовое обслуживание</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Интернет банкинг/ Банк-клиент</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Кредитование</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Международные операции</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Документарные операции</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Международные договоры</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Корпоративные пластиковые карты</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Депозиты</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Депозитные сертификаты</nuxt-link>
+              <nuxt-link to="/" class="anchor-items d-block">Invitation Page</nuxt-link>-->
             </div>
           </div>
         </div>
 
         <div class="search-block-footer">
-          <nuxt-link to="/" class="d-block">ГАЛЕРЕЯ</nuxt-link>
+          <!-- <nuxt-link to="/" class="d-block">ГАЛЕРЕЯ</nuxt-link>
           <nuxt-link to="/" class="d-block">О банке</nuxt-link>
           <nuxt-link to="/" class="d-block">Новости</nuxt-link>
           <nuxt-link to="/" class="d-block">Работа</nuxt-link>
@@ -321,7 +223,7 @@
           <nuxt-link to="/" class="d-block">ПРЕСС-ЦЕНТР</nuxt-link>
           <nuxt-link to="/" class="d-block">АНОНИМНОЕ ОБРАЩЕНИЕ</nuxt-link>
           <nuxt-link to="/" class="d-block">ИНТЕРНЕТ БАНКИНГ</nuxt-link>
-          <nuxt-link to="/" class="d-block">Форум</nuxt-link>
+          <nuxt-link to="/" class="d-block">Форум</nuxt-link>-->
         </div>
       </div>
     </div>
@@ -373,9 +275,7 @@ export default {
                 el.nextElementSibling.classList.remove('active')
                 el.classList.remove('active')
               },
-              {
-                once: true,
-              }
+              false
             )
           }
         })

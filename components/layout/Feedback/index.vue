@@ -38,7 +38,7 @@
                     <input
                       type="text"
                       class="d-block w-100"
-                      placeholder="..."
+                      placeholder="Имя и фамилия"
                     />
                   </div>
                 </div>
@@ -51,7 +51,7 @@
                     <input
                       type="text"
                       class="d-block w-100"
-                      placeholder="..."
+                      placeholder="+998"
                     />
                   </div>
                 </div>
@@ -64,7 +64,7 @@
                     <input
                       type="text"
                       class="d-block w-100"
-                      placeholder="..."
+                      placeholder="headoffice@qqb.uz"
                     />
                   </div>
                 </div>
@@ -77,7 +77,7 @@
                     <span class="appeal-label d-block">Текст обращения</span>
                     <textarea
                       class="d-block w-100"
-                      placeholder="..."
+                      placeholder="Текст обращения"
                     ></textarea>
                   </div>
                 </div>
