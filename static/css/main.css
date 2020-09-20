@@ -4052,15 +4052,31 @@ body {
   }
 
   .card-back {
-    max-width: 200px;
+    max-width: 170px;
   }
 
   .card-front {
-    max-width: 220px;
+    max-width: 190px;
   }
 
   .news-offset-wrap {
     padding-top: 20px;
+  }
+
+  .card-items {
+    padding: 20px;
+  }
+  
+  .card-items.card-active .card-hidden-content {
+        top: 90px;
+  }
+
+  .hidden-content-items {
+        margin-bottom: 5px;
+  }
+    
+  .hidden-content-items b {
+       font-size: 15px;
   }
 
   .news-offset-wrap .card-tab-navigation,
@@ -4666,6 +4682,19 @@ body {
   .mobile-slide-arrow {
     display: block;
   }
+
+  .hooper-slide-5 {
+    height: 100% !important;
+   min-height: 850px;
+}
+
+.hooper-slide-5 .service-slide-content {
+   min-height: 850px;
+}
+
+.search-form input {
+  margin-right: -10px;
+}
 
   .language-dropdown .dropdown--content {
       left: 10px;
