@@ -125,7 +125,7 @@
                 <img src="/img/svg/phone-white.png" alt />
                 <span>Телефон</span>
               </div>
-              <p>+998 (78) 150 10 01</p>
+              <p>+998 (78) 150 93 39</p>
             </div>
             <div class="col-lg-3 col-sm-6 col-6 footer-phone-cell">
               <div class="d-flex align-center">
@@ -139,14 +139,14 @@
                 <img src="/img/svg/email-white.png" alt />
                 <span>Эл. почта</span>
               </div>
-              <p>info.toshkent@qqb.uz</p>
+              <p>headoffice@qqb.uz</p>
             </div>
             <div class="col-lg-3 col-sm-6 col-6 footer-phone-cell">
               <div class="d-flex align-center">
                 <img src="/img/svg/loc-white.png" alt />
                 <span>Адрес</span>
               </div>
-              <p>100011, г. Ташкент, ул А. Навои, 18А</p>
+              <p>г. Ташкент, ул А. Навои, 18А</p>
             </div>
           </div>
         </div>
