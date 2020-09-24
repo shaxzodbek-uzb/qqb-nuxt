@@ -16,20 +16,28 @@
         >
           <div class="hooper-nested-container f-fill">
             <!-- Begin Nested Slider -->
-            <VueSlickCarousel v-bind="settings" ref="carousel">
+            <VueSlickCarousel
+              v-bind="settings"
+              ref="carousel"
+              v-if="slider.slides.length != 0"
+            >
               <!-- Nested Slide 1 -->
-              <div class="nested-slide-items p-relative d-flex align-center">
+              <div
+                v-for="slide in slider.slides"
+                class="nested-slide-items p-relative d-flex align-center"
+                :key="slide.id"
+              >
                 <img
                   class="slide-full-banner p-absolute img-cover"
-                  src="/img/slide-images/slide-img-1.jpg"
+                  :src="slide.image"
                   alt
                 />
 
                 <div class="container">
                   <div class="nested-slide-text p-relative">
-                    <h1 class="title-60">Кредиты для физических лиц</h1>
+                    <h1 class="title-60">{{ slide.name }}</h1>
 
-                    <p>Ипотечные кредиты по ИПСМ</p>
+                    <p>{{ slide.description }}</p>
 
                     <nuxt-link
                       to="/"
@@ -42,8 +50,8 @@
               <!-- End Nested Slide 1 -->
 
               <!-- Nested Slide 2 -->
-              <div>
-                <h3>234</h3>
+              <div v-if="slider.slides.length == 0">
+                <h3></h3>
               </div>
               <!-- End Nested Slide 2 -->
 
@@ -376,9 +384,14 @@
                   ref="nestedCarouselSecond"
                   v-bind="nestedSettings"
                   class="hooper-var-width"
+                  v-if="cards.length != 0"
                 >
                   <!-- Nested Slide 1 -->
-                  <div class="var-width-items">
+                  <div
+                    class="var-width-items"
+                    v-for="item in cards"
+                    :key="item.id"
+                  >
                     <nuxt-link
                       :to="{ to: 'CardsShow' }"
                       class="card-items rounded transition d-flex f-column h-100"
@@ -387,7 +400,7 @@
                         class="card-items__header card-header-animate mb-auto"
                       >
                         <h1>
-                          Kobeydjing
+                          {{ item.name }}
                           <br />(UnionPay)
                         </h1>
                       </div>
@@ -446,176 +459,10 @@
                     </nuxt-link>
                   </div>
                   <!-- End Nested Slide 1 -->
-
                   <!-- Nested Slide 2 -->
-                  <div class="var-width-items">
-                    <nuxt-link
-                      :to="{ to: 'CardsShow' }"
-                      class="card-items rounded transition d-flex f-column h-100"
-                    >
-                      <div
-                        class="card-items__header card-header-animate mb-auto"
-                      >
-                        <h1>
-                          Kobeydjing
-                          <br />(UnionPay)
-                        </h1>
-                      </div>
-
-                      <div class="card-hidden-content">
-                        <div class="hidden-content-items d-flex">
-                          <div class="hidden-content-left">
-                            <img
-                              src="~static/img/slide-images/card-icon-1.png"
-                              alt=""
-                            />
-                          </div>
-                          <div>
-                            <span>Банковские услуги по открытию карты:</span>
-                            <b>Бесплатно</b>
-                          </div>
-                        </div>
-                        <div class="hidden-content-items d-flex">
-                          <div class="hidden-content-left">
-                            <img
-                              src="~static/img/slide-images/card-icon-2.png"
-                              alt=""
-                            />
-                          </div>
-                          <div>
-                            <span>Срок действия:</span>
-                            <b>3 года</b>
-                          </div>
-                        </div>
-                        <div class="hidden-content-items d-flex">
-                          <div class="hidden-content-left">
-                            <img
-                              src="~static/img/slide-images/card-icon-3.png"
-                              alt=""
-                            />
-                          </div>
-                          <div>
-                            <span>Необходимые документы:</span>
-                            <b>Оригинал паспорта; ИНН; Применение; контракт</b>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="card-items-img d-flex p-relative f-center">
-                        <img
-                          src="/img/slide-images/card-back.png"
-                          class="card-back d-block p-absolute"
-                          alt
-                        />
-                        <img
-                          src="/img/slide-images/card-front.png"
-                          class="card-front d-block p-relative"
-                          alt
-                        />
-                      </div>
-                    </nuxt-link>
+                  <div v-if="cards.length == 0">
+                    <h3></h3>
                   </div>
-                  <!-- End Nested Slide 2 -->
-
-                  <!-- Nested Slide 3 -->
-                  <div class="var-width-items">
-                    <nuxt-link
-                      :to="{ to: 'CardsShow' }"
-                      class="card-items rounded transition d-flex f-column h-100"
-                    >
-                      <div
-                        class="card-items__header card-header-animate mb-auto"
-                      >
-                        <h1>
-                          Kobeydjing
-                          <br />(UnionPay)
-                        </h1>
-                      </div>
-
-                      <div class="card-hidden-content">
-                        <div class="hidden-content-items d-flex">
-                          <div class="hidden-content-left">
-                            <img
-                              src="~static/img/slide-images/card-icon-1.png"
-                              alt=""
-                            />
-                          </div>
-                          <div>
-                            <span>Банковские услуги по открытию карты:</span>
-                            <b>Бесплатно</b>
-                          </div>
-                        </div>
-                        <div class="hidden-content-items d-flex">
-                          <div class="hidden-content-left">
-                            <img
-                              src="~static/img/slide-images/card-icon-2.png"
-                              alt=""
-                            />
-                          </div>
-                          <div>
-                            <span>Срок действия:</span>
-                            <b>3 года</b>
-                          </div>
-                        </div>
-                        <div class="hidden-content-items d-flex">
-                          <div class="hidden-content-left">
-                            <img
-                              src="~static/img/slide-images/card-icon-3.png"
-                              alt=""
-                            />
-                          </div>
-                          <div>
-                            <span>Необходимые документы:</span>
-                            <b>Оригинал паспорта; ИНН; Применение; контракт</b>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="card-items-img d-flex p-relative f-center">
-                        <img
-                          src="/img/slide-images/card-back.png"
-                          class="card-back d-block p-absolute"
-                          alt
-                        />
-                        <img
-                          src="/img/slide-images/card-front.png"
-                          class="card-front d-block p-relative"
-                          alt
-                        />
-                      </div>
-                    </nuxt-link>
-                  </div>
-                  <!-- End Nested Slide 3 -->
-
-                  <!-- Nested Slide 4 -->
-                  <div class="var-width-items">
-                    <nuxt-link
-                      :to="{ to: 'CardsShow' }"
-                      class="card-items rounded transition d-flex f-column h-100"
-                    >
-                      <div class="card-items__header mb-auto">
-                        <h1>
-                          Kobeydjing
-                          <br />(UnionPay)
-                        </h1>
-                      </div>
-
-                      <div class="card-items-img d-flex p-relative f-center">
-                        <img
-                          src="/img/slide-images/card-back.png"
-                          class="card-back d-block p-absolute"
-                          alt
-                        />
-                        <img
-                          src="/img/slide-images/card-front.png"
-                          class="card-front d-block p-relative"
-                          alt
-                        />
-                      </div>
-                    </nuxt-link>
-                  </div>
-                  <!-- End Nested Slide 4 -->
-
                   <template #prevArrow="arrowOption">
                     <div class="custom-fraction-slot fraction-offset-slot">
                       <div class="container">
@@ -679,39 +526,30 @@
               data-offset="setLeftOffset"
             >
               <h1 class="title-50">Новости</h1>
-
               <div
                 class="tabs card-tab-navigation tab-navigation--credit no-tab-border d-flex"
               >
                 <a
-                  @click="activetab = '1'"
+                  v-for="item in news_categories"
+                  :key="item.id"
+                  @click="activetab = item.id"
                   class="tab-items p-relative pointer"
-                  :class="[activetab === '1' ? 'active' : '']"
-                  >Новости</a
+                  :class="[activetab === item.id ? 'active' : '']"
                 >
-                <a
-                  @click="activetab = '2'"
-                  class="tab-items p-relative pointer"
-                  :class="[activetab === '2' ? 'active' : '']"
-                  >Мероприятия</a
-                >
-                <a
-                  @click="activetab = '3'"
-                  class="tab-items p-relative pointer"
-                  :class="[activetab === '3' ? 'active' : '']"
-                  >Тендеры</a
-                >
-                <a
-                  @click="activetab = '4'"
-                  class="tab-items p-relative pointer"
-                  :class="[activetab === '4' ? 'active' : '']"
-                  >Почему</a
-                >
+                  {{ item.name }}
+                </a>
               </div>
 
               <div class="content">
-                <div v-if="activetab === '1'" class="tabcontent">
-                  <div class="slide-first-content p-relative">
+                <div
+                  v-for="item in news_categories"
+                  :key="item.id"
+                  class="tabcontent"
+                >
+                  <div
+                    class="slide-first-content p-relative"
+                    v-if="activetab === item.id"
+                  >
                     <div class="nested-hooper-arrow">
                       <div class="container">
                         <div class="arrow-slot-container d-flex">
@@ -736,14 +574,14 @@
                       ref="hooperNested"
                       :settings="newsHooper"
                     >
-                      <slide>
+                      <slide v-for="news in item.news" :key="news.id">
                         <nuxt-link
                           :to="{ to: 'NewsShow' }"
                           class="news-items-2 transition rounded d-block p-relative"
                         >
                           <div class="card-background p-absolute w-100 h-100">
                             <img
-                              src="~/static/img/img-15.png"
+                              :src="news.image"
                               class="img-cover d-block"
                               alt
                             />
@@ -758,130 +596,11 @@
                             </div>
 
                             <h1>
-                              Новая акция от Кишлок курилиш банк: "Оламшумул"
+                              {{ news.name }}
                             </h1>
 
                             <p>
-                              Акционерный коммерческий банк «Qishloq Qurilish
-                              Bank» объявляет акцию «Olamshumul»
-                            </p>
-                          </div>
-                        </nuxt-link>
-                      </slide>
-                      <slide>
-                        <nuxt-link
-                          :to="{ to: 'NewsShow' }"
-                          class="news-items-2 transition rounded d-block p-relative"
-                        >
-                          <div class="card-background p-absolute w-100 h-100">
-                            <img
-                              src="~/static/img/img-15.png"
-                              class="img-cover d-block"
-                              alt
-                            />
-                            <div
-                              class="card-background__overlay p-absolute w-100 h-100"
-                            ></div>
-                          </div>
-                          <div class="embed-news">
-                            <div class="embed-news__date d-flex align-center">
-                              <img src="/img/svg/calendar.png" alt />
-                              <span>23.01.2020</span>
-                            </div>
-
-                            <h1>
-                              Новая акция от Кишлок курилиш банк: "Оламшумул"
-                            </h1>
-
-                            <p>
-                              Акционерный коммерческий банк «Qishloq Qurilish
-                              Bank» объявляет акцию «Olamshumul»
-                            </p>
-                          </div>
-                        </nuxt-link>
-                      </slide>
-                      <slide>
-                        <nuxt-link
-                          :to="{ to: 'NewsShow' }"
-                          class="news-items-2 transition rounded d-block p-relative"
-                        >
-                          <div class="card-background p-absolute w-100 h-100">
-                            <img
-                              src="~/static/img/img-15.png"
-                              class="img-cover d-block"
-                              alt
-                            />
-                            <div
-                              class="card-background__overlay p-absolute w-100 h-100"
-                            ></div>
-                          </div>
-                          <div class="embed-news">
-                            <div class="embed-news__date d-flex align-center">
-                              <img src="/img/svg/calendar.png" alt />
-                              <span>23.01.2020</span>
-                            </div>
-
-                            <h1>
-                              Новая акция от Кишлок курилиш банк: "Оламшумул"
-                            </h1>
-
-                            <p>
-                              Акционерный коммерческий банк «Qishloq Qurilish
-                              Bank» объявляет акцию «Olamshumul»
-                            </p>
-                          </div>
-                        </nuxt-link>
-                      </slide>
-                      <slide>
-                        <nuxt-link
-                          :to="{ to: 'NewsShow' }"
-                          class="news-items-2 transition rounded d-block p-relative"
-                        >
-                          <div class="card-background p-absolute w-100 h-100">
-                            <img
-                              src="~/static/img/img-15.png"
-                              class="img-cover d-block"
-                              alt
-                            />
-                            <div
-                              class="card-background__overlay p-absolute w-100 h-100"
-                            ></div>
-                          </div>
-                          <div class="embed-news">
-                            <div class="embed-news__date d-flex align-center">
-                              <img src="/img/svg/calendar.png" alt />
-                              <span>23.01.2020</span>
-                            </div>
-
-                            <h1>
-                              Новая акция от Кишлок курилиш банк: "Оламшумул"
-                            </h1>
-
-                            <p>
-                              Акционерный коммерческий банк «Qishloq Qurilish
-                              Bank» объявляет акцию «Olamshumul»
-                            </p>
-                          </div>
-                        </nuxt-link>
-                      </slide>
-                      <slide>
-                        <nuxt-link
-                          :to="{ to: 'NewsShow' }"
-                          class="news-items-2 transition rounded d-block p-relative"
-                        >
-                          <div class="embed-news">
-                            <div class="embed-news__date d-flex align-center">
-                              <img src="/img/svg/calendar.png" alt />
-                              <span>23.01.2020</span>
-                            </div>
-
-                            <h1>
-                              Новая акция от Кишлок курилиш банк: "Оламшумул"
-                            </h1>
-
-                            <p>
-                              Акционерный коммерческий банк «Qishloq Qurilish
-                              Bank» объявляет акцию «Olamshumul»
+                              {{ news.description }}
                             </p>
                           </div>
                         </nuxt-link>
@@ -889,9 +608,6 @@
                     </hooper>
                   </div>
                 </div>
-                <div v-if="activetab === '2'" class="tabcontent">2</div>
-                <div v-if="activetab === '3'" class="tabcontent">3</div>
-                <div v-if="activetab === '4'" class="tabcontent">4</div>
               </div>
             </div>
           </div>
@@ -1056,10 +772,30 @@ import {
 } from '@/utils/frontend'
 
 export default {
+  props: {
+    slider: {
+      type: Object,
+      default() {
+        return { slides: [] }
+      },
+    },
+    cards: {
+      type: Array,
+      default() {
+        return []
+      },
+    },
+    news_categories: {
+      type: Array,
+      default() {
+        return []
+      },
+    },
+  },
   data() {
     return {
       value: 0,
-      activetab: '1',
+      activetab: 1,
       optionsRangeSlider: {
         dotSize: [9, 17],
         tooltip: 'none',

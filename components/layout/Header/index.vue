@@ -14,141 +14,7 @@
             </nuxt-link>
           </div>
           <div class="col-xl-7 header-cell-2">
-            <nav class="header-navigation">
-              <ul class="d-flex">
-                <li>
-                  <div
-                    class="header-navigation-dropdown dropdown-init pointer p-relative"
-                  >
-                    <span>Физическим лицам</span>
-                    <img src="~/static/img/svg/arrow-down.png" alt />
-                    <img
-                      src="~/static/img/svg/arrow-white.png"
-                      class="white-icon-5 p-absolute"
-                      alt
-                    />
-
-                    <div class="dropdown--content">
-                      <nuxt-link
-                        :to="{ path: 'Contributions' }"
-                        class="dropdown--content-items"
-                        >Вклады</nuxt-link
-                      >
-                      <nuxt-link
-                        :to="{ path: 'InternationalMoneyTransfers' }"
-                        class="dropdown--content-items"
-                        >Международные денежные переводы</nuxt-link
-                      >
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div
-                    class="header-navigation-dropdown dropdown-init pointer p-relative"
-                  >
-                    <span>Корпорациям</span>
-                    <img src="~/static/img/svg/arrow-down.png" alt />
-                    <img
-                      src="~/static/img/svg/arrow-white.png"
-                      class="white-icon-5 p-absolute"
-                      alt
-                    />
-
-                    <div class="dropdown--content">
-                      <nuxt-link
-                        :to="{ path: 'Tariff' }"
-                        class="dropdown--content-items"
-                        >Тарифы</nuxt-link
-                      >
-                      <nuxt-link
-                        :to="{ path: 'Deposits' }"
-                        class="dropdown--content-items"
-                        >Депозиты</nuxt-link
-                      >
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div
-                    class="header-navigation-dropdown dropdown-init pointer p-relative"
-                  >
-                    <span>Акционерам и инвесторам</span>
-                    <img src="~/static/img/svg/arrow-down.png" alt />
-                    <img
-                      src="~/static/img/svg/arrow-white.png"
-                      class="white-icon-5 p-absolute"
-                      alt
-                    />
-
-                    <div class="dropdown--content">
-                      <nuxt-link
-                        :to="{ path: 'FinancialStatementsIFRS' }"
-                        class="dropdown--content-items"
-                        >Финансовая отчетность МСФО</nuxt-link
-                      >
-                      <nuxt-link
-                        :to="{ path: 'EssentialFacts' }"
-                        class="dropdown--content-items"
-                        >Существенные факты</nuxt-link
-                      >
-                      <nuxt-link
-                        :to="{ path: 'BusinessPlan' }"
-                        class="dropdown--content-items"
-                        >Бизнес-план</nuxt-link
-                      >
-                      <nuxt-link
-                        :to="{ path: 'PaidDividends' }"
-                        class="dropdown--content-items"
-                        >Сведения о начисленных и выплаченных
-                        дивидендах</nuxt-link
-                      >
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div
-                    class="header-navigation-dropdown dropdown-init pointer p-relative"
-                  >
-                    <span>Интерактивные услуги</span>
-                    <img src="~/static/img/svg/arrow-down.png" alt />
-                    <img
-                      src="~/static/img/svg/arrow-white.png"
-                      class="white-icon-5 p-absolute"
-                      alt
-                    />
-
-                    <div class="dropdown--content">
-                      <nuxt-link
-                        :to="{ path: 'News' }"
-                        class="dropdown--content-items"
-                        >Новости</nuxt-link
-                      >
-                      <nuxt-link
-                        :to="{ path: 'PollsArchive' }"
-                        class="dropdown--content-items"
-                        >Архив опросов</nuxt-link
-                      >
-                      <nuxt-link
-                        :to="{ path: 'CreditApplication' }"
-                        class="dropdown--content-items"
-                        >Заявка на кредитный отпуск для юридических
-                        лиц</nuxt-link
-                      >
-                      <nuxt-link
-                        :to="{ path: 'AnonymousAppeal' }"
-                        class="dropdown--content-items"
-                        >Анонимное Обращние</nuxt-link
-                      >
-                      <nuxt-link
-                        :to="{ path: 'ExchangeRates' }"
-                        class="dropdown--content-items"
-                        >Курсы валют</nuxt-link
-                      >
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </nav>
+            <Navigation :menu.sync="top_menu" />
           </div>
           <div class="col-xl-2 col-lg-3 col-md-3 col-sm-6 col-2 header-cell-3">
             <div class="header-toolbar d-flex align-center">
@@ -163,98 +29,7 @@
       <div class="container">
         <div class="row align-center">
           <div class="col-lg-10 header-bototm-cell-1">
-            <nav class="header-navigation">
-              <ul class="d-flex">
-                <li>
-                  <nuxt-link
-                    :to="{ path: 'Cards' }"
-                    class="header-navigation--active d-block p-relative"
-                    >Карты</nuxt-link
-                  >
-                </li>
-                <li>
-                  <nuxt-link
-                    :to="{ path: 'Credits' }"
-                    class="d-block p-relative"
-                    >Кредиты</nuxt-link
-                  >
-                </li>
-                <li>
-                  <nuxt-link
-                    :to="{ path: 'Contributions' }"
-                    class="d-block p-relative"
-                    >Вклады</nuxt-link
-                  >
-                </li>
-                <li>
-                  <nuxt-link
-                    :to="{ path: 'Documents' }"
-                    class="d-block p-relative"
-                    >Документы</nuxt-link
-                  >
-                </li>
-                <li>
-                  <nuxt-link :to="{ path: 'Tariff' }" class="d-block p-relative"
-                    >Тарифы</nuxt-link
-                  >
-                </li>
-                <li>
-                  <nuxt-link
-                    :to="{ path: 'Gallery' }"
-                    class="d-block p-relative"
-                    >Галерея</nuxt-link
-                  >
-                </li>
-                <li>
-                  <nuxt-link
-                    :to="{ path: 'Deposits' }"
-                    class="d-block p-relative"
-                    >Депозиты</nuxt-link
-                  >
-                </li>
-                <li>
-                  <div
-                    class="header-navigation-dropdown dropdown-init pointer p-relative"
-                  >
-                    <span>О банке</span>
-                    <img src="~/static/img/svg/arrow-down.png" alt />
-                    <img
-                      src="~/static/img/svg/arrow-white.png"
-                      class="white-icon-5 p-absolute"
-                      alt
-                    />
-
-                    <div class="dropdown--content">
-                      <nuxt-link
-                        :to="{ path: 'FinancialPerformance' }"
-                        class="dropdown--content-items"
-                        >Финансовые показатели</nuxt-link
-                      >
-                      <nuxt-link
-                        :to="{ path: 'Vacancies' }"
-                        class="dropdown--content-items"
-                        >Вакансии</nuxt-link
-                      >
-                      <nuxt-link
-                        :to="{ path: 'BankCouncil' }"
-                        class="dropdown--content-items"
-                        >Совет банка</nuxt-link
-                      >
-                      <nuxt-link
-                        :to="{ path: 'Filials' }"
-                        class="dropdown--content-items"
-                        >Филиалы</nuxt-link
-                      >
-                      <nuxt-link
-                        :to="{ path: 'BankHistory' }"
-                        class="dropdown--content-items"
-                        >История банка</nuxt-link
-                      >
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </nav>
+            <Navigation :menu.sync="menu" />
           </div>
           <div class="col-lg-2 header-bototm-cell-2">
             <div class="user-bank">
@@ -313,13 +88,33 @@
 <script>
 import Language from './component/Language'
 import Search from './component/Search'
+import Navigation from './component/Navigation'
 
 export default {
   components: {
     Language,
     Search,
+    Navigation,
   },
-  mounted() {},
+  mounted() {
+    this.$axios.$get('/menus/main-menu').then((res) => {
+      this.menu = res.data
+    })
+
+    this.$axios.$get('/menus/top-menu').then((res) => {
+      this.top_menu = res.data
+    })
+  },
+  data() {
+    return {
+      menu: {
+        menuItems: [],
+      },
+      top_menu: {
+        menuItems: [],
+      },
+    }
+  },
 }
 </script>
 

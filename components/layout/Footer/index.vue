@@ -20,7 +20,6 @@
         src="/img/svg/line-2.png"
         alt
       />
-
       <div
         class="subscribe-header-content p-relative h-100 text-white"
         data-set="offset"
@@ -159,42 +158,18 @@
             <div class="footer-box-items">
               <h1>Информация</h1>
             </div>
-            <div class="footer-box-items">
-              <nuxt-link to="/" class="footer-item-anchor d-block"
-                >Годовые отчеты</nuxt-link
+            <div
+              class="footer-box-items"
+              v-for="item in menu.menuItems"
+              :key="item.id"
+            >
+              <nuxt-link
+                to="/"
+                class="footer-item-anchor d-block"
+                v-for="child in item.children"
+                :key="child.id"
               >
-              <nuxt-link to="/" class="footer-item-anchor d-block"
-                >Филиалы</nuxt-link
-              >
-              <nuxt-link to="/" class="footer-item-anchor d-block"
-                >Карта сайта</nuxt-link
-              >
-            </div>
-            <div class="footer-box-items">
-              <nuxt-link to="/" class="footer-item-anchor d-block"
-                >Пресс-центр</nuxt-link
-              >
-              <nuxt-link to="/" class="footer-item-anchor d-block"
-                >Типовые договора</nuxt-link
-              >
-              <nuxt-link to="/" class="footer-item-anchor d-block"
-                >Форум</nuxt-link
-              >
-            </div>
-            <div class="footer-box-items">
-              <nuxt-link to="/" class="footer-item-anchor d-block"
-                >Открытые данные</nuxt-link
-              >
-            </div>
-            <div class="footer-box-items">
-              <nuxt-link to="/" class="footer-item-anchor d-block"
-                >Правление банка</nuxt-link
-              >
-              <nuxt-link to="/" class="footer-item-anchor d-block"
-                >Тендеры и аукционы</nuxt-link
-              >
-              <nuxt-link to="/" class="footer-item-anchor d-block">
-                Нормативно правовые документы
+                {{ child.name }}
               </nuxt-link>
             </div>
           </div>
@@ -256,7 +231,20 @@
 </template>
 
 <script>
-export default {}
+export default {
+  mounted() {
+    this.$axios.$get('/menus/footer').then((res) => {
+      this.menu = res.data
+    })
+  },
+  data() {
+    return {
+      menu: {
+        menuItems: [],
+      },
+    }
+  },
+}
 </script>
 
 <style></style>
