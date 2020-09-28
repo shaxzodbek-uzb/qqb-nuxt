@@ -13,7 +13,7 @@ export default function ({ $axios, redirect }) {
   })
 
   $axios.setBaseURL(
-    config.dev ? 'http://manage.qqb.test/api' : 'http://manage.qqb.uz/api'
+    config.dev ? 'http://manage.qqb.test/api' : 'http://admin.parkent.ru/api'
   )
   $axios.setHeader('Content-Type', 'application/json')
 }
