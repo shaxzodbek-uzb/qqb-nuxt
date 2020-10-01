@@ -18,7 +18,7 @@
             <nuxt-link
               v-for="child in item.children"
               :key="child.id"
-              :to="{ path: 'Contributions' }"
+              :to="{ path: item.value }"
               class="dropdown--content-items"
               >{{ child.name }}</nuxt-link
             >
@@ -26,7 +26,7 @@
         </div>
         <nuxt-link
           v-else
-          :to="{ path: 'Deposits' }"
+          :to="{ path: item.value }"
           class="d-block p-relative"
           >{{ item.name }}</nuxt-link
         >
