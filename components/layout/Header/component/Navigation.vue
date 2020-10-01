@@ -18,7 +18,7 @@
             <nuxt-link
               v-for="child in item.children"
               :key="child.id"
-              :to="{ path: item.value }"
+              :to="{ path: child.value }"
               class="dropdown--content-items"
               >{{ child.name }}</nuxt-link
             >
