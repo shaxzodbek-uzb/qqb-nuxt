@@ -40,6 +40,7 @@ export default {
       src: '~/plugins/vue-slider-component.js',
       ssr: false,
     },
+    { src: '~/plugins/i18n.js' },
     '~/plugins/axios',
     // {
     //   src: '~/plugins/index.js',
@@ -62,8 +63,53 @@ export default {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
+    [
+      'nuxt-i18n',
+      {
+        locales: [
+          {
+            code: 'en',
+            name: 'English',
+            flag: '/img/icon/united-states.png',
+          },
+          {
+            code: 'uz',
+            name: "O'zbek",
+            flag: '/img/icon/uzbekistan.png',
+          },
+          {
+            code: 'ru',
+            name: 'RUssian',
+            flag: '/img/icon/russia.png',
+          },
+        ],
+      },
+    ],
     '@nuxtjs/axios',
   ],
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        name: 'English',
+        flag: '/img/icon/united-states.png',
+      },
+      {
+        code: 'uz',
+        name: "O'zbek",
+        flag: '/img/icon/uzbekistan.png',
+      },
+      {
+        code: 'ru',
+        name: 'RUssian',
+        flag: '/img/icon/russia.png',
+      },
+    ],
+    defaultLocale: 'ru',
+    vueI18n: {
+      fallbackLocale: 'ru',
+    },
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
@@ -75,7 +121,7 @@ export default {
    */
   build: {},
   server: {
-    host: '0.0.0.0',
+    host: 'localhost',
     port: 3002,
   },
 }

@@ -20,8 +20,9 @@
               :key="child.id"
               :to="{ path: child.value }"
               class="dropdown--content-items"
-              >{{ child.name }}</nuxt-link
             >
+              {{ child.name }}
+            </nuxt-link>
           </div>
         </div>
         <nuxt-link

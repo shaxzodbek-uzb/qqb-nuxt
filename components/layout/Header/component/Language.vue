@@ -17,24 +17,27 @@
     </button>
 
     <div class="dropdown--content">
-      <a class="dropdown-items d-flex align-center f-between pointer">
-        <span>UZ</span>
-        <img src="/img/icon/uzbekistan.png" alt="Uzbekistan Flag" />
-      </a>
-      <a class="dropdown-items d-flex align-center f-between pointer">
-        <span>RU</span>
-        <img src="/img/icon/russia.png" alt="Russia Flag" />
-      </a>
-      <a class="dropdown-items d-flex align-center f-between pointer">
-        <span>EN</span>
-        <img src="/img/icon/united-states.png" alt="USA Flag" />
-      </a>
+      <nuxt-link
+        v-for="locale in availableLocales"
+        :key="locale.code"
+        :to="switchLocalePath(locale.code)"
+        class="dropdown-items d-flex align-center f-between pointer"
+      >
+        <span>{{ locale.name }}</span>
+        <img :src="locale.flag" />
+      </nuxt-link>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  computed: {
+    availableLocales() {
+      return this.$i18n.locales.filter((i) => i.code !== this.$i18n.locale)
+    },
+  },
+}
 </script>
 
 <style>
