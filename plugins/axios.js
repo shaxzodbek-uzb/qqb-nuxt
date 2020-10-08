@@ -1,6 +1,6 @@
 import config from '~/nuxt.config.js'
 
-export default function ({ $axios, redirect }) {
+export default function ({ $axios, redirect, app }) {
   $axios.onRequest((config) => {
     console.log('Making request to ' + config.url)
   })
@@ -16,4 +16,5 @@ export default function ({ $axios, redirect }) {
     config.dev ? 'https://admin.parkent.ru/api' : 'https://admin.parkent.ru/api'
   )
   $axios.setHeader('Content-Type', 'application/json')
+  $axios.setHeader('Content-Language', app.i18n.locale)
 }
