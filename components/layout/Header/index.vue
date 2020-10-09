@@ -20,6 +20,7 @@
             <div class="header-toolbar d-flex align-center">
               <Search class="ml-auto" />
               <Language />
+              {{ $i18n.locale }}
             </div>
           </div>
         </div>
@@ -96,14 +97,17 @@ export default {
     Search,
     Navigation,
   },
+  watch: {
+    '$i18n.locale': {
+      immediate: true,
+      handler() {
+        this.loadMenu()
+        console.log('loading menu')
+      },
+    },
+  },
   mounted() {
-    this.$axios.$get('/menus/main-menu').then((res) => {
-      this.menu = res.data
-    })
-
-    this.$axios.$get('/menus/top-menu').then((res) => {
-      this.top_menu = res.data
-    })
+    this.loadMenu()
   },
   data() {
     return {
@@ -115,7 +119,16 @@ export default {
       },
     }
   },
+  methods: {
+    loadMenu() {
+      this.$axios.$get('/menus/main-menu').then((res) => {
+        this.menu = res.data
+      })
+
+      this.$axios.$get('/menus/top-menu').then((res) => {
+        this.top_menu = res.data
+      })
+    },
+  },
 }
 </script>
-
-<style></style>

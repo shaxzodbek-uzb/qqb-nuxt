@@ -2,6 +2,7 @@ import config from '~/nuxt.config.js'
 
 export default function ({ $axios, redirect, app }) {
   $axios.onRequest((config) => {
+    config.headers.common['Content-Language'] = app.i18n.locale
     console.log('Making request to ' + config.url)
   })
 
