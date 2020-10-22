@@ -20,7 +20,6 @@
             <div class="header-toolbar d-flex align-center">
               <Search class="ml-auto" />
               <Language />
-              {{ $i18n.locale }}
             </div>
           </div>
         </div>
