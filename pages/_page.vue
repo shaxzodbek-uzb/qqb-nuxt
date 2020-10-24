@@ -1,0 +1,37 @@
+<template>
+  <div class="deposit-page-wrap" data-set="offset" data-offset="top bottom">
+    <div class="container">
+      <div class="deposit-container pt-60 pb-60">
+        <div class="row">
+          <div class="col-xl-6">
+            <div class="money-transfer-left">
+              <h1>{{ name }}</h1>
+            </div>
+          </div>
+          <div class="col-xl-6">
+            <div class="money-transfer-right" v-html="content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      name: '',
+      content: '',
+    }
+  },
+  mounted() {
+    this.$axios.$get(`/pages/${this.$route.params.page}`).then((res) => {
+      this.name = res.data.name
+      this.content = res.data.content
+    })
+  },
+}
+</script>
+
+<style></style>
