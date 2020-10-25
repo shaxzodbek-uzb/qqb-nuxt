@@ -7,42 +7,24 @@
         <div class="card-tab-navigation tab-navigation--credit">
           <div class="card-tab-header">
             <div class="d-flex">
-              <div
-                class="tab-items p-relative pointer active"
+              <NuxtLink
+                v-for="type in types"
+                :key="type.id"
+                :to="'/documents/' + type.slug"
+                tag="div"
+                class="tab-items p-relative pointer"
+                :class="{ active: type.slug == $route.params.slug }"
                 data-toggle="tab"
               >
-                <span>Договор</span>
-              </div>
-              <div class="tab-items p-relative pointer" data-toggle="tab">
-                <span>Типовой договор</span>
-              </div>
-              <div class="tab-items p-relative pointer" data-toggle="tab">
-                <span>Регламент интерактивных услуг</span>
-              </div>
-              <div class="tab-items p-relative pointer" data-toggle="tab">
-                <span
-                  >Указы и программы, принятые Президентом Республики
-                  Узбекистан</span
-                >
-              </div>
-              <div class="tab-items p-relative pointer" data-toggle="tab">
-                <span>Постановление Кабинета Министров</span>
-              </div>
-              <div class="tab-items p-relative pointer" data-toggle="tab">
-                <span>Банковское законодательство</span>
-              </div>
-              <div class="tab-items p-relative pointer" data-toggle="tab">
-                <span>Внутренные нормативные документы</span>
-              </div>
+                <span> {{ type.name }}</span>
+              </NuxtLink>
             </div>
           </div>
 
           <div class="card-tab-content">
             <div role="tabpanel">
-              <Contract />
+              <NuxtChild :key="$route.params.slug" />
             </div>
-            <div role="tabpanel">1234aaa</div>
-            <div role="tabpanel">11axx</div>
           </div>
         </div>
       </div>
@@ -51,16 +33,21 @@
 </template>
 
 <script>
-import { setOffset, tabNavigation } from '@/utils/frontend'
-import Contract from '~/components/TabItems/Contract'
+import { setOffset } from '@/utils/frontend'
 
 export default {
-  components: {
-    Contract,
+  data() {
+    return {
+      types: [],
+    }
   },
   mounted() {
+    let me = this
     setOffset()
-    tabNavigation()
+    this.$axios.$get(`/pages/documents`).then((res) => {
+      while (me.types.pop());
+      me.types.push(...res.data.document_types)
+    })
   },
 }
 </script>

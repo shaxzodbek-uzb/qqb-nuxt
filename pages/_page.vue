@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import { setOffset } from '~/utils/frontend'
 export default {
   data() {
     return {
@@ -26,6 +27,7 @@ export default {
     }
   },
   mounted() {
+    setOffset()
     this.$axios.$get(`/pages/${this.$route.params.page}`).then((res) => {
       this.name = res.data.name
       this.content = res.data.content
