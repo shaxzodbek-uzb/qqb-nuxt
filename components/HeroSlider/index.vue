@@ -387,21 +387,25 @@
                   v-if="cards.length != 0"
                 >
                   <!-- Nested Slide 1 -->
-                  <div
+                  <nuxt-link
+                    tag="div"
+                    :to="{ to: 'CardsShow' }"
                     class="var-width-items"
                     v-for="item in cards"
                     :key="item.id"
                   >
-                    <nuxt-link
-                      :to="{ to: 'CardsShow' }"
+                    <div
                       class="card-items rounded transition d-flex f-column h-100"
+                      @mouseover="hover_card = item.id"
+                      @mouseleave="hover_card = 0"
+                      :class="{ 'card-active': item.id == hover_card }"
                     >
                       <div
                         class="card-items__header card-header-animate mb-auto"
                       >
                         <h1>
                           {{ item.name }}
-                          <br />(UnionPay)
+                          <br />({{ item.type }})
                         </h1>
                       </div>
 
@@ -415,7 +419,7 @@
                           </div>
                           <div>
                             <span>Банковские услуги по открытию карты:</span>
-                            <b>Бесплатно</b>
+                            <b>{{ item.cost }}</b>
                           </div>
                         </div>
                         <div class="hidden-content-items d-flex">
@@ -427,7 +431,7 @@
                           </div>
                           <div>
                             <span>Срок действия:</span>
-                            <b>3 года</b>
+                            <b>{{ item.validity }}</b>
                           </div>
                         </div>
                         <div class="hidden-content-items d-flex">
@@ -439,25 +443,25 @@
                           </div>
                           <div>
                             <span>Необходимые документы:</span>
-                            <b>Оригинал паспорта; ИНН; Применение; контракт</b>
+                            <b>{{ item.required_documents }}</b>
                           </div>
                         </div>
                       </div>
 
                       <div class="card-items-img d-flex p-relative f-center">
                         <img
-                          src="/img/slide-images/card-back.png"
+                          :src="item.image"
                           class="card-back d-block p-absolute"
                           alt
                         />
                         <img
-                          src="/img/slide-images/card-front.png"
+                          :src="item.cover_image"
                           class="card-front d-block p-relative"
                           alt
                         />
                       </div>
-                    </nuxt-link>
-                  </div>
+                    </div>
+                  </nuxt-link>
                   <!-- End Nested Slide 1 -->
                   <!-- Nested Slide 2 -->
                   <div v-if="cards.length == 0">
@@ -796,6 +800,7 @@ export default {
     return {
       value: 0,
       activetab: 1,
+      hover_card: 0,
       optionsRangeSlider: {
         dotSize: [9, 17],
         tooltip: 'none',
@@ -887,15 +892,6 @@ export default {
         el.classList.add('card-active')
       })
     }
-
-    $cardItems.forEach((el) => {
-      el.addEventListener('mouseenter', function () {
-        el.classList.add('card-active')
-      })
-      el.addEventListener('mouseleave', function () {
-        el.classList.remove('card-active')
-      })
-    })
   },
   methods: {
     slidePrev() {

@@ -32,7 +32,7 @@
       </div>
 
       <div class="header-outline-text text-white p-absolute text-truncate">
-        <p>visa gold</p>
+        <p>visa1 gold</p>
       </div>
     </div>
 
