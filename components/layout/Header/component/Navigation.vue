@@ -15,14 +15,33 @@
           />
 
           <div class="dropdown--content">
-            <nuxt-link
-              v-for="child in item.children"
-              :key="child.id"
-              :to="{ path: `/${child.value}` }"
-              class="dropdown--content-items"
-            >
-              {{ child.name }}
-            </nuxt-link>
+            <ul>
+              <li v-for="child in item.children" :key="child.id">
+                <nuxt-link
+                  :to="{ path: `/${child.value}` }"
+                  class="dropdown--content-items"
+                >
+                  <span>{{ child.name }}</span>
+
+                  <div class="chevron-left-icon"></div>
+                </nuxt-link>
+
+                <ul class="dropdown-content__sub">
+                  <li>
+                    <nuxt-link to="/">Child Items</nuxt-link>
+                  </li>
+                  <li>
+                    <nuxt-link to="/">Child Items 2</nuxt-link>
+                  </li>
+                  <li>
+                    <nuxt-link to="/">Child Items 3</nuxt-link>
+                  </li>
+                  <li>
+                    <nuxt-link to="/">Child Items 4</nuxt-link>
+                  </li>
+                </ul>
+              </li>
+            </ul>
           </div>
         </div>
         <nuxt-link
