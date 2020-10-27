@@ -32,7 +32,7 @@
       </div>
 
       <div class="header-outline-text text-white p-absolute text-truncate">
-        <p>visa1 gold</p>
+        <p>{{ card.name }}</p>
       </div>
     </div>
 
@@ -41,11 +41,9 @@
         <div class="row">
           <div class="col-xl-3 col-lg-3 card-cell-1">
             <div class="card-group-left">
-              <h1>Visa Gold</h1>
+              <h1>{{ card.name }}</h1>
               <p>
-                "Кишлок курилиш банк" предоставляет вам уникальную возможность —
-                открыть карты премиум-класса VISA Gold в международной платёжной
-                системе VISA.
+                {{ card.description }}
               </p>
             </div>
           </div>
@@ -69,7 +67,7 @@
                   />
                   <div>
                     <span>Банковские услуги по открытию карты:</span>
-                    <p>Бесплатно</p>
+                    <p>{{ card.cost }}</p>
                   </div>
                 </div>
                 <div class="about-card-cell p-relative">
@@ -80,7 +78,7 @@
                   />
                   <div>
                     <span>Срок действия:</span>
-                    <p>3 года</p>
+                    <p>{{ card.validity }}</p>
                   </div>
                 </div>
                 <div class="about-card-line"></div>
@@ -92,7 +90,7 @@
                   />
                   <div>
                     <span>Необходимые документы:</span>
-                    <p>Оригинал паспорта; ИНН; Применение; контракт</p>
+                    <p>{{ card.required_documents }}</p>
                   </div>
                 </div>
               </div>
@@ -120,13 +118,13 @@
       </div>
       <div class="card-tab-content">
         <div role="tabpanel">
-          <Card />
+          <Card :card="card" />
         </div>
         <div role="tabpanel">
-          <Document />
+          <Document :documents="card.documents" />
         </div>
         <div role="tabpanel">
-          <Faq />
+          <Faq :faqs="card.faqs" />
         </div>
       </div>
 
@@ -139,12 +137,11 @@
               <img src="~/static/img/svg/home.png" class="d-block" alt />
             </router-link>
             <router-link to="/" class="d-flex align-center p-relative">
-              <span>Новости</span>
+              <span>Карты</span>
             </router-link>
             <router-link to="/" class="d-flex align-center p-relative">
               <span>
-                О стратегии реформирования банковской системы Республики
-                Узбекистан на 2020-2025 годы
+                {{ card.name }}
               </span>
             </router-link>
           </div>
@@ -164,10 +161,6 @@
 </template>
 
 <script>
-// import VueSlickCarousel from "vue-slick-carousel";
-// import "vue-slick-carousel/dist/vue-slick-carousel.css";
-// optional style for arrows & dots
-// import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 import { setOffset, tabNavigation } from '~/utils/frontend'
 import Card from '~/components/TabItems/Cards'
 import Document from '~/components/TabItems/Document'
@@ -182,6 +175,28 @@ export default {
   mounted() {
     setOffset()
     tabNavigation()
+    this.$axios.$get('/cards/' + this.$route.params.id).then((res) => {
+      this.card = res.data.card
+    })
+  },
+  data() {
+    return {
+      card: {
+        id: 1,
+        name: '',
+        description: '',
+        image: '',
+        cover_image: '',
+        type: '',
+        cost: '',
+        validity: '',
+        required_documents: '',
+        resource_details: [],
+        advantages: [],
+        documents: [],
+        faqs: [],
+      },
+    }
   },
 }
 </script>

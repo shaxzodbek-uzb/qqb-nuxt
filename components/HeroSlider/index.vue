@@ -398,7 +398,9 @@
                       class="card-items rounded transition d-flex f-column h-100"
                       @mouseover="hover_card = item.id"
                       @mouseleave="hover_card = 0"
-                      :class="{ 'card-active': item.id == hover_card }"
+                      :class="{
+                        'card-active': item.id == hover_card || mobile_view,
+                      }"
                     >
                       <div
                         class="card-items__header card-header-animate mb-auto"
@@ -801,6 +803,7 @@ export default {
       value: 0,
       activetab: 1,
       hover_card: 0,
+      mobile_view: false,
       optionsRangeSlider: {
         dotSize: [9, 17],
         tooltip: 'none',
@@ -884,13 +887,10 @@ export default {
       document.querySelector('.hooper-container').classList.add('scrolled')
     }, 2000)
 
-    const $cardItems = document.querySelectorAll('.card-items')
     const $bodyWidth = document.querySelector('body').clientWidth
 
     if ($bodyWidth <= 1025) {
-      $cardItems.forEach((el) => {
-        el.classList.add('card-active')
-      })
+      this.mobile_view = true
     }
   },
   methods: {

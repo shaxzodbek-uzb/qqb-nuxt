@@ -8,68 +8,27 @@
         <p>Преимущества</p>
 
         <div class="card-meta-block d-flex f-wrap">
-          <div class="meta-block-items">
+          <div
+            class="meta-block-items"
+            v-for="item in card.advantages"
+            :key="item.id"
+          >
             <div class="meta-item-icon rounded child-center">
-              <img src="~/static/img/svg/call-info.png" alt />
+              <img :src="item.icon" alt />
             </div>
-            <h1>Бесплатное обслуживание</h1>
-            <p>0 ₽ в год</p>
-          </div>
-          <div class="meta-block-items">
-            <div class="meta-item-icon rounded child-center">
-              <img src="~/static/img/svg/card-group.png" alt />
-            </div>
-            <h1>Пополнение другой картой</h1>
-            <p>Без комиссии от 2000 ₽</p>
-          </div>
-          <div class="meta-block-items">
-            <div class="meta-item-icon rounded child-center">
-              <img src="~/static/img/svg/card-with-phone.png" alt />
-            </div>
-            <h1>Платите смартфоном</h1>
-            <p>Добавьте карту в Apple Pay</p>
-          </div>
-          <div class="meta-block-items">
-            <div class="meta-item-icon rounded child-center">
-              <img src="~/static/img/svg/pay.png" alt />
-            </div>
-            <h1>Снятие без комиссии</h1>
-            <p>210 точек пополнения.</p>
+            <h1>{{ item.name }}</h1>
+            <p>{{ item.value }}</p>
           </div>
         </div>
       </div>
       <div class="tab-card-sidebar">
-        <div class="card-sidebar-group text-white">
-          <span>Необходимые документы:</span>
-          <p>Бесплатно 30 $ 30 €</p>
-        </div>
-
-        <div class="card-sidebar-group text-white">
-          <span>Внутренний банковский перевод со счета:</span>
-          <p>Бесплатно</p>
-        </div>
-
-        <div class="card-sidebar-group text-white">
-          <span>
-            Снятие наличных с карты или вывод средств через партнеров банка:
-          </span>
-          <p>Бесплатно</p>
-        </div>
-
-        <div class="card-sidebar-group text-white">
-          <span>Снятие наличных с карты через банкоматы:</span>
-          <p>Бесплатно</p>
-        </div>
-
-        <div class="card-sidebar-group text-white">
-          <span>
-            Перевод с «QISHLOQ QURILISHBANK» на карту другого банка через
-            сервисы банка:
-          </span>
-          <p>
-            0,5% (но не меньше
-            <br />5 000 сум)
-          </p>
+        <div
+          class="card-sidebar-group text-white"
+          v-for="item in card.resource_details"
+          :key="item.id"
+        >
+          <span>{{ item.name }}:</span>
+          <p v-html="item.text"></p>
         </div>
       </div>
     </div>
@@ -80,6 +39,14 @@
 import { getLeftSideClientRect } from '~/utils/frontend'
 
 export default {
+  props: {
+    card: {
+      default() {
+        return {}
+      },
+      type: Object,
+    },
+  },
   mounted() {
     getLeftSideClientRect()
   },

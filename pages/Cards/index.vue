@@ -15,13 +15,19 @@
 
         <div class="card-items-container d-flex f-wrap">
           <nuxt-link
-            :to="{ to: 'CardsShow' }"
+            tag="div"
+            v-for="item in cards"
+            :key="item.id"
+            :to="'/cards/' + item.id"
             class="card-items rounded transition d-flex f-column h-100"
+            :class="{
+              'card-active': item.id == hover_card || mobile_view,
+            }"
           >
             <div class="card-items__header card-header-animate mb-auto">
               <h1>
-                Kobeydjing
-                <br />(UnionPay)
+                {{ item.name }}
+                <br />({{ item.type }})
               </h1>
             </div>
 
@@ -32,7 +38,7 @@
                 </div>
                 <div>
                   <span>Банковские услуги по открытию карты:</span>
-                  <b>Бесплатно</b>
+                  <b>{{ item.cost }}</b>
                 </div>
               </div>
               <div class="hidden-content-items d-flex">
@@ -41,7 +47,7 @@
                 </div>
                 <div>
                   <span>Срок действия:</span>
-                  <b>3 года</b>
+                  <b>{{ item.validity }}</b>
                 </div>
               </div>
               <div class="hidden-content-items d-flex">
@@ -50,93 +56,24 @@
                 </div>
                 <div>
                   <span>Необходимые документы:</span>
-                  <b>Оригинал паспорта; ИНН; Применение; контракт</b>
+                  <b>{{ item.required_documents }}</b>
                 </div>
               </div>
             </div>
 
-            <div class="card-items-img d-flex p-relative f-center">
+            <div
+              class="card-items-img d-flex p-relative f-center"
+              @mouseover="hover_card = item.id"
+              @mouseleave="hover_card = 0"
+            >
+              <img :src="item.image" class="card-back d-block p-absolute" alt />
               <img
-                src="/img/slide-images/card-back.png"
-                class="card-back d-block p-absolute"
-                alt
-              />
-              <img
-                src="/img/slide-images/card-front.png"
+                :src="item.cover_image"
                 class="card-front d-block p-relative"
                 alt
               />
             </div>
           </nuxt-link>
-          <!-- <nuxt-link
-            :to="{ name: 'CardsShow' }"
-            class="card-items rounded transition"
-          >
-            <div class="card-items__header mb-auto">
-              <h1>Uzcard</h1>
-            </div>
-
-            <div class="card-items-img d-flex p-relative f-center">
-              <img
-                src="~/static/img/slide-images/card-back.png"
-                class="card-back d-block p-absolute"
-                alt
-              />
-              <img
-                src="~/static/img/slide-images/card-front.png"
-                class="card-front d-block p-relative"
-                alt
-              />
-            </div>
-          </nuxt-link>
-          <nuxt-link
-            :to="{ name: 'CardsShow' }"
-            class="card-items rounded transition"
-          >
-            <div class="card-items__header mb-auto">
-              <h1>
-                HUMO
-                <br />(VISA)
-              </h1>
-            </div>
-
-            <div class="card-items-img d-flex p-relative f-center">
-              <img
-                src="~/static/img/slide-images/card-back.png"
-                class="card-back d-block p-absolute"
-                alt
-              />
-              <img
-                src="~/static/img/slide-images/card-front.png"
-                class="card-front d-block p-relative"
-                alt
-              />
-            </div>
-          </nuxt-link>
-          <nuxt-link
-            :to="{ name: 'CardsShow' }"
-            class="card-items rounded transition"
-          >
-            <div class="card-items__header">
-              <h1>
-                Kobeydjing
-                <br />(UnionPay)
-              </h1>
-            </div>
-
-            <div class="card-items-img d-flex p-relative f-center">
-              <img
-                src="~/static/img/slide-images/card-back.png"
-                class="card-back d-block p-absolute"
-                alt
-              />
-              <img
-                src="~/static/img/slide-images/card-front.png"
-                class="card-front d-block p-relative"
-                alt
-              />
-            </div>
-          </nuxt-link> -->
 
           <div class="card-load">
             <button
@@ -187,23 +124,21 @@ export default {
   mounted() {
     setOffset()
 
-    const $cardItems = document.querySelectorAll('.card-items')
     const $bodyWidth = document.querySelector('body').clientWidth
 
     if ($bodyWidth <= 1025) {
-      $cardItems.forEach((el) => {
-        el.classList.add('card-active')
-      })
+      this.mobile_view = true
     }
-
-    $cardItems.forEach((el) => {
-      el.addEventListener('mouseenter', function () {
-        el.classList.add('card-active')
-      })
-      el.addEventListener('mouseleave', function () {
-        el.classList.remove('card-active')
-      })
+    this.$axios.$get('/cards').then((res) => {
+      this.cards = res.data.cards
     })
+  },
+  data() {
+    return {
+      hover_card: 0,
+      mobile_view: false,
+      cards: [],
+    }
   },
 }
 </script>
