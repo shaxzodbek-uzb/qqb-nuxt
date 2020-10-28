@@ -146,27 +146,11 @@
                     <p>ПН-ПТ - 9:00 до 18:00</p>
                   </a>
                   <a
-                    href="tel:+998781501001"
+                    href="tel:+998781509339"
                     class="center-phones__items text-white"
                   >
-                    <span>Телефоны доверия</span>
-                    <h1>+998 78 150-10-01</h1>
-                    <p>ПН-ПТ - 9:00 до 18:00</p>
-                  </a>
-                  <a
-                    href="tel:+998781501001"
-                    class="center-phones__items text-white"
-                  >
-                    <span>Телефоны доверия</span>
-                    <h1>+998 78 150-10-01</h1>
-                    <p>ПН-ПТ - 9:00 до 18:00</p>
-                  </a>
-                  <a
-                    href="tel:+998781501001"
-                    class="center-phones__items text-white"
-                  >
-                    <span>Телефоны доверия</span>
-                    <h1>+998 78 150-10-01</h1>
+                    <span>Колл-центр</span>
+                    <h1>+998 78 150-93-39</h1>
                     <p>ПН-ПТ - 9:00 до 18:00</p>
                   </a>
                 </div>

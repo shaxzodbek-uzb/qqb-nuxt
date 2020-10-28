@@ -23,21 +23,20 @@
                 >
                   <span>{{ child.name }}</span>
 
-                  <div class="chevron-left-icon"></div>
+                  <div
+                    class="chevron-left-icon"
+                    v-if="child.children.length != 0"
+                  ></div>
                 </nuxt-link>
 
-                <ul class="dropdown-content__sub">
-                  <li>
-                    <nuxt-link to="/">Child Items</nuxt-link>
-                  </li>
-                  <li>
-                    <nuxt-link to="/">Child Items 2</nuxt-link>
-                  </li>
-                  <li>
-                    <nuxt-link to="/">Child Items 3</nuxt-link>
-                  </li>
-                  <li>
-                    <nuxt-link to="/">Child Items 4</nuxt-link>
+                <ul
+                  class="dropdown-content__sub"
+                  v-if="child.children.length != 0"
+                >
+                  <li v-for="ch in child.children" :key="ch.id">
+                    <nuxt-link :to="{ path: `/${ch.value}` }">
+                      {{ ch.name }}
+                    </nuxt-link>
                   </li>
                 </ul>
               </li>
