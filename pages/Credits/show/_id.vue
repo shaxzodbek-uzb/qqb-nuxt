@@ -15,7 +15,7 @@
       </div>
 
       <div class="credit-card-show-content">
-        <h1 class="title-50">Потребительский кредит</h1>
+        <h1 class="title-50">{{ credit.name }}</h1>
 
         <div class="card-tab-navigation tab-navigation--credit">
           <div class="card-tab-header">
@@ -43,31 +43,31 @@
               <div class="card-item-large rounded card-with-border d-flex">
                 <div class="item-text">
                   <span>Срок кредита</span>
-                  <h1>3 года</h1>
+                  <h1>{{ credit.term }}</h1>
                 </div>
                 <div class="item-text">
                   <span>Льготный период</span>
-                  <h1>3 месяца</h1>
+                  <h1>{{ credit.grace_period }}</h1>
                 </div>
                 <div class="item-text-line"></div>
                 <div class="item-text item-text--long">
                   <span>Сумма кредита</span>
-                  <h1>39 935 370,41 UZS</h1>
+                  <h1>{{ credit.amount }}</h1>
                 </div>
                 <div class="item-img">
-                  <img src="~/static/img/img-1.png" alt />
+                  <img :src="credit.image" alt />
                 </div>
               </div>
             </div>
             <div class="card-tab-box">
               <div role="tabpanel">
-                <AboutCredit />
+                <AboutCredit :content="credit.content" />
               </div>
               <div role="tabpanel">
-                <ConditionsAndRequirements />
+                <ConditionsAndRequirements :faqs="credit.faqs" />
               </div>
               <div role="tabpanel">
-                <CreditDocument />
+                <CreditDocument :documents="credit.documents" />
               </div>
               <div role="tabpanel">
                 <Calculator />
@@ -88,6 +88,11 @@ import CreditDocument from '~/components/TabItems/CreditDocument'
 import Calculator from '~/components/TabItems/Calculator'
 
 export default {
+  data() {
+    return {
+      credit: {},
+    }
+  },
   components: {
     AboutCredit,
     CreditDocument,
@@ -97,6 +102,9 @@ export default {
   mounted() {
     setOffset()
     tabNavigation()
+    this.$axios.$get('/credits/' + this.$route.params.id).then((res) => {
+      this.credit = res.data.credit
+    })
   },
 }
 </script>

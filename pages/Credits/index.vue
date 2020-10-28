@@ -7,24 +7,23 @@
         <div class="card-tab-navigation tab-navigation--credit">
           <div class="card-tab-header">
             <div class="d-flex">
-              <div
-                class="tab-items p-relative pointer active"
+              <NuxtLink
+                v-for="type in types"
+                :key="type.id"
+                :to="'/credits/' + type.slug"
+                tag="div"
+                class="tab-items p-relative pointer"
+                :class="{ active: type.slug == $route.params.slug }"
                 data-toggle="tab"
               >
-                <span>Кредиты</span>
-              </div>
-              <div class="tab-items p-relative pointer" data-toggle="tab">
-                <span>В иностранной валюте</span>
-              </div>
+                <span> {{ type.name }}</span>
+              </NuxtLink>
             </div>
           </div>
 
           <div class="card-tab-content">
             <div role="tabpanel">
-              <CreditCards />
-            </div>
-            <div role="tabpanel">
-              <ForeignCurrency />
+              <NuxtChild :key="$route.params.slug" />
             </div>
           </div>
         </div>
@@ -35,17 +34,21 @@
 
 <script>
 import { setOffset, tabNavigation } from '@/utils/frontend'
-import CreditCards from '~/components/TabItems/CreditCards'
-import ForeignCurrency from '~/components/TabItems/ForeignCurrency'
 
 export default {
-  components: {
-    CreditCards,
-    ForeignCurrency,
+  data() {
+    return {
+      types: [],
+    }
   },
   mounted() {
+    let me = this
     setOffset()
     tabNavigation()
+    this.$axios.$get(`/pages/credits`).then((res) => {
+      while (me.types.pop());
+      me.types.push(...res.data.types)
+    })
   },
 }
 </script>
