@@ -4024,17 +4024,13 @@ body {
 }
 
 .dropdown-content__sub {
-    position: absolute;
-    top: -8px;
-    right: -100%;
+    position: relative;
+    top: 0;
     background: #fff;
     min-width: 270px;
     background: #fff;
-    box-shadow: 0 -4px 20px rgba(0,0,0,0.1098);
-    padding: 0.5rem 0;
-    border-radius: 4px;
-    opacity: 0;
-    visibility: hidden;
+    padding: 0.5rem 0 0.5rem 1.25rem;
+    display: none;
     transition: opacity 350ms, visibility 350ms;
 }
 
@@ -4044,10 +4040,9 @@ body {
     transition: all 350ms;
 }
 
-.header-top .dropdown--content ul > li:hover .dropdown-content__sub {
-    opacity: 1;
-    visibility: visible;
-}
+/* .header-top .dropdown--content ul > li:hover .dropdown-content__sub {
+    display: block;
+} */
 
 .chevron-left-icon {
     width: 6px;

@@ -15,7 +15,7 @@
           />
 
           <div class="dropdown--content">
-            <ul>
+            <ul ref="dropdownList">
               <li v-for="child in item.children" :key="child.id">
                 <nuxt-link
                   :to="{ path: `/${child.value}` }"
