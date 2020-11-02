@@ -11,25 +11,22 @@
         <div class="card-tab-navigation tab-navigation--credit">
           <div class="card-tab-header">
             <div class="d-flex">
-              <div
-                class="tab-items p-relative pointer active"
+              <nuxt-link
+                :to="'/contributions/' + type.slug"
+                class="tab-items p-relative pointer"
                 data-toggle="tab"
+                v-for="type in types"
+                :key="type.id"
+                :class="{ active: $route.params.slug == type.slug }"
               >
-                <span>В национальной валюте</span>
-              </div>
-              <div class="tab-items p-relative pointer" data-toggle="tab">
-                <span>В иностранной валюте</span>
-              </div>
+                <span>{{ type.name }}</span>
+              </nuxt-link>
             </div>
           </div>
 
           <div class="card-tab-content">
             <div role="tabpanel">
-              <NationalCurrency />
-            </div>
-            <div role="tabpanel">
-              <!-- <ForeignCurrency /> -->
-              1234aaa
+              <NuxtChild :key="$route.params.slug" />
             </div>
           </div>
         </div>
@@ -40,15 +37,21 @@
 
 <script>
 import { setOffset, tabNavigation } from '@/utils/frontend'
-import NationalCurrency from '~/components/TabItems/NationalCurrency'
 
 export default {
-  components: {
-    NationalCurrency,
-  },
   mounted() {
     setOffset()
     tabNavigation()
+    let me = this
+    this.$axios.$get(`/pages/deposits`).then((res) => {
+      while (me.types.pop());
+      me.types.push(...res.data.types)
+    })
+  },
+  data() {
+    return {
+      types: [],
+    }
   },
 }
 </script>
