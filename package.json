@@ -19,6 +19,7 @@
     "nuxt": "^2.14.0",
     "nuxt-i18n": "^6.15.1",
     "vue-select": "^3.10.8",
+    "vue-simple-accordion": "^0.1.0",
     "vue-slick-carousel": "^1.0.6",
     "vue-slider-component": "^3.2.5",
     "vue2-datepicker": "^3.6.2"

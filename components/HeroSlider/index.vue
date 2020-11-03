@@ -1,14 +1,9 @@
 <template>
   <div class="swipe-container">
     <!-- :wheelControl="false" -->
-    <hooper
-      @slide="slideWheel"
-      v-bind="parentHooper"
-      ref="hooperCarousel"
-      class="hooper-container vh-100"
-    >
+    <div class="hooper-container vh-100">
       <!-- Parent Slide 1 -->
-      <slide class="hooper-slide-items hooper-slide-1">
+      <div class="hooper-slide-items hooper-slide-1">
         <div
           class="set-offset-slide d-flex f-column"
           data-set="offset"
@@ -126,11 +121,11 @@
             </div>
           </div>
         </div>
-      </slide>
+      </div>
       <!-- End Parent Slide 1 -->
 
       <!-- Parent Slide 2 -->
-      <slide class="hooper-slide-items hooper-slide-2">
+      <div class="hooper-slide-items hooper-slide-2">
         <div
           class="set-offset-slide d-flex f-column"
           data-set="offset"
@@ -190,7 +185,7 @@
                       :to="{ to: 'CardsShow' }"
                       class="card-items rounded transition d-flex f-column align-center h-100"
                     >
-                      <div class="card-items__header">
+                      <div class="card-items__header items-center">
                         <h1>COVID-19: программы помощи QQB</h1>
 
                         <div class="orphan-space-1">
@@ -200,11 +195,11 @@
                             некоммерческим организациям.
                           </p>
                         </div>
-                      </div>
-                      <div
-                        class="fake-route-button-1 rounded pointer transition"
-                      >
-                        <span>Подробнее</span>
+                        <div
+                          class="fake-route-button-1 rounded pointer transition"
+                        >
+                          <span>Подробнее</span>
+                        </div>
                       </div>
                       <img
                         class="card-bottom-img p-absolute"
@@ -242,23 +237,33 @@
 
                   <!-- Nested Slide 3 -->
                   <div class="var-width-items">
-                    <div
+                    <nuxt-link
+                      :to="{ to: 'CardsShow' }"
                       class="card-items rounded transition d-flex f-column align-center h-100"
                     >
-                      <div class="card-items__top">
-                        <div class="card-items__header">
-                          <h1>Рассчитайте доходность вклада</h1>
+                      <div class="card-items__header items-center">
+                        <h1>Рассчитайте доходность вклада</h1>
 
-                          <div class="card-top-text">
-                            <p>До 22% годовых с Мультикартой QQB</p>
-                            <p>Проценты начисляются на ежедневный остаток</p>
-                            <p>
-                              Снятие и пополнение — без ограничений и без потери
-                              %
-                            </p>
+                        <div class="card-top-text">
+                          <p>До 22% годовых с Мультикартой QQB</p>
+                          <p>Проценты начисляются на ежедневный остаток</p>
+                          <p>
+                            Снятие и пополнение — без ограничений и без потери %
+                          </p>
+                        </div>
+
+                        <div class="orphan-space-3">
+                          <div
+                            class="fake-route-button-3 rounded pointer transition"
+                          >
+                            <span>Открыть вклад</span>
                           </div>
                         </div>
                       </div>
+                    </nuxt-link>
+                    <!-- <div
+                      class="card-items rounded transition d-flex f-column align-center h-100"
+                    >
 
                       <div class="card-items__body w-100">
                         <div class="form-group">
@@ -277,16 +282,8 @@
                             <span>30 лет.</span>
                           </div>
                         </div>
-
-                        <div class="orphan-space-3">
-                          <div
-                            class="fake-route-button-3 rounded pointer transition"
-                          >
-                            <span>Открыть вклад</span>
-                          </div>
-                        </div>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                   <!-- End Nested Slide 3 -->
 
@@ -327,11 +324,11 @@
             </div>
           </div>
         </div>
-      </slide>
+      </div>
       <!-- End Parent Slide 2 -->
 
       <!-- Parent Slide 3 -->
-      <slide class="hooper-slide-items hooper-slide-3">
+      <div class="hooper-slide-items hooper-slide-3">
         <div
           class="set-offset-slide d-flex f-columne"
           data-set="offset"
@@ -403,7 +400,7 @@
                       }"
                     >
                       <div
-                        class="card-items__header card-header-animate mb-auto"
+                        class="card-items__header card-header-animate mb-auto items-center"
                       >
                         <h1>
                           {{ item.name }}
@@ -487,11 +484,11 @@
             </div>
           </div>
         </div>
-      </slide>
+      </div>
       <!-- End Parent Slide 3 -->
 
       <!-- Parent Slide 4 -->
-      <slide class="hooper-slide-items header-white hooper-slide-4">
+      <div class="hooper-slide-items header-white hooper-slide-4">
         <div class="slide-no-space h-100">
           <div class="no-space-header" data-set="offset" data-offset="top">
             <img
@@ -575,6 +572,7 @@
                         </div>
                       </div>
                     </div>
+
                     <hooper
                       class="nested-hooper"
                       ref="hooperNested"
@@ -618,11 +616,11 @@
             </div>
           </div>
         </div>
-      </slide>
+      </div>
       <!-- End Parent Slide 4 -->
 
       <!-- Parent Slide 5 -->
-      <slide class="hooper-slide-items header-white hooper-slide-5">
+      <div class="hooper-slide-items header-white hooper-slide-5">
         <div class="slide-no-space h-100">
           <div
             class="service-slide-wrap p-relative h-100"
@@ -748,17 +746,17 @@
             </div>
           </div>
         </div>
-      </slide>
+      </div>
       <!-- End Parent Slide 5 -->
 
       <!-- Parent Slide 6 -->
-      <slide class="hooper-slide-items header-white hooper-slide-6">
+      <div class="hooper-slide-items header-white hooper-slide-6">
         <div class="slide-no-space h-100">
           <TheFooter />
         </div>
-      </slide>
+      </div>
       <!-- End Parent Slide 6 -->
-    </hooper>
+    </div>
   </div>
 </template>
 
@@ -924,17 +922,17 @@ export default {
     nestedSecondNextSlide() {
       this.$refs.nestedCarouselSecond.next()
     },
-    slideWheel() {
-      const $parent = this.$refs.hooperCarousel
-      const $current = $parent.$children[$parent.currentSlide]
-      const $body = document.querySelector('body')
+    // slideWheel() {
+    //   const $parent = this.$refs.hooperCarousel
+    //   const $current = $parent.$children[$parent.currentSlide]
+    //   const $body = document.querySelector('body')
 
-      if ($current.$el.classList.contains('header-white')) {
-        $body.classList.add('dark-side')
-      } else {
-        $body.classList.remove('dark-side')
-      }
-    },
+    //   if ($current.$el.classList.contains('header-white')) {
+    //     $body.classList.add('dark-side')
+    //   } else {
+    //     $body.classList.remove('dark-side')
+    //   }
+    // },
   },
 }
 </script>

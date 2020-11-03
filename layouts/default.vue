@@ -1,5 +1,6 @@
 <template>
   <div id="app" class="app d-flex f-column">
+    <Loader />
     <TheHeader />
     <TheFeedback />
     <transition name="fade">
@@ -19,6 +20,7 @@ import TheHeader from '~/components/layout/Header'
 import TheFooter from '~/components/layout/Footer'
 import TheCurrencyRates from '~/components/layout/CurrencyRates'
 import TheFeedback from '~/components/layout/Feedback'
+import Loader from '~/components/Loader'
 import { /*setVH,*/ dropdown } from '~/utils/frontend'
 
 export default {
@@ -32,6 +34,7 @@ export default {
     TheFooter,
     TheCurrencyRates,
     TheFeedback,
+    Loader,
   },
   watch: {
     $route() {
