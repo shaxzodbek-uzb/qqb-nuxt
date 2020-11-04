@@ -12,9 +12,9 @@
       </div>
 
       <div class="gallery-container">
-        <div class="row gallery-items">
+        <div class="row gallery-items" v-for="item in galleries" :key="item.id">
           <div class="col-xl-3 gallery-left">
-            <h1>“BANKEXPO-2019”</h1>
+            <h1>{{ item.name }}</h1>
 
             <div class="news-badge">
               <img src="~/static/img/svg/calendar.png" alt />
@@ -22,21 +22,8 @@
             </div>
           </div>
           <div class="col-xl-9 gallery-right">
-            <lightbox :items="images"> </lightbox>
-          </div>
-        </div>
-
-        <div class="row gallery-items">
-          <div class="col-xl-3 gallery-left">
-            <h1>“BANKEXPO-2019”</h1>
-
-            <div class="news-badge">
-              <img src="~/static/img/svg/calendar.png" alt />
-              <span>23.01.2020</span>
-            </div>
-          </div>
-          <div class="col-xl-9 gallery-right">
-            <lightbox :items="images"> </lightbox>
+            <lightbox :items="item.images.map((image) => image.url)">
+            </lightbox>
           </div>
         </div>
       </div>
@@ -60,22 +47,17 @@ export default {
         'https://images.unsplash.com/photo-1593642532400-2682810df593?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80',
         'https://images.unsplash.com/photo-1558980394-4c7c9299fe96?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=750&amp;q=80',
       ],
+      galleries: [],
     }
   },
   mounted() {
     setOffset()
+    let me = this
 
-    // const $imgItems = document.querySelectorAll('.gallery-items-cell')
-
-    // $imgItems.forEach((el) => {
-    //   el.addEventListener('click', () => {
-    //     var $slideShow = el.closest('.grid-gallery')
-
-    //     // new CBPGridGallery($slideShow);
-    //   })
-    // })
-
-    // new CBPGridGallery(document.getElementById('grid-gallery'))
+    this.$axios.$get(`/galleries`).then((res) => {
+      while (me.galleries.pop());
+      me.galleries.push(...res.data.galleries)
+    })
   },
 }
 </script>
