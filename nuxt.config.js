@@ -42,9 +42,7 @@ export default {
     },
     { src: '~/plugins/i18n.js' },
     '~/plugins/axios',
-    // {
-    //   src: '~/plugins/index.js',
-    // },
+    '@/plugins/bootstrap-vue',
   ],
   /*
    ** Auto import components
