@@ -319,6 +319,7 @@ body {
   display: none;
 }
 
+.search-icon,
 .search-enabled .times-icon {
   display: block;
 }
@@ -4132,6 +4133,15 @@ body {
 
 .vsa-list__wrap:not(:last-child) {
   margin-bottom: 20px;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none !important
 }
 
 /***************** MEDIA ***************/

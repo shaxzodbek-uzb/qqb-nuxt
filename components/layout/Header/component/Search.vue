@@ -1,14 +1,18 @@
 <template>
   <div class="search-wrap">
-    <button class="d-block pointer p-relative" ref="searchButton">
+    <button
+      class="d-block pointer p-relative"
+      style="outline: none;"
+      ref="searchButton"
+    >
       <img
         src="/img/svg/search-icon.png"
-        class="search-icon d-block"
+        class="search-icon"
         alt="Search Icon"
       />
       <img
         src="/img/svg/search-white.png"
-        class="search-icon d-block p-absolute white-icon"
+        class="search-icon p-absolute white-icon"
         alt="Search Icon"
       />
       <img src="/img/svg/times-icon.png" class="times-icon" alt="Times Icon" />

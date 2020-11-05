@@ -15,9 +15,12 @@
   "dependencies": {
     "@morioh/v-lightbox": "^1.0.3",
     "@nuxtjs/axios": "^5.12.0",
+    "bootstrap": "^4.5.3",
+    "bootstrap-vue": "^2.18.1",
     "hooper": "^0.3.4",
     "nuxt": "^2.14.0",
     "nuxt-i18n": "^6.15.1",
+    "vue": "^2.6.12",
     "vue-select": "^3.10.8",
     "vue-simple-accordion": "^0.1.0",
     "vue-slick-carousel": "^1.0.6",
