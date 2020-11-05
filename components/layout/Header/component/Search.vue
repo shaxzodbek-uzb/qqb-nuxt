@@ -92,242 +92,191 @@
         </div>
 
         <div class="menu-items-wrap">
-          <vsa-list class="vsa-list__wrap">
-            <vsa-item class="vsa-list__item">
-              <vsa-heading>
-                <div class="search-block-aside">
-                  <h1>О БАНКЕ</h1>
+          <div class="desktop-menu-container">
+            <div class="desktop-menu--items">
+              <div class="row">
+                <div class="col-xl-3 col-lg-12">
+                  <div class="search-block-aside">
+                    <h1>О БАНКЕ</h1>
+                  </div>
                 </div>
-              </vsa-heading>
-
-              <vsa-content class="vsa-list__content">
-                <div class="search-items-wrap">
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >История банка</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Функции банка</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
+                <div class="col-xl-3 col-lg-4">
+                  <nuxt-link to="/" class="menu--item">История банка</nuxt-link>
+                  <nuxt-link to="/" class="menu--item">Функции банка</nuxt-link>
+                  <nuxt-link to="/" class="menu--item"
                     >Структура банка</nuxt-link
                   >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Совет банка</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Правление банка</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Филиалы банка</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Функции управления</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Внутренный аудит</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Ревизионная комиссия</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Реквизиты банка</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Вакансии</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Финансовые показатели</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Обращение Председателя Правления</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Лицензии</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Существенные факты</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Устав банка</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Банки-корреспонденты</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Политика системы менеджмента качества</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Совет лидеров Союз молодёжа банка</nuxt-link
+                </div>
+                <div class="col-xl-3 col-lg-4">
+                  <nuxt-link to="/" class="menu--item">История банка</nuxt-link>
+                  <nuxt-link to="/" class="menu--item">Функции банка</nuxt-link>
+                  <nuxt-link to="/" class="menu--item"
+                    >Структура банка</nuxt-link
                   >
                 </div>
-              </vsa-content>
-            </vsa-item>
-          </vsa-list>
+                <div class="col-xl-3 col-lg-4">
+                  <nuxt-link to="/" class="menu--item">История банка</nuxt-link>
+                  <nuxt-link to="/" class="menu--item">Функции банка</nuxt-link>
+                  <nuxt-link to="/" class="menu--item"
+                    >Структура банка</nuxt-link
+                  >
+                </div>
+              </div>
+            </div>
 
-          <vsa-list class="vsa-list__wrap">
-            <vsa-item class="vsa-list__item">
-              <vsa-heading>
-                <div class="search-block-aside">
-                  <h1>Частным лицам</h1>
+            <div class="desktop-menu--items">
+              <div class="row">
+                <div class="col-xl-3 col-lg-12">
+                  <div class="search-block-aside">
+                    <h1>ЧАСТНЫМ ЛИЦАМ</h1>
+                  </div>
                 </div>
-              </vsa-heading>
+                <div class="col-xl-3 col-lg-4">
+                  <nuxt-link to="/" class="menu--item">История банка</nuxt-link>
+                  <nuxt-link to="/" class="menu--item">Функции банка</nuxt-link>
+                  <nuxt-link to="/" class="menu--item"
+                    >Структура банка</nuxt-link
+                  >
+                </div>
+                <div class="col-xl-3 col-lg-4">
+                  <nuxt-link to="/" class="menu--item">История банка</nuxt-link>
+                  <nuxt-link to="/" class="menu--item">Функции банка</nuxt-link>
+                  <nuxt-link to="/" class="menu--item"
+                    >Структура банка</nuxt-link
+                  >
+                </div>
+                <div class="col-xl-3 col-lg-4">
+                  <nuxt-link to="/" class="menu--item">История банка</nuxt-link>
+                  <nuxt-link to="/" class="menu--item">Функции банка</nuxt-link>
+                  <nuxt-link to="/" class="menu--item"
+                    >Структура банка</nuxt-link
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
 
-              <vsa-content class="vsa-list__content">
-                <div class="search-items-wrap">
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Денежные переводы</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >MoneyGram</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Western Union</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Контакт</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Золотая корона</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Пластиковые карточки</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Международные пластиковые карты “VISA CLASSIC”</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Кобейджинговая карта</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Банкоматы</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Инфокиоски</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Вклады</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Кредитование</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Ипотечные кредиты по ТПСМ</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Ипотечные кредиты в рамках нового порядка</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Валютно-обменные пункты</nuxt-link
-                  >
-                </div>
-              </vsa-content>
-            </vsa-item>
-          </vsa-list>
+          <div class="mobile-menu-container">
+            <div class="mobile-menu--items mb-4">
+              <b-button v-b-toggle.collapse-1 variant="light" class="w-100">
+                <div
+                  class="search-block-aside d-flex align-center justify-content-between"
+                >
+                  <h1 class="mb-0">О БАНКЕ</h1>
 
-          <vsa-list class="vsa-list__wrap">
-            <vsa-item class="vsa-list__item">
-              <vsa-heading>
-                <div class="search-block-aside">
-                  <h1>КОРПОРАТИВНЫМ КЛИЕНТАМ</h1>
+                  <div class="arrow-down"></div>
                 </div>
-              </vsa-heading>
+              </b-button>
+              <b-collapse id="collapse-1" class="mt-2">
+                <div class="row my-4">
+                  <div class="col-xl-3 col-md-6 mb-3">
+                    <nuxt-link to="/" class="menu--item"
+                      >История банка</nuxt-link
+                    >
+                    <nuxt-link to="/" class="menu--item"
+                      >Функции банка</nuxt-link
+                    >
+                    <nuxt-link to="/" class="menu--item"
+                      >Структура банка</nuxt-link
+                    >
+                  </div>
+                  <div class="col-xl-3 col-md-6 mb-3">
+                    <nuxt-link to="/" class="menu--item"
+                      >История банка</nuxt-link
+                    >
+                    <nuxt-link to="/" class="menu--item"
+                      >Функции банка</nuxt-link
+                    >
+                    <nuxt-link to="/" class="menu--item"
+                      >Структура банка</nuxt-link
+                    >
+                  </div>
+                  <div class="col-xl-3 col-md-6 mb-3">
+                    <nuxt-link to="/" class="menu--item"
+                      >История банка</nuxt-link
+                    >
+                    <nuxt-link to="/" class="menu--item"
+                      >Функции банка</nuxt-link
+                    >
+                    <nuxt-link to="/" class="menu--item"
+                      >Структура банка</nuxt-link
+                    >
+                  </div>
+                  <div class="col-xl-3 col-md-6 mb-3">
+                    <nuxt-link to="/" class="menu--item"
+                      >История банка</nuxt-link
+                    >
+                    <nuxt-link to="/" class="menu--item"
+                      >Функции банка</nuxt-link
+                    >
+                    <nuxt-link to="/" class="menu--item"
+                      >Структура банка</nuxt-link
+                    >
+                  </div>
+                  <div class="col-xl-3 col-md-6 mb-3">
+                    <nuxt-link to="/" class="menu--item"
+                      >История банка</nuxt-link
+                    >
+                    <nuxt-link to="/" class="menu--item"
+                      >Функции банка</nuxt-link
+                    >
+                    <nuxt-link to="/" class="menu--item"
+                      >Структура банка</nuxt-link
+                    >
+                  </div>
+                  <div class="col-xl-3 col-md-6 mb-3">
+                    <nuxt-link to="/" class="menu--item"
+                      >История банка</nuxt-link
+                    >
+                    <nuxt-link to="/" class="menu--item"
+                      >Функции банка</nuxt-link
+                    >
+                    <nuxt-link to="/" class="menu--item"
+                      >Структура банка</nuxt-link
+                    >
+                  </div>
+                </div>
+              </b-collapse>
+            </div>
 
-              <vsa-content class="vsa-list__content">
-                <div class="search-items-wrap">
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Денежные переводы</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >MoneyGram</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Western Union</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Контакт</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Золотая корона</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Пластиковые карточки</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Международные пластиковые карты “VISA CLASSIC”</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Кобейджинговая карта</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Банкоматы</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Инфокиоски</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Вклады</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Кредитование</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Ипотечные кредиты по ТПСМ</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Ипотечные кредиты в рамках нового порядка</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Валютно-обменные пункты</nuxt-link
-                  >
-                </div>
-              </vsa-content>
-            </vsa-item>
-          </vsa-list>
+            <div class="mobile-menu--items mb-4">
+              <b-button v-b-toggle.collapse-2 variant="light" class="w-100">
+                <div
+                  class="search-block-aside d-flex align-center justify-content-between"
+                >
+                  <h1 class="mb-0">ЧАСТНЫМ ЛИЦАМ</h1>
 
-          <vsa-list class="vsa-list__wrap">
-            <vsa-item class="vsa-list__item">
-              <vsa-heading>
-                <div class="search-block-aside">
-                  <h1>ИНТЕРАКТИВНЫЕ УСЛУГИ</h1>
+                  <div class="arrow-down"></div>
                 </div>
-              </vsa-heading>
-
-              <vsa-content class="vsa-list__content">
-                <div class="search-items-wrap">
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Расчетно-кассовое обслуживание</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Интернет банкинг/ Банк-клиент</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Кредитование</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Международные операции</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Документарные операции</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Международные договоры</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Корпоративные пластиковые карты</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Депозиты</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Депозитные сертификаты</nuxt-link
-                  >
-                  <nuxt-link to="/" class="anchor-items d-block"
-                    >Invitation Page</nuxt-link
-                  >
+              </b-button>
+              <b-collapse id="collapse-2" class="mt-2">
+                <div class="row my-4">
+                  <div class="col-xl-3 col-md-6 mb-3">
+                    <nuxt-link to="/" class="menu--item"
+                      >История банка</nuxt-link
+                    >
+                    <nuxt-link to="/" class="menu--item"
+                      >Функции банка</nuxt-link
+                    >
+                    <nuxt-link to="/" class="menu--item"
+                      >Структура банка</nuxt-link
+                    >
+                  </div>
+                  <div class="col-xl-3 col-md-6 mb-3">
+                    <nuxt-link to="/" class="menu--item"
+                      >История банка</nuxt-link
+                    >
+                    <nuxt-link to="/" class="menu--item"
+                      >Функции банка</nuxt-link
+                    >
+                    <nuxt-link to="/" class="menu--item"
+                      >Структура банка</nuxt-link
+                    >
+                  </div>
                 </div>
-              </vsa-content>
-            </vsa-item>
-          </vsa-list>
+              </b-collapse>
+            </div>
+          </div>
         </div>
 
         <div class="search-block-footer">

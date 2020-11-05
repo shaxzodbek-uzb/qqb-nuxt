@@ -18,7 +18,7 @@
           </div>
           <div class="col-xl-2 col-lg-3 col-md-3 col-sm-6 col-2 header-cell-3">
             <div class="header-toolbar d-flex align-center">
-              <!-- <Search class="ml-auto" /> -->
+              <Search class="ml-auto" />
               <Language />
             </div>
           </div>
@@ -87,13 +87,13 @@
 
 <script>
 import Language from './component/Language'
-// import Search from './component/Search'
+import Search from './component/Search'
 import Navigation from './component/Navigation'
 
 export default {
   components: {
     Language,
-    // Search,
+    Search,
     Navigation,
   },
   watch: {
