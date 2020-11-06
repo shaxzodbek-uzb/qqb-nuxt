@@ -28,24 +28,22 @@ export function tabCarousel() {
 
 // // Set offset
 export function setOffset() {
-  setTimeout(() => {
-    // const $offsetItems = document.querySelectorAll('[data-set="offset"]')
-    // const $header = document.querySelector('.header').clientHeight
-    // const $footer = document.querySelector('.currency-wrap').clientHeight
-    // $offsetItems.forEach((el) => {
-    //   const dataset = el.dataset.offset
-    //   if (dataset === 'top bottom') {
-    //     el.style.marginTop = `${$header}px`
-    //     el.style.marginBottom = `${$footer}px`
-    //   }
-    //   if (dataset === 'top') {
-    //     el.style.paddingTop = `${$header}px`
-    //   }
-    //   if (dataset === 'bottom') {
-    //     el.style.paddingBottom = `${$footer}px`
-    //   }
-    // })
-  }, 3000)
+  const $offsetItems = document.querySelectorAll('[data-set="offset"]')
+  const $header = document.querySelector('.header').clientHeight
+  const $footer = document.querySelector('.currency-wrap').clientHeight
+  $offsetItems.forEach((el) => {
+    const dataset = el.dataset.offset
+    if (dataset === 'top bottom') {
+      el.style.marginTop = `${$header}px`
+      el.style.marginBottom = `${$footer}px`
+    }
+    if (dataset === 'top') {
+      el.style.paddingTop = `${$header}px`
+    }
+    if (dataset === 'bottom') {
+      el.style.paddingBottom = `${$footer}px`
+    }
+  })
 }
 
 // // Tab Navigation
