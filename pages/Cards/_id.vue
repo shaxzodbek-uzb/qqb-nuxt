@@ -49,11 +49,7 @@
           </div>
           <div class="col-xl-6 col-lg-6 card-cell-2">
             <div class="card-group-img p-absolute">
-              <img
-                src="~/static/img/slide-images/card-group.png"
-                class="d-block"
-                alt
-              />
+              <img :src="card.big_image" class="d-block" alt />
             </div>
           </div>
           <div class="col-xl-3 col-lg-3 card-cell-3">
