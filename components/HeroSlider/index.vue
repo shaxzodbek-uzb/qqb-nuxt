@@ -796,6 +796,13 @@ export default {
       },
     },
   },
+  watch: {
+    news_categories(new_val) {
+      if (new_val.length > 0) {
+        this.activetab = new_val[0].id
+      }
+    },
+  },
   data() {
     return {
       value: 0,
