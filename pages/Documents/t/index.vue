@@ -13,8 +13,8 @@
         </div>
         <div class="item-text f-fill">
           <h1>{{ document.name }}</h1>
-          <span
-            >{{ document.mime }},
+          <span>
+            <!-- {{ document.mime }}, -->
             {{ (document.size / 1024).toFixed(2) }} KB</span
           >
         </div>

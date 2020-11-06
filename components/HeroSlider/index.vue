@@ -386,7 +386,7 @@
                   <!-- Nested Slide 1 -->
                   <nuxt-link
                     tag="div"
-                    :to="{ to: 'CardsShow' }"
+                    :to="'/cards/' + item.id"
                     class="var-width-items"
                     v-for="item in cards"
                     :key="item.id"
