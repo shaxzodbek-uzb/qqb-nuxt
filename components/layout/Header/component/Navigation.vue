@@ -20,6 +20,8 @@
                 <nuxt-link
                   :to="{ path: `/${child.value}` }"
                   class="dropdown--content-items"
+                  data-items="anchors"
+                  @click="toggleDropdown"
                 >
                   <span>{{ child.name }}</span>
 
@@ -62,6 +64,11 @@ export default {
       default() {
         return { menuItems: [] }
       },
+    },
+  },
+  methods: {
+    toggleDropdown(event) {
+      console.log(event.target)
     },
   },
 }

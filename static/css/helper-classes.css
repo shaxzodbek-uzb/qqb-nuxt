@@ -70,12 +70,13 @@
 }
 
 .main-bg {
-  background-color: rgba(var(--main-color), 1);
-  color: #fff;
+  background-color: rgba(var(--main-color), 1) !important;
+  color: #fff !important;
 }
 
 .main-bg.btn:hover {
   background-color: rgba(var(--main-color), 0.85);
+  color: #fff;
 }
 
 .secondary-color {
@@ -154,7 +155,7 @@
 }
 
 .dropdown-content::after {
-  content: "";
+  content: '';
   position: absolute;
   top: -6px;
   right: 50%;
@@ -208,6 +209,7 @@
 
 .title-40 span {
   color: rgba(var(--secondary-text-color), 1);
+  display: block;
 }
 
 .title-50 {
