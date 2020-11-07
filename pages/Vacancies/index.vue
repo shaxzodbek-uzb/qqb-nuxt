@@ -5,82 +5,27 @@
         <h1 class="title-50">Вакансии</h1>
 
         <div class="vacancies-container">
-          <div class="tab-document-items rounded">
+          <div
+            class="tab-document-items rounded"
+            v-for="item in vacancies"
+            :key="item.id"
+          >
             <div class="tab-document-header d-flex">
               <div class="item-text f-fill">
-                <h1>Клиентский менеджер (ипотечное направление)</h1>
+                <h1>{{ item.name }}</h1>
                 <span
-                  >Вакансия опубликована: 07.05.2020 13:13:27 в Ташкенте</span
+                  >Вакансия опубликована: {{ item.created_at }}
+                  {{ item.region }}</span
                 >
               </div>
 
-              <div class="vacancy-badge">
+              <!-- <div class="vacancy-badge">
                 <div class="app-badge">Будьте первыми</div>
-              </div>
+              </div> -->
 
               <div class="item-more">
                 <router-link
-                  to="vacancies/show"
-                  class="main-bg d-flex align-center btn rounded pointer transition"
-                >
-                  <span>Подробнее</span>
-                </router-link>
-              </div>
-            </div>
-          </div>
-
-          <div class="tab-document-items rounded">
-            <div class="tab-document-header d-flex">
-              <div class="item-text f-fill">
-                <h1>Web-дизайнер</h1>
-                <span
-                  >Вакансия опубликована: 07.05.2020 13:13:27 в Ташкенте</span
-                >
-              </div>
-
-              <div class="item-more">
-                <router-link
-                  :to="{ name: 'VacanciesShow' }"
-                  class="main-bg d-flex align-center btn rounded pointer transition"
-                >
-                  <span>Подробнее</span>
-                </router-link>
-              </div>
-            </div>
-          </div>
-
-          <div class="tab-document-items rounded">
-            <div class="tab-document-header d-flex">
-              <div class="item-text f-fill">
-                <h1>Начальник отдела кредитования юридических лиц</h1>
-                <span
-                  >Вакансия опубликована: 07.05.2020 13:13:27 в Ташкенте</span
-                >
-              </div>
-
-              <div class="item-more">
-                <router-link
-                  :to="{ name: 'VacanciesShow' }"
-                  class="main-bg d-flex align-center btn rounded pointer transition"
-                >
-                  <span>Подробнее</span>
-                </router-link>
-              </div>
-            </div>
-          </div>
-
-          <div class="tab-document-items rounded">
-            <div class="tab-document-header d-flex">
-              <div class="item-text f-fill">
-                <h1>Бухгалтер по расчету заработной платы</h1>
-                <span
-                  >Вакансия опубликована: 07.05.2020 13:13:27 в Ташкенте</span
-                >
-              </div>
-
-              <div class="item-more">
-                <router-link
-                  :to="{ name: 'VacanciesShow' }"
+                  :to="'/vacancies/' + item.id"
                   class="main-bg d-flex align-center btn rounded pointer transition"
                 >
                   <span>Подробнее</span>
@@ -98,8 +43,16 @@
 import { setOffset } from '~/utils/frontend'
 
 export default {
+  data() {
+    return {
+      vacancies: [],
+    }
+  },
   mounted() {
     setOffset()
+    this.$axios.$get('/vacancies').then((res) => {
+      this.vacancies = res.data.vacancies
+    })
   },
 }
 </script>
