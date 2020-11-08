@@ -54,9 +54,9 @@
                   <span>Сумма кредита</span>
                   <h1>{{ credit.amount }}</h1>
                 </div>
-                <div class="item-img">
+                <!-- <div class="item-img">
                   <img :src="credit.image" alt />
-                </div>
+                </div> -->
               </div>
             </div>
             <div class="card-tab-box">
