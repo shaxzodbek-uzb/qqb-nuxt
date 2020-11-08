@@ -84,6 +84,13 @@ export default {
       },
     ],
     '@nuxtjs/axios',
+    [
+      'nuxt-gmaps',
+      {
+        key: 'AIzaSyAeiaH3J_Y2ArS4jPY97F3QwYC00cgm6h4',
+        //you can use libraries: ['places']
+      },
+    ],
   ],
   i18n: {
     locales: [

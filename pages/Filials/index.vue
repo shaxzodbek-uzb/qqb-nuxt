@@ -50,14 +50,45 @@
           <div class="card-tab-content">
             <div role="tabpanel">
               <div style="height: 500px;">
-                <!-- <GmapMap
-                  :center="{ lat: 10, lng: 10 }"
-                  :zoom="7"
-                  map-type-id="terrain"
-                  style="width: 500px; h~eight: 300px"
+                <GMap
+                  ref="gMap"
+                  :cluster="{ options: { styles: clusterStyle } }"
+                  :center="{ lat: locations[0].lat, lng: locations[0].lng }"
+                  :options="{
+                    fullscreenControl: false,
+                    streetViewControl: false,
+                    mapTypeControl: false,
+                    zoomControl: true,
+                    gestureHandling: 'cooperative',
+                    styles: mapStyle,
+                  }"
+                  :zoom="6"
+                  @bounds_changed="checkForMarkers"
                 >
-                  <GmapMarker :clickable="true" :draggable="true" />
-                </GmapMap> -->
+                  <GMapMarker
+                    v-for="location in locations"
+                    :key="location.id"
+                    :position="{ lat: location.lat, lng: location.lng }"
+                    :options="{
+                      icon:
+                        location === currentLocation
+                          ? pins.selected
+                          : pins.notSelected,
+                    }"
+                    @click="currentLocation = location"
+                  >
+                    <GMapInfoWindow :options="{ maxWidth: 200 }">
+                      <b>{{ location.name }}</b>
+                      <br />
+                      <br />
+                      <code>
+                        Lat: {{ location.lat }},
+                        <br />
+                        Lng: {{ location.lng }}
+                      </code>
+                    </GMapInfoWindow>
+                  </GMapMarker>
+                </GMap>
               </div>
             </div>
             <div role="tabpanel">
@@ -78,6 +109,7 @@ export default {
   components: {
     FilialList,
   },
+
   mounted() {
     setOffset()
     tabNavigation()

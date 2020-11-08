@@ -19,6 +19,7 @@
     "bootstrap-vue": "^2.18.1",
     "hooper": "^0.3.4",
     "nuxt": "^2.14.0",
+    "nuxt-gmaps": "^1.2.10",
     "nuxt-i18n": "^6.15.1",
     "vue": "^2.6.12",
     "vue-select": "^3.10.8",
