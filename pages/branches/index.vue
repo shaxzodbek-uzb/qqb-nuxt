@@ -92,7 +92,7 @@
               </div>
             </div>
             <div role="tabpanel">
-              <FilialList />
+              <BranchesList :branches="branches" />
             </div>
           </div>
         </div>
@@ -103,18 +103,25 @@
 
 <script>
 import { setOffset, tabNavigation } from '~/utils/frontend'
-import FilialList from '~/components/TabItems/FilialList'
+import BranchesList from '~/components/TabItems/BranchesList'
 
 export default {
+  data() {
+    return {
+      branches: [],
+    }
+  },
   components: {
-    FilialList,
+    BranchesList,
   },
 
   mounted() {
     setOffset()
     tabNavigation()
+
+    this.$axios.$get('/branches').then((res) => {
+      this.branches = res.data.branches
+    })
   },
 }
 </script>
-
-<style></style>
