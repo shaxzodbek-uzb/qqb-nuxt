@@ -57,6 +57,7 @@
             </div>
           </div>
         </div>
+        <SpecialFunctions />
         <div class="currency-cell-3">
           <div class="currency-wrap-right d-flex align-center">
             <div class="call-center-phones p-relative dropdown-init pointer">
@@ -93,7 +94,9 @@
 </template>
 
 <script>
+import SpecialFunctions from '~/components/layout/SpecialFunctions'
 export default {
+  components: { SpecialFunctions },
   data() {
     return {
       currency_rate: {

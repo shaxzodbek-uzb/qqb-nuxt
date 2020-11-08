@@ -209,7 +209,7 @@
                   <!-- Nested Slide 2 -->
                   <div class="var-width-items">
                     <nuxt-link
-                      :to="{ to: 'CardsShow' }"
+                      to="/branches"
                       class="card-items rounded transition d-flex f-column align-center h-100"
                     >
                       <img
