@@ -16,25 +16,25 @@
                 </tr>
               </thead>
               <tbody class="table-tbody">
-                <tr>
+                <tr v-for="item in currency_rate.currencies" :key="item.id">
                   <td>
                     <div class="table-tbody-td">
                       <span class="table-mobile-text">Наименование валюты</span>
-                      <img src="~/static/img/icon/uzbekistan.png" alt />
-                      <span>1 USD, Доллар - США</span>
+                      <img :src="item.logo" alt />
+                      <span>{{ item.name }}</span>
                     </div>
                   </td>
                   <td>
                     <span class="table-mobile-text">Курс ЦБ</span>
-                    11 666.39
+                    {{ item.cb_rate }}
                   </td>
                   <td>
                     <span class="table-mobile-text">Покупка</span>
-                    41 666,67
+                    {{ item.buy_rate }}
                   </td>
                   <td>
                     <span class="table-mobile-text">Продажа</span>
-                    41 666,67
+                    {{ item.sell_rate }}
                   </td>
                 </tr>
               </tbody>
@@ -87,27 +87,7 @@
           </div>
         </div>
         <div class="col-xl-3 col-lg-4 cash-left-cell">
-          <div class="exchange-converter rounded">
-            <div class="converter-header">
-              <div class="converter-header-content p-relative">
-                <img src="~/static/img/svg/coins.png" alt />
-                <h1>Конвертер валют</h1>
-
-                <div class="converter-form">
-                  <div class="converter-input">
-                    <input type="text" />
-                  </div>
-                  <div class="converter-select">
-                    <v-select :options="options"></v-select>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="converter-footer d-flex f-between">
-              <h1>10 210.39</h1>
-              <h1>USD</h1>
-            </div>
-          </div>
+          <CurrencyConverter />
 
           <div class="exchange-converter rounded">
             <div class="converter-header">
@@ -141,21 +121,51 @@
 </template>
 
 <script>
+import CurrencyConverter from '~/components/CurrencyConverter'
 import DatePicker from 'vue2-datepicker'
 import 'vue2-datepicker/index.css'
 
 export default {
+  components: {
+    CurrencyConverter,
+    DatePicker,
+  },
   data() {
     return {
-      options: ['UZS', 'UZD', 'EURO'],
-      year: ['2000', '2001', '2002', '2003', '2004'],
+      currency_rate: {
+        currencies: [],
+      },
+      active_currency_id: 0,
       time1: null,
     }
   },
-  components: {
-    DatePicker,
+  mounted() {
+    let me = this
+    this.$axios.$get('/currency-rates/last').then((res) => {
+      me.currency_rate = res.data.currency_rate
+      me.active_currency_id = me.currency_rate.currencies[0].id
+    })
+  },
+  computed: {
+    activeCurrency() {
+      for (
+        let index = 0;
+        index < this.currency_rate.currencies.length;
+        index++
+      ) {
+        const element = this.currency_rate.currencies[index]
+        if (element.id == this.active_currency_id) {
+          return element
+        }
+      }
+      return {
+        name: '-',
+        slug: '-',
+        sell_rate: '-',
+        buy_rate: '-',
+        cb_rate: '-',
+      }
+    },
   },
 }
 </script>
-
-<style></style>

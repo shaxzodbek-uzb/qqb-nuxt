@@ -11,10 +11,7 @@
                 class="tab-items p-relative pointer active"
                 data-toggle="tab"
               >
-                <span>Курс для наличных</span>
-              </div>
-              <div class="tab-items p-relative pointer" data-toggle="tab">
-                <span>Курс для банковских карт</span>
+                <span>Курс</span>
               </div>
               <div class="tab-items p-relative pointer" data-toggle="tab">
                 <span>Архив</span>
@@ -26,7 +23,6 @@
             <div role="tabpanel">
               <CashRate />
             </div>
-            <div role="tabpanel">1234aaa</div>
             <div role="tabpanel">
               <Archive />
             </div>
