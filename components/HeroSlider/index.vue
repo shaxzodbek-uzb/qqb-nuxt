@@ -1,14 +1,10 @@
 <template>
   <div class="swipe-container">
     <!-- :wheelControl="false" -->
-    <div class="hooper-container vh-100">
+    <div class="hooper-container">
       <!-- Parent Slide 1 -->
       <div class="hooper-slide-items hooper-slide-1">
-        <div
-          class="set-offset-slide d-flex f-column"
-          data-set="offset"
-          data-offset="top bottom"
-        >
+        <div class="set-offset-slide d-flex f-column">
           <div class="hooper-nested-container f-fill">
             <!-- Begin Nested Slider -->
             <VueSlickCarousel
@@ -256,7 +252,7 @@
                           <div
                             class="fake-route-button-3 rounded pointer transition"
                           >
-                            <span>Открыть вклад</span>
+                            <span>Подробнее</span>
                           </div>
                         </div>
                       </div>
@@ -387,7 +383,7 @@
                   <nuxt-link
                     tag="div"
                     :to="'/cards/' + item.id"
-                    class="var-width-items"
+                    class="var-width-items pointer"
                     v-for="item in cards"
                     :key="item.id"
                   >
@@ -402,7 +398,7 @@
                       <div
                         class="card-items__header card-header-animate mb-auto items-center"
                       >
-                        <h1>
+                        <h1 class="text-left">
                           {{ item.name }}
                           <br />({{ item.type }})
                         </h1>
@@ -490,7 +486,7 @@
       <!-- Parent Slide 4 -->
       <div class="hooper-slide-items header-white hooper-slide-4">
         <div class="slide-no-space h-100">
-          <div class="no-space-header" data-set="offset" data-offset="top">
+          <div class="no-space-header">
             <img
               class="img-line-2 img-cover p-absolute"
               src="/img/svg/line-2.png"
@@ -603,8 +599,15 @@
                               {{ news.name }}
                             </h1>
 
-                            <p>
-                              {{ news.description }}
+                            <p
+                              :class="
+                                news.description.length > 150
+                                  ? 'text-row-truncate'
+                                  : ''
+                              "
+                              class="mb-0"
+                            >
+                              {{ news.description.slice(0, 150) }}
                             </p>
                           </div>
                         </nuxt-link>
@@ -855,7 +858,7 @@ export default {
           {
             breakpoint: 1370,
             settings: {
-              slidesToShow: 2.5,
+              slidesToShow: 2.35,
               variableWidth: false,
             },
           },

@@ -73,7 +73,7 @@
           </div>
         </div>
 
-        <div class="search-form d-flex align-center rounded">
+        <div class="search-form d-flex align-center rounded mb-5">
           <img src="/img/svg/search.png" alt="Search Icon" class="d-block" />
           <input type="text" placeholder="Искать..." class="f-fill" />
           <p class="search-form-text">Что вы хотите найти?</p>
@@ -82,14 +82,14 @@
           </button>
         </div>
 
-        <div class="search-form-result">
+        <!-- <div class="search-form-result">
           <nuxt-link to="/" class="form-result-items d-block transition">
             <span>Ре</span>квизиты банка
           </nuxt-link>
           <nuxt-link to="/" class="form-result-items d-block transition">
             <span>Ре</span>визионная комиссия
           </nuxt-link>
-        </div>
+        </div> -->
 
         <div class="menu-items-wrap">
           <div class="desktop-menu-container">

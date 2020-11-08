@@ -7,7 +7,7 @@
     >
       <div class="tab-document-header d-flex">
         <div class="item-badge">
-          <div class="app-badge badge-danger" style="width: auto !important;">
+          <div class="app-badge badge-danger">
             {{ document.extension.toUpperCase() }}
           </div>
         </div>
