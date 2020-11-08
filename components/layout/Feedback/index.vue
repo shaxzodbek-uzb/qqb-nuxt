@@ -99,7 +99,10 @@
               <h1>+998 78 150-10 01</h1>
               <b>ПН-ПТ - 9:00 до 18:00</b>
 
-              <nuxt-link to="/" class="feedback-footer-pdf d-flex align-center">
+              <nuxt-link
+                :to="localePath('/')"
+                class="feedback-footer-pdf d-flex align-center"
+              >
                 <b class="text-white">Регламент</b>
                 <span class="white-bg">PDF</span>
               </nuxt-link>
@@ -112,7 +115,10 @@
               <h1>+998 78 150-93-39</h1>
               <b>ПН-ПТ - 9:00 до 18:00</b>
 
-              <nuxt-link to="/" class="feedback-footer-pdf d-flex align-center">
+              <nuxt-link
+                :to="localePath('/')"
+                class="feedback-footer-pdf d-flex align-center"
+              >
                 <b class="text-white">Регламент</b>
                 <span class="white-bg">PDF</span>
               </nuxt-link>

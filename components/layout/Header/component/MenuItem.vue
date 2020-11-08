@@ -11,12 +11,12 @@
 
       <div class="dropdown--content">
         <nuxt-link
-          :to="{ path: 'Contributions' }"
+          :to="localePath('/Contributions')"
           class="dropdown--content-items"
           >Вклады</nuxt-link
         >
         <nuxt-link
-          :to="{ path: 'InternationalMoneyTransfers' }"
+          :to="localePath('/InternationalMoneyTransfers')"
           class="dropdown--content-items"
           >Международные денежные переводы</nuxt-link
         >

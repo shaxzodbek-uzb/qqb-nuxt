@@ -18,7 +18,7 @@
             <ul>
               <li v-for="child in item.children" :key="child.id">
                 <nuxt-link
-                  :to="{ path: `/${child.value}` }"
+                  :to="localePath(`/${child.value}`)"
                   class="dropdown--content-items"
                   data-items="anchors"
                   @click="toggleDropdown"
@@ -36,7 +36,7 @@
                   v-if="child.children.length != 0"
                 >
                   <li v-for="ch in child.children" :key="ch.id">
-                    <nuxt-link :to="{ path: `/${ch.value}` }">
+                    <nuxt-link :to="localePath(`/${ch.value}`)">
                       {{ ch.name }}
                     </nuxt-link>
                   </li>
@@ -47,7 +47,7 @@
         </div>
         <nuxt-link
           v-else
-          :to="{ path: `/${item.value}` }"
+          :to="localePath(`/${item.value}`)"
           class="d-block p-relative"
           >{{ item.name }}</nuxt-link
         >

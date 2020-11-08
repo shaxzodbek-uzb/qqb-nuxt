@@ -12,7 +12,7 @@
           <div class="card-tab-header">
             <div class="d-flex">
               <nuxt-link
-                :to="'/contributions/' + type.slug"
+                :to="localePath('/contributions/' + type.slug)"
                 class="tab-items p-relative pointer"
                 data-toggle="tab"
                 v-for="type in types"

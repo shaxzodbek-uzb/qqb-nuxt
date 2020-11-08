@@ -31,7 +31,7 @@
                     <p>{{ slide.description }}</p>
 
                     <nuxt-link
-                      to="/"
+                      :to="localePath('/')"
                       class="btn btn-border rounded pointer transition"
                       >Подробнее</nuxt-link
                     >
@@ -141,7 +141,7 @@
                   филиалов банка.
                 </p>
 
-                <nuxt-link to="/" class="button-arrow">
+                <nuxt-link :to="localePath('/')" class="button-arrow">
                   <span>Смотреть все</span>
                   <img src="/img/svg/arrow-right.png" alt />
                 </nuxt-link>
@@ -178,7 +178,7 @@
                   <!-- Nested Slide 1 -->
                   <div class="var-width-items">
                     <nuxt-link
-                      :to="{ to: 'CardsShow' }"
+                      :to="localePath('/cards')"
                       class="card-items rounded transition d-flex f-column align-center h-100"
                     >
                       <div class="card-items__header items-center">
@@ -209,7 +209,7 @@
                   <!-- Nested Slide 2 -->
                   <div class="var-width-items">
                     <nuxt-link
-                      to="/branches"
+                      :to="localePath('/branches')"
                       class="card-items rounded transition d-flex f-column align-center h-100"
                     >
                       <img
@@ -234,7 +234,7 @@
                   <!-- Nested Slide 3 -->
                   <div class="var-width-items">
                     <nuxt-link
-                      :to="{ to: 'CardsShow' }"
+                      :to="localePath('/cards')"
                       class="card-items rounded transition d-flex f-column align-center h-100"
                     >
                       <div class="card-items__header items-center">
@@ -286,7 +286,7 @@
                   <!-- Nested Slide 4 -->
                   <div class="var-width-items">
                     <nuxt-link
-                      :to="{ to: 'CardsShow' }"
+                      :to="localePath('/cards')"
                       class="card-items rounded transition d-flex f-column h-100"
                       >dd</nuxt-link
                     >
@@ -296,7 +296,7 @@
                   <!-- Nested Slide 5 -->
                   <div class="var-width-items">
                     <nuxt-link
-                      :to="{ to: 'CardsShow' }"
+                      :to="localePath('/cards')"
                       class="card-items rounded transition d-flex f-column h-100"
                       >s12</nuxt-link
                     >
@@ -344,7 +344,7 @@
                   филиалов банка.
                 </p>
 
-                <nuxt-link to="/" class="button-arrow">
+                <nuxt-link :to="localePath('/')" class="button-arrow">
                   <span>Смотреть все</span>
                   <img src="/img/svg/arrow-right.png" alt />
                 </nuxt-link>
@@ -381,8 +381,8 @@
                 >
                   <!-- Nested Slide 1 -->
                   <nuxt-link
+                    :to="localePath('/cards/' + item.id)"
                     tag="div"
-                    :to="'/cards/' + item.id"
                     class="var-width-items pointer"
                     v-for="item in cards"
                     :key="item.id"
@@ -576,7 +576,7 @@
                     >
                       <slide v-for="news in item.news" :key="news.id">
                         <nuxt-link
-                          :to="{ to: 'NewsShow' }"
+                          :to="localePath(`/news/${news.id}`)"
                           class="news-items-2 transition rounded d-block p-relative"
                         >
                           <div class="card-background p-absolute w-100 h-100">
@@ -717,14 +717,20 @@
                                     </div>
 
                                     <div class="app-images d-flex">
-                                      <nuxt-link to="/" class="d-block">
+                                      <nuxt-link
+                                        :to="localePath('/')"
+                                        class="d-block"
+                                      >
                                         <img
                                           class="d-block"
                                           src="/img/svg/app-store.png"
                                           alt
                                         />
                                       </nuxt-link>
-                                      <nuxt-link to="/" class="d-block">
+                                      <nuxt-link
+                                        :to="localePath('/')"
+                                        class="d-block"
+                                      >
                                         <img
                                           class="d-block"
                                           src="/img/svg/google-play.png"

@@ -15,7 +15,7 @@
         </div>
         <div class="item-more">
           <nuxt-link
-            :to="'/credits/show/' + credit.id"
+            :to="localePath('/credits/show/' + credit.id)"
             class="main-bg d-flex align-center btn rounded pointer transition"
           >
             <span>Подробнее</span>

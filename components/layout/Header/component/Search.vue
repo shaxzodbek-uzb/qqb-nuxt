@@ -82,214 +82,72 @@
           </button>
         </div>
 
-        <!-- <div class="search-form-result">
-          <nuxt-link to="/" class="form-result-items d-block transition">
-            <span>Ре</span>квизиты банка
-          </nuxt-link>
-          <nuxt-link to="/" class="form-result-items d-block transition">
-            <span>Ре</span>визионная комиссия
-          </nuxt-link>
-        </div> -->
-
         <div class="menu-items-wrap">
           <div class="desktop-menu-container">
-            <div class="desktop-menu--items">
+            <div
+              class="desktop-menu--items"
+              v-for="item in menu.menuItems"
+              :key="item.id"
+            >
               <div class="row">
                 <div class="col-xl-3 col-lg-12">
                   <div class="search-block-aside">
-                    <h1>О БАНКЕ</h1>
+                    <h1>{{ item.name }}</h1>
                   </div>
                 </div>
-                <div class="col-xl-3 col-lg-4">
-                  <nuxt-link to="/" class="menu--item">История банка</nuxt-link>
-                  <nuxt-link to="/" class="menu--item">Функции банка</nuxt-link>
-                  <nuxt-link to="/" class="menu--item"
-                    >Структура банка</nuxt-link
-                  >
-                </div>
-                <div class="col-xl-3 col-lg-4">
-                  <nuxt-link to="/" class="menu--item">История банка</nuxt-link>
-                  <nuxt-link to="/" class="menu--item">Функции банка</nuxt-link>
-                  <nuxt-link to="/" class="menu--item"
-                    >Структура банка</nuxt-link
-                  >
-                </div>
-                <div class="col-xl-3 col-lg-4">
-                  <nuxt-link to="/" class="menu--item">История банка</nuxt-link>
-                  <nuxt-link to="/" class="menu--item">Функции банка</nuxt-link>
-                  <nuxt-link to="/" class="menu--item"
-                    >Структура банка</nuxt-link
-                  >
-                </div>
-              </div>
-            </div>
-
-            <div class="desktop-menu--items">
-              <div class="row">
-                <div class="col-xl-3 col-lg-12">
-                  <div class="search-block-aside">
-                    <h1>ЧАСТНЫМ ЛИЦАМ</h1>
+                <div class="col-xl-9 col-lg-12">
+                  <div class="row">
+                    <div
+                      class="col-xl-3 col-lg-4"
+                      v-for="child in item.children"
+                      :key="child.id"
+                      v-show="seachText(child.name)"
+                    >
+                      <nuxt-link to="/" class="menu--item">{{
+                        child.name
+                      }}</nuxt-link>
+                    </div>
                   </div>
-                </div>
-                <div class="col-xl-3 col-lg-4">
-                  <nuxt-link to="/" class="menu--item">История банка</nuxt-link>
-                  <nuxt-link to="/" class="menu--item">Функции банка</nuxt-link>
-                  <nuxt-link to="/" class="menu--item"
-                    >Структура банка</nuxt-link
-                  >
-                </div>
-                <div class="col-xl-3 col-lg-4">
-                  <nuxt-link to="/" class="menu--item">История банка</nuxt-link>
-                  <nuxt-link to="/" class="menu--item">Функции банка</nuxt-link>
-                  <nuxt-link to="/" class="menu--item"
-                    >Структура банка</nuxt-link
-                  >
-                </div>
-                <div class="col-xl-3 col-lg-4">
-                  <nuxt-link to="/" class="menu--item">История банка</nuxt-link>
-                  <nuxt-link to="/" class="menu--item">Функции банка</nuxt-link>
-                  <nuxt-link to="/" class="menu--item"
-                    >Структура банка</nuxt-link
-                  >
                 </div>
               </div>
             </div>
           </div>
 
           <div class="mobile-menu-container">
-            <div class="mobile-menu--items mb-4">
-              <b-button v-b-toggle.collapse-1 variant="light" class="w-100">
+            <div
+              class="mobile-menu--items mb-4"
+              v-for="item in menu.menuItems"
+              :key="item.id"
+            >
+              <b-button
+                v-b-toggle="'collapse-' + item.id"
+                variant="light"
+                class="w-100"
+              >
                 <div
                   class="search-block-aside d-flex align-center justify-content-between"
                 >
-                  <h1 class="mb-0">О БАНКЕ</h1>
+                  <h1 class="mb-0">{{ item.name }}</h1>
 
                   <div class="arrow-down"></div>
                 </div>
               </b-button>
-              <b-collapse id="collapse-1" class="mt-2">
+              <b-collapse :id="'collapse-' + item.id" class="mt-2">
                 <div class="row my-4">
                   <div class="col-xl-3 col-md-6 mb-3">
-                    <nuxt-link to="/" class="menu--item"
-                      >История банка</nuxt-link
+                    <nuxt-link
+                      to="/"
+                      class="menu--item"
+                      v-for="child in item.children"
+                      :key="child.id"
                     >
-                    <nuxt-link to="/" class="menu--item"
-                      >Функции банка</nuxt-link
-                    >
-                    <nuxt-link to="/" class="menu--item"
-                      >Структура банка</nuxt-link
-                    >
-                  </div>
-                  <div class="col-xl-3 col-md-6 mb-3">
-                    <nuxt-link to="/" class="menu--item"
-                      >История банка</nuxt-link
-                    >
-                    <nuxt-link to="/" class="menu--item"
-                      >Функции банка</nuxt-link
-                    >
-                    <nuxt-link to="/" class="menu--item"
-                      >Структура банка</nuxt-link
-                    >
-                  </div>
-                  <div class="col-xl-3 col-md-6 mb-3">
-                    <nuxt-link to="/" class="menu--item"
-                      >История банка</nuxt-link
-                    >
-                    <nuxt-link to="/" class="menu--item"
-                      >Функции банка</nuxt-link
-                    >
-                    <nuxt-link to="/" class="menu--item"
-                      >Структура банка</nuxt-link
-                    >
-                  </div>
-                  <div class="col-xl-3 col-md-6 mb-3">
-                    <nuxt-link to="/" class="menu--item"
-                      >История банка</nuxt-link
-                    >
-                    <nuxt-link to="/" class="menu--item"
-                      >Функции банка</nuxt-link
-                    >
-                    <nuxt-link to="/" class="menu--item"
-                      >Структура банка</nuxt-link
-                    >
-                  </div>
-                  <div class="col-xl-3 col-md-6 mb-3">
-                    <nuxt-link to="/" class="menu--item"
-                      >История банка</nuxt-link
-                    >
-                    <nuxt-link to="/" class="menu--item"
-                      >Функции банка</nuxt-link
-                    >
-                    <nuxt-link to="/" class="menu--item"
-                      >Структура банка</nuxt-link
-                    >
-                  </div>
-                  <div class="col-xl-3 col-md-6 mb-3">
-                    <nuxt-link to="/" class="menu--item"
-                      >История банка</nuxt-link
-                    >
-                    <nuxt-link to="/" class="menu--item"
-                      >Функции банка</nuxt-link
-                    >
-                    <nuxt-link to="/" class="menu--item"
-                      >Структура банка</nuxt-link
-                    >
-                  </div>
-                </div>
-              </b-collapse>
-            </div>
-
-            <div class="mobile-menu--items mb-4">
-              <b-button v-b-toggle.collapse-2 variant="light" class="w-100">
-                <div
-                  class="search-block-aside d-flex align-center justify-content-between"
-                >
-                  <h1 class="mb-0">ЧАСТНЫМ ЛИЦАМ</h1>
-
-                  <div class="arrow-down"></div>
-                </div>
-              </b-button>
-              <b-collapse id="collapse-2" class="mt-2">
-                <div class="row my-4">
-                  <div class="col-xl-3 col-md-6 mb-3">
-                    <nuxt-link to="/" class="menu--item"
-                      >История банка</nuxt-link
-                    >
-                    <nuxt-link to="/" class="menu--item"
-                      >Функции банка</nuxt-link
-                    >
-                    <nuxt-link to="/" class="menu--item"
-                      >Структура банка</nuxt-link
-                    >
-                  </div>
-                  <div class="col-xl-3 col-md-6 mb-3">
-                    <nuxt-link to="/" class="menu--item"
-                      >История банка</nuxt-link
-                    >
-                    <nuxt-link to="/" class="menu--item"
-                      >Функции банка</nuxt-link
-                    >
-                    <nuxt-link to="/" class="menu--item"
-                      >Структура банка</nuxt-link
-                    >
+                      {{ child.name }}
+                    </nuxt-link>
                   </div>
                 </div>
               </b-collapse>
             </div>
           </div>
-        </div>
-
-        <div class="search-block-footer">
-          <!-- <nuxt-link to="/" class="d-block">ГАЛЕРЕЯ</nuxt-link>
-          <nuxt-link to="/" class="d-block">О банке</nuxt-link>
-          <nuxt-link to="/" class="d-block">Новости</nuxt-link>
-          <nuxt-link to="/" class="d-block">Работа</nuxt-link>
-          <nuxt-link to="/" class="d-block">Контакты</nuxt-link>
-          <nuxt-link to="/" class="d-block">Помощь</nuxt-link>
-          <nuxt-link to="/" class="d-block">ПРЕСС-ЦЕНТР</nuxt-link>
-          <nuxt-link to="/" class="d-block">АНОНИМНОЕ ОБРАЩЕНИЕ</nuxt-link>
-          <nuxt-link to="/" class="d-block">ИНТЕРНЕТ БАНКИНГ</nuxt-link>
-          <nuxt-link to="/" class="d-block">Форум</nuxt-link>-->
         </div>
       </div>
     </div>
@@ -301,13 +159,27 @@ import { search } from '@/utils/frontend'
 import Language from './Language'
 
 export default {
+  data() {
+    return {
+      menu: [],
+      search_text: '',
+    }
+  },
   components: {
     Language,
   },
   mounted() {
     const { searchButton, searchContent } = this.$refs
-    // Initialize header search function
     search(searchButton, searchContent)
+
+    this.$axios.$get('/menus/top-menu').then((res) => {
+      this.menu = res.data
+    })
+  },
+  methods: {
+    seachText(str) {
+      return str.includes(this.search_text)
+    },
   },
 }
 </script>

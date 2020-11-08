@@ -73,33 +73,42 @@
 
                 <div class="socials-meta">
                   <div class="social-wrap d-flex">
-                    <nuxt-link to="/" class="social-items child-center">
+                    <nuxt-link
+                      :to="localePath('/')"
+                      class="social-items child-center"
+                    >
                       <img src="/img/svg/white-fb.png" alt />
                     </nuxt-link>
-                    <nuxt-link to="/" class="social-items child-center">
+                    <nuxt-link
+                      :to="localePath('/')"
+                      class="social-items child-center"
+                    >
                       <img src="/img/svg/white-gp.png" alt />
                     </nuxt-link>
-                    <nuxt-link to="/" class="social-items child-center">
+                    <nuxt-link
+                      :to="localePath('/')"
+                      class="social-items child-center"
+                    >
                       <img src="/img/svg/white-tw.png" alt />
                     </nuxt-link>
                   </div>
                   <div class="symbols-wrap d-flex">
                     <nuxt-link
-                      to="/"
+                      :to="localePath('/')"
                       class="symbol-items d-flex align-center text-white"
                     >
                       <img src="/img/svg/symbol-1.png" alt />
                       <span>ГЕРБ</span>
                     </nuxt-link>
                     <nuxt-link
-                      to="/"
+                      :to="localePath('/')"
                       class="symbol-items d-flex align-center text-white"
                     >
                       <img src="/img/svg/symbol-2.png" alt />
                       <span>ФЛАГ</span>
                     </nuxt-link>
                     <nuxt-link
-                      to="/"
+                      :to="localePath('/')"
                       class="symbol-items d-flex align-center text-white"
                     >
                       <img src="/img/svg/symbol-3.png" alt />
@@ -188,7 +197,7 @@
                 <nuxt-link
                   class="text-white"
                   style="text-decoration: underline;"
-                  to="/"
+                  :to="localePath('/')"
                   >QISHLOQQURILISHBANK</nuxt-link
                 >. Все права защищены. Обнаружив в тексте ошибку, выделите её и
                 нажмите

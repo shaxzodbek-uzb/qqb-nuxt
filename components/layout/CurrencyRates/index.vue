@@ -5,7 +5,7 @@
         <div class="col-xl-7 col-lg-5 col-md-4 col-sm-6 col-5 currency-cell-1">
           <div class="currency-container d-flex align-center">
             <nuxt-link
-              :to="{ path: 'currency-rates' }"
+              :to="localePath('/currency-rates')"
               class="btn btn-sm rounded"
             >
               <span>Курсы валют</span>

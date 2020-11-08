@@ -4,7 +4,10 @@
       <div class="container" data-resize="resize">
         <div class="row align-center header-row">
           <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-10 header-cell-1">
-            <nuxt-link to="/" class="header-logo d-block p-relative">
+            <nuxt-link
+              :to="localePath('/')"
+              class="header-logo d-block p-relative"
+            >
               <img src="~/static/img/logo.png" alt="Logo" class="d-block" />
               <img
                 src="~/static/img/logo-white.png"

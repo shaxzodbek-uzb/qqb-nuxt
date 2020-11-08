@@ -18,7 +18,7 @@
             tag="div"
             v-for="item in cards"
             :key="item.id"
-            :to="'/cards/' + item.id"
+            :to="localePath('/cards/' + item.id)"
             class="card-items rounded transition d-flex f-column h-100"
             :class="{
               'card-active': item.id == hover_card || mobile_view,
