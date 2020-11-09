@@ -8,30 +8,22 @@
           <div class="card-tab-header">
             <div class="d-flex">
               <div
-                class="tab-items p-relative pointer active"
+                class="tab-items p-relative pointer"
                 data-toggle="tab"
+                v-for="item in news_categories"
+                :key="item.id"
+                :class="{ active: item.id == active_item }"
+                @click="active_item = item.id"
               >
-                <span>Новости</span>
-              </div>
-              <div class="tab-items p-relative pointer" data-toggle="tab">
-                <span>Мероприятия и Тендеры</span>
-              </div>
-              <div class="tab-items p-relative pointer" data-toggle="tab">
-                <span>Объявления</span>
-              </div>
-              <div class="tab-items p-relative pointer" data-toggle="tab">
-                <span>Аудио и видео</span>
+                <span>{{ item.name }}</span>
               </div>
             </div>
           </div>
 
           <div class="card-tab-content">
             <div role="tabpanel">
-              <News />
+              <News :category_id="active_item" />
             </div>
-            <div role="tabpanel">3445</div>
-            <div role="tabpanel">3445bb</div>
-            <div role="tabpanel">3445aa</div>
           </div>
         </div>
       </div>
@@ -41,15 +33,27 @@
 
 <script>
 import { setOffset, tabNavigation } from '~/utils/frontend'
-import News from '~/components/TabItems/News'
+import News from '~/components/TabItems/News/index'
 
 export default {
+  data() {
+    return {
+      news_categories: [],
+      active_item: 0,
+    }
+  },
   components: {
     News,
   },
   mounted() {
     setOffset()
     tabNavigation()
+    let me = this
+    this.$axios.$get(`/news-categories`).then((res) => {
+      while (me.news_categories.pop());
+      me.news_categories.push(...res.data.news_categories)
+      me.active_item = res.data.news_categories[0].id
+    })
   },
 }
 </script>
