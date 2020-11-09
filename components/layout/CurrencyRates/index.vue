@@ -33,7 +33,7 @@
             </div>
 
             <div class="currency-item">
-              <span>Покупка</span>
+              <span>{{ $t('Покупка') }}</span>
               <div class="currency-item__text d-flex align-center">
                 <img src="/img/svg/grow-up.png" alt="Icon" />
                 <span>{{ activeCurrency.buy_rate }}</span>
@@ -41,7 +41,7 @@
             </div>
 
             <div class="currency-item">
-              <span>Продажа</span>
+              <span>{{ $t('Продажа') }}</span>
               <div class="currency-item__text d-flex align-center">
                 <img src="/img/svg/grow-down.png" alt="Icon" />
                 <span>{{ activeCurrency.sell_rate }}</span>
@@ -49,7 +49,7 @@
             </div>
 
             <div class="currency-item">
-              <span>Курс ЦБ</span>
+              <span>{{ $t('Курс ЦБ') }}</span>
               <div class="currency-item__text d-flex align-center">
                 <img src="/img/svg/grow-down.png" alt="Icon" />
                 <span>{{ activeCurrency.cb_rate }}</span>

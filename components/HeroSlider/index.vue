@@ -33,7 +33,7 @@
                     <nuxt-link
                       :to="localePath('/')"
                       class="btn btn-border rounded pointer transition"
-                      >Подробнее</nuxt-link
+                      >{{ $t('Подробнее') }}</nuxt-link
                     >
                   </div>
                 </div>
@@ -92,20 +92,20 @@
             <div class="container">
               <div class="app-exchange-row d-flex align-center p-relative">
                 <div class="app-exchange-cell">
-                  <span>Кредиты</span>
-                  <h1>от 7.75%</h1>
+                  <span>{{ $t('Кредиты') }}</span>
+                  <h1>{{ $t('от') }} 7.75%</h1>
                 </div>
                 <div class="app-exchange-cell">
-                  <span>Ипотека</span>
-                  <h1>от 4%</h1>
+                  <span>{{ $t('Ипотека') }}</span>
+                  <h1>{{ $t('от') }} 4%</h1>
                 </div>
                 <div class="app-exchange-cell">
-                  <span>Вклады</span>
-                  <h1>от 10.25%</h1>
+                  <span>{{ $t('Вклады') }}</span>
+                  <h1>{{ $t('от') }} 10.25%</h1>
                 </div>
                 <div class="app-exchange-cell">
-                  <span>Карты с CashBack</span>
-                  <h1>от 10%</h1>
+                  <span>{{ $t('Карты с CashBack') }}</span>
+                  <h1>{{ $t('от') }} 10%</h1>
                 </div>
 
                 <img
@@ -133,16 +133,20 @@
           >
             <div class="slide-offset-container d-flex">
               <div class="slide-offset-left d-flex f-column">
-                <h1 class="title-40"><span>Популярные</span> Продукты</h1>
+                <h1 class="title-40">
+                  <span>{{ $t('Популярные') }}</span> {{ $t('Продукты') }}
+                </h1>
 
                 <p>
-                  Покупайте товары и оплачивайте услуги в торговых точках по
-                  всему миру. Снимайте наличные средства в банкоматах и кассах
-                  филиалов банка.
+                  {{
+                    $t(
+                      'Покупайте товары и оплачивайте услуги в торговых точках по всему миру. Снимайте наличные средства в банкоматах и кассах филиалов банка.'
+                    )
+                  }}
                 </p>
 
                 <nuxt-link :to="localePath('/')" class="button-arrow">
-                  <span>Смотреть все</span>
+                  <span>{{ $t('Смотреть все') }}</span>
                   <img src="/img/svg/arrow-right.png" alt />
                 </nuxt-link>
 
@@ -194,7 +198,7 @@
                         <div
                           class="fake-route-button-1 rounded pointer transition"
                         >
-                          <span>Подробнее</span>
+                          <span>{{ $t('Подробнее') }}</span>
                         </div>
                       </div>
                       <img
@@ -225,7 +229,7 @@
                       <div
                         class="fake-route-button-2 rounded pointer transition"
                       >
-                        <span>Подробнее</span>
+                        <span>{{ $t('Подробнее') }}</span>
                       </div>
                     </nuxt-link>
                   </div>
@@ -252,7 +256,7 @@
                           <div
                             class="fake-route-button-3 rounded pointer transition"
                           >
-                            <span>Подробнее</span>
+                            <span>{{ $t('Подробнее') }}</span>
                           </div>
                         </div>
                       </div>
@@ -336,16 +340,20 @@
           >
             <div class="slide-offset-container d-flex">
               <div class="slide-offset-left d-flex f-column">
-                <h1 class="title-40"><span>Лучшие</span> Карты</h1>
+                <h1 class="title-40">
+                  <span>{{ $t('Лучшие') }}</span> {{ $t('Карты') }}
+                </h1>
 
                 <p>
-                  Покупайте товары и оплачивайте услуги в торговых точках по
-                  всему миру. Снимайте наличные средства в банкоматах и кассах
-                  филиалов банка.
+                  {{
+                    $t(
+                      'Покупайте товары и оплачивайте услуги в торговых точках по всему миру. Снимайте наличные средства в банкоматах и кассах филиалов банка.'
+                    )
+                  }}
                 </p>
 
                 <nuxt-link :to="localePath('/')" class="button-arrow">
-                  <span>Смотреть все</span>
+                  <span>{{ $t('Смотреть все') }}</span>
                   <img src="/img/svg/arrow-right.png" alt />
                 </nuxt-link>
 
@@ -501,7 +509,7 @@
                 <div class="col-xl-4">
                   <p>
                     Уважаемые клиенты! Обращаем ваше внимание на режим работы
-                    дежурных офисов ВТБ с 12 по 14 июня. Подробнее
+                    дежурных офисов ВТБ с 12 по 14 июня. {{ $t('Подробнее') }}
                   </p>
                 </div>
                 <div class="col-xl-4">
@@ -524,7 +532,7 @@
               class="news-offset-wrap pt-60 pb-60"
               data-offset="setLeftOffset"
             >
-              <h1 class="title-50">Новости</h1>
+              <h1 class="title-50">{{ $t('Новости') }}</h1>
               <div
                 class="tabs card-tab-navigation tab-navigation--credit no-tab-border d-flex"
               >
@@ -648,7 +656,9 @@
                 <div class="container h-100">
                   <div class="d-flex f-column h-100">
                     <div class="service-title d-flex align-center">
-                      <h1 class="title-50 w-100">Сервисы QQB Mobile</h1>
+                      <h1 class="title-50 w-100">
+                        {{ $t('Сервисы QQB Mobile') }}
+                      </h1>
 
                       <!-- Nested Slide Arrows -->
                       <div class="nested-slide-arrow-slot arrow-slot-relative">
@@ -688,7 +698,7 @@
                                   class="tab-items p-relative pointer active"
                                   data-toggle="tab"
                                 >
-                                  <span>Мобильное приложение</span>
+                                  <span>{{ $t('Мобильное приложение') }}</span>
                                 </div>
                                 <div
                                   class="tab-items p-relative pointer"
@@ -706,13 +716,16 @@
                                     <img src="/img/svg/24h.png" alt />
                                   </div>
 
-                                  <h1>Мобильные приложения</h1>
+                                  <h1>{{ $t('Мобильное приложение') }}</h1>
 
                                   <div class="d-flex align-center f-between">
                                     <div class="f-fill">
                                       <p>
-                                        Управляйте своими финансами с
-                                        <br />мобильным приложением Банка QQB
+                                        {{
+                                          $t(
+                                            'Управляйте своими финансами с мобильным приложением Банка QQB'
+                                          )
+                                        }}
                                       </p>
                                     </div>
 

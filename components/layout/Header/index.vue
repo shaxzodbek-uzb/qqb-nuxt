@@ -40,7 +40,7 @@
                 <button
                   class="d-flex align-center btn btn-border rounded pointer transition"
                 >
-                  <span style="margin-right: 1rem;">Мой банк</span>
+                  <span style="margin-right: 1rem;">{{ $t('Мой банк') }}</span>
                   <img
                     src="~/static/img/svg/user-icon.png"
                     class="default-icon-1"
@@ -59,7 +59,7 @@
                     target="_blank"
                     class="dropdown--content-items"
                   >
-                    <span>InternetBank физ.</span>
+                    <span>{{ $t('InternetBank физ.') }} </span>
                     <img src="~static/img/svg/arrow-r2.png" alt="" />
                   </a>
                   <a
@@ -67,7 +67,7 @@
                     target="_blank"
                     class="dropdown--content-items"
                   >
-                    <span>InternetBank юр.</span>
+                    <span>{{ $t('InternetBank юр.') }}</span>
                     <img src="~static/img/svg/arrow-r2.png" alt="" />
                   </a>
                   <a
@@ -75,7 +75,7 @@
                     target="_blank"
                     class="dropdown--content-items"
                   >
-                    <span>Персоналный кабинет</span>
+                    <span>{{ $t('Персоналный кабинет') }}</span>
                     <img src="~static/img/svg/arrow-r2.png" alt="" />
                   </a>
                 </div>

@@ -4,9 +4,9 @@
       <div class="p-relative dropdown-init pointer">
         <button class="btn btn-sm d-flex align-center text-white pointer">
           <img src="/img/svg/eye.png" alt="Eye Icon" />
-          <span class="facilities-text" style="margin: 0 5px;"
-            >Версия для слабовидящих</span
-          >
+          <span class="facilities-text" style="margin: 0 5px;">{{
+            $t('Версия для слабовидящих')
+          }}</span>
           <img src="/img/svg/arrow-down-white.png" alt />
         </button>
 

@@ -80,7 +80,7 @@
                   to="/"
                   class="main-bg d-flex align-center btn rounded pointer transition"
                 >
-                  <span>Подробнее</span>
+                  <span>{{ $t('Подробнее') }}</span>
                 </router-link>
               </div>
             </div>

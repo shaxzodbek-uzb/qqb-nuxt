@@ -26,7 +26,7 @@
             _target="_blank"
             class="main-bg d-flex align-center btn rounded pointer transition"
           >
-            <span>Подробнее</span>
+            <span>{{ $t('Подробнее') }}</span>
           </a>
         </div>
       </div>

@@ -97,19 +97,24 @@ export default {
       {
         code: 'en',
         name: 'English',
+        file: 'en.js',
         flag: '/img/icon/united-states.png',
       },
       {
         code: 'uz',
         name: "O'zbek",
+        file: 'uz.js',
         flag: '/img/icon/uzbekistan.png',
       },
       {
         code: 'ru',
         name: 'RUssian',
+        file: 'ru.js',
         flag: '/img/icon/russia.png',
       },
     ],
+    lazy: true,
+    langDir: 'lang/',
     defaultLocale: 'ru',
     vueI18n: {
       fallbackLocale: 'ru',

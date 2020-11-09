@@ -75,10 +75,14 @@
 
         <div class="search-form d-flex align-center rounded mb-5">
           <img src="/img/svg/search.png" alt="Search Icon" class="d-block" />
-          <input type="text" placeholder="Искать..." class="f-fill" />
-          <p class="search-form-text">Что вы хотите найти?</p>
+          <input
+            type="text"
+            :placeholder="$t('Искать') + '...'"
+            class="f-fill"
+          />
+          <p class="search-form-text">{{ $t('Что вы хотите найти?') }}</p>
           <button type="submit" class="btn main-bg rounded transition pointer">
-            Искать
+            {{ $t('Искать') }}
           </button>
         </div>
 
@@ -103,9 +107,11 @@
                       :key="child.id"
                       v-show="seachText(child.name)"
                     >
-                      <nuxt-link to="/" class="menu--item">{{
-                        child.name
-                      }}</nuxt-link>
+                      <nuxt-link
+                        :to="localePath(`/${child.value}`)"
+                        class="menu--item"
+                        >{{ child.name }}</nuxt-link
+                      >
                     </div>
                   </div>
                 </div>
