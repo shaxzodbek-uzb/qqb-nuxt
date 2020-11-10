@@ -3,12 +3,12 @@
     <div class="container">
       <div class="deposit-container pt-60 pb-60">
         <div class="row">
-          <div class="col-xl-6">
+          <div class="col-xl-4">
             <div class="money-transfer-left">
               <h1>{{ name }}</h1>
             </div>
           </div>
-          <div class="col-xl-6">
+          <div class="col-xl-8">
             <div class="money-transfer-right" v-html="content"></div>
           </div>
         </div>

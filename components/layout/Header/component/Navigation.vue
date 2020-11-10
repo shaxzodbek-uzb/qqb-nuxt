@@ -31,16 +31,15 @@
                   ></div>
                 </nuxt-link>
 
-                <ul
-                  class="dropdown-content__sub"
-                  v-if="child.children.length != 0"
-                >
-                  <li v-for="ch in child.children" :key="ch.id">
-                    <nuxt-link :to="localePath(`/${ch.value}`)">
-                      {{ ch.name }}
-                    </nuxt-link>
-                  </li>
-                </ul>
+                <div class="dropdown-content__sub">
+                  <ul v-if="child.children.length != 0">
+                    <li v-for="ch in child.children" :key="ch.id">
+                      <nuxt-link :to="localePath(`/${ch.value}`)">
+                        {{ ch.name }}
+                      </nuxt-link>
+                    </li>
+                  </ul>
+                </div>
               </li>
             </ul>
           </div>

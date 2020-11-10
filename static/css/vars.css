@@ -25,6 +25,12 @@
   content: '...';
 }
 
+@media ( max-width: 1450px ) {
+  .header-cell-2 ul li:last-child {
+    display: none;
+  }
+}
+
 @media (max-width: 1370px) {
   .app-exchange-wrap {
     padding: 0.75rem 0 !important;

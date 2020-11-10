@@ -25,7 +25,7 @@ body {
 }
 
 .header-logo img {
-  max-width: initial;
+  max-width: 100%;
 }
 
 .header-top {
@@ -106,7 +106,7 @@ body {
 }
 
 .header-top .header-navigation ul > li {
-  position: relative;
+  position: static;
 }
 
 .header-top .header-navigation > ul > li:first-child {
@@ -4032,25 +4032,38 @@ body {
 }
 
 .dropdown-content__sub {
-  position: relative;
+  position: absolute;
+  right: calc(-100% - 5px);
   top: 0;
-  background: #fff;
+  height: 100%;
+  max-width: 270px;
   min-width: 270px;
-  background: #fff;
-  padding: 0.5rem 0 0.5rem 1.25rem;
-  display: none;
+  opacity: 0;
+  visibility: hidden;
   transition: opacity 350ms, visibility 350ms;
+}
+
+.dropdown-content__sub ul {
+  background: #fff;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.1098);
+  border-radius: 5px;
+  padding: 0.5rem 0 !important;
 }
 
 .dropdown-content__sub li a {
   padding: 0.5rem 1.25rem;
   display: block;
   transition: all 350ms;
+  font-family: var(--semiBold);
+  position: relative;
+  font-size: 14px;
+  color: var(--main-text-color);
 }
 
-/* .header-top .dropdown--content ul > li:hover .dropdown-content__sub {
-    display: block;
-} */
+.header-top .dropdown--content ul > li:hover .dropdown-content__sub {
+    opacity: 1;
+  visibility: visible;
+}
 
 .chevron-left-icon {
   width: 6px;
@@ -4271,12 +4284,6 @@ body {
     line-height: 45px;
   }
 
-  .header-row {
-    justify-content: space-between;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-
   .nested-hooper-arrow .arrow-slot--right {
     right: 0;
   }
@@ -4327,18 +4334,9 @@ body {
     max-width: 165px;
   }
 
-  /* .hooper-slide-3 .card-items,
-  .hooper-slide-3 .hooper-var-width {
-    height: auto !important;
-  } */
-
-  .header-cell-2 {
-    /* flex: 0 0 100% !important;
-    max-width: 100% !important;
-    order: 2 !important;
-    margin-top: 0.5rem !important; */
-    display: none;
-  }
+  /*.header-cell-2 {*/
+  /*  display: none;*/
+  /*}*/
 
   .header-top ul > li:first-child,
   .header-bototm-cell-1,
@@ -4360,8 +4358,19 @@ body {
     min-width: 1000px;
   }
 
-  .search-block-aside {
-    margin-bottom: 15px;
+  .header-row {
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .header-cell-2,
+  .header-bottom {
+    display: none !important;
+  }
+
+  .hooper-slide-1 .hooper-nested-container {
+    padding-top: 55px;
   }
 
   .gallery-right,
@@ -4563,11 +4572,6 @@ body {
     padding-bottom: 1rem;
   }
 
-  .header-cell-2,
-  .header-bottom {
-    display: none !important;
-  }
-
   .tab-card-meta > p {
     font-size: 44px;
   }
@@ -4719,10 +4723,6 @@ body {
 
   .currency-container .btn {
     padding: calc(8px + 0.1588vw) calc(15px + 0.5249vw);
-  }
-
-  .header-logo img {
-    max-width: 100%;
   }
 
   .calculator-result-table {
