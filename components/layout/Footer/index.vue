@@ -141,7 +141,7 @@
                 <img src="/img/svg/phone-white-2.png" alt />
                 <span>Факс</span>
               </div>
-              <p>+998 (78) 150 93 39</p>
+              <p>+998 (78) 150 39 93</p>
             </div>
             <div class="col-lg-3 col-sm-6 col-6 footer-phone-cell">
               <div class="d-flex align-center">

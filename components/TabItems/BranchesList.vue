@@ -10,11 +10,13 @@
       <div class="card-medium-header d-flex align-center">
         <h1>{{ item.name }}</h1>
 
-        <button class="btn main-bg rounded pointer transition ml-auto">
+        <!-- <button class="btn main-bg rounded pointer transition ml-auto">
           <span>Заполнить заявку</span>
-        </button>
+        </button> -->
 
-        <button class="card-location-button secondary-color rounded pointer">
+        <button
+          class="card-location-button secondary-color rounded pointer ml-auto"
+        >
           <img src="~/static/img/svg/location.png" alt />
         </button>
       </div>

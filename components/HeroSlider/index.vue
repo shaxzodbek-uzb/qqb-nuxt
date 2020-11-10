@@ -93,19 +93,19 @@
               <div class="app-exchange-row d-flex align-center p-relative">
                 <div class="app-exchange-cell">
                   <span>{{ $t('Кредиты') }}</span>
-                  <h1>{{ $t('от') }} 7.75%</h1>
+                  <h1>{{ $t('от') }} 23%</h1>
                 </div>
                 <div class="app-exchange-cell">
                   <span>{{ $t('Ипотека') }}</span>
-                  <h1>{{ $t('от') }} 4%</h1>
+                  <h1>{{ $t('от') }} 18%</h1>
                 </div>
                 <div class="app-exchange-cell">
                   <span>{{ $t('Вклады') }}</span>
-                  <h1>{{ $t('от') }} 10.25%</h1>
+                  <h1>{{ $t('от') }} 14%</h1>
                 </div>
                 <div class="app-exchange-cell">
                   <span>{{ $t('Карты с CashBack') }}</span>
-                  <h1>{{ $t('от') }} 10%</h1>
+                  <h1>{{ $t('от') }} 2%</h1>
                 </div>
 
                 <img
@@ -515,13 +515,13 @@
                 <div class="col-xl-4">
                   <p>
                     Общероссийское голосование по вопросу одобрения изменений в
-                    Конституцию РФ Подробнее
+                    Конституцию РФ. {{ $t('Подробнее') }}
                   </p>
                 </div>
                 <div class="col-xl-4">
                   <p>
                     Мобильное приложение для iOS и Android со всеми доступными
-                    операциями банка
+                    операциями банка. {{ $t('Подробнее') }}
                   </p>
                 </div>
               </div>
@@ -600,7 +600,7 @@
                           <div class="embed-news">
                             <div class="embed-news__date d-flex align-center">
                               <img src="/img/svg/calendar.png" alt />
-                              <span>23.01.2020</span>
+                              <span>{{ news.created_at }}</span>
                             </div>
 
                             <h1>

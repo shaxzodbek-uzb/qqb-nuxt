@@ -53,6 +53,8 @@
 
                 <div class="orphan-space-4">
                   <button
+                    type="button"
+                    @click="submitForm"
                     class="fake-route-button-4 rounded transition pointer"
                   >
                     Отправить сообщение
@@ -109,7 +111,9 @@
                 v-for="itm in item.poll_variants"
                 :key="'item2' + itm.id"
               >
-                <span class="d-block p-relative text-white"
+                <span
+                  class="d-block p-relative text-white"
+                  style="text-shadow: 0px 0px 2px #030303;"
                   >{{ itm.name }}
                   {{ ((itm.count * 100) / item.count).toFixed(0) }}%</span
                 >
@@ -150,9 +154,38 @@ export default {
   },
   mounted() {
     setOffset()
-    this.$axios.$get('/polls').then((res) => {
-      this.polls = res.data.polls
-    })
+    this.loadPolls()
+  },
+  methods: {
+    loadPolls() {
+      this.$axios.$get('/polls').then((res) => {
+        this.polls = res.data.polls
+      })
+    },
+    submitForm() {
+      console.log(this.activeItem)
+      let variant_id = 0
+      for (
+        let index = 0;
+        index < this.activeItem.poll_variants.length;
+        index++
+      ) {
+        const element = this.activeItem.poll_variants[index]
+        if (element.active) {
+          variant_id = element.id
+        }
+      }
+      if (variant_id != 0) {
+        this.$axios
+          .$put('/polls/' + this.activeItem.id, {
+            poll_variant_id: variant_id,
+          })
+          .then(() => {
+            this.loadPolls()
+            this.active_id = false
+          })
+      }
+    },
   },
 }
 </script>

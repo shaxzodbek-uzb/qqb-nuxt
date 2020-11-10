@@ -8,7 +8,7 @@
     </div>
 
     <div class="tab-document-items calculator-box rounded">
-      <div class="calculator-header d-flex f-between">
+      <!-- <div class="calculator-header d-flex f-between">
         <div class="calculator-header-left p-relative">
           <img src="~/static/img/svg/calc.png" class="p-absolute" alt />
           <h1>Вклад</h1>
@@ -74,7 +74,6 @@
           </div>
           <div class="col-xl-3">
             <div class="form-group">
-              <!-- Opacity o'chmasligi kerak  -->
               <span style="opacity: 0;">Срок вклада</span>
               <div class="pick-up-deposit">
                 <button class="pointer rounded transition d-block w-100">
@@ -84,9 +83,9 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
-      <div class="calculator-result d-flex f-wrap text-white">
+      <!-- <div class="calculator-result d-flex f-wrap text-white">
         <div class="calculator-result__left">
           <span>Всего вкладов</span>
           <h1>346</h1>
@@ -137,7 +136,7 @@
         <div class="calculator-result__bottom w-100">
           <span>Посмотреть все вклады</span>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <div class="card-items-container d-flex f-wrap">
@@ -225,15 +224,15 @@ export default {
     let me = this
     const $button = document.querySelector('.mobile-credit-button')
     const $calcContent = document.querySelector('.calculator-box')
-    const $closeIcon = document.querySelector('.mobile-close-icon')
+    // const $closeIcon = document.querySelector('.mobile-close-icon')
 
     $button.addEventListener('click', function () {
       $calcContent.classList.add('active')
     })
 
-    $closeIcon.addEventListener('click', function () {
-      $calcContent.classList.remove('active')
-    })
+    // $closeIcon.addEventListener('click', function () {
+    //   $calcContent.classList.remove('active')
+    // })
     this.$axios.$get(`/deposits`).then((res) => {
       while (me.deposits.pop());
       me.deposits.push(...res.data.deposits)
