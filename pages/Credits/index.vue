@@ -2,7 +2,7 @@
   <div class="credit-page-wrap" data-set="offset" data-offset="top bottom">
     <div class="container">
       <div class="credit-page-container pt-60">
-        <h1 class="title-50">Кредиты</h1>
+        <h1 class="title-50">{{ $t('Кредиты') }}</h1>
 
         <div class="card-tab-navigation tab-navigation--credit">
           <div class="card-tab-header">

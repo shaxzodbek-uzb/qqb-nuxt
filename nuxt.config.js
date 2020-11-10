@@ -108,7 +108,7 @@ export default {
       },
       {
         code: 'ru',
-        name: 'RUssian',
+        name: 'Russian',
         file: 'ru.js',
         flag: '/img/icon/russia.png',
       },

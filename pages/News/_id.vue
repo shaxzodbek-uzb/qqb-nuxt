@@ -44,6 +44,7 @@
           </div>
           <div class="col-xl-6">
             <div class="vacancies-show-right">
+              <img :src="news.image" alt="" class="rounded w-100" />
               <div class="news-show-meta" v-html="news.description"></div>
             </div>
           </div>
