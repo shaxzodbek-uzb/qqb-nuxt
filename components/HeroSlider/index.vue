@@ -93,17 +93,17 @@
               <div class="app-exchange-row d-flex align-center p-relative">
                 <div class="app-exchange-cell">
                   <span>{{ $t('Кредиты') }}</span>
-                  <h1>{{ $t('от') }} 23%</h1>
+                  <h1>{{ $t('от', { percent: '23%' }) }}</h1>
                 </div>
                 <div class="app-exchange-cell">
                   <span>{{ $t('Ипотека') }}</span>
-                  <h1>{{ $t('от') }} 18%</h1>
+                  <h1>{{ $t('от', { percent: '18%' }) }}</h1>
                 </div>
                 <div class="app-exchange-cell">
                   <span>{{ $t('Вклады') }}</span>
-                  <h1>{{ $t('от') }} 14%</h1>
+                  <h1>{{ $t('от', { percent: '14%' }) }}</h1>
                 </div>
-                <div class="app-exchange-cell">
+                <div class="app-exchange-cell" v-if="false">
                   <span>{{ $t('Карты с CashBack') }}</span>
                   <h1>{{ $t('от') }} 2%</h1>
                 </div>
@@ -703,6 +703,7 @@
                                 <div
                                   class="tab-items p-relative pointer"
                                   data-toggle="tab"
+                                  v-if="false"
                                 >
                                   <span>Ипотека от 6,5%</span>
                                 </div>

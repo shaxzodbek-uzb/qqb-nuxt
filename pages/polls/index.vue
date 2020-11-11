@@ -11,7 +11,7 @@
         <transition name="fade">
           <div
             class="polls-modal feedback-modal p-fixed w-100 h-100 child-center"
-            v-if="active_id"
+            v-if="active_id !== false"
           >
             <div
               class="feedback-modal-overlay p-fixed w-100 h-100"
@@ -67,8 +67,9 @@
         <div class="polls-wrap">
           <div
             class="polls-items rounded d-flex f-wrap"
-            v-for="item in polls"
-            :key="'item1' + item.id"
+            v-for="(item, index) in polls"
+            :key="'item1' + index"
+            :data-id="index"
           >
             <div class="polls-items-header f-fill">
               <div class="polls-header-meta">
@@ -89,7 +90,7 @@
             <div class="polls-button">
               <button
                 v-if="item.active"
-                @click="active_id = item.id"
+                @click="active_id = index"
                 class="d-flex align-center btn btn-border rounded pointer transition"
               >
                 <span>Голосовать</span>
@@ -137,13 +138,7 @@ import { setOffset } from '~/utils/frontend'
 export default {
   computed: {
     activeItem() {
-      for (let index = 0; index < this.polls.length; index++) {
-        const element = this.polls[index]
-        if ((element.id = this.active_id)) {
-          return element
-        }
-      }
-      return {}
+      return this.polls[this.active_id]
     },
   },
   data() {
@@ -158,6 +153,7 @@ export default {
   },
   methods: {
     loadPolls() {
+      this.polls = []
       this.$axios.$get('/polls').then((res) => {
         this.polls = res.data.polls
       })

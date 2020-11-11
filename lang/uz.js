@@ -18,7 +18,7 @@ export default {
   Ипотека: 'Ipoteka',
   Вклады: 'Omonatlar',
   'Карты с CashBack': 'Cashback kartalari',
-  от: 'dan',
+  от: '{percent} dan',
   Искать: 'Qidirish',
   'Что вы хотите найти?': "Qidiruv uchun ma'lumot kiriting",
   Подробнее: 'Batafsil',

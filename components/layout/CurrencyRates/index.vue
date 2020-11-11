@@ -62,7 +62,7 @@
           <div class="currency-wrap-right d-flex align-center">
             <div class="call-center-phones p-relative dropdown-init pointer">
               <div class="btn btn-border rounded transition text-white pointer">
-                +998 (78) 150 10 01
+                +998 (78) 150 93 39
               </div>
 
               <div class="dropdown--content" data-position="top right">
