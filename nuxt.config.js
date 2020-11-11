@@ -26,6 +26,12 @@ export default {
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [
+      {
+        src: 'http://code-ya.jivosite.com/widget/cHXd28Shen',
+        body: true,
+      },
+    ],
   },
   /*
    ** Global CSS
