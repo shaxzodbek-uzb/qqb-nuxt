@@ -234,6 +234,10 @@
         </div>
       </div>
     </div>
+
+    <div class="notification-wrap active">
+      <p>Lorem ipsum</p>
+    </div>
   </div>
 </template>
 

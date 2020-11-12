@@ -557,19 +557,19 @@
                     class="slide-first-content p-relative"
                     v-if="activetab === item.id"
                   >
-                    <div class="nested-hooper-arrow">
+                    <div class="nested-hooper-arrow d-none">
                       <div class="container">
                         <div class="arrow-slot-container d-flex">
                           <div
                             class="custom-arrow-slot arrow-slot--left child-center"
-                            @click.prevent="slidePrev"
+                            @click.prevent="newsPrev"
                           >
                             <img src="/img/svg/arrow-left.png" alt />
                           </div>
 
                           <div
                             class="custom-arrow-slot arrow-slot--right child-center"
-                            @click.prevent="slideNext"
+                            @click.prevent="newsNext"
                           >
                             <img src="/img/svg/arrow-right.png" alt />
                           </div>
@@ -851,10 +851,10 @@ export default {
         slidesToScroll: 1,
       },
       newsHooper: {
-        draggable: false,
+        draggable: true,
         infiniteScroll: true,
-        wheelControl: false,
-        mouseDrag: false,
+        wheelControl: true,
+        mouseDrag: true,
         breakpoints: {
           1370: {
             itemsToShow: 3.5,
@@ -922,11 +922,11 @@ export default {
     }
   },
   methods: {
-    slidePrev() {
-      this.$refs.hooperNested.slidePrev()
+    newsPrev() {
+      this.$refs.serviceHooper.slidePrev()
     },
-    slideNext() {
-      this.$refs.hooperNested.slideNext()
+    newsNext() {
+      this.$refs.serviceHooper.slideNext()
     },
     servicePrev() {
       this.$refs.serviceHooper.slidePrev()
