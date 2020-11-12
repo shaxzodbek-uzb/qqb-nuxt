@@ -117,16 +117,6 @@ export function accardion(ref) {
   }
 }
 
-// Header Search
-export function search(searchButton, searchContent) {
-  const $body = document.querySelector('body')
-
-  searchButton.addEventListener('click', function () {
-    $body.classList.toggle('search-enabled')
-    searchContent.classList.toggle('active')
-  })
-}
-
 export function getLeftSideClientRect() {
   const $target = document.querySelector('[data-resize="resize"]')
   const rectLeft = $target.getBoundingClientRect().left

@@ -31,13 +31,15 @@
               <form class="appeal-form">
                 <div class="form-group-wrap">
                   <div
-                    class="appeap-form-group appeap-form-success rounded bg-white p-relative"
+                    class="appeap-form-group rounded bg-white p-relative"
+                    :class="{ 'appeap-form-success': false }"
                   >
                     <span class="appeal-label d-block">Адресат обращения</span>
                     <input
                       type="text"
                       class="d-block w-100"
                       placeholder="..."
+                      v-model="form.address"
                     />
 
                     <img
@@ -54,13 +56,15 @@
 
                 <div class="form-group-wrap">
                   <div
-                    class="appeap-form-group appeap-form-error rounded bg-white p-relative"
+                    class="appeap-form-group rounded bg-white p-relative"
+                    :class="{ 'appeap-form-error': false }"
                   >
                     <span class="appeal-label d-block">Тема обращения</span>
                     <input
                       type="text"
                       class="d-block w-100"
                       placeholder="..."
+                      v-model="form.title"
                     />
 
                     <img
@@ -70,7 +74,7 @@
                     />
                   </div>
 
-                  <span class="form-error-text"
+                  <span class="form-error-text" v-if="false"
                     >Поле обязательно для заполнения</span
                   >
                 </div>
@@ -81,6 +85,7 @@
                     <textarea
                       class="d-block w-100"
                       placeholder="..."
+                      v-model="form.content"
                     ></textarea>
                   </div>
                 </div>
@@ -104,6 +109,8 @@
                           type="file"
                           class="d-block w-100"
                           id="upload-1"
+                          ref="upload-1"
+                          v-on:change="handleFilesUpload(1)"
                         />
 
                         <span class="file-upload-text">File Name</span>
@@ -123,7 +130,9 @@
                         <input
                           type="file"
                           class="d-block w-100"
-                          id="upload-1"
+                          id="upload-2"
+                          ref="upload-2"
+                          v-on:change="handleFilesUpload(2)"
                         />
 
                         <span class="file-upload-text">File Name</span>
@@ -143,7 +152,9 @@
                         <input
                           type="file"
                           class="d-block w-100"
-                          id="upload-1"
+                          id="upload-3"
+                          ref="upload-3"
+                          v-on:change="handleFilesUpload(3)"
                         />
 
                         <span class="file-upload-text">File Name</span>
@@ -163,7 +174,9 @@
                         <input
                           type="file"
                           class="d-block w-100"
-                          id="upload-1"
+                          id="upload-4"
+                          ref="upload-4"
+                          v-on:change="handleFilesUpload(4)"
                         />
 
                         <span class="file-upload-text">File Name</span>
@@ -172,7 +185,7 @@
                   </div>
                 </div>
 
-                <div class="appeap-form-code">
+                <div class="appeap-form-code" v-if="false">
                   <div class="form-file-title">
                     <h1>Защитный код</h1>
                   </div>
@@ -210,6 +223,7 @@
                   <button
                     type="button"
                     class="appeal-button transition rounded pointer"
+                    @click="submitForm"
                   >
                     Отправить
                   </button>
@@ -227,9 +241,52 @@
 import { setOffset, getLeftSideClientRect } from '~/utils/frontend'
 
 export default {
+  data() {
+    return {
+      form: {
+        address: '',
+        title: '',
+        content: '',
+        files: [],
+      },
+    }
+  },
   mounted() {
     setOffset()
     getLeftSideClientRect()
+  },
+  methods: {
+    submitForm() {
+      let formData = new FormData()
+      for (var i = 0; i < this.form.files.length; i++) {
+        let file = this.form.files[i]
+
+        formData.append('upload_files[' + i + ']', file)
+      }
+      formData.append('title', this.form.title)
+      formData.append('address', this.form.address)
+      formData.append('content', this.form.content)
+
+      this.$axios
+        .post('/appeals', formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        })
+        .then(function () {
+          console.log('SUCCESS!!')
+        })
+        .catch(function () {
+          console.log('FAILURE!!')
+        })
+    },
+    handleFilesUpload(id) {
+      let uploadedFiles = this.$refs['upload-' + id].files
+      console.log(uploadedFiles)
+      for (var i = 0; i < uploadedFiles.length; i++) {
+        this.form.files.push(uploadedFiles[i])
+      }
+    },
   },
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="search-wrap">
+  <div class="search-wrap" :class="{ 'search-enabled': show }">
     <button
       class="d-block pointer p-relative"
       style="outline: none;"
@@ -9,16 +9,27 @@
         src="/img/svg/search-icon.png"
         class="search-icon"
         alt="Search Icon"
+        @click="show = true"
       />
       <img
         src="/img/svg/search-white.png"
         class="search-icon p-absolute white-icon"
         alt="Search Icon"
+        @click="show = true"
       />
-      <img src="/img/svg/times-icon.png" class="times-icon" alt="Times Icon" />
+      <img
+        src="/img/svg/times-icon.png"
+        class="times-icon"
+        alt="Times Icon"
+        @click="show = false"
+      />
     </button>
 
-    <div class="search-wrap__field p-fixed w-100" ref="searchContent">
+    <div
+      class="search-wrap__field p-fixed w-100"
+      ref="searchContent"
+      :class="{ active: show }"
+    >
       <div class="container">
         <div class="mobile-user-tools align-center">
           <!-- <div class="mobile-qqb-online">
@@ -142,7 +153,7 @@
                 <div class="row my-4">
                   <div class="col-xl-3 col-md-6 mb-3">
                     <nuxt-link
-                      to="/"
+                      :to="localePath(`/${child.value}`)"
                       class="menu--item"
                       v-for="child in item.children"
                       :key="child.id"
@@ -161,7 +172,6 @@
 </template>
 
 <script>
-import { search } from '@/utils/frontend'
 import Language from './Language'
 
 export default {
@@ -169,18 +179,21 @@ export default {
     return {
       menu: [],
       search_text: '',
+      show: false,
     }
   },
   components: {
     Language,
   },
   mounted() {
-    const { searchButton, searchContent } = this.$refs
-    search(searchButton, searchContent)
-
     this.$axios.$get('/menus/top-menu').then((res) => {
       this.menu = res.data
     })
+  },
+  watch: {
+    $route() {
+      this.show = false
+    },
   },
   methods: {
     seachText(str) {

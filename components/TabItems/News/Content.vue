@@ -1,8 +1,9 @@
 <template>
   <div class="news-right">
-    <div
+    <nuxt-link
+      tag="div"
+      :to="'/news/' + top_news.id"
       class="news-left-embed p-relative rounded pointer"
-      @click="show = !show"
     >
       <img :src="top_news.image" class="p-absolute img-cover d-block" alt />
 
@@ -24,7 +25,7 @@
       <div class="embed-overlay p-absolute w-100 h-100 child-center">
         <!-- <div class="embed-play p-relative child-center transition"></div> -->
       </div>
-    </div>
+    </nuxt-link>
 
     <div class="row">
       <div class="col-xl-6" v-for="item in news" :key="item.id">

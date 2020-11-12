@@ -29,10 +29,10 @@
                 class="tab-items p-relative pointer active"
                 data-toggle="tab"
               >
-                <span>На карте</span>
+                <span>Списком</span>
               </div>
               <div class="tab-items p-relative pointer" data-toggle="tab">
-                <span>Списком</span>
+                <span>На карте</span>
               </div>
 
               <div class="conent-select">
@@ -48,6 +48,9 @@
           </div>
 
           <div class="card-tab-content">
+            <div role="tabpanel">
+              <BranchesList :branches="branches" />
+            </div>
             <div role="tabpanel">
               <div style="height: 500px;">
                 <!-- <GMap
@@ -90,9 +93,6 @@
                   </GMapMarker>
                 </GMap> -->
               </div>
-            </div>
-            <div role="tabpanel">
-              <BranchesList :branches="branches" />
             </div>
           </div>
         </div>

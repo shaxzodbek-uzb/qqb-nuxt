@@ -26,6 +26,12 @@ export default {
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [
+      {
+        src: 'https://code-ya.jivosite.com/widget/cHXd28Shen',
+        body: true,
+      },
+    ],
   },
   /*
    ** Global CSS
@@ -108,7 +114,7 @@ export default {
       },
       {
         code: 'ru',
-        name: 'RUssian',
+        name: 'Russian',
         file: 'ru.js',
         flag: '/img/icon/russia.png',
       },
