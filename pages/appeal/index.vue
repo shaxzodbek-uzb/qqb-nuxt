@@ -248,6 +248,7 @@ export default {
   data() {
     return {
       form: {
+        type: 'anonymous',
         address: '',
         title: '',
         content: '',
@@ -267,6 +268,7 @@ export default {
 
         formData.append('upload_files[' + i + ']', file)
       }
+      formData.append('type', this.form.type)
       formData.append('title', this.form.title)
       formData.append('address', this.form.address)
       formData.append('content', this.form.content)
