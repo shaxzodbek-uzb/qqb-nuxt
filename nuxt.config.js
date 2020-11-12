@@ -28,7 +28,7 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     script: [
       {
-        src: 'https://code-ya.jivosite.com/widget/cHXd28Shen',
+        src: 'http://code.jivosite.com/widget/95D8Br60LX',
         body: true,
       },
     ],
