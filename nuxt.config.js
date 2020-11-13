@@ -27,10 +27,10 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     script: [
-      //   {
-      //     src: 'https://code.jivosite.com/widget/95D8Br60LX',
-      //     body: true,
-      //   },
+      {
+        src: 'https://code.jivosite.com/widget/95D8Br60LX',
+        body: true,
+      },
     ],
   },
   /*
