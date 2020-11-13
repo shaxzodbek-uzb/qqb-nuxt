@@ -27,10 +27,10 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     script: [
-      {
-        src: 'http://code.jivosite.com/widget/95D8Br60LX',
-        body: true,
-      },
+      //   {
+      //     src: 'https://code.jivosite.com/widget/95D8Br60LX',
+      //     body: true,
+      //   },
     ],
   },
   /*
@@ -71,11 +71,11 @@ export default {
       'nuxt-i18n',
       {
         locales: [
-          {
-            code: 'en',
-            name: 'English',
-            flag: '/img/icon/united-states.png',
-          },
+          //   {
+          //     code: 'en',
+          //     name: 'English',
+          //     flag: '/img/icon/united-states.png',
+          //   },
           {
             code: 'uz',
             name: "O'zbek",
@@ -100,12 +100,12 @@ export default {
   ],
   i18n: {
     locales: [
-      {
-        code: 'en',
-        name: 'English',
-        file: 'en.js',
-        flag: '/img/icon/united-states.png',
-      },
+      //   {
+      //     code: 'en',
+      //     name: 'English',
+      //     file: 'en.js',
+      //     flag: '/img/icon/united-states.png',
+      //   },
       {
         code: 'uz',
         name: "O'zbek",
@@ -121,7 +121,7 @@ export default {
     ],
     lazy: true,
     langDir: 'lang/',
-    defaultLocale: 'ru',
+    defaultLocale: 'uz',
     vueI18n: {
       fallbackLocale: 'ru',
     },

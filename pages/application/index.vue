@@ -36,21 +36,21 @@ export default {
   data() {
     return {
       types: [
-        {
-          id: 2,
-          slug: 'credit-legal',
-          name: 'Заявка на кредитный отпуск на юридических лиц',
-        },
-        {
-          id: 3,
-          slug: 'credit',
-          name: 'Заявка на кредитный отпуск для физических лиц',
-        },
-        {
-          id: 4,
-          slug: 'deposit',
-          name: 'Онлайн заявки по вкладам',
-        },
+        // {
+        //   id: 2,
+        //   slug: 'credit-legal',
+        //   name: 'Заявка на кредитный отпуск на юридических лиц',
+        // },
+        // {
+        //   id: 3,
+        //   slug: 'credit',
+        //   name: 'Заявка на кредитный отпуск для физических лиц',
+        // },
+        // {
+        //   id: 4,
+        //   slug: 'deposit',
+        //   name: 'Онлайн заявки по вкладам',
+        // },
       ],
       form: {
         address: '',
@@ -58,12 +58,18 @@ export default {
         content: '',
         files: [],
       },
+      active_item: false,
     }
   },
   mounted() {
     console.log(this.$route.params)
     setOffset()
     getLeftSideClientRect()
+    let me = this
+    this.$axios.$get('/appeal-types').then((res) => {
+      me.types = res.data['appeal_types']
+      me.active_item = me.types[0].id
+    })
   },
   methods: {
     submitForm() {

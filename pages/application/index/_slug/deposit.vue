@@ -2,20 +2,9 @@
   <div class="row h-100">
     <div class="col-xl-5 h-100 bg-white pt-60">
       <div class="appeal-offset-left">
-        <h1>
-          Онлайн заявки по вкладам
-        </h1>
+        <h1 v-html="type.name"></h1>
 
-        <p>
-          Примерная форма анонимного обращения для содействия в решении вопросов
-          предотвращения и недопу-щения бюрократизма и волокиты, в обеспечении
-          предоставле-ния банковских услуг согласно принципов, основанных на
-          честности, бескорыст-ности и справедливости, а также, для содействия
-          предотвращения злоупотребления служебным положением для получения
-          личной выгоды или для удовлетворения противозаконных интересов других
-          лиц, которые порождают затруднение клиентам, при пользовании услугами
-          банка.
-        </p>
+        <p v-html="type.description"></p>
       </div>
     </div>
     <div class="col-xl-7 pt-60">
@@ -190,6 +179,7 @@ import { setOffset, getLeftSideClientRect } from '~/utils/frontend'
 export default {
   data() {
     return {
+      type: {},
       form: {
         type: 'deposit',
         address: '-',
@@ -212,6 +202,10 @@ export default {
   mounted() {
     setOffset()
     getLeftSideClientRect()
+    let me = this
+    this.$axios.$get('/appeal-types/deposit').then((res) => {
+      me.type = res.data['appeal_type']
+    })
   },
   methods: {
     submitForm() {
