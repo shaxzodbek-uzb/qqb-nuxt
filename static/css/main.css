@@ -2916,7 +2916,7 @@ body {
 }
 
 .hooper-var-second
-  .slick-slide:nth-child(3n - 1)
+  .slick-slide
   .card-items
   > *:not(.card-background-1) {
   position: relative;

@@ -130,6 +130,7 @@
           <div
             class="nested-container-offset f-fill d-flex"
             data-offset="setLeftOffset"
+            v-if="popular_products && popular_products.length > 0"
           >
             <div class="slide-offset-container d-flex">
               <div class="slide-offset-left d-flex f-column">
@@ -179,52 +180,27 @@
                   v-bind="nestedSettings"
                   class="hooper-var-width hooper-var-second"
                 >
-                  <!-- Nested Slide 1 -->
-                  <div class="var-width-items">
-                    <nuxt-link
-                      :to="localePath('/cards')"
-                      class="card-items rounded transition d-flex f-column align-center h-100"
-                    >
-                      <div class="card-items__header items-center">
-                        <h1>COVID-19: программы помощи QQB</h1>
-
-                        <div class="orphan-space-1">
-                          <p>
-                            QQB - поддерживает партнеров и оказывает помощь
-                            медицинским учреждениям, волонтерским и
-                            некоммерческим организациям.
-                          </p>
-                        </div>
-                        <div
-                          class="fake-route-button-1 rounded pointer transition"
-                        >
-                          <span>{{ $t('Подробнее') }}</span>
-                        </div>
-                      </div>
-                      <img
-                        class="card-bottom-img p-absolute"
-                        src="/img/slide-images/covid-img.png"
-                        alt
-                      />
-                    </nuxt-link>
-                  </div>
-                  <!-- End Nested Slide 1 -->
-
                   <!-- Nested Slide 2 -->
-                  <div class="var-width-items">
+                  <div
+                    class="var-width-items"
+                    v-for="item in popular_products"
+                    :key="item.id"
+                  >
                     <nuxt-link
                       :to="localePath('/branches')"
                       class="card-items rounded transition d-flex f-column align-center h-100"
                     >
                       <img
                         class="card-background-1 img-cover p-absolute"
-                        src="/img/slide-images/card-img.png"
+                        :src="item.image"
                         alt
                       />
 
-                      <h2>Филиалы и Банкоматы</h2>
-
-                      <img class="mt-auto mb-auto" src="/img/logo-2.png" alt />
+                      <h2>{{ item.name }}</h2>
+                      <div
+                        class="mt-auto mb-auto"
+                        v-html="item.description"
+                      ></div>
 
                       <div
                         class="fake-route-button-2 rounded pointer transition"
@@ -234,78 +210,6 @@
                     </nuxt-link>
                   </div>
                   <!-- End Nested Slide 2 -->
-
-                  <!-- Nested Slide 3 -->
-                  <div class="var-width-items">
-                    <nuxt-link
-                      :to="localePath('/cards')"
-                      class="card-items rounded transition d-flex f-column align-center h-100"
-                    >
-                      <div class="card-items__header items-center">
-                        <h1>Рассчитайте доходность вклада</h1>
-
-                        <div class="card-top-text">
-                          <p>До 22% годовых с Мультикартой QQB</p>
-                          <p>Проценты начисляются на ежедневный остаток</p>
-                          <p>
-                            Снятие и пополнение — без ограничений и без потери %
-                          </p>
-                        </div>
-
-                        <div class="orphan-space-3">
-                          <div
-                            class="fake-route-button-3 rounded pointer transition"
-                          >
-                            <span>{{ $t('Подробнее') }}</span>
-                          </div>
-                        </div>
-                      </div>
-                    </nuxt-link>
-                    <!-- <div
-                      class="card-items rounded transition d-flex f-column align-center h-100"
-                    >
-
-                      <div class="card-items__body w-100">
-                        <div class="form-group">
-                          <span>Сумма вклада</span>
-
-                          <div class="form-group-range">
-                            <p>{{ value }} мес.</p>
-                            <vue-slider
-                              v-model="value"
-                              v-bind="optionsRangeSlider"
-                            ></vue-slider>
-                          </div>
-
-                          <div class="form-range-field d-flex f-between">
-                            <span>1 год.</span>
-                            <span>30 лет.</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div> -->
-                  </div>
-                  <!-- End Nested Slide 3 -->
-
-                  <!-- Nested Slide 4 -->
-                  <div class="var-width-items">
-                    <nuxt-link
-                      :to="localePath('/cards')"
-                      class="card-items rounded transition d-flex f-column h-100"
-                      >dd</nuxt-link
-                    >
-                  </div>
-                  <!-- End Nested Slide 4 -->
-
-                  <!-- Nested Slide 5 -->
-                  <div class="var-width-items">
-                    <nuxt-link
-                      :to="localePath('/cards')"
-                      class="card-items rounded transition d-flex f-column h-100"
-                      >s12</nuxt-link
-                    >
-                  </div>
-                  <!-- End Nested Slide 5 -->
 
                   <template #prevArrow="arrowOption">
                     <div class="custom-fraction-slot fraction-offset-slot">
@@ -811,6 +715,12 @@ export default {
       },
     },
     cards: {
+      type: Array,
+      default() {
+        return []
+      },
+    },
+    popular_products: {
       type: Array,
       default() {
         return []
