@@ -130,7 +130,6 @@
           <div
             class="nested-container-offset f-fill d-flex"
             data-offset="setLeftOffset"
-            v-if="popular_products.slides.length == 0"
           >
             <div class="slide-offset-container d-flex">
               <div class="slide-offset-left d-flex f-column">
@@ -179,6 +178,7 @@
                   ref="nestedCarouselFirst"
                   v-bind="nestedSettings"
                   class="hooper-var-width hooper-var-second"
+                  v-if="slider.slides.length != 0"
                 >
                   <!-- Nested Slide 2 -->
                   <div
@@ -210,7 +210,9 @@
                     </nuxt-link>
                   </div>
                   <!-- End Nested Slide 2 -->
-
+                  <div v-if="popular_products.slides.length == 0">
+                    <h3></h3>
+                  </div>
                   <template #prevArrow="arrowOption">
                     <div class="custom-fraction-slot fraction-offset-slot">
                       <div class="container">
@@ -721,9 +723,9 @@ export default {
       },
     },
     popular_products: {
-      type: Array,
+      type: Object,
       default() {
-        return []
+        return { slides: [] }
       },
     },
     news_categories: {

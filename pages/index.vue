@@ -4,7 +4,7 @@
       :slider.sync="slider"
       :cards.sync="cards"
       :news_categories="news_categories"
-      :popular_products="popular_products"
+      :popular_products.sync="popular_products"
     />
   </div>
 </template>
@@ -25,7 +25,7 @@ export default {
       slider: { slides: [] },
       cards: [],
       news_categories: [],
-      popular_products: [],
+      popular_products: { slides: [] },
     }
   },
   components: {
