@@ -188,7 +188,7 @@
                     :key="item.id"
                   >
                     <nuxt-link
-                      :to="localePath('/branches')"
+                      :to="localePath(item.url)"
                       class="card-items rounded transition d-flex f-column align-center h-100"
                     >
                       <img
@@ -203,13 +203,11 @@
                         v-html="item.description"
                       ></div>
 
-                      <nuxt-link
-                        tag="div"
-                        :to="localePath(item.url)"
+                      <div
                         class="fake-route-button-2 rounded pointer transition"
                       >
                         {{ $t('Подробнее') }}
-                      </nuxt-link>
+                      </div>
                     </nuxt-link>
                   </div>
                   <!-- End Nested Slide 2 -->
@@ -655,7 +653,7 @@
                                         />
                                       </nuxt-link>
                                       <nuxt-link
-                                        :to="localePath('/')"
+                                        to="https://play.google.com/store/apps/details?id=uz.fido_biznes.mobile.client.qqb"
                                         class="d-block"
                                       >
                                         <img
