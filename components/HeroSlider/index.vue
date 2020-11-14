@@ -204,7 +204,7 @@
 
                       <nuxt-link
                         tag="div"
-                        :to="localePath(slide.url)"
+                        :to="localePath(item.url)"
                         class="fake-route-button-2 rounded pointer transition"
                       >
                         {{ $t('Подробнее') }}
