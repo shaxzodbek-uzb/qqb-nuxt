@@ -187,7 +187,7 @@
                     :key="item.id"
                   >
                     <nuxt-link
-                      :to="localePath(item.url)"
+                      :to="localePath(`/${item.url}`)"
                       class="card-items rounded transition d-flex f-column align-center h-100"
                     >
                       <img
