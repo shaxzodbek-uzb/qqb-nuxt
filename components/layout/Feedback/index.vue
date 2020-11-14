@@ -140,7 +140,7 @@
                   <img src="/img/svg/envelope.png" alt />
                   <span>{{ $t('Эл. почта') }}</span>
                 </div>
-                <h1>info.toshkent@qqb.uz</h1>
+                <h1>headoffice@qqb.uz</h1>
               </div>
 
               <div class="footer-cell-items">

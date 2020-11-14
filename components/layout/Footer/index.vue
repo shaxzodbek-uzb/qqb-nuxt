@@ -57,19 +57,22 @@
 
               <div class="subscribe-bottom d-flex align-center f-between w-100">
                 <div class="data-update d-flex f-fill">
-                  <a href="#" class="data-update__items">
+                  <a href="http://www.gov.uz/uz/" class="data-update__items">
                     <img src="~static/img/icon/f-icon-4.png" alt="" />
                   </a>
-                  <a href="#" class="data-update__items">
+                  <a
+                    href="http://www.mineconomy.uz/"
+                    class="data-update__items"
+                  >
                     <img src="~static/img/icon/f-icon-2.png" alt="" />
                   </a>
-                  <a href="#" class="data-update__items">
+                  <a href="http://www.cbu.uz/" class="data-update__items">
                     <img src="~static/img/icon/f-icon-1.png" alt="" />
                   </a>
-                  <a href="#" class="data-update__items">
+                  <a href="http://e-kommunal.uz/ru/" class="data-update__items">
                     <img src="~static/img/icon/f-icon-5.png" alt="" />
                   </a>
-                  <a href="#" class="data-update__items">
+                  <a href="http://my.gov.uz/" class="data-update__items">
                     <img src="~static/img/icon/f-icon-3.png" alt="" />
                   </a>
                 </div>
@@ -176,7 +179,7 @@
               :key="item.id"
             >
               <nuxt-link
-                to="/"
+                :to="localePath(`/${child.value}`)"
                 class="footer-item-anchor d-block"
                 v-for="child in item.children"
                 :key="child.id"
@@ -237,6 +240,88 @@
                 </a>
                 <a href="#" class="f-icon-items">
                   <img src="~static/img/icon/f-5.png" alt="" class="d-block" />
+                </a>
+                <a
+                  href="http://www.uzrating.com/"
+                  target="_blank"
+                  class="f-icon-items"
+                  v-if="false"
+                >
+                  <img
+                    class="d-block"
+                    src="http://www.uzrating.com/cgi-bin/count.fgi?rn=0.6556755010969937&amp;id=2010&amp;ck=y&amp;js=1.3&amp;ja=y&amp;tm=-300&amp;px=40&amp;sw=1440x900&amp;rf=http%3A//qqb.uz/"
+                    alt="UzRating"
+                    height="31"
+                    border="0"
+                  />
+                </a>
+                <a
+                  href="http://www.cert.uz/uzcertified"
+                  class="f-icon-items"
+                  v-if="false"
+                >
+                  <img
+                    src="http://www.cert.uz/certified/uz-certified.gif"
+                    alt="www.cert.uz"
+                    height="31"
+                    border="0"
+                    class="d-block"
+                  />
+                </a>
+                <a
+                  href="http://www.uz/rus/toprating/cmd/stat/id/17254"
+                  target="_top"
+                  class="f-icon-items"
+                  v-if="false"
+                >
+                  <img
+                    src="http://www.uz/plugins/top_rating/count/cnt.png?id=17254&amp;r=http%3A//qqb.uz/&amp;pg=http%3A//qqb.uz/uz/index.php&amp;c=Y&amp;j=Y&amp;wh=1440x900&amp;px=40&amp;js=1.3&amp;col=ECEFF1&amp;t=003F82&amp;p=009984"
+                    alt="Топ рейтинг www.uz"
+                    height="31"
+                    border="0"
+                    class="d-block"
+                    v-if="false"
+                  />
+                </a>
+                <a href="http://www.gis.uz/" class="f-icon-items" v-if="false">
+                  <img
+                    src="/local/templates/.default/img/ginsitt.png"
+                    alt=""
+                    height="31"
+                    class="d-block"
+                  />
+                </a>
+                <a href="http://orphus.ru/" class="f-icon-items" v-if="false">
+                  <img
+                    src="/local/templates/.default/img/orphus.gif"
+                    alt=""
+                    height="31"
+                    class="d-block"
+                  />
+                </a>
+                <a
+                  href="https://www.facebook.com/pg/official.qqb.uz"
+                  class="f-icon-items"
+                  v-if="false"
+                >
+                  <img
+                    src="/local/templates/.default/img/facebook.png"
+                    alt=""
+                    height="32"
+                    class="d-block"
+                  />
+                </a>
+                <a
+                  href="https://twitter.com/official_qqb_uz"
+                  class="f-icon-items"
+                  v-if="false"
+                >
+                  <img
+                    src="/local/templates/.default/img/twitter.png"
+                    alt=""
+                    height="32"
+                    class="d-block"
+                  />
                 </a>
               </div>
             </div>

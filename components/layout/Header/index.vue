@@ -55,7 +55,7 @@
 
                 <div class="dropdown--content">
                   <a
-                    href="http://qishloqqurilishbank.uz/uz/internet-banking/index.php"
+                    href="https://client.qqb.uz:9998/ib_web/ib"
                     target="_blank"
                     class="dropdown--content-items"
                   >
@@ -63,7 +63,7 @@
                     <img src="~static/img/svg/arrow-r2.png" alt="" />
                   </a>
                   <a
-                    href="http://qishloqqurilishbank.uz/uz/internet-banking/index.php"
+                    href="https://client.qqb.uz:9999/cib"
                     target="_blank"
                     class="dropdown--content-items"
                   >

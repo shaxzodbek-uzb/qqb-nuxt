@@ -31,6 +31,7 @@
                     <p>{{ slide.description }}</p>
 
                     <nuxt-link
+                      v-if="slide.url"
                       :to="localePath(slide.url)"
                       class="btn btn-border rounded pointer transition"
                       >{{ $t('Подробнее') }}</nuxt-link
