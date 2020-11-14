@@ -179,7 +179,6 @@
                   ref="nestedCarouselFirst"
                   v-bind="nestedSettings"
                   class="hooper-var-width hooper-var-second"
-                  v-if="slider.slides.length != 0"
                 >
                   <!-- Nested Slide 2 -->
                   <div
