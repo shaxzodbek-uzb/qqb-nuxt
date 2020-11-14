@@ -197,7 +197,7 @@
             <div class="col-xl-8 footer-bottom__left">
               <span>
                 {{ $t('Последнее обновление сайта') }}:
-                <b>07.05.2020 13:13:27</b>
+                <b>{{ last_update }}</b>
               </span>
               <p>
                 1994-2020 ©
@@ -334,6 +334,11 @@
 
 <script>
 export default {
+  computed: {
+    last_update() {
+      return this.$store.state.last_update
+    },
+  },
   mounted() {
     this.$axios.$get('/menus/footer').then((res) => {
       this.menu = res.data

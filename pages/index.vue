@@ -20,6 +20,7 @@ export default {
       this.news_categories = res.data.news_categories
       this.popular_products = res.data.popular_products
       this.main_news = res.data.main_news
+      this.$store.commit('set_last_update', res.data.last_update)
     })
   },
   data() {
