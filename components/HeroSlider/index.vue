@@ -130,7 +130,7 @@
           <div
             class="nested-container-offset f-fill d-flex"
             data-offset="setLeftOffset"
-            v-if="popular_products && popular_products.length > 0"
+            v-if="popular_products.slides.length == 0"
           >
             <div class="slide-offset-container d-flex">
               <div class="slide-offset-left d-flex f-column">
@@ -183,7 +183,7 @@
                   <!-- Nested Slide 2 -->
                   <div
                     class="var-width-items"
-                    v-for="item in popular_products"
+                    v-for="item in popular_products.slides"
                     :key="item.id"
                   >
                     <nuxt-link
