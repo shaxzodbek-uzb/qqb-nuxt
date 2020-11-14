@@ -31,7 +31,7 @@
                     <p>{{ slide.description }}</p>
 
                     <nuxt-link
-                      :to="localePath('/')"
+                      :to="localePath(slide.url)"
                       class="btn btn-border rounded pointer transition"
                       >{{ $t('Подробнее') }}</nuxt-link
                     >
@@ -202,11 +202,13 @@
                         v-html="item.description"
                       ></div>
 
-                      <div
+                      <nuxt-link
+                        tag="div"
+                        :to="localePath(slide.url)"
                         class="fake-route-button-2 rounded pointer transition"
                       >
-                        <span>{{ $t('Подробнее') }}</span>
-                      </div>
+                        {{ $t('Подробнее') }}
+                      </nuxt-link>
                     </nuxt-link>
                   </div>
                   <!-- End Nested Slide 2 -->
