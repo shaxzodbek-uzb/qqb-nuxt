@@ -5,6 +5,7 @@
       :cards.sync="cards"
       :news_categories="news_categories"
       :popular_products.sync="popular_products"
+      :main_news.sync="main_news"
     />
   </div>
 </template>
@@ -18,6 +19,7 @@ export default {
       this.cards = res.data.cards
       this.news_categories = res.data.news_categories
       this.popular_products = res.data.popular_products
+      this.main_news = res.data.main_news
     })
   },
   data() {
@@ -25,6 +27,7 @@ export default {
       slider: { slides: [] },
       cards: [],
       news_categories: [],
+      main_news: [],
       popular_products: { slides: [] },
     }
   },

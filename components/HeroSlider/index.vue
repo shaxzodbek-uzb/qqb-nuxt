@@ -416,22 +416,12 @@
 
             <div class="container">
               <div class="row">
-                <div class="col-xl-4">
+                <div class="col-xl-4" v-for="news in main_news" :key="news.id">
                   <p>
-                    Уважаемые клиенты! Обращаем ваше внимание на режим работы
-                    дежурных офисов ВТБ с 12 по 14 июня. {{ $t('Подробнее') }}
-                  </p>
-                </div>
-                <div class="col-xl-4">
-                  <p>
-                    Общероссийское голосование по вопросу одобрения изменений в
-                    Конституцию РФ. {{ $t('Подробнее') }}
-                  </p>
-                </div>
-                <div class="col-xl-4">
-                  <p>
-                    Мобильное приложение для iOS и Android со всеми доступными
-                    операциями банка. {{ $t('Подробнее') }}
+                    {{ news.name }}
+                    <nuxt-link :to="localePath(`/news/${news.id}`)">
+                      {{ $t('Подробнее') }}
+                    </nuxt-link>
                   </p>
                 </div>
               </div>
@@ -729,6 +719,12 @@ export default {
       },
     },
     news_categories: {
+      type: Array,
+      default() {
+        return []
+      },
+    },
+    main_news: {
       type: Array,
       default() {
         return []
