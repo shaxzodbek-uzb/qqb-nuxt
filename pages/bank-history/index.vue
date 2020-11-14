@@ -6,7 +6,7 @@
   >
     <div class="container">
       <div class="bank-history-container pt-60">
-        <h1 class="title-50">История банка</h1>
+        <h1 class="title-50">{{ $t('История банка') }}</h1>
 
         <div class="cards-entry-text"></div>
 

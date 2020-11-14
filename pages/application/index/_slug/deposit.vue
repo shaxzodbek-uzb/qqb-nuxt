@@ -16,7 +16,7 @@
               :class="{ 'appeap-form-success': false }"
             >
               <span class="appeal-label d-block">
-                Наименовние физической лица
+                {{ $t('Наименовние физической лица') }}
               </span>
               <input
                 type="text"
@@ -32,7 +32,9 @@
               />
             </div>
 
-            <span class="form-error-text">Поле обязательно для заполнения</span>
+            <span class="form-error-text">
+              {{ $t('Поле обязательно для заполнения') }}
+            </span>
           </div>
 
           <div class="form-group-wrap">
@@ -40,7 +42,9 @@
               class="appeap-form-group rounded bg-white p-relative"
               :class="{ 'appeap-form-error': false }"
             >
-              <span class="appeal-label d-block">Паспорт серия и номер</span>
+              <span class="appeal-label d-block">
+                {{ $t('Паспорт серия и номер') }}
+              </span>
               <input
                 type="text"
                 class="d-block w-100"
@@ -55,16 +59,16 @@
               />
             </div>
 
-            <span class="form-error-text" v-if="false"
-              >Поле обязательно для заполнения</span
-            >
+            <span class="form-error-text" v-if="false">
+              {{ $t('Поле обязательно для заполнения') }}
+            </span>
           </div>
           <div class="form-group-wrap">
             <div
               class="appeap-form-group rounded bg-white p-relative"
               :class="{ 'appeap-form-error': false }"
             >
-              <span class="appeal-label d-block">Филиалы</span>
+              <span class="appeal-label d-block">{{ $t('Филиалы') }}</span>
               <input
                 type="text"
                 class="d-block w-100"
@@ -79,14 +83,14 @@
               />
             </div>
 
-            <span class="form-error-text" v-if="false"
-              >Поле обязательно для заполнения</span
-            >
+            <span class="form-error-text" v-if="false">
+              {{ $t('Поле обязательно для заполнения') }}
+            </span>
           </div>
 
           <div class="appeap-form-file">
             <div class="form-file-title d-flex f-between align-center">
-              <h1>Тема обращения</h1>
+              <h1>{{ $t('Тема обращения') }}</h1>
               <span>(.doc .docx .xls .xlsx .zip .pdf)</span>
             </div>
 
@@ -112,7 +116,7 @@
             <div class="form-file-content">
               <div class="file-upload-items d-flex align-center rounded">
                 <label for="upload-1" class="file-upload-title main-bg pointer">
-                  <h1>Выберите файл...</h1>
+                  <h1>{{ $t('Выберите файл') }}...</h1>
                 </label>
                 <div class="file-upload-area f-fill bg-white p-relative">
                   <input
@@ -131,7 +135,7 @@
             <div class="form-file-content">
               <div class="file-upload-items d-flex align-center rounded">
                 <label for="upload-1" class="file-upload-title main-bg pointer">
-                  <h1>Выберите файл...</h1>
+                  <h1>{{ $t('Выберите файл') }}...</h1>
                 </label>
                 <div class="file-upload-area f-fill bg-white p-relative">
                   <input
@@ -150,7 +154,7 @@
 
           <div class="appeap-form-code" v-if="false">
             <div class="form-file-title">
-              <h1>Защитный код</h1>
+              <h1>{{ $t('Защитный код') }}</h1>
             </div>
 
             <div class="appeap-code-group rounded bg-white p-relative">
@@ -165,10 +169,13 @@
             class="appeal-button transition rounded pointer"
             @click="submitForm"
           >
-            Отправить
+            {{ $t('Отправить') }}
           </button>
         </form>
       </div>
+    </div>
+    <div class="notification-wrap" :class="{ active: show_success }">
+      <p>{{ $t('Заявка успешно отправлена!') }}</p>
     </div>
   </div>
 </template>
@@ -209,6 +216,7 @@ export default {
   },
   methods: {
     submitForm() {
+      let me = this
       let formData = new FormData()
       for (var i = 0; i < this.form.files.length; i++) {
         let file = this.form.files[i]
@@ -243,7 +251,10 @@ export default {
           },
         })
         .then(function () {
-          console.log('SUCCESS!!')
+          me.show_success = true
+          setTimeout(() => {
+            me.show_success = false
+          }, 3000)
         })
         .catch(function () {
           console.log('FAILURE!!')

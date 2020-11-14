@@ -2,7 +2,7 @@
   <div class="tab-content-calculator">
     <div class="mobile-credit-button">
       <div class="d-flex align-center">
-        <p>Рассчитайте свой кредит</p>
+        <p>{{ $t('Рассчитайте свой кредит') }}</p>
         <img src="~/static/img/svg/arrow-right.png" alt />
       </div>
     </div>
@@ -10,8 +10,8 @@
       <div class="calculator-header d-flex f-between">
         <div class="calculator-header-left p-relative">
           <img src="~/static/img/svg/calc.png" class="p-absolute" alt />
-          <h1>Рассчитайте свой кредит</h1>
-          <span>Калькулятор - Депозит</span>
+          <h1>{{ $t('Рассчитайте свой кредит') }}</h1>
+          <span>{{ $t('Калькулятор - Депозит') }}</span>
         </div>
 
         <div class="mobile-close-icon">
@@ -19,7 +19,7 @@
         </div>
 
         <div class="calculator-header-right">
-          <p>Последнее обновление:</p>
+          <p>{{ $t('Последнее обновление') }}:</p>
           <span class="d-block">07.05.2020 13:13:27</span>
         </div>
       </div>
@@ -27,7 +27,7 @@
         <div class="row">
           <div class="col-xl-5">
             <div class="form-group">
-              <span>Сумма вклада</span>
+              <span>{{ $t('Сумма вклада') }}</span>
 
               <div class="form-group-range">
                 <p>{{ value }} UZS</p>
@@ -45,43 +45,43 @@
           </div>
           <div class="col-xl-2">
             <div class="form-group">
-              <span>Срок депозита</span>
+              <span>{{ $t('Срок депозита') }}</span>
 
               <div class="form-group-field">
                 <v-select :options="options"></v-select>
               </div>
 
               <div class="form-range-field d-flex f-between">
-                <span>3 года</span>
-                <span>3 мес.</span>
+                <span>3 {{ $t('года') }}</span>
+                <span>3 {{ $t('мес.') }}</span>
               </div>
             </div>
           </div>
           <div class="col-xl-2">
             <div class="form-group">
-              <span>Льготный период</span>
+              <span>{{ $t('Льготный период') }}</span>
 
               <div class="form-group-field">
                 <v-select :options="options"></v-select>
               </div>
 
               <div class="form-range-field d-flex f-between">
-                <span>3 года</span>
-                <span>3 мес.</span>
+                <span>3 {{ $t('года') }}</span>
+                <span>3 {{ $t('мес.') }}</span>
               </div>
             </div>
           </div>
           <div class="col-xl-3">
             <div class="form-group">
-              <span>Первоначальный взнос</span>
+              <span>{{ $t('Первоначальный взнос') }}</span>
 
               <div class="form-group-field">
                 <v-select :options="options"></v-select>
               </div>
 
               <div class="form-range-field d-flex f-between">
-                <span>3 года</span>
-                <span>3 мес.</span>
+                <span>3 {{ $t('года') }}</span>
+                <span>3 {{ $t('мес.') }}</span>
               </div>
             </div>
           </div>
@@ -91,7 +91,7 @@
             <div class="form-group">
               <div class="pick-up-deposit">
                 <button class="pointer rounded transition d-block w-100">
-                  Рассчитать кредит
+                  {{ $t('Рассчитать кредит') }}
                 </button>
               </div>
             </div>
@@ -101,25 +101,28 @@
 
       <div class="calculator-result d-flex f-wrap text-white">
         <div class="calculator-result__left">
-          <span>Процентная ставка</span>
+          <span>{{ $t('Процентная ставка') }}</span>
           <h1>24%</h1>
         </div>
         <div class="calculator-result__right f-fill d-flex">
           <div>
-            <span>Процентная ставка</span>
+            <span>{{ $t('Процентная ставка') }}</span>
             <h1>39 935 370,41 UZS</h1>
           </div>
           <div>
-            <span>Ежемесячная сумма платежа</span>
+            <span>{{ $t('Ежемесячная сумма платежа') }}</span>
             <h1>544 798,36 UZS</h1>
           </div>
         </div>
 
         <div class="calculator-result__bottom w-100">
-          <span
-            >Результаты расчета предназначены для приблизительных и справочных
-            целей.</span
-          >
+          <span>
+            {{
+              $t(
+                'Результаты расчета предназначены для приблизительных и справочных целей.'
+              )
+            }}
+          </span>
         </div>
       </div>
     </div>
@@ -128,12 +131,17 @@
       <ul>
         <li>
           <p>
-            Последние расчеты производятся специалистами в филиалах Банка на
-            основании вашей информации.
+            {{
+              $t(
+                'Последние расчеты производятся специалистами в филиалах Банка на основании вашей информации.'
+              )
+            }}
           </p>
         </li>
         <li>
-          <p>Эти расчеты не включены в кредитные обязательства Банка.</p>
+          <p>
+            {{ $t('Эти расчеты не включены в кредитные обязательства Банка.') }}
+          </p>
         </li>
       </ul>
     </div>
@@ -142,12 +150,12 @@
       <table class="table w-100">
         <thead class="table-thead">
           <tr>
-            <th>Голосов</th>
-            <th style="width: 150px;">Вы</th>
-            <th>Начисленный доход</th>
-            <th>Оплачиваемый доход</th>
-            <th>Увеличение депозитов</th>
-            <th>Сумма депозита находится в конце платежа</th>
+            <th>{{ $t('Голосов') }}</th>
+            <th style="width: 150px;">{{ $t('Вы') }}</th>
+            <th>{{ $t('Начисленный доход') }}</th>
+            <th>{{ $t('Оплачиваемый доход') }}</th>
+            <th>{{ $t('Увеличение депозитов') }}</th>
+            <th>{{ $t('Сумма депозита находится в конце платежа') }}</th>
           </tr>
         </thead>
         <tbody class="table-tbody">
@@ -186,28 +194,28 @@
         </tbody>
         <tfoot class="table-tfoot">
           <tr>
-            <td colspan="2">На общий депозит</td>
+            <td colspan="2">{{ $t('На общий депозит') }}</td>
             <td>41 666,67</td>
             <td>41 666,67</td>
             <td>0,00</td>
             <td>5 000 000,00</td>
           </tr>
           <tr>
-            <td colspan="2">Сумма вклада</td>
+            <td colspan="2">{{ $t('Сумма вклада') }}</td>
             <td></td>
             <td></td>
             <td>5 000 000,00</td>
             <td></td>
           </tr>
           <tr>
-            <td colspan="2">Депозитный доход</td>
+            <td colspan="2">{{ $t('Депозитный доход') }}</td>
             <td></td>
             <td></td>
             <td>500 000,04</td>
             <td></td>
           </tr>
           <tr>
-            <td colspan="2">Сумма вклада в процентах</td>
+            <td colspan="2">{{ $t('Сумма вклада в процентах') }}</td>
             <td></td>
             <td></td>
             <td>5 500 000,04</td>

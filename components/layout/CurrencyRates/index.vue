@@ -8,7 +8,7 @@
               :to="localePath('/currency-rates')"
               class="btn btn-sm rounded"
             >
-              <span>Курсы валют</span>
+              <span>{{ $t('Курсы валют') }}</span>
             </nuxt-link>
 
             <div class="currency-dropdown dropdown dropdown-init">
@@ -71,17 +71,17 @@
                     href="tel:+998781501001"
                     class="center-phones__items text-white"
                   >
-                    <span>Телефоны доверия</span>
+                    <span>{{ $t('Телефоны доверия') }}</span>
                     <h1>+998 78 150-10-01</h1>
-                    <p>ПН-ПТ - 9:00 до 18:00</p>
+                    <p>{{ $t('ПН-ПТ - 9:00 до 18:00') }}</p>
                   </a>
                   <a
                     href="tel:+998781509339"
                     class="center-phones__items text-white"
                   >
-                    <span>Колл-центр</span>
+                    <span>{{ $t('Колл-центр') }}</span>
                     <h1>+998 78 150-93-39</h1>
-                    <p>ПН-ПТ - 9:00 до 18:00</p>
+                    <p>{{ $t('ПН-ПТ - 9:00 до 18:00') }}</p>
                   </a>
                 </div>
               </div>

@@ -10,19 +10,15 @@
           <div class="col-xl-5 h-100 bg-white pt-60">
             <div class="appeal-offset-left">
               <h1>
-                Анонимное Обращние
+                {{ $t('Анонимное Обращние') }}
               </h1>
 
               <p>
-                Примерная форма анонимного обращения для содействия в решении
-                вопросов предотвращения и недопу-щения бюрократизма и волокиты,
-                в обеспечении предоставле-ния банковских услуг согласно
-                принципов, основанных на честности, бескорыст-ности и
-                справедливости, а также, для содействия предотвращения
-                злоупотребления служебным положением для получения личной выгоды
-                или для удовлетворения противозаконных интересов других лиц,
-                которые порождают затруднение клиентам, при пользовании услугами
-                банка.
+                {{
+                  $t(
+                    'Примерная форма анонимного обращения для содействия в решении вопросов предотвращения и недопу-щения бюрократизма и волокиты, в обеспечении предоставле-ния банковских услуг согласно принципов, основанных на честности, бескорыст-ности и справедливости, а также, для содействия предотвращения злоупотребления служебным положением для получения личной выгоды или для удовлетворения противозаконных интересов других лиц, которые порождают затруднение клиентам, при пользовании услугами банка.'
+                  )
+                }}
               </p>
             </div>
           </div>
@@ -34,7 +30,9 @@
                     class="appeap-form-group rounded bg-white p-relative"
                     :class="{ 'appeap-form-success': false }"
                   >
-                    <span class="appeal-label d-block">Адресат обращения</span>
+                    <span class="appeal-label d-block">{{
+                      $t('Адресат обращения')
+                    }}</span>
                     <input
                       type="text"
                       class="d-block w-100"
@@ -49,9 +47,9 @@
                     />
                   </div>
 
-                  <span class="form-error-text"
-                    >Поле обязательно для заполнения</span
-                  >
+                  <span class="form-error-text">
+                    {{ $t('Поле обязательно для заполнения') }}
+                  </span>
                 </div>
 
                 <div class="form-group-wrap">
@@ -59,7 +57,9 @@
                     class="appeap-form-group rounded bg-white p-relative"
                     :class="{ 'appeap-form-error': false }"
                   >
-                    <span class="appeal-label d-block">Тема обращения</span>
+                    <span class="appeal-label d-block">
+                      {{ $t('Тема обращения') }}
+                    </span>
                     <input
                       type="text"
                       class="d-block w-100"
@@ -74,14 +74,16 @@
                     />
                   </div>
 
-                  <span class="form-error-text" v-if="false"
-                    >Поле обязательно для заполнения</span
-                  >
+                  <span class="form-error-text" v-if="false">
+                    {{ $t('Поле обязательно для заполнения') }}
+                  </span>
                 </div>
 
                 <div class="form-group-wrap">
                   <div class="appeap-form-group rounded bg-white p-relative">
-                    <span class="appeal-label d-block">Текст обращения</span>
+                    <span class="appeal-label d-block">
+                      {{ $t('Текст обращения') }}
+                    </span>
                     <textarea
                       class="d-block w-100"
                       placeholder="..."
@@ -92,7 +94,7 @@
 
                 <div class="appeap-form-file">
                   <div class="form-file-title d-flex f-between align-center">
-                    <h1>Тема обращения</h1>
+                    <h1>{{ $t('Тема обращения') }}</h1>
                     <span>(.doc .docx .xls .xlsx .zip .pdf)</span>
                   </div>
 
@@ -102,7 +104,7 @@
                         for="upload-1"
                         class="file-upload-title main-bg pointer"
                       >
-                        <h1>Выберите файл...</h1>
+                        <h1>{{ $t('Выберите файл') }}...</h1>
                       </label>
                       <div class="file-upload-area f-fill bg-white p-relative">
                         <input
@@ -124,7 +126,7 @@
                         for="upload-1"
                         class="file-upload-title main-bg pointer"
                       >
-                        <h1>Выберите файл...</h1>
+                        <h1>{{ $t('Выберите файл') }}...</h1>
                       </label>
                       <div class="file-upload-area f-fill bg-white p-relative">
                         <input
@@ -146,7 +148,7 @@
                         for="upload-1"
                         class="file-upload-title main-bg pointer"
                       >
-                        <h1>Выберите файл...</h1>
+                        <h1>{{ $t('Выберите файл') }}...</h1>
                       </label>
                       <div class="file-upload-area f-fill bg-white p-relative">
                         <input
@@ -168,7 +170,7 @@
                         for="upload-1"
                         class="file-upload-title main-bg pointer"
                       >
-                        <h1>Выберите файл...</h1>
+                        <h1>{{ $t('Выберите файл') }}...</h1>
                       </label>
                       <div class="file-upload-area f-fill bg-white p-relative">
                         <input
@@ -187,7 +189,7 @@
 
                 <div class="appeap-form-code" v-if="false">
                   <div class="form-file-title">
-                    <h1>Защитный код</h1>
+                    <h1>{{ $t('Защитный код') }}</h1>
                   </div>
 
                   <div class="appeap-code-group rounded bg-white p-relative">
@@ -202,20 +204,25 @@
                 </div>
 
                 <div class="appeal-form-descr">
-                  <h1>Примечание</h1>
+                  <h1>{{ $t('Примечание') }}</h1>
 
                   <div class="apperal-descr">
                     <div class="apperal-descr-items">
                       <p>
-                        Согласно Закону “Об обращениях физических и юридических
-                        лиц”, на анонимные обращения ответы не возвращаються.
+                        {{
+                          $t(
+                            'Согласно Закону “Об обращениях физических и юридических лиц”, на анонимные обращения ответы не возвращаються.'
+                          )
+                        }}
                       </p>
                     </div>
                     <div class="apperal-descr-items">
                       <p>
-                        Анонимное обращение содержащего клевету, оскорбления и
-                        необоснованную информацию может привести к
-                        ответственности в установленном порядке
+                        {{
+                          $t(
+                            'Анонимное обращение содержащего клевету, оскорбления и необоснованную информацию может привести к ответственности в установленном порядке'
+                          )
+                        }}
                       </p>
                     </div>
                   </div>
@@ -225,7 +232,7 @@
                     class="appeal-button transition rounded pointer"
                     @click="submitForm"
                   >
-                    Отправить
+                    {{ $t('Отправить') }}
                   </button>
                 </div>
               </form>
@@ -235,8 +242,8 @@
       </div>
     </div>
 
-    <div class="notification-wrap active">
-      <p>Lorem ipsum</p>
+    <div class="notification-wrap" :class="{ active: show_success }">
+      <p>{{ $t('Заявка успешно отправлена!') }}</p>
     </div>
   </div>
 </template>
@@ -247,6 +254,7 @@ import { setOffset, getLeftSideClientRect } from '~/utils/frontend'
 export default {
   data() {
     return {
+      show_success: false,
       form: {
         type: 'anonymous',
         address: '',
@@ -262,6 +270,7 @@ export default {
   },
   methods: {
     submitForm() {
+      let me = this
       let formData = new FormData()
       for (var i = 0; i < this.form.files.length; i++) {
         let file = this.form.files[i]
@@ -280,7 +289,10 @@ export default {
           },
         })
         .then(function () {
-          console.log('SUCCESS!!')
+          me.show_success = true
+          setTimeout(() => {
+            me.show_success = false
+          }, 3000)
         })
         .catch(function () {
           console.log('FAILURE!!')

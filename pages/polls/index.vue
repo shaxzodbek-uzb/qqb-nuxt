@@ -6,7 +6,7 @@
   >
     <div class="container">
       <div class="news-page-container pt-60">
-        <h1 class="title-50">Архив опросов</h1>
+        <h1 class="title-50">{{ $t('Архив опросов') }}</h1>
 
         <transition name="fade">
           <div
@@ -57,7 +57,7 @@
                     @click="submitForm"
                     class="fake-route-button-4 rounded transition pointer"
                   >
-                    Отправить сообщение
+                    {{ $t('Отправить сообщение') }}
                   </button>
                 </div>
               </form>
@@ -81,7 +81,9 @@
                     <span>{{ item.created_at }}</span>
                   </div>
                   <div class="vacancy-badge">
-                    <div class="app-badge">ГОЛОСОВ: {{ item.count }}</div>
+                    <div class="app-badge">
+                      {{ $t('ГОЛОСОВ') }}: {{ item.count }}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -93,19 +95,19 @@
                 @click="active_id = index"
                 class="d-flex align-center btn btn-border rounded pointer transition"
               >
-                <span>Голосовать</span>
+                <span>{{ $t('Голосовать') }}</span>
               </button>
               <button
                 v-else
                 disabled
                 class="d-flex align-center btn btn-border rounded pointer transition"
               >
-                <span>Не активен</span>
+                <span>{{ $t('Не активен') }}</span>
               </button>
             </div>
 
             <div class="polls-items-content w-100">
-              <h1>Результаты опроса</h1>
+              <h1>{{ $t('Результаты опроса') }}</h1>
 
               <div
                 class="polls-range-items rounded p-relative"

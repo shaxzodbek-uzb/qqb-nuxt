@@ -12,7 +12,7 @@
                   @click="$router.go(-1)"
                 >
                   <img src="~/static/img/svg/arrow-back.png" alt />
-                  <span>Новости</span>
+                  <span>{{ $t('Новости') }}</span>
                 </button>
 
                 <h1>
@@ -26,7 +26,7 @@
               </div>
 
               <div class="news-social">
-                <span>Поделиться новостью в соцсетях:</span>
+                <span>{{ $t('Поделиться новостью в соцсетях') }}:</span>
 
                 <div class="d-flex">
                   <router-link to="/" class="social-items child-center">

@@ -159,7 +159,7 @@
               <img src="~/static/img/slide-images/card-icon-1.png" alt />
 
               <div>
-                <span>Срок вклада</span>
+                <span>{{ $t('Срок вклада') }}</span>
                 <h1>{{ deposit.term }}</h1>
               </div>
             </div>
@@ -168,7 +168,7 @@
               <img src="~/static/img/slide-images/card-icon-2.png" alt />
 
               <div>
-                <span>Ставка</span>
+                <span>{{ $t('Ставка') }}</span>
                 <h1>{{ deposit.rate }}</h1>
               </div>
             </div>
@@ -177,7 +177,7 @@
               <img src="~/static/img/slide-images/card-icon-3.png" alt />
 
               <div>
-                <span>Сумма вклада:</span>
+                <span>{{ $t('Сумма вклада') }}:</span>
                 <h1>{{ deposit.summ }}</h1>
               </div>
             </div>
@@ -199,7 +199,7 @@
 
       <div class="card-load">
         <button type="button" class="d-block w-100 rounded pointer transition">
-          Загрузить еще
+          {{ $t('Загрузить еще') }}
         </button>
       </div>
     </div>

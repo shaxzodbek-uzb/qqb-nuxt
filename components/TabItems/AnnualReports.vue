@@ -6,7 +6,7 @@
           <router-link to="/" class="report-items d-block transition rounded">
             <h1>2009 год</h1>
             <p>
-              Загрузка файла годового отчета
+              {{ $t('Загрузка файла годового отчета') }}
             </p>
 
             <div class="report-book p-relative">
@@ -22,7 +22,7 @@
           <router-link to="/" class="report-items d-block transition rounded">
             <h1>2010 год</h1>
             <p>
-              Загрузка файла годового отчета
+              {{ $t('Загрузка файла годового отчета') }}
             </p>
 
             <div class="report-book p-relative">
@@ -38,7 +38,7 @@
           <router-link to="/" class="report-items d-block transition rounded">
             <h1>2011 год</h1>
             <p>
-              Загрузка файла годового отчета
+              {{ $t('Загрузка файла годового отчета') }}
             </p>
 
             <div class="report-book p-relative">
@@ -54,7 +54,7 @@
           <router-link to="/" class="report-items d-block transition rounded">
             <h1>2012 год</h1>
             <p>
-              Загрузка файла годового отчета
+              {{ $t('Загрузка файла годового отчета') }}
             </p>
 
             <div class="report-book p-relative">
@@ -70,7 +70,7 @@
           <router-link to="/" class="report-items d-block transition rounded">
             <h1>2013 год</h1>
             <p>
-              Загрузка файла годового отчета
+              {{ $t('Загрузка файла годового отчета') }}
             </p>
 
             <div class="report-book p-relative">
@@ -86,7 +86,7 @@
           <router-link to="/" class="report-items d-block transition rounded">
             <h1>2014 год</h1>
             <p>
-              Загрузка файла годового отчета
+              {{ $t('Загрузка файла годового отчета') }}
             </p>
 
             <div class="report-book p-relative">

@@ -2,7 +2,7 @@
   <div class="documents-page-wrap" data-set="offset" data-offset="top bottom">
     <div class="container">
       <div class="documents-page-container pt-60">
-        <h1 class="title-50" v-if="type === null">Документы</h1>
+        <h1 class="title-50" v-if="type === null">{{ $t('Документы') }}</h1>
         <h1 class="title-50" v-else>{{ type.name }}</h1>
 
         <div class="card-tab-navigation tab-navigation--credit">

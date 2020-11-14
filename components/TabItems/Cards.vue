@@ -5,7 +5,7 @@
       data-offset="setLeftOffset"
     >
       <div class="tab-card-meta f-fill">
-        <p>Преимущества</p>
+        <p>{{ $t('Преимущества') }}</p>
 
         <div class="card-meta-block d-flex f-wrap">
           <div

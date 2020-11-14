@@ -3,7 +3,7 @@
     <div class="converter-header">
       <div class="converter-header-content p-relative">
         <img src="~/static/img/svg/coins.png" alt />
-        <h1>Конвертер валют</h1>
+        <h1>{{ $t('Конвертер валют') }}</h1>
 
         <div class="converter-form">
           <div class="converter-input">

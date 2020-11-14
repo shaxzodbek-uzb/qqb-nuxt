@@ -2,7 +2,7 @@
   <div class="vacancies-page-wrap" data-set="offset" data-offset="top bottom">
     <div class="container">
       <div class="credit-page-container pt-60">
-        <h1 class="title-50">Вакансии</h1>
+        <h1 class="title-50">{{ $t('Вакансии') }}</h1>
 
         <div class="vacancies-container">
           <div
@@ -13,8 +13,8 @@
             <div class="tab-document-header d-flex">
               <div class="item-text f-fill">
                 <h1>{{ item.name }}</h1>
-                <span
-                  >Вакансия опубликована: {{ item.created_at }}
+                <span>
+                  {{ $t('Вакансия опубликована') }}: {{ item.created_at }}
                   {{ item.region }}</span
                 >
               </div>

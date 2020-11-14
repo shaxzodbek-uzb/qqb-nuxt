@@ -3,7 +3,7 @@
     <div class="tab-document-items rounded">
       <div class="accordion-header d-flex align-center">
         <div class="item-text f-fill">
-          <h1>2009 год</h1>
+          <h1>2009 {{ $t('год') }}</h1>
           <span>Финансовая отчетность</span>
         </div>
         <div class="tab-arrow">
@@ -239,7 +239,7 @@
 
     <div class="content-load">
       <button type="button" class="d-block w-100 rounded pointer transition">
-        Загрузить еще
+        {{ $t('Загрузить еще') }}
       </button>
     </div>
   </div>

@@ -25,25 +25,25 @@
         <div class="tariff-table">
           <div class="tariff-table-items d-flex">
             <div class="f-fill">
-              <p>Руководитель:</p>
+              <p>{{ $t('Руководитель') }}:</p>
             </div>
             <span>{{ item.director }}</span>
           </div>
           <div class="tariff-table-items d-flex">
             <div class="f-fill">
-              <p>Адрес:</p>
+              <p>{{ $t('Адрес') }}:</p>
             </div>
             <span>{{ item.address }}</span>
           </div>
           <div class="tariff-table-items d-flex">
             <div class="f-fill">
-              <p>Номера телефонов:</p>
+              <p>{{ $t('Номера телефонов') }}:</p>
             </div>
             <span>{{ item.phone }}</span>
           </div>
           <div class="tariff-table-items d-flex">
             <div class="f-fill">
-              <p>Электронная почта:</p>
+              <p>{{ $t('Электронная почта') }}:</p>
             </div>
             <span>{{ item.email }}</span>
           </div>

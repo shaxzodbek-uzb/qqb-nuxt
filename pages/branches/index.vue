@@ -7,7 +7,7 @@
             class="title-route-items d-flex align-center"
             :to="{ name: 'Filials' }"
           >
-            <span>Филиалы</span>
+            <span>{{ $t('Филиалы') }}</span>
           </router-link>
           <router-link
             class="title-route-items d-flex align-center"
@@ -18,7 +18,7 @@
                 <img src="~/static/img/svg/switch-icon.png" alt />
               </div>
             </div>
-            <span>Банкоматы</span>
+            <span>{{ $t('Банкоматы') }}</span>
           </router-link>
         </div>
 
@@ -29,14 +29,14 @@
                 class="tab-items p-relative pointer active"
                 data-toggle="tab"
               >
-                <span>Списком</span>
+                <span>{{ $t('Списком') }}</span>
               </div>
               <div class="tab-items p-relative pointer" data-toggle="tab">
-                <span>На карте</span>
+                <span>{{ $t('На карте') }}</span>
               </div>
 
               <div class="conent-select">
-                <span>Списком</span>
+                <span>{{ $t('Списком') }}</span>
                 <select>
                   <option value="1">Ташкент</option>
                   <option value="2">2</option>

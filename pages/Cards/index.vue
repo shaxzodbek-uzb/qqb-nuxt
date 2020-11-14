@@ -2,14 +2,20 @@
   <div class="cards-wrapper" data-set="offset" data-offset="top bottom">
     <div class="container">
       <div class="cards-container pt-60">
-        <h1 class="title-50">Карты</h1>
+        <h1 class="title-50">{{ $t('Карты') }}</h1>
 
         <div class="cards-entry-text">
           <p>
-            Покупайте товары и оплачивайте услуги в торговых точках по всему
-            миру.
-            <br />Снимайте наличные средства в банкоматах и кассах филиалов
-            банка.
+            {{
+              $t(
+                'Покупайте товары и оплачивайте услуги в торговых точках по всему миру.'
+              )
+            }}
+            <br />{{
+              $t(
+                'Снимайте наличные средства в банкоматах и кассах филиалов банка.'
+              )
+            }}
           </p>
         </div>
 
@@ -37,7 +43,7 @@
                   <img src="~static/img/slide-images/card-icon-1.png" alt="" />
                 </div>
                 <div>
-                  <span>Банковские услуги по открытию карты:</span>
+                  <span>{{ $t('Банковские услуги по открытию карты') }}:</span>
                   <b>{{ item.cost }}</b>
                 </div>
               </div>
@@ -46,7 +52,7 @@
                   <img src="~static/img/slide-images/card-icon-2.png" alt="" />
                 </div>
                 <div>
-                  <span>Срок действия:</span>
+                  <span>{{ $t('Срок действия') }}:</span>
                   <b>{{ item.validity }}</b>
                 </div>
               </div>
@@ -55,7 +61,7 @@
                   <img src="~static/img/slide-images/card-icon-3.png" alt="" />
                 </div>
                 <div>
-                  <span>Необходимые документы:</span>
+                  <span>{{ $t('Необходимые документы') }}:</span>
                   <b>{{ item.required_documents }}</b>
                 </div>
               </div>
@@ -80,7 +86,7 @@
               type="button"
               class="d-block w-100 rounded pointer transition"
             >
-              Загрузить еще
+              {{ $t('Загрузить еще') }}
             </button>
           </div>
         </div>
@@ -97,15 +103,14 @@
             </router-link>
             <router-link to="/" class="d-flex align-center p-relative">
               <span
-                >О стратегии реформирования банковской системы Республики
-                Узбекистан на 2020-2025 годы</span
+                >{{('О стратегии реформирования банковской системы Республики Узбекистан на 2020-2025 годы')}}</span
               >
             </router-link>
           </div>
 
           <div class="app-meta__download d-flex align-center">
             <p>
-              Скачать
+              {{ $t('Скачать') }}
               <span>PDF,</span>
               <span>205.77 KB</span>
             </p>

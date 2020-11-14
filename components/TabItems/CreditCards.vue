@@ -3,8 +3,8 @@
     <div class="tab-document-items rounded">
       <div class="tab-document-header d-flex">
         <div class="item-text f-fill">
-          <h1>Потребительский кредит</h1>
-          <span>Без первоначального взноса</span>
+          <h1>{{ $t('Потребительский кредит') }}</h1>
+          <span>{{ $t('Без первоначального взноса') }}</span>
         </div>
         <div class="card-card-img p-absolute">
           <img src="~/static/img/img-1.png" alt />
@@ -23,8 +23,10 @@
     <div class="tab-document-items rounded">
       <div class="tab-document-header d-flex">
         <div class="item-text f-fill">
-          <h1>Микрозайм</h1>
-          <span>Микрозаем предоставляется в национальной валюте</span>
+          <h1>{{ $t('Микрозайм') }}</h1>
+          <span>{{
+            $t('Микрозаем предоставляется в национальной валюте')
+          }}</span>
         </div>
         <div class="card-card-img p-absolute">
           <img src="~/static/img/img-2.png" alt />
@@ -43,9 +45,11 @@
     <div class="tab-document-items rounded">
       <div class="tab-document-header d-flex">
         <div class="item-text f-fill">
-          <h1>Ипотечные кредиты по ИПСМ</h1>
-          <span
-            >Порядок получения доступных жилых домов в сельской местности</span
+          <h1>{{ $t('Ипотечные кредиты по ИПСМ') }}</h1>
+          <span>
+            {{
+              $t('Порядок получения доступных жилых домов в сельской местности')
+            }}</span
           >
         </div>
         <div class="card-card-img p-absolute">

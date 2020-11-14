@@ -2,11 +2,13 @@
   <div class="gallery-page-wrap" data-set="offset" data-offset="top bottom">
     <div class="container">
       <div class="gallery-page-container d-flex f-between pt-60">
-        <h1 class="title-50">Галерея</h1>
+        <h1 class="title-50">{{ $t('Галерея') }}</h1>
 
         <div class="gallery-search news-search p-relative">
           <input type="text" class="d-block w-100 h-100" />
-          <span class="input-placeholder p-absolute transition">Поиск</span>
+          <span class="input-placeholder p-absolute transition">
+            {{ $t('Поиск') }}
+          </span>
           <img src="~/static/img/svg/search.png" class="p-absolute" alt />
         </div>
       </div>

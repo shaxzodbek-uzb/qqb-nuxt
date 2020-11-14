@@ -2,7 +2,7 @@
   <div class="tab-content-national-currency">
     <div class="mobile-credit-button">
       <div class="d-flex align-center">
-        <p>Вклад</p>
+        <p>{{ $t('Вклад') }}</p>
         <img src="~/static/img/svg/arrow-right.png" alt />
       </div>
     </div>
@@ -11,8 +11,8 @@
       <div class="calculator-header d-flex f-between">
         <div class="calculator-header-left p-relative">
           <img src="~/static/img/svg/calc.png" class="p-absolute" alt />
-          <h1>Вклад</h1>
-          <span>Наше предложение</span>
+          <h1>{{ $t('Вклад') }}</h1>
+          <span>{{ $t('Наше предложение') }}</span>
         </div>
 
         <div class="mobile-close-icon">
@@ -20,7 +20,7 @@
         </div>
 
         <div class="calculator-header-right">
-          <p>Последнее обновление:</p>
+          <p>{{ $t('Последнее обновление') }}:</p>
           <span class="d-block">07.05.2020 13:13:27</span>
         </div>
       </div>
@@ -28,7 +28,7 @@
         <div class="row">
           <div class="col-xl-5">
             <div class="form-group">
-              <span>Сумма вклада</span>
+              <span>{{ $t('Сумма вклада') }}</span>
 
               <div class="form-group-range">
                 <p>{{ value }} UZS</p>
@@ -46,7 +46,7 @@
           </div>
           <div class="col-xl-2">
             <div class="form-group">
-              <span>Валюта</span>
+              <span>{{ $t('Валюта') }}</span>
 
               <div class="form-group-field">
                 <v-select :options="options"></v-select>
@@ -60,7 +60,7 @@
           </div>
           <div class="col-xl-2">
             <div class="form-group">
-              <span>Срок вклада</span>
+              <span>{{ $t('Срок вклада') }}</span>
 
               <div class="form-group-field">
                 <v-select :options="options"></v-select>
@@ -75,10 +75,10 @@
           <div class="col-xl-3">
             <div class="form-group">
               <!-- Opacity o'chmasligi kerak  -->
-              <span style="opacity: 0;">Срок вклада</span>
+              <span style="opacity: 0;">{{ $t('Срок вклада') }}</span>
               <div class="pick-up-deposit">
                 <button class="pointer rounded transition d-block w-100">
-                  Подобрать вклад
+                  {{ $t('Подобрать вклад') }}
                 </button>
               </div>
             </div>
@@ -88,7 +88,7 @@
 
       <div class="calculator-result d-flex f-wrap text-white">
         <div class="calculator-result__left">
-          <span>Всего вкладов</span>
+          <span>{{ $t('Всего вкладов') }}</span>
           <h1>346</h1>
         </div>
 
@@ -99,7 +99,7 @@
               <div class="checkbox-curtain transition">
                 <img src="~/static/img/svg/check.png" alt />
               </div>
-              <span>Капитализация %</span>
+              <span>{{ $t('Капитализация') }} %</span>
             </label>
           </div>
 
@@ -109,7 +109,7 @@
               <div class="checkbox-curtain transition">
                 <img src="~/static/img/svg/check.png" alt />
               </div>
-              <span>Периодическая выплата %</span>
+              <span>{{ $t('Периодическая выплата') }} %</span>
             </label>
           </div>
 
@@ -119,7 +119,7 @@
               <div class="checkbox-curtain transition">
                 <img src="~/static/img/svg/check.png" alt />
               </div>
-              <span>Пополнение</span>
+              <span>{{ $t('Пополнение') }}</span>
             </label>
           </div>
 
@@ -129,13 +129,13 @@
               <div class="checkbox-curtain transition">
                 <img src="~/static/img/svg/check.png" alt />
               </div>
-              <span>Частичное снятие</span>
+              <span>{{ $t('Частичное снятие') }}</span>
             </label>
           </div>
         </div>
 
         <div class="calculator-result__bottom w-100">
-          <span>Посмотреть все вклады</span>
+          <span>{{ $t('Посмотреть все вклады') }}</span>
         </div>
       </div>
     </div>
@@ -160,7 +160,7 @@
               <img src="~/static/img/slide-images/card-icon-1.png" alt />
 
               <div>
-                <span>Срок вклада</span>
+                <span>{{ $t('Срок вклада') }}</span>
                 <h1>{{ deposit.term }}</h1>
               </div>
             </div>
@@ -169,7 +169,7 @@
               <img src="~/static/img/slide-images/card-icon-2.png" alt />
 
               <div>
-                <span>Ставка</span>
+                <span>{{ $t('Ставка') }}</span>
                 <h1>{{ deposit.rate }}</h1>
               </div>
             </div>
@@ -178,7 +178,7 @@
               <img src="~/static/img/slide-images/card-icon-3.png" alt />
 
               <div>
-                <span>Сумма вклада:</span>
+                <span>{{ $t('Сумма вклада') }}:</span>
                 <h1>{{ deposit.summ }}</h1>
               </div>
             </div>
@@ -200,7 +200,7 @@
 
       <div class="card-load">
         <button type="button" class="d-block w-100 rounded pointer transition">
-          Загрузить еще
+          {{ $t('Загрузить еще') }}
         </button>
       </div>
     </div>

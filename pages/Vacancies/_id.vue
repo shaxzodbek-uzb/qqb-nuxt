@@ -11,7 +11,7 @@
                 @click="$router.go(-1)"
               >
                 <img src="~/static/img/svg/arrow-back.png" alt />
-                <span>Вакансии</span>
+                <span>{{ $t('Вакансии') }}</span>
               </button>
 
               <h1>
@@ -19,7 +19,7 @@
               </h1>
 
               <p>
-                Вакансия опубликована:
+                {{ $t('Вакансия опубликована') }}:
                 <br />
                 {{ vacancy.created_at }} {{ vacancy.region }}
               </p>
@@ -27,18 +27,18 @@
           </div>
           <div class="col-xl-6 col-lg-6">
             <div class="vacancies-show-right">
-              <h1>Обязанности:</h1>
+              <h1>{{ $t('Обязанности') }}:</h1>
 
               <div
                 class="about-credit-need"
                 v-html="vacancy.requirements"
               ></div>
 
-              <h1>Требования:</h1>
+              <h1>{{ $t('Требования') }}:</h1>
 
               <div class="about-credit-need" v-html="vacancy.duties"></div>
 
-              <h1>Контакты:</h1>
+              <h1>{{ $t('Контакты') }}:</h1>
 
               <div class="contact-dates">
                 <div class="contact-date-items d-flex">
@@ -55,7 +55,7 @@
                     <img src="~/static/img/svg/email-3.png" alt />
                   </div>
                   <div class="contact-date-text">
-                    <span>Email: {{ vacancy.email }}</span>
+                    <span>{{ $t('Email') }}: {{ vacancy.email }}</span>
                   </div>
                 </div>
 
@@ -64,7 +64,7 @@
                     <img src="~/static/img/svg/loc-3.png" alt />
                   </div>
                   <div class="contact-date-text">
-                    <span>Адрес: {{ vacancy.address }}</span>
+                    <span>{{ $t('Адрес') }}: {{ vacancy.address }}</span>
                   </div>
                 </div>
               </div>

@@ -2,7 +2,7 @@
   <div class="exchange-rates-wrap" data-set="offset" data-offset="top bottom">
     <div class="container">
       <div class="news-page-container pt-60">
-        <h1 class="title-50">Курсы валют</h1>
+        <h1 class="title-50">{{ $t('Курсы валют') }}</h1>
 
         <div class="card-tab-navigation tab-navigation--credit">
           <div class="card-tab-header">
@@ -11,10 +11,10 @@
                 class="tab-items p-relative pointer active"
                 data-toggle="tab"
               >
-                <span>Курс</span>
+                <span>{{ $t('Курс') }}</span>
               </div>
               <div class="tab-items p-relative pointer" data-toggle="tab">
-                <span>Архив</span>
+                <span>{{ $t('Архив') }}</span>
               </div>
             </div>
           </div>

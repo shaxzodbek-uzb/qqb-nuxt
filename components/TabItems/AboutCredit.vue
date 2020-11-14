@@ -5,8 +5,7 @@
         <div class="col-xl-6">
           <div class="about-credit-text">
             <h1>
-              На что можно
-              <br />взять кредит
+              {{ $t('На что можно взять кредит') }}
             </h1>
           </div>
         </div>

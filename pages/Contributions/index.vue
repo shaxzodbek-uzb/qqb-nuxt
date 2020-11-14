@@ -6,7 +6,7 @@
   >
     <div class="container">
       <div class="credit-page-container pt-60">
-        <h1 class="title-50">Вклады</h1>
+        <h1 class="title-50">{{ $t('Вклады') }}</h1>
 
         <div class="card-tab-navigation tab-navigation--credit">
           <div class="card-tab-header">

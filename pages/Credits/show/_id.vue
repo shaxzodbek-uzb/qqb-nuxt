@@ -9,7 +9,7 @@
             @click="$router.go(-1)"
           >
             <img src="~/static/img/svg/arrow-back.png" alt />
-            <span>Кредиты и кредитные карты</span>
+            <span>{{ $t('Кредиты и кредитные карты') }}</span>
           </button>
         </div>
       </div>
@@ -24,16 +24,16 @@
                 class="tab-items p-relative pointer active"
                 data-toggle="tab"
               >
-                <span>О кредите</span>
+                <span>{{ $t('О кредите') }}</span>
               </div>
               <div class="tab-items p-relative pointer" data-toggle="tab">
-                <span>Условия и требования</span>
+                <span>{{ $t('Условия и требования') }}</span>
               </div>
               <div class="tab-items p-relative pointer" data-toggle="tab">
-                <span>Документы</span>
+                <span>{{ $t('Документы') }}</span>
               </div>
               <div class="tab-items p-relative pointer" data-toggle="tab">
-                <span>Калькулятор</span>
+                <span>{{ $t('Калькулятор') }}</span>
               </div>
             </div>
           </div>
@@ -46,12 +46,12 @@
                   <h1>{{ credit.term }}</h1>
                 </div>
                 <div class="item-text">
-                  <span>Льготный период</span>
+                  <span>{{ $t('Льготный период') }}</span>
                   <h1>{{ credit.grace_period }}</h1>
                 </div>
                 <div class="item-text-line"></div>
                 <div class="item-text item-text--long">
-                  <span>Сумма кредита</span>
+                  <span>{{ $t('Сумма кредита') }}</span>
                   <h1>{{ credit.amount }}</h1>
                 </div>
                 <!-- <div class="item-img">

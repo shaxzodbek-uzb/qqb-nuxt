@@ -8,32 +8,34 @@
               <thead class="table-thead">
                 <tr>
                   <th style="text-align: left; width: 400px;">
-                    Наименование валюты
+                    {{ $t('Наименование валюты') }}
                   </th>
-                  <th>Курс ЦБ</th>
-                  <th>Покупка</th>
-                  <th>Продажа</th>
+                  <th>{{ $t('Курс ЦБ') }}</th>
+                  <th>{{ $t('Покупка') }}</th>
+                  <th>{{ $t('Продажа') }}</th>
                 </tr>
               </thead>
               <tbody class="table-tbody">
                 <tr v-for="item in currency_rate.currencies" :key="item.id">
                   <td>
                     <div class="table-tbody-td">
-                      <span class="table-mobile-text">Наименование валюты</span>
+                      <span class="table-mobile-text">{{
+                        $t('Наименование валюты')
+                      }}</span>
                       <img :src="item.logo" alt />
                       <span>{{ item.name }}</span>
                     </div>
                   </td>
                   <td>
-                    <span class="table-mobile-text">Курс ЦБ</span>
+                    <span class="table-mobile-text">{{ $t('Курс ЦБ') }}</span>
                     {{ item.cb_rate }}
                   </td>
                   <td>
-                    <span class="table-mobile-text">Покупка</span>
+                    <span class="table-mobile-text">{{ $t('Покупка') }}</span>
                     {{ item.buy_rate }}
                   </td>
                   <td>
-                    <span class="table-mobile-text">Продажа</span>
+                    <span class="table-mobile-text">{{ $t('Продажа') }}</span>
                     {{ item.sell_rate }}
                   </td>
                 </tr>
@@ -46,23 +48,29 @@
               <ul>
                 <li>
                   <p>
-                    Курс конвертации является информативным. При расчете может
-                    возникнуть погрешность по причине дополнительного округления
-                    курса.
+                    {{
+                      $t(
+                        'Курс конвертации является информативным. При расчете может возникнуть погрешность по причине дополнительного округления курса.'
+                      )
+                    }}
                   </p>
                 </li>
                 <li>
                   <p>
-                    В расчете не учтена конвертация на стороне платежной
-                    системы, которая происходит при проведении операций в
-                    банкоматах сторонних банков.
+                    {{
+                      $t(
+                        'В расчете не учтена конвертация на стороне платежной системы, которая происходит при проведении операций в банкоматах сторонних банков.'
+                      )
+                    }}
                   </p>
                 </li>
                 <li>
                   <p>
-                    Обращаем ваше внимание, что курс на дату совершения операции
-                    может отличаться от курса на дату списания денежных средств
-                    со счета.
+                    {{
+                      $t(
+                        'Обращаем ваше внимание, что курс на дату совершения операции может отличаться от курса на дату списания денежных средств со счета.'
+                      )
+                    }}
                   </p>
                 </li>
               </ul>
@@ -72,7 +80,7 @@
           <div class="tab-document-items rounded">
             <div class="tab-document-header d-flex">
               <div class="item-text f-fill">
-                <h1>Курсы валют в JSON формате</h1>
+                <h1>{{ $t('Курсы валют в JSON формате') }}</h1>
                 <span>07.05.2020 13:13:27</span>
               </div>
               <div class="item-more">
@@ -93,7 +101,7 @@
             <div class="converter-header">
               <div class="converter-header-content p-relative">
                 <img src="~/static/img/svg/coins.png" alt />
-                <h1>Архив</h1>
+                <h1>{{ $t('Архив') }}</h1>
 
                 <div class="converter-form">
                   <div class="converter-input">

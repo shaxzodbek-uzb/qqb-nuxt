@@ -30,10 +30,13 @@
             <div class="row">
               <div class="col-xl-4">
                 <div class="header-content-left">
-                  <h1>Подписывайтесь на QQB</h1>
+                  <h1>{{ $t('Подписывайтесь на QQB') }}</h1>
                   <p>
-                    Будем отправлять одно письмо в неделю,
-                    <br />и никакого спама
+                    {{
+                      $t(
+                        'Будем отправлять одно письмо в неделю, и никакого спама'
+                      )
+                    }}
                   </p>
                 </div>
               </div>
@@ -46,7 +49,7 @@
                       placeholder="Электронная почта"
                     />
                     <button class="btn btn-border rounded pointer transition">
-                      <span class="text-white">Подписаться</span>
+                      <span class="text-white">{{ $t('Подписаться') }}</span>
                     </button>
                   </div>
                 </form>
@@ -98,21 +101,21 @@
                       class="symbol-items d-flex align-center text-white"
                     >
                       <img src="/img/svg/symbol-1.png" alt />
-                      <span>ГЕРБ</span>
+                      <span>{{ $t('ГЕРБ') }}</span>
                     </nuxt-link>
                     <nuxt-link
                       :to="localePath('/')"
                       class="symbol-items d-flex align-center text-white"
                     >
                       <img src="/img/svg/symbol-2.png" alt />
-                      <span>ФЛАГ</span>
+                      <span>{{ $t('ФЛАГ') }}</span>
                     </nuxt-link>
                     <nuxt-link
                       :to="localePath('/')"
                       class="symbol-items d-flex align-center text-white"
                     >
                       <img src="/img/svg/symbol-3.png" alt />
-                      <span>ГИМН</span>
+                      <span>{{ $t('ГИМН') }}</span>
                     </nuxt-link>
                   </div>
                 </div>
@@ -132,30 +135,30 @@
             <div class="col-lg-3 col-sm-6 col-6 footer-phone-cell">
               <div class="d-flex align-center">
                 <img src="/img/svg/phone-white.png" alt />
-                <span>Телефон</span>
+                <span>{{ $t('Телефон') }}</span>
               </div>
               <p>+998 (78) 150 93 39</p>
             </div>
             <div class="col-lg-3 col-sm-6 col-6 footer-phone-cell">
               <div class="d-flex align-center">
                 <img src="/img/svg/phone-white-2.png" alt />
-                <span>Факс</span>
+                <span>{{ $t('Факс') }}</span>
               </div>
               <p>+998 (78) 150 39 93</p>
             </div>
             <div class="col-lg-3 col-sm-6 col-6 footer-phone-cell">
               <div class="d-flex align-center">
                 <img src="/img/svg/email-white.png" alt />
-                <span>Эл. почта</span>
+                <span>{{ $t('Эл. почта') }}</span>
               </div>
               <p>headoffice@qqb.uz</p>
             </div>
             <div class="col-lg-3 col-sm-6 col-6 footer-phone-cell">
               <div class="d-flex align-center">
                 <img src="/img/svg/loc-white.png" alt />
-                <span>Адрес</span>
+                <span>{{ $t('Адрес') }}</span>
               </div>
-              <p>г. Ташкент, ул А. Навои, 18А</p>
+              <p>{{ $t('г. Ташкент, ул А. Навои, 18А') }}</p>
             </div>
           </div>
         </div>
@@ -165,7 +168,7 @@
         <div class="container">
           <div class="footer-body-box d-flex">
             <div class="footer-box-items">
-              <h1>Информация</h1>
+              <h1>{{ $t('Информация') }}</h1>
             </div>
             <div
               class="footer-box-items"
@@ -189,9 +192,10 @@
         <div class="container">
           <div class="row align-center">
             <div class="col-xl-8 footer-bottom__left">
-              <span
-                >Последнее обновление сайта: <b>07.05.2020 13:13:27</b></span
-              >
+              <span>
+                {{ $t('Последнее обновление сайта') }}:
+                <b>07.05.2020 13:13:27</b>
+              </span>
               <p>
                 1994-2020 ©
                 <nuxt-link
@@ -199,8 +203,12 @@
                   style="text-decoration: underline;"
                   :to="localePath('/')"
                   >QISHLOQQURILISHBANK</nuxt-link
-                >. Все права защищены. Обнаружив в тексте ошибку, выделите её и
-                нажмите
+                >.
+                {{
+                  $t(
+                    'Все права защищены. Обнаружив в тексте ошибку, выделите её и нажмите'
+                  )
+                }}
                 <b>Ctrl+Enter</b>
               </p>
               <a
@@ -208,7 +216,7 @@
                 target="_blank"
                 class="owner-develope"
               >
-                Разработка сайта -
+                {{ $t('Разработка сайта') }} -
                 <b>GOODONE</b>
               </a>
             </div>

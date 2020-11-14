@@ -9,14 +9,14 @@
             @click="$router.go(-1)"
           >
             <img src="~/static/img/svg/arrow-back.png" alt />
-            <span>Карты</span>
+            <span>{{ $t('Карты') }}</span>
           </button>
 
           <div class="card-header-tools d-flex align-center">
             <button
               class="card-print-btn d-flex align-center f-between w-100 rounded pointer"
             >
-              <span>Печать</span>
+              <span>{{ $t('Печать') }}</span>
               <img src="~/static/img/svg/print.png" alt />
             </button>
 
@@ -24,7 +24,7 @@
               href="#"
               class="card-download-btn d-flex align-center f-between w-100 rounded secondary-color"
             >
-              <span>Скачать PDF</span>
+              <span>{{ $t('Скачать PDF') }}</span>
               <img src="~/static/img/svg/doc.png" alt />
             </a>
           </div>
@@ -62,7 +62,9 @@
                     alt
                   />
                   <div>
-                    <span>Банковские услуги по открытию карты:</span>
+                    <span
+                      >{{ $t('Банковские услуги по открытию карты') }}:</span
+                    >
                     <p>{{ card.cost }}</p>
                   </div>
                 </div>
@@ -73,7 +75,7 @@
                     alt
                   />
                   <div>
-                    <span>Срок действия:</span>
+                    <span>{{ $t('Срок действия') }}:</span>
                     <p>{{ card.validity }}</p>
                   </div>
                 </div>
@@ -85,7 +87,7 @@
                     alt
                   />
                   <div>
-                    <span>Необходимые документы:</span>
+                    <span>{{ $t('Необходимые документы') }}:</span>
                     <p>{{ card.required_documents }}</p>
                   </div>
                 </div>
@@ -101,13 +103,13 @@
         <div class="container">
           <div class="d-flex f-center">
             <div class="tab-items p-relative pointer active" data-toggle="tab">
-              <span>Карты</span>
+              <span>{{ $t('Карты') }}</span>
             </div>
             <div class="tab-items p-relative pointer" data-toggle="tab">
-              <span>Документы</span>
+              <span>{{ $t('Документы') }}</span>
             </div>
             <div class="tab-items p-relative pointer" data-toggle="tab">
-              <span>Вопросы и ответы</span>
+              <span>{{ $t('Вопросы и ответы') }}</span>
             </div>
           </div>
         </div>
@@ -133,7 +135,7 @@
               <img src="~/static/img/svg/home.png" class="d-block" alt />
             </router-link>
             <router-link to="/" class="d-flex align-center p-relative">
-              <span>Карты</span>
+              <span>{{ $t('Карты') }}</span>
             </router-link>
             <router-link to="/" class="d-flex align-center p-relative">
               <span>
@@ -144,7 +146,7 @@
 
           <div class="app-meta__download d-flex align-center">
             <p>
-              Скачать
+              {{ $t('Скачать') }}
               <span>PDF,</span>
               <span>205.77 KB</span>
             </p>

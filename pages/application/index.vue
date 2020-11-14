@@ -22,10 +22,6 @@
         <NuxtChild :key="$route.params.slug" />
       </div>
     </div>
-
-    <div class="notification-wrap active">
-      <p>Lorem ipsum</p>
-    </div>
   </div>
 </template>
 

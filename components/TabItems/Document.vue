@@ -1,7 +1,9 @@
 <template>
   <div class="tab-document">
     <div class="container">
-      <p class="tab-document-title">Все что вы хотели знать о картах QQB</p>
+      <p class="tab-document-title">
+        {{ $t('Все что вы хотели знать о картах QQB') }}
+      </p>
 
       <div
         class="tab-document-items rounded"

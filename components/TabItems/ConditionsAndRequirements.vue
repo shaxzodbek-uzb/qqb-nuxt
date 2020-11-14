@@ -1,7 +1,7 @@
 <template>
   <div class="tab-content-requirement" ref="initAccordion">
     <p class="tab-document-title">
-      Все что вы хотели знать о условиях и требованиях
+      {{ $t('Все что вы хотели знать о условиях и требованиях') }}
     </p>
 
     <div class="tab-document-items rounded" v-for="faq in faqs" :key="faq.id">
