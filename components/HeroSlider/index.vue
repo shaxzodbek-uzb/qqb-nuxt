@@ -32,7 +32,7 @@
 
                     <nuxt-link
                       v-if="slide.url"
-                      :to="localePath(slide.url)"
+                      :to="localePath(`/${slide.url}`)"
                       class="btn btn-border rounded pointer transition"
                       >{{ $t('Подробнее') }}</nuxt-link
                     >
@@ -179,6 +179,7 @@
                   ref="nestedCarouselFirst"
                   v-bind="nestedSettings"
                   class="hooper-var-width hooper-var-second"
+                  v-if="popular_products.slides.length != 0"
                 >
                   <!-- Nested Slide 2 -->
                   <div

@@ -120,7 +120,7 @@ export default {
   Обязанности: 'Vazifalar',
   Требования: 'Talablar',
   Email: 'Email',
-  Адрес: 'Adres',
+  Адрес: 'Manzil',
   'Телефоны доверия': 'Ishonch telefonlari',
   'ПН-ПТ - 9:00 до 18:00': 'Du-Ju - 9:00 dan 18:00 gacha',
   'Колл-центр': 'Call markaz',
@@ -158,7 +158,7 @@ export default {
   'Обращаем ваше внимание, что курс на дату совершения операции может отличаться от курса на дату списания денежных средств со счета.':
     'Iltimos, shuni esda tutingki, operatsiyani amalga oshirish kunidagi stavka mablag`lar hisobdan chiqarilgan kun stavkasidan farq qilishi mumkin.',
   'Курсы валют в JSON формате': 'Valyutalar kursi JSON formatda',
-  Руководитель: 'Boshqaruvchi',
+  Руководитель: 'Rahbar',
   'Рассчитайте свой кредит': 'Kreditingizni hisoblang',
   'Калькулятор - Депозит': 'Kalkulyator - depozit',
   года: 'yil',
