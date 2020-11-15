@@ -157,11 +157,11 @@ export default {
         files: [],
         additional_params: {
           tin: {
-            title: 'Инн',
+            label: 'Инн',
             value: '',
           },
           branche: {
-            title: 'Филиалы',
+            label: 'Филиалы',
             value: '',
           },
         },

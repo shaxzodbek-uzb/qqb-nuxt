@@ -38,6 +38,7 @@
                       $t('Имя и фамилия')
                     }}</span>
                     <input
+                      v-model="form.title"
                       type="text"
                       class="d-block w-100"
                       :placeholder="$t('Имя и фамилия')"
@@ -56,6 +57,7 @@
                       type="text"
                       class="d-block w-100"
                       placeholder="+998"
+                      v-model="form.additional_params.phone_number.value"
                     />
                   </div>
                 </div>
@@ -71,6 +73,7 @@
                       type="text"
                       class="d-block w-100"
                       placeholder="headoffice@qqb.uz"
+                      v-model="form.additional_params.email.value"
                     />
                   </div>
                 </div>
@@ -86,6 +89,7 @@
                     <textarea
                       class="d-block w-100"
                       :placeholder="$t('Текст обращения')"
+                      v-model="form.content"
                     ></textarea>
                   </div>
                 </div>
@@ -94,6 +98,7 @@
                   <button
                     type="button"
                     class="transition d-block w-100 h-100 pointer rounded"
+                    @click="submitForm"
                   >
                     {{ $t('Отправить сообщение') }}
                   </button>
@@ -155,6 +160,9 @@
         </div>
       </div>
     </transition>
+    <div class="notification-wrap" :class="{ active: show_success }">
+      <p>{{ $t('Заявка успешно отправлена!') }}</p>
+    </div>
   </div>
 </template>
 
@@ -163,7 +171,70 @@ export default {
   data() {
     return {
       show: false,
+      show_success: false,
+      form: {
+        type: 'feedback',
+        address: '-',
+        title: '',
+        content: '',
+        additional_params: {
+          phone_number: {
+            label: 'Номер телефона',
+            value: '',
+          },
+          email: {
+            label: 'Электронная почта',
+            value: '',
+          },
+        },
+      },
     }
+  },
+  methods: {
+    submitForm() {
+      let me = this
+      let formData = new FormData()
+      formData.append('title', this.form.title)
+      formData.append('address', this.form.address)
+      formData.append('content', this.form.content)
+      formData.append('type', this.form.type)
+      formData.append(
+        'additional_params[phone_number][label]',
+        this.form.additional_params.phone_number.label
+      )
+      formData.append(
+        'additional_params[phone_number][value]',
+        this.form.additional_params.phone_number.value
+      )
+      formData.append(
+        'additional_params[email][label]',
+        this.form.additional_params.email.label
+      )
+      formData.append(
+        'additional_params[email][value]',
+        this.form.additional_params.email.value
+      )
+
+      this.$axios
+        .post('/appeals', formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        })
+        .then(function () {
+          me.show_success = true
+          me.form.content = ''
+          me.form.title = ''
+          me.form.additional_params.phone_number.value = ''
+          me.form.additional_params.email.value = ''
+          setTimeout(() => {
+            me.show_success = false
+          }, 3000)
+        })
+        .catch(function () {
+          console.log('FAILURE!!')
+        })
+    },
   },
 }
 </script>

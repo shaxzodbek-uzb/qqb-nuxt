@@ -155,11 +155,11 @@ export default {
         files: [],
         additional_params: {
           credit_id: {
-            title: 'Кредить ID',
+            label: 'Кредить ID',
             value: '',
           },
           branche: {
-            title: 'Филиалы',
+            label: 'Филиалы',
             value: '',
           },
         },

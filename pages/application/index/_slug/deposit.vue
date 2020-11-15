@@ -195,11 +195,11 @@ export default {
         files: [],
         additional_params: {
           passport: {
-            title: 'Паспорт серия и номер',
+            label: 'Паспорт серия и номер',
             value: '',
           },
           branche: {
-            title: 'Филиалы',
+            label: 'Филиалы',
             value: '',
           },
         },
