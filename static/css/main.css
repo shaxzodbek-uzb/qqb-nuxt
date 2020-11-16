@@ -4214,6 +4214,15 @@ body {
   margin-bottom: 0
 }
 
+.dropdown--content > ul > li {
+  position: static;
+}
+
+.dropdown--content ul>li:hover .dropdown-content__sub {
+  opacity: 1;
+  visibility: visible;
+}
+
 /***************** MEDIA ***************/
 
 /* .header,
