@@ -415,12 +415,15 @@
             <div class="content-overlay-2 p-absolute w-100 h-100"></div>
             <div class="content-overlay-3 p-absolute w-100 h-100"></div>
 
-            <div class="container">
+            <div class="container p-relative" style="z-index: 1;">
               <div class="row">
                 <div class="col-xl-4" v-for="news in main_news" :key="news.id">
                   <p>
                     {{ news.name }}
-                    <nuxt-link :to="localePath(`/news/${news.id}`)">
+                    <nuxt-link
+                      :to="localePath(`/news/${news.id}`)"
+                      class="d-block text-white"
+                    >
                       {{ $t('Подробнее') }}
                     </nuxt-link>
                   </p>
