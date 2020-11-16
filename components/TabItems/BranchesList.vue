@@ -2,7 +2,7 @@
   <div class="filial-list-content">
     <div class="news-search p-relative">
       <input type="text" class="d-block w-100 h-100" />
-      <span class="input-placeholder p-absolute transition">Поиск</span>
+      <!-- <span class="input-placeholder p-absolute transition">Поиск</span> -->
       <img src="~/static/img/svg/search.png" class="p-absolute" alt />
     </div>
 

@@ -34,14 +34,13 @@
               <div class="tab-items p-relative pointer" data-toggle="tab">
                 <span>{{ $t('На карте') }}</span>
               </div>
-
               <div class="conent-select">
                 <span>{{ $t('Списком') }}</span>
-                <select>
-                  <option value="1">Ташкент</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
+                <select v-model="region_name">
+                  <option value="">-</option>
+                  ><option v-for="item in regions" :key="item" :value="item">
+                    {{ item }}
+                  </option>
                 </select>
               </div>
             </div>
@@ -49,7 +48,7 @@
 
           <div class="card-tab-content">
             <div role="tabpanel">
-              <BranchesList :branches="branches" />
+              <BranchesList :branches="filtered_branches" />
             </div>
             <div role="tabpanel">
               <div style="height: 500px;">
@@ -109,6 +108,7 @@ export default {
   data() {
     return {
       branches: [],
+      region_name: '',
       //   currentLocation: {},
       //   locationsVisibleOnMap: '',
       //   locations: [
@@ -306,6 +306,18 @@ export default {
   },
   components: {
     BranchesList,
+  },
+  computed: {
+    regions() {
+      return this.branches
+        .map((branch) => branch.region)
+        .filter((v, i, a) => a.indexOf(v) === i)
+    },
+    filtered_branches() {
+      return this.branches.filter(
+        (v) => this.region_name === '' || v.region === this.region_name
+      )
+    },
   },
 
   mounted() {

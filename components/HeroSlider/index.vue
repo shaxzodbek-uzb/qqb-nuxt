@@ -635,8 +635,8 @@
                                     </div>
 
                                     <div class="app-images d-flex">
-                                      <nuxt-link
-                                        to="https://apps.apple.com/uz/app/qqb-mobile/id1368479325"
+                                      <a
+                                        href="https://apps.apple.com/uz/app/qqb-mobile/id1368479325"
                                         class="d-block"
                                       >
                                         <img
@@ -644,9 +644,9 @@
                                           src="/img/svg/app-store.png"
                                           alt
                                         />
-                                      </nuxt-link>
-                                      <nuxt-link
-                                        to="https://play.google.com/store/apps/details?id=uz.fido_biznes.mobile.client.qqb"
+                                      </a>
+                                      <a
+                                        href="https://play.google.com/store/apps/details?id=uz.fido_biznes.mobile.client.qqb"
                                         class="d-block"
                                       >
                                         <img
@@ -654,7 +654,7 @@
                                           src="/img/svg/google-play.png"
                                           alt
                                         />
-                                      </nuxt-link>
+                                      </a>
                                     </div>
                                   </div>
                                 </div>

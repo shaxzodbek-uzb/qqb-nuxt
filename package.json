@@ -15,6 +15,7 @@
   "dependencies": {
     "@morioh/v-lightbox": "^1.0.3",
     "@nuxtjs/axios": "^5.12.0",
+    "@nuxtjs/recaptcha": "^0.6.2",
     "bootstrap": "^4.5.3",
     "bootstrap-vue": "^2.18.1",
     "hooper": "^0.3.4",

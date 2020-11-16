@@ -81,7 +81,7 @@
             <div class="tab-document-header d-flex">
               <div class="item-text f-fill">
                 <h1>{{ $t('Курсы валют в JSON формате') }}</h1>
-                <span>07.05.2020 13:13:27</span>
+                <span>{{ currency_rate.date }}</span>
               </div>
               <div class="item-more">
                 <router-link
@@ -103,19 +103,19 @@
                 <img src="~/static/img/svg/coins.png" alt />
                 <h1>{{ $t('Архив') }}</h1>
 
-                <div class="converter-form">
+                <!-- <div class="converter-form">
                   <div class="converter-input">
                     <v-select :options="year"></v-select>
                   </div>
                   <div class="converter-select">
                     <v-select :options="options"></v-select>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
             <div class="converter-datepicker">
               <date-picker
-                v-model="time1"
+                v-model="date"
                 valueType="format"
                 :inline="true"
               ></date-picker>
@@ -144,36 +144,23 @@ export default {
         currencies: [],
       },
       active_currency_id: 0,
-      time1: null,
+      date: null,
     }
+  },
+  watch: {
+    date(newVal) {
+      let me = this
+      this.$axios.$get('/currency-rates/last?limit=' + newVal).then((res) => {
+        me.currency_rate = res.data.currency_rate
+      })
+    },
   },
   mounted() {
     let me = this
     this.$axios.$get('/currency-rates/last').then((res) => {
       me.currency_rate = res.data.currency_rate
-      me.active_currency_id = me.currency_rate.currencies[0].id
     })
   },
-  computed: {
-    activeCurrency() {
-      for (
-        let index = 0;
-        index < this.currency_rate.currencies.length;
-        index++
-      ) {
-        const element = this.currency_rate.currencies[index]
-        if (element.id == this.active_currency_id) {
-          return element
-        }
-      }
-      return {
-        name: '-',
-        slug: '-',
-        sell_rate: '-',
-        buy_rate: '-',
-        cb_rate: '-',
-      }
-    },
-  },
+  computed: {},
 }
 </script>

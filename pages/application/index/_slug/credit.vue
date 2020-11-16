@@ -67,12 +67,14 @@
               :class="{ 'appeap-form-error': false }"
             >
               <span class="appeal-label d-block">{{ $t('Филиалы') }}</span>
-              <input
-                type="text"
-                class="d-block w-100"
-                placeholder="..."
+              <select
                 v-model="form.additional_params.branche.value"
-              />
+                class="d-block w-100 border-none"
+              >
+                <option v-for="item in branche_names" :key="item" :value="item">
+                  {{ item }}
+                </option>
+              </select>
 
               <img
                 class="form-error-img"
@@ -124,6 +126,11 @@
             </div>
           </div>
 
+          <recaptcha
+            @error="onError"
+            @success="onSuccess"
+            @expired="onExpired"
+          />
           <button
             type="button"
             class="appeal-button transition rounded pointer"
@@ -146,6 +153,9 @@ import { setOffset, getLeftSideClientRect } from '~/utils/frontend'
 export default {
   data() {
     return {
+      branches: [],
+      recaptcha_login: false,
+      show_success: false,
       type: {},
       form: {
         type: 'credit',
@@ -166,6 +176,11 @@ export default {
       },
     }
   },
+  computed: {
+    branche_names() {
+      return this.branches.map((branch) => branch.name)
+    },
+  },
   mounted() {
     setOffset()
     getLeftSideClientRect()
@@ -173,9 +188,23 @@ export default {
     this.$axios.$get('/appeal-types/credit').then((res) => {
       me.type = res.data['appeal_type']
     })
+    this.$axios.$get('/branches').then((res) => {
+      this.branches = res.data.branches
+    })
   },
   methods: {
-    submitForm() {
+    async submitForm() {
+      this.recaptcha_login = false
+      try {
+        const token = await this.$recaptcha.getResponse()
+        console.log('ReCaptcha token:', token)
+        this.submit()
+        await this.$recaptcha.reset()
+      } catch (error) {
+        console.log('Login error:', error)
+      }
+    },
+    submit() {
       let me = this
       let formData = new FormData()
       for (var i = 0; i < this.form.files.length; i++) {
@@ -226,6 +255,15 @@ export default {
       for (var i = 0; i < uploadedFiles.length; i++) {
         this.form.files.push(uploadedFiles[i])
       }
+    },
+    onError() {
+      this.recaptcha_login = false
+    },
+    onSuccess() {
+      this.recaptcha_login = true
+    },
+    onExpired() {
+      this.recaptcha_login = false
     },
   },
 }

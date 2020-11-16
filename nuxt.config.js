@@ -97,7 +97,14 @@ export default {
         //you can use libraries: ['places']
       },
     ],
+    '@nuxtjs/recaptcha',
   ],
+  recaptcha: {
+    hideBadge: true,
+    language: 'ru',
+    siteKey: '6Lf5feMZAAAAAIV7mpFFPSt0eKeP1jQL1ZTmUfwV',
+    version: 2,
+  },
   i18n: {
     locales: [
       //   {
