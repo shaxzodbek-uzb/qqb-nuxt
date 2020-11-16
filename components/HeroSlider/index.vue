@@ -633,7 +633,7 @@
 
                                     <div class="app-images d-flex">
                                       <nuxt-link
-                                        :to="localePath('/')"
+                                        to="https://apps.apple.com/uz/app/qqb-mobile/id1368479325"
                                         class="d-block"
                                       >
                                         <img

@@ -42,7 +42,7 @@
             <div class="tab-content-static pt-40">
               <div class="card-item-large rounded card-with-border d-flex">
                 <div class="item-text">
-                  <span>Срок кредита</span>
+                  <span>{{ $t('Срок кредита') }}</span>
                   <h1>{{ credit.term }}</h1>
                 </div>
                 <div class="item-text">

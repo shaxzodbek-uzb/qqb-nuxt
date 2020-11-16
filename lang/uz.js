@@ -197,4 +197,5 @@ export default {
   год: 'yil',
   'Финансовая отчетность': 'Moliyaviy hisobot',
   'Конвертер валют': 'Valyuta konvertori',
+  'Срок кредита': 'Kredit muddati',
 }

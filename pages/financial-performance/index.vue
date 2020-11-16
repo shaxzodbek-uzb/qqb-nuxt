@@ -25,10 +25,12 @@
 
           <div class="card-tab-content">
             <div role="tabpanel">
-              <FinancialPerformance />
+              <FinancialPerformance
+                :financial_performances="financial_performances"
+              />
             </div>
             <div role="tabpanel">
-              <AnnualReports />
+              <AnnualReports :anual_reports="anual_reports" />
             </div>
           </div>
         </div>
@@ -43,6 +45,12 @@ import FinancialPerformance from '~/components/TabItems/FinancialPerformance'
 import AnnualReports from '~/components/TabItems/AnnualReports'
 
 export default {
+  data() {
+    return {
+      financial_performances: [],
+      anual_reports: [],
+    }
+  },
   components: {
     FinancialPerformance,
     AnnualReports,
@@ -50,6 +58,15 @@ export default {
   mounted() {
     setOffset()
     tabNavigation()
+    let me = this
+    this.$axios.$get(`/financial-performances`).then((res) => {
+      while (me.financial_performances.pop());
+      me.financial_performances.push(...res.data.financial_performances)
+    })
+    this.$axios.$get(`/anual-reports`).then((res) => {
+      while (me.anual_reports.pop());
+      me.anual_reports.push(...res.data.anual_reports)
+    })
   },
 }
 </script>

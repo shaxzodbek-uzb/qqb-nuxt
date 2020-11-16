@@ -21,7 +21,7 @@
 
                 <div class="news-badge">
                   <img src="~/static/img/svg/calendar.png" alt />
-                  <span>23.01.2020</span>
+                  <span>{{ news.created_at }}</span>
                 </div>
               </div>
 
