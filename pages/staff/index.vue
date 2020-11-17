@@ -2,7 +2,7 @@
   <div class="bank-council-wrapper" data-set="offset" data-offset="top bottom">
     <div class="container">
       <div class="bank-container pt-60">
-        <h1 class="title-50">Совет банка</h1>
+        <h1 class="title-50">{{ $t('Совет банка') }}</h1>
 
         <div class="cards-entry-text">
           <h1>

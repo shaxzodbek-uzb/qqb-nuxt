@@ -141,7 +141,7 @@
 
     <div class="card-items-container d-flex f-wrap">
       <router-link
-        to="/"
+        :to="localePath(`/contributions/show/${deposit.id}`)"
         class="card-items deposit-card rounded transition"
         v-for="deposit in deposits"
         :key="deposit.id"
@@ -222,13 +222,13 @@ export default {
   },
   mounted() {
     let me = this
-    const $button = document.querySelector('.mobile-credit-button')
-    const $calcContent = document.querySelector('.calculator-box')
+    // const $button = document.querySelector('.mobile-credit-button')
+    // const $calcContent = document.querySelector('.calculator-box')
     // const $closeIcon = document.querySelector('.mobile-close-icon')
 
-    $button.addEventListener('click', function () {
-      $calcContent.classList.add('active')
-    })
+    // $button.addEventListener('click', function () {
+    //   $calcContent.classList.add('active')
+    // })
 
     // $closeIcon.addEventListener('click', function () {
     //   $calcContent.classList.remove('active')

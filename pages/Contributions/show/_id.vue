@@ -12,40 +12,24 @@
                   @click="$router.go(-1)"
                 >
                   <img src="~/static/img/svg/arrow-back.png" alt />
-                  <span>{{ $t('Новости') }}</span>
+                  <span>{{ $t('Вклады') }}</span>
                 </button>
 
                 <h1>
-                  {{ news.name }}
+                  {{ deposit.name }}
                 </h1>
 
                 <div class="news-badge">
                   <img src="~/static/img/svg/calendar.png" alt />
-                  <span>{{ news.created_at }}</span>
-                </div>
-              </div>
-
-              <div class="news-social">
-                <span>{{ $t('Поделиться новостью в соцсетях') }}:</span>
-
-                <div class="d-flex">
-                  <router-link to="/" class="social-items child-center">
-                    <img src="~/static/img/svg/fb.png" alt />
-                  </router-link>
-                  <router-link to="/" class="social-items child-center">
-                    <img src="~/static/img/svg/go.png" alt />
-                  </router-link>
-                  <router-link to="/" class="social-items child-center">
-                    <img src="~/static/img/svg/tw.png" alt />
-                  </router-link>
+                  <span>{{ deposit.created_at }}</span>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-xl-6">
             <div class="vacancies-show-right">
-              <img :src="news.image" alt="" class="rounded w-100" />
-              <div class="news-show-meta" v-html="news.content"></div>
+              <img :src="deposit.image" alt="" class="rounded w-100" />
+              <div class="news-show-meta" v-html="deposit.content"></div>
             </div>
           </div>
         </div>
@@ -60,14 +44,14 @@ import { setOffset } from '~/utils/frontend'
 export default {
   data() {
     return {
-      news: {},
+      deposit: {},
     }
   },
   mounted() {
     setOffset()
     let me = this
-    this.$axios.$get(`/news/` + this.$route.params.id).then((res) => {
-      me.news = res.data.news
+    this.$axios.$get(`/deposits/` + this.$route.params.id).then((res) => {
+      me.deposit = res.data.deposit
     })
   },
 }

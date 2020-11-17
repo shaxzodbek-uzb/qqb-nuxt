@@ -6,7 +6,7 @@
   >
     <div class="container">
       <div class="credit-page-container pt-60">
-        <h1 class="title-50">Финансовые показатели</h1>
+        <h1 class="title-50">{{ $t('Финансовые показатели') }}</h1>
 
         <div class="card-tab-navigation tab-navigation--credit">
           <div class="card-tab-header">
@@ -15,10 +15,10 @@
                 class="tab-items p-relative pointer active"
                 data-toggle="tab"
               >
-                <span>Финансовые показатели</span>
+                <span>{{ $t('Финансовые показатели') }}</span>
               </div>
               <div class="tab-items p-relative pointer" data-toggle="tab">
-                <span>Годовые отчеты</span>
+                <span>{{ $t('Годовые отчеты') }}</span>
               </div>
             </div>
           </div>

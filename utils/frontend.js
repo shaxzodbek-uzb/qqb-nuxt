@@ -25,6 +25,9 @@ export function tabCarousel() {
     })
   })
 }
+export function print() {
+  return window && window.print()
+}
 
 // // Set offset
 export function setOffset() {

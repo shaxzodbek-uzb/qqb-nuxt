@@ -5,16 +5,19 @@
         <div class="page-title-route d-flex align-center">
           <router-link
             class="title-route-items d-flex align-center"
-            :to="{ name: 'Filials' }"
+            :to="localePath('/branches')"
           >
             <span>{{ $t('Филиалы') }}</span>
           </router-link>
           <router-link
             class="title-route-items d-flex align-center"
-            :to="{ name: 'CashMachine' }"
+            :to="localePath('/branches/cash_machine')"
           >
             <div class="route-swich">
-              <div class="route-switch__circle child-center p-relative">
+              <div
+                class="route-switch__circle child-center p-relative"
+                style="margin-left: none;"
+              >
                 <img src="~/static/img/svg/switch-icon.png" alt />
               </div>
             </div>

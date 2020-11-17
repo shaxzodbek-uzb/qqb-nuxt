@@ -18,7 +18,9 @@
             <ul>
               <li v-for="child in item.children" :key="child.id">
                 <nuxt-link
+                  v-if="child.target == '_slef'"
                   :to="localePath(`/${child.value}`)"
+                  :target="child.target"
                   class="dropdown--content-items"
                   data-items="anchors"
                   @click="toggleDropdown"
@@ -30,6 +32,22 @@
                     v-if="child.children.length != 0"
                   ></div>
                 </nuxt-link>
+
+                <a
+                  v-else
+                  :href="child.value"
+                  class="dropdown--content-items"
+                  data-items="anchors"
+                  @click="toggleDropdown"
+                  :target="child.target"
+                >
+                  <span>{{ child.name }}</span>
+
+                  <div
+                    class="chevron-left-icon"
+                    v-if="child.children.length != 0"
+                  ></div>
+                </a>
 
                 <div class="dropdown-content__sub">
                   <ul v-if="child.children.length != 0">

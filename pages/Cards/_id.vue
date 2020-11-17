@@ -15,6 +15,7 @@
           <div class="card-header-tools d-flex align-center">
             <button
               class="card-print-btn d-flex align-center f-between w-100 rounded pointer"
+              @click="print()"
             >
               <span>{{ $t('Печать') }}</span>
               <img src="~/static/img/svg/print.png" alt />
@@ -23,6 +24,7 @@
             <a
               href="#"
               class="card-download-btn d-flex align-center f-between w-100 rounded secondary-color"
+              @click="pdf()"
             >
               <span>{{ $t('Скачать PDF') }}</span>
               <img src="~/static/img/svg/doc.png" alt />
@@ -155,14 +157,18 @@
         </div>
       </div>
     </div>
+
+    <div id="elementH"></div>
   </div>
 </template>
 
 <script>
-import { setOffset, tabNavigation } from '~/utils/frontend'
+import { setOffset, tabNavigation, print } from '~/utils/frontend'
 import Card from '~/components/TabItems/Cards'
 import Document from '~/components/TabItems/Document'
 import Faq from '~/components/TabItems/Faq'
+import html2canvas from 'html2canvas'
+import jsPdf from 'jspdf'
 
 export default {
   components: {
@@ -179,6 +185,7 @@ export default {
   },
   data() {
     return {
+      print,
       card: {
         id: 1,
         name: '',
@@ -195,6 +202,21 @@ export default {
         faqs: [],
       },
     }
+  },
+  methods: {
+    pdf() {
+      const domElement = document.body
+      html2canvas(domElement, {
+        onclone: () => {
+          //   document.getElementById('print-button').style.visibility = 'hidden'
+        },
+      }).then((canvas) => {
+        const img = canvas.toDataURL('image/png')
+        const pdf = new jsPdf()
+        pdf.addImage(img, 'JPEG', 0, 0, 200, 300)
+        pdf.save('document.pdf')
+      })
+    },
   },
 }
 </script>

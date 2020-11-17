@@ -178,14 +178,23 @@
               v-for="item in menu.menuItems"
               :key="item.id"
             >
-              <nuxt-link
-                :to="localePath(`/${child.value}`)"
-                class="footer-item-anchor d-block"
-                v-for="child in item.children"
-                :key="child.id"
-              >
-                {{ child.name }}
-              </nuxt-link>
+              <div v-for="child in item.children" :key="child.id">
+                <nuxt-link
+                  v-if="child.target == '_slef'"
+                  :to="localePath(`/${child.value}`)"
+                  class="footer-item-anchor d-block"
+                >
+                  {{ child.name }}
+                </nuxt-link>
+                <a
+                  v-else
+                  :href="child.value"
+                  :target="child.target"
+                  class="footer-item-anchor d-block"
+                >
+                  {{ child.name }}
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -205,7 +214,8 @@
                   class="text-white"
                   style="text-decoration: underline;"
                   :to="localePath('/')"
-                  >QISHLOQQURILISHBANK</nuxt-link
+                >
+                  QISHLOQQURILISHBANK </nuxt-link
                 >.
                 {{
                   $t(

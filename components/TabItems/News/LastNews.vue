@@ -9,7 +9,10 @@
     </div>
 
     <div class="news-items-wrap" v-for="item in news" :key="item.id">
-      <router-link :to="'news/' + item.id" class="news-items d-block">
+      <router-link
+        :to="localePath('news/' + item.id)"
+        class="news-items d-block"
+      >
         <div class="news-items__date d-flex align-center">
           <img src="~/static/img/svg/calendar.png" alt />
           <span>{{ item.created_at }}</span>

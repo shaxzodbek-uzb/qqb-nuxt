@@ -2,8 +2,9 @@
   <div class="news-right">
     <nuxt-link
       tag="div"
-      :to="'/news/' + top_news.id"
+      :to="localePath('/news/' + top_news.id)"
       class="news-left-embed p-relative rounded pointer"
+      v-if="top_news.id"
     >
       <img :src="top_news.image" class="p-absolute img-cover d-block" alt />
 
@@ -30,7 +31,7 @@
     <div class="row">
       <div class="col-xl-6" v-for="item in news" :key="item.id">
         <router-link
-          :to="'/news/' + item.id"
+          :to="localePath('/news/' + item.id)"
           class="news-items-2 transition rounded d-block"
         >
           <div class="embed-news">
