@@ -11,7 +11,7 @@
           </router-link>
           <router-link
             class="title-route-items d-flex align-center"
-            :to="localePath('/branches/cash_machine')"
+            :to="localePath('/cash_machines')"
           >
             <div class="route-swich">
               <div
@@ -51,7 +51,7 @@
 
           <div class="card-tab-content">
             <div role="tabpanel">
-              <BranchesList :branches="filtered_branches" />
+              <CashMachineList :cash_machines="filtered_cash_machines" />
             </div>
             <div role="tabpanel">
               <div style="height: 500px;">
@@ -105,27 +105,30 @@
 
 <script>
 import { setOffset, tabNavigation } from '~/utils/frontend'
-import BranchesList from '~/components/TabItems/BranchesList'
+import CashMachineList from '~/components/TabItems/CashMachineList'
 
 export default {
   data() {
     return {
-      branches: [],
+      cash_machines: [],
       region_name: '',
     }
   },
   components: {
-    BranchesList,
+    CashMachineList,
   },
   computed: {
     regions() {
-      return this.branches
-        .map((branch) => branch.region)
+      return this.cash_machines
+        .map((cash_machine) => cash_machine.branche.region)
         .filter((v, i, a) => a.indexOf(v) === i)
     },
-    filtered_branches() {
-      return this.branches.filter(
-        (v) => this.region_name === '' || v.region === this.region_name
+    filtered_cash_machines() {
+      return this.cash_machines.filter(
+        (v) =>
+          this.region_name === '' ||
+          v.branche === '' ||
+          v.branche.region === this.region_name
       )
     },
   },
@@ -134,8 +137,8 @@ export default {
     setOffset()
     tabNavigation()
 
-    this.$axios.$get('/branches?cash_machine=1').then((res) => {
-      this.branches = res.data.branches
+    this.$axios.$get('/cash-machines').then((res) => {
+      this.cash_machines = res.data.cash_machines
     })
   },
 

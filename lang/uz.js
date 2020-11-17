@@ -200,4 +200,5 @@ export default {
   'Срок кредита': 'Kredit muddati',
   'Финансовые показатели': "Moliyaviy ko'rsatkichlar",
   'Годовые отчеты': 'Yillik hisobot',
+  'Расположение банкомата': 'Bankomatning joylashgan joyi ',
 }

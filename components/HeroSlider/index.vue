@@ -28,7 +28,7 @@
                   <div class="nested-slide-text p-relative">
                     <h1 class="title-60">{{ slide.name }}</h1>
 
-                    <p>{{ slide.description }}</p>
+                    <p v-html="slide.description"></p>
 
                     <nuxt-link
                       v-if="slide.url"
@@ -882,5 +882,3 @@ export default {
   },
 }
 </script>
-
-<style></style>
