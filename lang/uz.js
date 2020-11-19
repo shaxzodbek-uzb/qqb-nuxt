@@ -4,7 +4,7 @@ export default {
   'InternetBank физ.': 'Internet bank jismoniy shaxslar',
   'InternetBank юр.': 'Internet bank yuridik shaxslar',
   'Персоналный кабинет': 'Shaxsiy kabinet',
-  Лучшие: 'Eng yahshi',
+  Лучшие: 'Eng yaxshi',
   Карты: 'Kartalar',
   'Покупайте товары и оплачивайте услуги в торговых точках по всему миру. Снимайте наличные средства в банкоматах и кассах филиалов банка.':
     "Dunyo bo'ylab chakana savdo do'konlarida tovarlarni sotib oling va xizmatlar uchun to'lovlarni amalga oshiring. Bankomatlardan va bank filiallarining kassalaridan naqd pul oling.",
@@ -61,7 +61,7 @@ export default {
   'Банковские услуги по открытию карты':
     'Plastik karta ochish bo`yicha bank xizmatlari',
   'Срок действия': 'Amal qilish muddati',
-  'Необходимые документы': 'Krakli hujjatlar',
+  'Необходимые документы': 'Kerakli hujjatlar',
   Документы: 'Hujjatlar',
   'Вопросы и ответы': 'Savol va javoblar',
   Скачать: 'Yuklab olish',
