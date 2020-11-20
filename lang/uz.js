@@ -108,7 +108,7 @@ export default {
   'Результаты опроса': 'So`rov natijalari',
   'Совет банка': 'Bank boshqaruvi',
   'Примечание: У членов Совета Банка не имеются доли в уставном капитале банка':
-    'Izoh: Bank Kengashi a`zolarining bank ustav kapitalida ulushi yo`q',
+    'Izoh: Bank boshqaruvi a`zolarining bank ustav kapitalida ulushi yo`q',
   'Члены наблюдательного совета АКБ “Кишлок курилиш банк” (01.01.2020)':
     '“Qishloq qurilish bank” ATB Kuzatuv kengashi a`zolari (01.01.2020 y.)',
   'Занимаемая должность': 'Lavozim',
