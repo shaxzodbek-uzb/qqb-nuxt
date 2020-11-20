@@ -35,6 +35,18 @@
             </div>
             <span>{{ item.position }}</span>
           </div>
+          <div class="tariff-table-items d-flex">
+            <div class="f-fill">
+              <p>{{ $t('Номера телефонов') }}:</p>
+            </div>
+            <span>{{ item.phone }}</span>
+          </div>
+          <div class="tariff-table-items d-flex">
+            <div class="f-fill">
+              <p>{{ $t('Электронная почта') }}:</p>
+            </div>
+            <span>{{ item.email }}</span>
+          </div>
         </div>
       </div>
     </div>
