@@ -31,6 +31,10 @@ export default {
         src: 'https://code.jivosite.com/widget/95D8Br60LX',
         body: true,
       },
+      {
+        src: 'https://www.gstatic.com/charts/loader.js',
+        body: true,
+      },
     ],
   },
   /*
