@@ -7,8 +7,10 @@
     </div>
 
     <div class="card-medium" v-for="item in branches" :key="item.id">
-      <div class="card-medium-header d-flex align-center">
-        <h1>{{ item.name }}</h1>
+      <div class="card-medium-header d-flex">
+        <div class="branches-text">
+          <h1>{{ item.name }}</h1>
+        </div>
 
         <!-- <button class="btn main-bg rounded pointer transition ml-auto">
           <span>Заполнить заявку</span>
@@ -17,7 +19,11 @@
         <button
           class="card-location-button secondary-color rounded pointer ml-auto"
         >
-          <img src="~/static/img/svg/location.png" alt />
+          <img
+            src="~/static/img/svg/location.png"
+            alt
+            class="d-block mx-auto"
+          />
         </button>
       </div>
 

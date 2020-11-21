@@ -3,7 +3,7 @@
     <div class="container">
       <div class="vacancies-show-container pt-60">
         <div class="row">
-          <div class="col-xl-6">
+          <div class="col-xl-5">
             <div class="news-aside d-flex f-column h-100">
               <div class="vacancies-show-left">
                 <button
@@ -26,7 +26,7 @@
               </div>
             </div>
           </div>
-          <div class="col-xl-6">
+          <div class="col-xl-7">
             <div class="vacancies-show-right">
               <img :src="deposit.image" alt="" class="rounded w-100" />
               <div class="news-show-meta" v-html="deposit.content"></div>

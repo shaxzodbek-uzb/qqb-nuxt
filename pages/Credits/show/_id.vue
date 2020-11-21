@@ -41,16 +41,16 @@
           <div class="card-tab-content">
             <div class="tab-content-static pt-40">
               <div class="card-item-large rounded card-with-border d-flex">
-                <div class="item-text">
+                <div class="item-text orphan-text-2">
                   <span>{{ $t('Срок кредита') }}</span>
                   <h1>{{ credit.term }}</h1>
                 </div>
-                <div class="item-text">
+                <div class="item-text orphan-text-2">
                   <span>{{ $t('Льготный период') }}</span>
                   <h1>{{ credit.grace_period }}</h1>
                 </div>
                 <div class="item-text-line"></div>
-                <div class="item-text item-text--long">
+                <div class="item-text item-text--long orphan-text-2">
                   <span>{{ $t('Сумма кредита') }}</span>
                   <h1>{{ credit.amount }}</h1>
                 </div>

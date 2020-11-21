@@ -11,7 +11,7 @@
             {{ document.extension.toUpperCase() }}
           </div>
         </div>
-        <div class="item-text f-fill">
+        <div class="item-text orphan-text-3 f-fill">
           <h1>{{ document.name }}</h1>
           <span>
             <!-- {{ document.mime }}, -->

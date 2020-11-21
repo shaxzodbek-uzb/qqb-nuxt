@@ -9,6 +9,7 @@
             <!-- Begin Nested Slider -->
             <VueSlickCarousel
               v-bind="settings"
+              :autoplay="true"
               ref="carousel"
               v-if="slider.slides.length != 0"
             >
@@ -419,7 +420,7 @@
               <div class="row">
                 <div class="col-xl-4" v-for="news in main_news" :key="news.id">
                   <p>
-                    {{ news.name }}
+                    <span>{{ news.name }}</span>
                     <nuxt-link
                       :to="localePath(`/news/${news.id}`)"
                       class="d-block text-white"
@@ -482,14 +483,14 @@
                     </div>
 
                     <hooper
-                      class="nested-hooper"
+                      class="nested-hooper orphan-hooper-1"
                       ref="hooperNested"
                       :settings="newsHooper"
                     >
                       <slide v-for="news in item.news" :key="news.id">
                         <nuxt-link
                           :to="localePath(`/news/${news.id}`)"
-                          class="news-items-2 transition rounded d-block p-relative"
+                          class="news-items-2 orphan-news-2 transition rounded d-block p-relative"
                         >
                           <div class="card-background p-absolute w-100 h-100">
                             <img

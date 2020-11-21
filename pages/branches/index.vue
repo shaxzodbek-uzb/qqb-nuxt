@@ -16,7 +16,7 @@
             <div class="route-swich">
               <div
                 class="route-switch__circle child-center p-relative"
-                style="margin-left: none;"
+                style="margin-left: 0;"
               >
                 <img src="~/static/img/svg/switch-icon.png" alt />
               </div>
@@ -26,8 +26,8 @@
         </div>
 
         <div class="filials-tab-navigation tab-navigation--credit">
-          <div class="card-tab-header">
-            <div class="d-flex">
+          <div class="card-tab-header branches-header">
+            <div class="d-flex flex-wrap">
               <div
                 class="tab-items p-relative pointer active"
                 data-toggle="tab"
