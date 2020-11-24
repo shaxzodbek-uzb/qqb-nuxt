@@ -17,12 +17,12 @@
         alt="Search Icon"
         @click="showSearch"
       />
-      <img
+      <!-- <img
         src="/img/svg/times-icon.png"
         class="times-icon"
         alt="Times Icon"
         @click="hideSearch"
-      />
+      /> -->
     </button>
 
     <div
@@ -31,6 +31,49 @@
       :class="{ active: show }"
     >
       <div class="container">
+        <header class="header p-fixed w-100">
+          <div class="header-top header-top__search d-flex align-center">
+            <div class="container">
+              <div class="row align-center header-row">
+                <div
+                  class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-10 header-cell-1"
+                >
+                  <nuxt-link
+                    :to="localePath('/')"
+                    class="header-logo d-block p-relative"
+                  >
+                    <img
+                      src="~/static/img/logo.png"
+                      alt="Logo"
+                      class="d-block"
+                    />
+                    <img
+                      src="~/static/img/logo-white.png"
+                      alt="Logo"
+                      class="logo-white d-block p-absolute transition"
+                    />
+                  </nuxt-link>
+                </div>
+                <div
+                  class="col-xl-9 col-lg-8 col-md-6 col-sm-6 col-2 header-cell-3"
+                >
+                  <div
+                    class="header-toolbar header-toolbar__search d-flex align-center"
+                  >
+                    <img
+                      src="/img/svg/times-icon.png"
+                      class="times-icon pointer"
+                      alt="Times Icon"
+                      @click="hideSearch"
+                    />
+                    <Language />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
         <div class="mobile-user-tools align-center">
           <!-- <div class="mobile-qqb-online">
             <button

@@ -314,7 +314,7 @@
                       }"
                     >
                       <div
-                        class="card-items__header card-header-animate mb-auto items-center"
+                        class="card-items__header card-header-animate items-center"
                       >
                         <h1 class="text-left">
                           {{ item.name }}
