@@ -110,11 +110,13 @@
                   <h1>{{ $t('от') }} 2%</h1>
                 </div>
 
-                <img
-                  class="slide-angle-icon ml-auto pointer"
-                  src="/img/svg/angle-down.png"
-                  alt
-                />
+                <a href="#hooper-section-2" id="anchor">
+                  <img
+                    class="slide-angle-icon ml-auto pointer"
+                    src="/img/svg/angle-down.png"
+                    alt
+                  />
+                </a>
               </div>
             </div>
           </div>
@@ -123,7 +125,7 @@
       <!-- End Parent Slide 1 -->
 
       <!-- Parent Slide 2 -->
-      <div class="hooper-slide-items hooper-slide-2">
+      <div id="hooper-section-2" class="hooper-slide-items hooper-slide-2">
         <div
           class="set-offset-slide d-flex f-column"
           data-set="offset"
@@ -787,23 +789,23 @@ export default {
       nestedSettings: {
         speed: 500,
         draggable: false,
-        infinite: false,
-        slidesToShow: 3,
+        infinite: true,
+        slidesToShow: 2,
         slidesToScroll: 1,
         variableWidth: true,
         responsive: [
           {
-            breakpoint: 1370,
+            breakpoint: 1500,
             settings: {
-              slidesToShow: 2.35,
-              variableWidth: false,
+              slidesToShow: 2,
+              //   variableWidth: false,
             },
           },
           {
             breakpoint: 1025,
             settings: {
               slidesToShow: 1.5,
-              variableWidth: false,
+              //   variableWidth: false,
             },
           },
           {
@@ -836,6 +838,19 @@ export default {
 
     if ($bodyWidth <= 1025) {
       this.mobile_view = true
+    }
+
+    const links = document.querySelector('#anchor')
+
+    function clickHandler(e) {
+      e.preventDefault()
+      const href = this.getAttribute('href')
+      const offsetTop = document.querySelector(href).offsetTop
+
+      scroll({
+        top: offsetTop,
+        behavior: 'smooth',
+      })
     }
   },
   methods: {

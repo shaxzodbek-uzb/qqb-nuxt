@@ -21,7 +21,7 @@ import TheFooter from '~/components/layout/Footer'
 import TheCurrencyRates from '~/components/layout/CurrencyRates'
 import TheFeedback from '~/components/layout/Feedback'
 import Loader from '~/components/Loader'
-import { /*setVH,*/ dropdown } from '~/utils/frontend'
+import { setVH, dropdown } from '~/utils/frontend'
 
 export default {
   data() {
@@ -43,7 +43,7 @@ export default {
   },
   mounted() {
     // Initialize functions
-    // setVH()
+    setVH()
     dropdown()
 
     function iOS() {

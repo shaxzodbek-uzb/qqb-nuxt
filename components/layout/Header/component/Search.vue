@@ -9,19 +9,19 @@
         src="/img/svg/search-icon.png"
         class="search-icon"
         alt="Search Icon"
-        @click="show = true"
+        @click="showSearch"
       />
       <img
         src="/img/svg/search-white.png"
         class="search-icon p-absolute white-icon"
         alt="Search Icon"
-        @click="show = true"
+        @click="showSearch"
       />
       <img
         src="/img/svg/times-icon.png"
         class="times-icon"
         alt="Times Icon"
-        @click="show = false"
+        @click="hideSearch"
       />
     </button>
 
@@ -198,6 +198,14 @@ export default {
   methods: {
     seachText(str) {
       return str.includes(this.search_text)
+    },
+    showSearch() {
+      this.show = true
+      document.querySelector('body').classList.add('search-active')
+    },
+    hideSearch() {
+      this.show = false
+      document.querySelector('body').classList.remove('search-active')
     },
   },
 }
