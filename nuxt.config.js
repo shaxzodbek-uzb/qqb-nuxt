@@ -64,7 +64,7 @@ export default {
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module',
+    // '@nuxtjs/eslint-module',
   ],
   /*
    ** Nuxt.js modules
@@ -97,7 +97,7 @@ export default {
     [
       'nuxt-gmaps',
       {
-        key: 'AIzaSyAeiaH3J_Y2ArS4jPY97F3QwYC00cgm6h4',
+        key: 'AIzaSyCpza6nn7UWrWSftkGop51ndOx9YW7ZR08',
         //you can use libraries: ['places']
       },
     ],
