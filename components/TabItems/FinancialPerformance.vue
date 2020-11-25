@@ -29,7 +29,7 @@
               v-for="item in performance.attributes"
               :key="item.id"
             >
-              <p v-html="item.name"></p>
+              <p v-html="item.name" style="margin-bottom: 0;"></p>
               <span v-html="item.text"></span>
             </div>
           </div>
