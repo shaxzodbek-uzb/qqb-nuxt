@@ -188,10 +188,34 @@ export default {
           },
         },
       },
+      validate: {
+        title: {
+          validated: true,
+          message: '',
+        },
+        address: {
+          validate: true,
+          message: '',
+        },
+        content: {
+          validate: true,
+          message: '',
+        },
+        phone_number: {
+          validate: true,
+          message: '',
+        },
+        email: {
+          validate: true,
+          message: '',
+        },
+      },
     }
   },
   methods: {
     submitForm() {
+      let valited = this.validateForm()
+      if (!valited) return valited
       let me = this
       let formData = new FormData()
       formData.append('title', this.form.title)
@@ -234,6 +258,10 @@ export default {
         .catch(function () {
           console.log('FAILURE!!')
         })
+    },
+    validateForm() {
+      return true
+      // if()
     },
   },
 }

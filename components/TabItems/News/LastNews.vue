@@ -1,14 +1,14 @@
 <template>
   <div class="news-left">
     <div class="news-search p-relative">
-      <input type="text" class="d-block w-100 h-100" />
+      <input type="text" class="d-block w-100 h-100" v-model="filter_text" />
       <span class="input-placeholder p-absolute transition">{{
         $t('Поиск')
       }}</span>
       <img src="~/static/img/svg/search.png" class="p-absolute" alt />
     </div>
 
-    <div class="news-items-wrap" v-for="item in news" :key="item.id">
+    <div class="news-items-wrap" v-for="item in filtered_news" :key="item.id">
       <router-link
         :to="localePath('news/' + item.id)"
         class="news-items d-block"
@@ -43,7 +43,13 @@ export default {
   data() {
     return {
       news: [],
+      filter_text: '',
     }
+  },
+  computed: {
+    filtered_news() {
+      return this.news.filter((item) => item.name.includes(this.filter_text))
+    },
   },
   props: {
     category_id: {

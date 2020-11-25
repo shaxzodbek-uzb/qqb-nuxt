@@ -9,7 +9,7 @@
             @click="$router.go(-1)"
           >
             <img src="~/static/img/svg/arrow-back.png" alt />
-            <span>{{ $t('Кредиты и кредитные карты') }}</span>
+            <span>{{ $t('Кредиты') }}</span>
           </button>
         </div>
       </div>
@@ -46,7 +46,7 @@
                   <h1>{{ credit.term }}</h1>
                 </div>
                 <div class="item-text orphan-text-2">
-                  <span>{{ $t('Льготный период') }}</span>
+                  <span>{{ $t('Ставка кредита') }}</span>
                   <h1>{{ credit.grace_period }}</h1>
                 </div>
                 <div class="item-text-line"></div>

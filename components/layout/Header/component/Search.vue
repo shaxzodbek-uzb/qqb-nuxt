@@ -87,6 +87,7 @@
         <div class="search-form d-flex align-center rounded mb-5">
           <img src="/img/svg/search.png" alt="Search Icon" class="d-block" />
           <input
+            v-model="filter_text"
             type="text"
             :placeholder="$t('Искать') + '...'"
             class="f-fill"
@@ -101,8 +102,9 @@
           <div class="desktop-menu-container">
             <div
               class="desktop-menu--items"
-              v-for="item in menu.menuItems"
+              v-for="item in filted_menu"
               :key="item.id"
+              v-show="item.children.length > 0"
             >
               <div class="row">
                 <div class="col-xl-3 col-lg-12">
@@ -133,7 +135,7 @@
           <div class="mobile-menu-container">
             <div
               class="mobile-menu--items mb-4"
-              v-for="item in menu.menuItems"
+              v-for="item in filted_menu"
               :key="item.id"
             >
               <b-button
@@ -177,25 +179,48 @@ import Language from './Language'
 export default {
   data() {
     return {
-      menu: [],
+      menu: {
+        menuItems: [],
+      },
       search_text: '',
       show: false,
+      filter_text: '',
     }
   },
   components: {
     Language,
   },
   mounted() {
-    this.$axios.$get('/menus/top-menu').then((res) => {
-      this.menu = res.data
-    })
+    this.loadMenu()
+  },
+  computed: {
+    filted_menu() {
+      return this.menu.menuItems.map((item) => {
+        let it = { ...item }
+        it.children = item.children.filter((t) =>
+          t.name.includes(this.filter_text)
+        )
+        return it
+      })
+    },
   },
   watch: {
     $route() {
       this.show = false
     },
+    '$i18n.locale': {
+      immediate: true,
+      handler() {
+        this.loadMenu()
+      },
+    },
   },
   methods: {
+    loadMenu() {
+      this.$axios.$get('/menus/top-menu').then((res) => {
+        this.menu = res.data
+      })
+    },
     seachText(str) {
       return str.includes(this.search_text)
     },

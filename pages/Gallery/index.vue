@@ -5,7 +5,11 @@
         <h1 class="title-50">{{ $t('Галерея') }}</h1>
 
         <div class="gallery-search news-search p-relative">
-          <input type="text" class="d-block w-100 h-100" />
+          <input
+            type="text"
+            class="d-block w-100 h-100"
+            v-model="filter_text"
+          />
           <span class="input-placeholder p-absolute transition">
             {{ $t('Поиск') }}
           </span>
@@ -14,13 +18,17 @@
       </div>
 
       <div class="gallery-container">
-        <div class="row gallery-items" v-for="item in galleries" :key="item.id">
+        <div
+          class="row gallery-items"
+          v-for="item in filtered_galleries"
+          :key="item.id"
+        >
           <div class="col-xl-3 gallery-left">
             <h1>{{ item.name }}</h1>
 
             <div class="news-badge">
               <img src="~/static/img/svg/calendar.png" alt />
-              <span>23.01.2020</span>
+              <span>{{ item.created_at }}</span>
             </div>
           </div>
           <div class="col-xl-9 gallery-right">
@@ -41,7 +49,15 @@ export default {
   data() {
     return {
       galleries: [],
+      filter_text: '',
     }
+  },
+  computed: {
+    filtered_galleries() {
+      return this.galleries.filter((item) =>
+        item.name.includes(this.filter_text)
+      )
+    },
   },
   mounted() {
     setOffset()
