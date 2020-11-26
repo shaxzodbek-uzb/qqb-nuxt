@@ -6,7 +6,7 @@
   >
     <div class="container">
       <div class="tariff-page-container pt-60 pb-60">
-        <h1 class="title-50">{{ $t('Тарифы') }}</h1>
+        <h1 class="title-50">{{ $t('Вопросы и ответы') }}</h1>
         <div class="card-tab-navigation tab-navigation--credit">
           <div class="card-tab-header">
             <!-- <div class="d-flex">
