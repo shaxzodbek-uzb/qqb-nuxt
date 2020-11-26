@@ -25,7 +25,7 @@
 
               <div class="item-more">
                 <router-link
-                  :to="'/vacancies/' + item.id"
+                  :to="localePath('/vacancies/' + item.id)"
                   class="main-bg d-flex align-center btn rounded pointer transition"
                 >
                   <span>{{ $t('Подробнее') }}</span>

@@ -9,7 +9,7 @@
         <NuxtLink
           v-for="type in types"
           :key="type.id"
-          :to="'/application/' + type.slug"
+          :to="localePath('/application/' + type.slug)"
           tag="div"
           class="tab-items p-relative pointer"
           :class="{ active: type.slug == $route.params.slug }"
