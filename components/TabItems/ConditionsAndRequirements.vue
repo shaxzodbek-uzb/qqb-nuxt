@@ -1,7 +1,7 @@
 <template>
   <div class="tab-content-requirement" ref="initAccordion">
     <p class="tab-document-title">
-      {{ $t('Все что вы хотели знать о условиях и требованиях') }}
+      {{ $t(title) }}
     </p>
 
     <div class="tab-document-items rounded" v-for="faq in faqs" :key="faq.id">
@@ -40,6 +40,10 @@ export default {
       },
       type: Array,
     },
+    title: {
+        default: 'Все что вы хотели знать о условиях и требованиях',
+        type: String
+    }
   },
   mounted() {
     const { initAccordion } = this.$refs

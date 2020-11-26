@@ -41,18 +41,17 @@
                 </div>
               </div>
               <div class="col-xl-8">
-                <form>
                   <div class="subscribe-form d-flex align-center rounded">
                     <input
                       class="f-fill text-white"
                       type="text"
-                      placeholder="Электронная почта"
+                      :placeholder="$t('Электронная почта')"
+                      v-model="email"
                     />
-                    <button class="btn btn-border rounded pointer transition">
+                    <button class="btn btn-border rounded pointer transition" @click="subscribe()">
                       <span class="text-white">{{ $t('Подписаться') }}</span>
                     </button>
                   </div>
-                </form>
               </div>
 
               <div class="subscribe-bottom d-flex align-center f-between w-100">
@@ -359,8 +358,18 @@ export default {
       menu: {
         menuItems: [],
       },
+      email: ''
     }
   },
+  methods: {
+      subscribe() {
+        this.$axios.$post('/subscribers', {
+            email: this.email
+        }).then(res => {
+            this.email = ''
+        })
+      }
+  }
 }
 </script>
 
