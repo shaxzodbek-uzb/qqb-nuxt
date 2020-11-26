@@ -179,7 +179,7 @@
             >
               <div v-for="child in item.children" :key="child.id">
                 <nuxt-link
-                  v-if="child.target == '_slef'"
+                  v-if="child.target == '_self'"
                   :to="localePath(`/${child.value}`)"
                   class="footer-item-anchor d-block"
                 >

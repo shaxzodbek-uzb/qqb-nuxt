@@ -18,7 +18,7 @@
             <ul>
               <li v-for="child in item.children" :key="child.id">
                 <nuxt-link
-                  v-if="child.target == '_slef'"
+                  v-if="child.target == '_self'"
                   :to="localePath(`/${child.value}`)"
                   :target="child.target"
                   class="dropdown--content-items"
