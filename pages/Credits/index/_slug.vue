@@ -6,7 +6,7 @@
       :key="credit.id"
     >
       <div class="tab-document-header d-flex">
-        <div class="item-text f-fill">
+        <div class="item-text f-fill fill-space">
           <h1>{{ credit.name }}</h1>
           <span>{{ credit.description }}</span>
         </div>
