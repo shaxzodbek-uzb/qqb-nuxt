@@ -4298,6 +4298,11 @@ body {
   margin-bottom: 0;
 }
 
+.fill-space {
+  padding-right: 340px;
+  line-height: 1.65;
+}
+
 /***************** MEDIA ***************/
 
 /* .header,
@@ -4632,6 +4637,10 @@ body {
 @media (max-width: 992px) {
   .desktop-menu-container {
     display: none;
+  }
+
+  .fill-space {
+    padding-right: 0;
   }
 
   .news-search {
