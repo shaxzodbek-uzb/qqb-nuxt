@@ -1,7 +1,7 @@
 <template>
   <div class="tab-content-document">
     <p class="tab-document-title">
-      {{ $t('Все что вы хотели знать о картах QQB') }}
+      <!-- {{ $t('Все что вы хотели знать о картах QQB') }} -->
     </p>
 
     <div

@@ -2,7 +2,7 @@
   <div class="tab-faq" ref="initAccordion">
     <div class="container">
       <p class="tab-document-title">
-        {{ $t('Все что вы хотели знать о картах QQB') }}
+        <!-- {{ $t('Все что вы хотели знать о картах QQB') }} -->
       </p>
 
       <div

@@ -52,9 +52,19 @@
                 <div class="dropdown-content__sub">
                   <ul v-if="child.children.length != 0">
                     <li v-for="ch in child.children" :key="ch.id">
-                      <nuxt-link :to="localePath(`/${ch.value}`)">
+                      <nuxt-link
+                        v-if="ch.target == '_self'"
+                        :to="localePath(`/${ch.value}`)">
                         {{ ch.name }}
                       </nuxt-link>
+                      
+                        <a
+                        v-else
+                        :href="ch.value"
+                        :target="ch.target"
+                        >
+                        {{ ch.name }}
+                        </a>
                     </li>
                   </ul>
                 </div>
