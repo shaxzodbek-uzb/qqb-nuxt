@@ -12,6 +12,7 @@
       <router-link
         :to="localePath('news/' + item.id)"
         class="news-items d-block"
+        style="color: inherit"
       >
         <div class="news-items__date d-flex align-center">
           <img src="~/static/img/svg/calendar.png" alt />

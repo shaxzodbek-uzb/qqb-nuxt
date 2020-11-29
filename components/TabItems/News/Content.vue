@@ -14,7 +14,7 @@
           <span>{{ top_news.created_at }}</span>
         </div>
 
-        <h1>
+        <h1 class="text-white">
           {{ top_news.name }}
         </h1>
 

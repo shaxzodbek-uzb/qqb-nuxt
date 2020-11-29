@@ -110,7 +110,7 @@
                   <h1>{{ $t('от') }} 2%</h1>
                 </div>
 
-                <a href="#hooper-section-2" id="anchor">
+                <a href="#hooper-section-2" id="anchor" class="js-scroll d-block ml-auto">
                   <img
                     class="slide-angle-icon ml-auto pointer"
                     src="/img/svg/angle-down.png"
@@ -840,17 +840,21 @@ export default {
       this.mobile_view = true
     }
 
-    const links = document.querySelector('#anchor')
+    const links = document.querySelectorAll('.js-scroll');
 
-    function clickHandler(e) {
-      e.preventDefault()
-      const href = this.getAttribute('href')
-      const offsetTop = document.querySelector(href).offsetTop
+    links.forEach(function (elem) {
+      elem.addEventListener('click', smoothScroll)
+    });
+
+    function smoothScroll(e) {
+      e.preventDefault();
+      const link = this.getAttribute("href");
+      const offsetTop = document.querySelector(link).offsetTop;
 
       scroll({
-        top: offsetTop,
-        behavior: 'smooth',
-      })
+        top: offsetTop - 145,
+        behavior: "smooth"
+      });
     }
   },
   methods: {

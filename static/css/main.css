@@ -329,7 +329,7 @@ body {
 .search-wrap__field {
   bottom: 0;
   left: 0;
-  height: calc(var(--vh, 1vh) * 100 - 0);
+  height: calc(var(--vh, 1vh) * 100 - 1px);
   /* height: 100vh; */
   background: #fff;
   transition: opacity 300ms, visibility 300ms;
@@ -1869,7 +1869,6 @@ body.search-enabled .header-top .header-navigation {
 
 .exchange-converter {
   border: 1px solid rgba(var(--main-color), 0.12);
-  overflow: hidden;
   margin-bottom: 24px;
 }
 
@@ -1885,6 +1884,7 @@ body.search-enabled .header-top .header-navigation {
   background: url('../img/svg/shape.png');
   background-size: cover;
   color: #fff;
+  border-bottom-right-radius: 0.25rem;
 }
 
 .converter-footer h1 {
@@ -3795,18 +3795,19 @@ body {
 }
 
 .lb-modal-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover !important;
+  border-radius: 4px;
+  /*width: 100%;*/
+  /*height: 100%;*/
+  /*object-fit: cover !important;*/
 }
 
 .lb-modal .lb-modal-next,
 .lb-modal .lb-modal-prev {
-  padding: 0;
+  padding: 0 !important;
   margin: 0;
   width: 34px;
   height: 34px;
-  background: #fff;
+  background: #fff !important;
   border-radius: 100%;
   display: flex;
   align-items: center;
@@ -3835,10 +3836,11 @@ body {
 .lb-modal-close {
   padding: 0 !important;
   width: 35px !important;
-  background: #fff;
   border-radius: 4px !important;
   height: 35px !important;
   cursor: pointer;
+  background: #fff !important;
+  box-shadow: none !important;
 }
 
 .lb-modal-close i {
@@ -4301,6 +4303,10 @@ body {
 .fill-space {
   padding-right: 340px;
   line-height: 1.65;
+}
+
+.currency-dropdown > .btn > span {
+  text-transform: uppercase;
 }
 
 /***************** MEDIA ***************/
@@ -5185,8 +5191,8 @@ body {
 
   .search-block-aside h1,
   .search-block-footer a {
-    line-height: 25px;
-    font-size: 18px;
+    line-height: 20px;
+    font-size: 15px;
   }
 
   .title-60 {
@@ -5396,7 +5402,6 @@ body {
     padding: 0 20px 20px 20px;
   }
 
-  .card-item-large h1,
   .about-credit-text h1 {
     font-size: 28px !important;
     line-height: 40px !important;

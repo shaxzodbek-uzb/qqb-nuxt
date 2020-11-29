@@ -24,6 +24,8 @@ import Loader from '~/components/Loader'
 import { setVH, dropdown } from '~/utils/frontend'
 
 export default {
+  scrollToTop: true,
+
   data() {
     return {
       isMobileContent: false,

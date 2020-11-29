@@ -146,10 +146,10 @@ export default {
   },
   methods: {
     grayscaleMode() {
-      document.querySelector('body').classList.add('grayscale-mode')
+      document.querySelector('html').classList.add('grayscale-mode')
     },
     defaultMode() {
-      document.querySelector('body').classList.remove('grayscale-mode')
+      document.querySelector('html').classList.remove('grayscale-mode')
     },
   },
 }
