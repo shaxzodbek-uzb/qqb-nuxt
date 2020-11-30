@@ -35,6 +35,10 @@ export default {
         src: 'https://www.gstatic.com/charts/loader.js',
         body: true,
       },
+      {
+        src: 'https://share.pluso.ru/pluso-like.js',
+        body: true,
+      },
     ],
   },
   /*

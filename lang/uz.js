@@ -200,4 +200,5 @@ export default {
   'Финансовые показатели': "Moliyaviy ko'rsatkichlar",
   'Годовые отчеты': 'Yillik hisobot',
   'Расположение банкомата': 'Bankomatning joylashgan joyi ',
+  "Дата последнего обновления": "Oxirgi yangilanish sanasi"
 }

@@ -28,8 +28,11 @@
           </div>
           <div class="col-xl-7">
             <div class="vacancies-show-right">
-              <img :src="deposit.image" alt="" class="rounded w-100" />
-              <div class="news-show-meta" v-html="deposit.content"></div>
+                <img :src="deposit.image" alt="" class="rounded w-100" />
+                <div class="news-show-meta" v-html="deposit.content"></div>
+                <div class="text-right mb-2">
+                    <strong>{{$t('Дата последнего обновления')}}:</strong> {{ deposit.updated_at }}
+                </div>
             </div>
           </div>
         </div>

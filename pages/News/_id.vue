@@ -27,18 +27,7 @@
 
               <div class="news-social">
                 <span>{{ $t('Поделиться новостью в соцсетях') }}:</span>
-
-                <div class="d-flex">
-                  <router-link to="/" class="social-items child-center">
-                    <img src="~/static/img/svg/fb.png" alt />
-                  </router-link>
-                  <router-link to="/" class="social-items child-center">
-                    <img src="~/static/img/svg/go.png" alt />
-                  </router-link>
-                  <router-link to="/" class="social-items child-center">
-                    <img src="~/static/img/svg/tw.png" alt />
-                  </router-link>
-                </div>
+                <div class="pluso" data-background="#ebebeb" data-options="medium,square,line,horizontal,counter,theme=04" data-services="vkontakte,odnoklassniki,facebook,twitter,google,moimir,email,print"></div>
               </div>
             </div>
           </div>
@@ -55,7 +44,8 @@
 </template>
 
 <script>
-import { setOffset } from '~/utils/frontend'
+import { setOffset, setPluso } from '~/utils/frontend'
+
 
 export default {
   data() {
@@ -64,6 +54,7 @@ export default {
     }
   },
   mounted() {
+    setPluso();
     setOffset()
     let me = this
     this.$axios.$get(`/news/` + this.$route.params.id).then((res) => {

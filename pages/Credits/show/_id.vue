@@ -62,6 +62,9 @@
             <div class="card-tab-box">
               <div role="tabpanel">
                 <AboutCredit :content="credit.content" />
+                <div class="text-right mb-2">
+                    <strong>{{$t('Дата последнего обновления')}}:</strong> {{ credit.updated_at }}
+                </div>
               </div>
               <div role="tabpanel">
                 <ConditionsAndRequirements :faqs="credit.faqs" />

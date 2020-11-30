@@ -1,3 +1,8 @@
+
+export function setPluso(){
+    pluso.start();
+    if (typeof pluso_ready == 'function') pluso_ready()
+}
 export function setVH() {
   if (process.client) {
     let vh = window.innerHeight * 0.01
