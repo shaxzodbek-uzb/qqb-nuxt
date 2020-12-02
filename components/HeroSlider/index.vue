@@ -439,7 +439,7 @@
               class="news-offset-wrap pt-60 pb-60"
               data-offset="setLeftOffset"
             >
-              <h1 class="title-50">{{ $t('Новости') }}</h1>
+              <nuxt-link to="/news"><h1 class="title-50">{{ $t('Новости') }}</h1></nuxt-link>
               <div
                 class="tabs card-tab-navigation tab-navigation--credit no-tab-border d-flex"
               >
