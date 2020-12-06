@@ -40,6 +40,7 @@
                     <input
                       v-model="form.title"
                       type="text"
+                      required
                       class="d-block w-100"
                       :placeholder="$t('Имя и фамилия')"
                     />
@@ -55,6 +56,7 @@
                     </span>
                     <input
                       type="text"
+                      required
                       class="d-block w-100"
                       placeholder="+998"
                       v-model="form.additional_params.phone_number.value"
@@ -71,6 +73,7 @@
                     </span>
                     <input
                       type="text"
+                      required
                       class="d-block w-100"
                       placeholder="headoffice@qqb.uz"
                       v-model="form.additional_params.email.value"
@@ -88,6 +91,7 @@
                     </span>
                     <textarea
                       class="d-block w-100"
+                      required
                       :placeholder="$t('Текст обращения')"
                       v-model="form.content"
                     ></textarea>
@@ -96,7 +100,7 @@
 
                 <div class="feedback-form-button">
                   <button
-                    type="button"
+                    type="submit"
                     class="transition d-block w-100 h-100 pointer rounded"
                     @click="submitForm"
                   >
@@ -210,6 +214,14 @@ export default {
           message: '',
         },
       },
+    }
+  },
+  watch: {
+    'form.additional_params.phone_number.value'(val) {
+        this.form.additional_params.phone_number.value = val.replace(/[^0-9]/g, '')
+    },
+    'form.title'(val) {
+        /^[a-zA-Z-.()& ]+$/.test(val) ? this.form.title = val : this.form.title = val.slice(0,-1)
     }
   },
   methods: {
