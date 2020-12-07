@@ -121,7 +121,7 @@
               ></date-picker>
             </div>
           </div>
-          <span class="converter-date">07.05.2020 13:13:27</span>
+          <span class="converter-date">{{ currency_rate.date }}</span>
         </div>
       </div>
     </div>
