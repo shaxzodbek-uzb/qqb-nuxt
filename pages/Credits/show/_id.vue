@@ -73,7 +73,8 @@
                 <CreditDocument :documents="credit.documents" />
               </div>
               <div role="tabpanel">
-                <Calculator />
+                <Calculator 
+                max_value="credit"/>
               </div>
             </div>
           </div>

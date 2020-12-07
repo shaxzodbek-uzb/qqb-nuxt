@@ -81,7 +81,7 @@
             <div class="tab-document-header d-flex">
               <div class="item-text f-fill">
                 <h1>{{ $t('Курсы валют в JSON формате') }}</h1>
-                <span>07.05.2020 13:13:27</span>
+                <span>{{ currency_rate.date }}</span>
               </div>
               <div class="item-more">
                 <router-link
@@ -97,7 +97,7 @@
         <div class="col-xl-3 col-lg-4 cash-left-cell">
           <CurrencyConverter />
 
-          <span class="converter-date">07.05.2020 13:13:27</span>
+          <span class="converter-date">{{ currency_rate.date }}</span>
         </div>
       </div>
     </div>

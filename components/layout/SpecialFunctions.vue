@@ -15,7 +15,7 @@
           data-position="top right"
         >
           <div class="special-facilities">
-            <span>Вид:</span>
+            <span>{{ $t('Вид') }}:</span>
 
             <div class="checkbox-group" @click="defaultMode">
               <input type="radio" id="check-11" name="radio" checked />
@@ -23,7 +23,7 @@
                 <div class="checkbox-curtain transition">
                   <img src="/img/svg/check.png" alt />
                 </div>
-                <span>Обычная версия</span>
+                <span>{{ $t('Обычная версия') }}</span>
               </label>
             </div>
 
@@ -33,12 +33,12 @@
                 <div class="checkbox-curtain transition">
                   <img src="/img/svg/check.png" alt />
                 </div>
-                <span>Черно-белая версия</span>
+                <span>{{ $t('Черно-белая версия') }}</span>
               </label>
             </div>
 
             <div class="facilities-font d-flex align-center">
-              <span>Размер шрифта:</span>
+              <span>{{ $t('Размер шрифта') }}:</span>
 
               <div class="facilities-font-control d-flex">
                 <div

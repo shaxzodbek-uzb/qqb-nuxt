@@ -39,6 +39,10 @@ export default {
         src: 'https://share.pluso.ru/pluso-like.js',
         body: true,
       },
+      {
+        src: '~/assets/orphus/orphus.js',
+        body: true,
+      },
     ],
   },
   /*

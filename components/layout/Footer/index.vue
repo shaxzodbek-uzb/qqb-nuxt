@@ -248,7 +248,7 @@
                   <img src="~static/img/icon/f-4.png" alt="" class="d-block" />
                 </a>
                 <a href="#" class="f-icon-items">
-                  <img src="~static/img/icon/f-5.png" alt="" class="d-block" />
+                  <a href="http://orphus.ru" id="orphus" target="_blank"><img alt="Orphus tizimi" src="https://orphus.ru/img/modern_blue.gif" border="0" width="88" height="" /></a>
                 </a>
                 <a
                   href="http://www.uzrating.com/"

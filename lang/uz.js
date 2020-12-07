@@ -52,7 +52,7 @@ export default {
   'Наименовние физической лица': 'Jismoniy shaxs nomi',
   'Кредить ID': 'Kredit ID raqami',
   'Паспорт серия и номер': 'Pasport seriyasi va raqami',
-  'История банка': 'Bank tarihi',
+  'История банка': 'Bank tarixi',
   Банкоматы: 'Bankomatlar',
   Списком: 'Ro`yhat',
   'На карте': 'Kartada',
@@ -200,5 +200,9 @@ export default {
   'Финансовые показатели': "Moliyaviy ko'rsatkichlar",
   'Годовые отчеты': 'Yillik hisobot',
   'Расположение банкомата': 'Bankomatning joylashgan joyi ',
-  "Дата последнего обновления": "Oxirgi yangilanish sanasi"
+  "Дата последнего обновления": "Oxirgi yangilanish sanasi",
+  "Вид": "Ko'rinish",
+  "Обычная версия": "Oddiy versiya",
+  "Черно-белая версия": "Qora va oq versiya",
+  "Размер шрифта": "Shrift hajmi"
 }

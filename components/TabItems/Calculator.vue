@@ -30,16 +30,16 @@
               <span>{{ $t('Сумма вклада') }}</span>
 
               <div class="form-group-range">
-                <p>{{ value }} UZS</p>
+                <p>{{ max_value * value_percent /100 }} UZS</p>
                 <vue-slider
-                  v-model="value"
+                  v-model="value_percent"
                   v-bind="optionsRangeSlider"
                 ></vue-slider>
               </div>
 
               <div class="form-range-field d-flex f-between">
-                <span>200 000 сум.</span>
-                <span>100 000 000 сум.</span>
+                <span>0 сум.</span>
+                <span>{{ max_value }} сум.</span>
               </div>
             </div>
           </div>
@@ -229,9 +229,15 @@
 
 <script>
 export default {
+    props: {
+        max_value: {
+            type: Number,
+            default: 0,
+        }
+    },
   data() {
     return {
-      value: 0,
+      value_percent: 0,
       optionsRangeSlider: {
         dotSize: [9, 17],
         tooltip: 'none',
