@@ -5612,7 +5612,12 @@ body {
   .app-exchange-cell {
     width: 33.33333%;
     margin: 0;
+    text-align: center;
   }
+
+    body .js-scroll {
+        display: none !important;
+    }
 
   .app-router,
   .nested-slide-text {
