@@ -106,7 +106,7 @@ export default {
       'nuxt-gmaps',
       {
         key: 'AIzaSyDQLvnqitj7zPdWE9jtfxLawpZZrbp1A-k',
-        //you can use libraries: ['places']
+        // libraries: ['places'],
       },
     ],
     '@nuxtjs/recaptcha',
