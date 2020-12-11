@@ -248,7 +248,9 @@ export default {
     },
     watch:{
         credit(){
-            this.date_options.push(this.credit.calculator_period)
+            for (let index = this.credit.calculator_grace_period + 1; index < this.credit.calculator_period; index++) {
+                this.date_options.push(index)
+            }
             this.selected_period = this.credit.calculator_period
 
             this.grace_options.push(this.credit.calculator_grace_period)
