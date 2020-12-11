@@ -164,13 +164,13 @@ export default {
   'мес.': 'oy',
   'Первоначальный взнос': 'Dastlabki to`lov',
   'Рассчитать кредит': 'Kreditni hisoblang',
-  'Процентная ставка': 'Stavka foizi',
+  'Процентная ставка': 'Foiz stavkasi',
   'Ежемесячная сумма платежа': 'Oylik to`lov miqdori',
-  'Результаты расчета предназначены для приблизительных и справочных целей.':
+  'Результаты расчетов предназначены только для оценочных и информационных целей.':
     'Hisoblash natijalari faqat taxminiy va ma`lumot olish uchun mo`ljallangan.',
-  'Последние расчеты производятся специалистами в филиалах Банка на основании вашей информации.':
+  'Окончательные расчеты производятся специалистами отделений Банка на основании ваших данных.':
     'So`nggi hisob-kitoblarni sizning ma`lumotlaringiz asosida Bank filiallaridagi mutaxassislar amalga oshiradilar.',
-  'Эти расчеты не включены в кредитные обязательства Банка.':
+  'Эти расчеты не включаются в кредитные обязательства Банка.':
     'Ushbu hisob-kitoblar Bankning kredit majburiyatlariga kiritilmagan.',
   Голосов: 'Ovozlar soni',
   Вы: 'Siz',
@@ -204,5 +204,12 @@ export default {
   "Вид": "Ko'rinish",
   "Обычная версия": "Oddiy versiya",
   "Черно-белая версия": "Qora va oq versiya",
-  "Размер шрифта": "Shrift hajmi"
+  "Размер шрифта": "Shrift hajmi",
+  "Льготный период": "Imtiyoz davri",
+  "Кол-во месяцев": "Oylar soni",
+  "Остаток": "Qoldiq",
+  "Основной долг": "Asosiy qarz",
+  "Оплата процентов": "Foiz to'lovi",
+  "Всего за кредит": "Jami kredit uchun",
+  "Итого": "Jami"
 }

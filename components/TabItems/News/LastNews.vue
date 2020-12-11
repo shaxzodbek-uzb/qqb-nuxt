@@ -9,8 +9,8 @@
     </div>
 
     <div class="news-items-wrap" v-for="item in filtered_news" :key="item.id">
-      <router-link
-        :to="localePath('news/' + item.id)"
+      <nuxt-link
+        :to="localePath('/news/' + item.id)"
         class="news-items d-block"
         style="color: inherit"
       >
@@ -26,7 +26,7 @@
         <p>
           {{ item.description }}
         </p>
-      </router-link>
+      </nuxt-link>
 
       <div class="line-horizontal"></div>
     </div>

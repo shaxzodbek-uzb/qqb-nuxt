@@ -11,7 +11,7 @@
         <div class="calculator-header-left p-relative">
           <img src="~/static/img/svg/calc.png" class="p-absolute" alt />
           <h1>{{ $t('Рассчитайте свой кредит') }}</h1>
-          <span>{{ $t('Калькулятор - Депозит') }}</span>
+          <span>{{ $t('Калькулятор - ') + credit.name }}</span>
         </div>
 
         <div class="mobile-close-icon">
@@ -27,7 +27,7 @@
         <div class="row">
           <div class="col-xl-5">
             <div class="form-group">
-              <span>{{ $t('Сумма вклада') }}</span>
+              <span>{{ $t('Сумма кредита') }}</span>
 
               <div class="form-group-range">
                 <p>{{ formatMoney(selected_amount) }} UZS</p>
@@ -45,7 +45,7 @@
           </div>
           <div class="col-xl-2">
             <div class="form-group">
-              <span>{{ $t('Срок депозита') }}</span>
+              <span>{{ $t('Срок кредита') }}</span>
 
               <div class="form-group-field">
                 <v-select :options="date_options" v-model="selected_period"></v-select>
@@ -100,7 +100,7 @@
           <span>
             {{
               $t(
-                'Результаты расчета предназначены для приблизительных и справочных целей.'
+                'Результаты расчетов предназначены только для оценочных и информационных целей.'
               )
             }}
           </span>
@@ -114,14 +114,14 @@
           <p>
             {{
               $t(
-                'Последние расчеты производятся специалистами в филиалах Банка на основании вашей информации.'
+                'Окончательные расчеты производятся специалистами отделений Банка на основании ваших данных.'
               )
             }}
           </p>
         </li>
         <li>
           <p>
-            {{ $t('Эти расчеты не включены в кредитные обязательства Банка.') }}
+            {{ $t('Эти расчеты не включаются в кредитные обязательства Банка.') }}
           </p>
         </li>
       </ul>
@@ -131,12 +131,12 @@
       <table class="table w-100">
         <thead class="table-thead">
           <tr>
-            <th>Фоиз ставкаси</th>
-            <th style="width: 150px;">Ойлар сони</th>
-            <th>Қолдиқ</th>
-            <th>Асосий қарз</th>
-            <th>Фоиз тўлови</th>
-            <th>Жами кредит учун</th>
+            <th>{{ $t('Процентная ставка') }}</th>
+            <th style="width: 150px;">{{ $t('Кол-во месяцев') }}</th>
+            <th>{{ $t('Остаток') }}</th>
+            <th>{{ $t('Основной долг') }}</th>
+            <th>{{ $t('Оплата процентов') }}</th>
+            <th>{{ $t('Всего за кредит') }}</th>
           </tr>
         </thead>
         <tbody class="table-tbody">
@@ -151,7 +151,7 @@
         </tbody>
         <tfoot class="table-tfoot">
           <tr>
-            <td colspan="3">Жами</td>
+            <td colspan="3">{{ $t('Итого') }}</td>
             <td>{{ formatMoney(sum_main_debit) }}</td>
             <td>{{ formatMoney(sum_percent_payment) }}</td>
             <td>{{ formatMoney(sum_overall) }}</td>
