@@ -20,7 +20,7 @@
 
         <div class="calculator-header-right">
           <p>{{ $t('Последнее обновление') }}:</p>
-          <span class="d-block">07.05.2020 13:13:27</span>
+          <span class="d-block">{{ credit.updated_at }}</span>
         </div>
       </div>
       <div class="calculator-area">
@@ -30,7 +30,7 @@
               <span>{{ $t('Сумма вклада') }}</span>
 
               <div class="form-group-range">
-                <p>{{ max_value * value_percent /100 }} UZS</p>
+                <p>{{ formatMoney(selected_amount) }} UZS</p>
                 <vue-slider
                   v-model="value_percent"
                   v-bind="optionsRangeSlider"
@@ -38,8 +38,8 @@
               </div>
 
               <div class="form-range-field d-flex f-between">
-                <span>0 сум.</span>
-                <span>{{ max_value }} сум.</span>
+                <span>{{ formatMoney(credit.calculator_min_amount) }} сум.</span>
+                <span>{{ formatMoney(credit.calculator_max_amount) }} сум.</span>
               </div>
             </div>
           </div>
@@ -48,12 +48,7 @@
               <span>{{ $t('Срок депозита') }}</span>
 
               <div class="form-group-field">
-                <v-select :options="options"></v-select>
-              </div>
-
-              <div class="form-range-field d-flex f-between">
-                <span>3 {{ $t('года') }}</span>
-                <span>3 {{ $t('мес.') }}</span>
+                <v-select :options="date_options" v-model="selected_period"></v-select>
               </div>
             </div>
           </div>
@@ -62,12 +57,7 @@
               <span>{{ $t('Льготный период') }}</span>
 
               <div class="form-group-field">
-                <v-select :options="options"></v-select>
-              </div>
-
-              <div class="form-range-field d-flex f-between">
-                <span>3 {{ $t('года') }}</span>
-                <span>3 {{ $t('мес.') }}</span>
+                <v-select :options="grace_options" v-model="selected_grace_period"></v-select>
               </div>
             </div>
           </div>
@@ -76,12 +66,7 @@
               <span>{{ $t('Первоначальный взнос') }}</span>
 
               <div class="form-group-field">
-                <v-select :options="options"></v-select>
-              </div>
-
-              <div class="form-range-field d-flex f-between">
-                <span>3 {{ $t('года') }}</span>
-                <span>3 {{ $t('мес.') }}</span>
+                <v-select :options="initial_options" v-model="initial_amount"></v-select>
               </div>
             </div>
           </div>
@@ -102,16 +87,12 @@
       <div class="calculator-result d-flex f-wrap text-white">
         <div class="calculator-result__left">
           <span>{{ $t('Процентная ставка') }}</span>
-          <h1>24%</h1>
+          <h1>{{ first_percent }}%</h1>
         </div>
         <div class="calculator-result__right f-fill d-flex">
           <div>
-            <span>{{ $t('Процентная ставка') }}</span>
-            <h1>39 935 370,41 UZS</h1>
-          </div>
-          <div>
             <span>{{ $t('Ежемесячная сумма платежа') }}</span>
-            <h1>544 798,36 UZS</h1>
+            <h1>{{ formatMoney(first_amount) }} UZS</h1>
           </div>
         </div>
 
@@ -150,76 +131,30 @@
       <table class="table w-100">
         <thead class="table-thead">
           <tr>
-            <th>{{ $t('Голосов') }}</th>
-            <th style="width: 150px;">{{ $t('Вы') }}</th>
-            <th>{{ $t('Начисленный доход') }}</th>
-            <th>{{ $t('Оплачиваемый доход') }}</th>
-            <th>{{ $t('Увеличение депозитов') }}</th>
-            <th>{{ $t('Сумма депозита находится в конце платежа') }}</th>
+            <th>Фоиз ставкаси</th>
+            <th style="width: 150px;">Ойлар сони</th>
+            <th>Қолдиқ</th>
+            <th>Асосий қарз</th>
+            <th>Фоиз тўлови</th>
+            <th>Жами кредит учун</th>
           </tr>
         </thead>
         <tbody class="table-tbody">
-          <tr>
-            <td>1,00</td>
-            <td>2020-08-24</td>
-            <td>41 666,67</td>
-            <td>41 666,67</td>
-            <td>0,00</td>
-            <td>5 000 000,00</td>
-          </tr>
-          <tr>
-            <td>2,00</td>
-            <td>2020-08-24</td>
-            <td>41 666,67</td>
-            <td>41 666,67</td>
-            <td>0,00</td>
-            <td>5 000 000,00</td>
-          </tr>
-          <tr>
-            <td>3,00</td>
-            <td>2020-08-24</td>
-            <td>41 666,67</td>
-            <td>41 666,67</td>
-            <td>0,00</td>
-            <td>5 000 000,00</td>
-          </tr>
-          <tr>
-            <td>4,00</td>
-            <td>2020-08-24</td>
-            <td>41 666,67</td>
-            <td>41 666,67</td>
-            <td>0,00</td>
-            <td>5 000 000,00</td>
+          <tr v-for="(item,index) in generatedTable" :key="index">
+            <td>{{ item.percent }}%</td>
+            <td>{{ item.month_number }}</td>
+            <td>{{ formatMoney(item.reminder) }}</td>
+            <td>{{ formatMoney(item.main_debit) }}</td>
+            <td>{{ formatMoney(item.percent_payment) }}</td>
+            <td>{{ formatMoney(item.overall) }}</td>
           </tr>
         </tbody>
         <tfoot class="table-tfoot">
           <tr>
-            <td colspan="2">{{ $t('На общий депозит') }}</td>
-            <td>41 666,67</td>
-            <td>41 666,67</td>
-            <td>0,00</td>
-            <td>5 000 000,00</td>
-          </tr>
-          <tr>
-            <td colspan="2">{{ $t('Сумма вклада') }}</td>
-            <td></td>
-            <td></td>
-            <td>5 000 000,00</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td colspan="2">{{ $t('Депозитный доход') }}</td>
-            <td></td>
-            <td></td>
-            <td>500 000,04</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td colspan="2">{{ $t('Сумма вклада в процентах') }}</td>
-            <td></td>
-            <td></td>
-            <td>5 500 000,04</td>
-            <td></td>
+            <td colspan="3">Жами</td>
+            <td>{{ formatMoney(sum_main_debit) }}</td>
+            <td>{{ formatMoney(sum_percent_payment) }}</td>
+            <td>{{ formatMoney(sum_overall) }}</td>
           </tr>
         </tfoot>
       </table>
@@ -230,35 +165,146 @@
 <script>
 export default {
     props: {
-        max_value: {
-            type: Number,
-            default: 0,
+        credit:{
+            type: Object,
+            default(){
+                return {}
+            }
         }
     },
-  data() {
-    return {
-      value_percent: 0,
-      optionsRangeSlider: {
-        dotSize: [9, 17],
-        tooltip: 'none',
-        height: 1,
-      },
-      options: ['foo', 'bar', 'baz'],
+    computed:{
+        first_percent(){
+            if (this.generatedTable.length > 0){
+                return this.generatedTable[0].percent
+            }else{
+                return 0
+            }
+        },
+        first_amount(){
+            if (this.generatedTable.length > 0){
+                return this.generatedTable[0].percent_payment
+            }else{
+                return 0
+            }
+        },
+        sum_main_debit(){
+            let sum = 0;
+            for (let index = 0; index < this.generatedTable.length; index++) {
+                const element = this.generatedTable[index];
+                sum += element.main_debit
+            }
+            return sum
+        },
+        sum_percent_payment(){
+            let sum = 0;
+            for (let index = 0; index < this.generatedTable.length; index++) {
+                const element = this.generatedTable[index];
+                sum += element.percent_payment
+            }
+            return sum
+        },
+        sum_overall(){
+            let sum = 0;
+            for (let index = 0; index < this.generatedTable.length; index++) {
+                const element = this.generatedTable[index];
+                sum += element.overall
+            }
+            return sum
+        },
+        selected_amount(){
+            return this.value_percent * (this.credit.calculator_max_amount - this.credit.calculator_min_amount) / 100 + this.credit.calculator_min_amount;
+        },
+        initial_amount(){
+            return this.selected_amount * this.credit.calculator_initial_amount / 100;
+        },
+        initial_options(){
+            return [this.initial_amount]
+        },
+        generatedTable(){
+            let result = [];
+            let percent = this.percent / 2;
+            let main_debit = this.selected_amount / (this.selected_period - this.selected_grace_period);
+            let main_debit_index = 0;
+            let reminder = this.selected_amount;
+            let percent_payment = 0;
+            for (let index = 1; index <= this.selected_period; index++) {
+                if(index>1 && index % 12 == 1 && percent < this.percent){
+                    percent += this.percent / 10;
+                }
+                main_debit_index = (index > this.selected_grace_period)?main_debit:0;
+                percent_payment = percent * reminder / 1200
+                result.push({
+                    percent: this.formatMoney(percent,1),
+                    month_number: index,
+                    reminder: reminder,
+                    main_debit: main_debit_index,
+                    percent_payment: percent_payment,
+                    overall: main_debit_index+percent_payment
+                });
+                reminder = reminder - main_debit_index;
+            }
+            return result;
+        }
+    },
+    watch:{
+        credit(){
+            this.date_options.push(this.credit.calculator_period)
+            this.selected_period = this.credit.calculator_period
+
+            this.grace_options.push(this.credit.calculator_grace_period)
+            this.selected_grace_period = this.credit.calculator_grace_period
+        
+            this.initial_options.push(this.credit.calculator_initial_amount * this)
+            this.selected_grace_period = this.credit.calculator_grace_period
+        
+        }
+    },
+    data() {
+        return {
+            percent: 14,
+            value_percent: 0,
+            optionsRangeSlider: {
+                dotSize: [9, 17],
+                tooltip: 'none',
+                height: 1,
+            },
+            options: ['foo', 'bar', 'baz'],
+            date_options: [],
+            grace_options: [],
+            selected_period: 0,
+            selected_grace_period: 0,
+        }
+    },
+    mounted() {
+        const $button = document.querySelector('.mobile-credit-button')
+        const $calcContent = document.querySelector('.calculator-box')
+        const $closeIcon = document.querySelector('.mobile-close-icon')
+
+        $button.addEventListener('click', function () {
+            $calcContent.classList.add('active')
+        })
+
+        $closeIcon.addEventListener('click', function () {
+            $calcContent.classList.remove('active')
+        })
+    },
+    methods: {
+        formatMoney(amount, decimalCount = 0, decimal = ".", thousands = " ") {
+            try {
+                decimalCount = Math.abs(decimalCount);
+                decimalCount = isNaN(decimalCount) ? 2 : decimalCount;
+
+                const negativeSign = amount < 0 ? "-" : "";
+
+                let i = parseInt(amount = Math.abs(Number(amount) || 0).toFixed(decimalCount)).toString();
+                let j = (i.length > 3) ? i.length % 3 : 0;
+
+                return negativeSign + (j ? i.substr(0, j) + thousands : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousands) + (decimalCount ? decimal + Math.abs(amount - i).toFixed(decimalCount).slice(2) : "");
+            } catch (e) {
+                console.log(e)
+            }
+        }
     }
-  },
-  mounted() {
-    const $button = document.querySelector('.mobile-credit-button')
-    const $calcContent = document.querySelector('.calculator-box')
-    const $closeIcon = document.querySelector('.mobile-close-icon')
-
-    $button.addEventListener('click', function () {
-      $calcContent.classList.add('active')
-    })
-
-    $closeIcon.addEventListener('click', function () {
-      $calcContent.classList.remove('active')
-    })
-  },
 }
 </script>
 
