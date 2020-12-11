@@ -11,7 +11,7 @@
           </router-link>
           <router-link
             class="title-route-items d-flex align-center"
-            :to="localePath('/cash_machines')"
+            :to="localePath('/cash-machines')"
           >
             <div class="route-swich">
               <div
