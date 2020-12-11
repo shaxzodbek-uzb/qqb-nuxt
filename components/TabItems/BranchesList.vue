@@ -17,6 +17,7 @@
         </button> -->
 
         <button
+          @click="openMapModal"
           class="card-location-button secondary-color rounded pointer ml-auto"
         >
           <img
@@ -56,6 +57,41 @@
         </div>
       </div>
     </div>
+
+    <div class="app-modal">
+      <div class="app-modal__overlay" @click="closeMapModal"></div>
+      <div class="app-modal__content">
+        <div class="modal-aspect-ratio">
+          <div class="modal-ratio__map">
+            <GMap
+              ref="gMap"
+              :center="{ lat: 41.311081, lng: 69.240562 }"
+              :options="{
+                fullscreenControl: false,
+                streetViewControl: false,
+                mapTypeControl: false,
+                zoomControl: true,
+                gestureHandling: 'cooperative',
+              }"
+              :zoom="15"
+            >
+              <GMapMarker
+                :position="{ lat: 41.311081, lng: 69.240562 }"
+                :options="{
+                  icon:
+                    'https://developers.google.com/maps/documentation/javascript/images/default-marker.png',
+                }"
+              >
+              </GMapMarker>
+            </GMap>
+          </div>
+
+          <div class="modal-close" @click="closeMapModal">
+            <i class="fas far fa-times"></i>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -67,6 +103,21 @@ export default {
       default() {
         return []
       },
+    },
+  },
+  data() {
+    return {}
+  },
+  methods: {
+    openMapModal() {
+      const $modal = document.querySelector('.app-modal')
+
+      $modal.classList.add('active')
+    },
+    closeMapModal() {
+      const $modal = document.querySelector('.app-modal')
+
+      $modal.classList.remove('active')
     },
   },
 }
