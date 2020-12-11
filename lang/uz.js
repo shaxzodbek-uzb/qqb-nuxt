@@ -55,7 +55,7 @@ export default {
   'История банка': 'Bank tarixi',
   Банкоматы: 'Bankomatlar',
   Списком: 'Ro`yhat',
-  'На карте': 'Kartada',
+  'На карте': 'Xarita',
   Печать: 'Bosib chiqarish',
   'Скачать PDF': 'Pdf fayl shaklida yuklash',
   'Банковские услуги по открытию карты':
@@ -211,5 +211,7 @@ export default {
   "Основной долг": "Asosiy qarz",
   "Оплата процентов": "Foiz to'lovi",
   "Всего за кредит": "Jami kredit uchun",
-  "Итого": "Jami"
+  "Итого": "Jami",
+  "Все Филиалы": "Barcha filiallar",
+  "Все Банкоматы": "Barcha bankomatlar"
 }

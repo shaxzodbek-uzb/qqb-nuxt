@@ -40,7 +40,7 @@
               <div class="conent-select">
                 <span>{{ $t('Списком') }}</span>
                 <select v-model="region_name">
-                  <option value="">Все Банкоматы</option>
+                  <option value="">{{ $t('Все Банкоматы') }}</option>
                   <option v-for="item in regions" :key="item" :value="item">
                     {{ item }}
                   </option>
