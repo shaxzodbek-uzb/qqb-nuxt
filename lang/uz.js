@@ -159,7 +159,6 @@ export default {
   'Курсы валют в JSON формате': 'Valyutalar kursi JSON formatda',
   Руководитель: 'Rahbar',
   'Рассчитайте свой кредит': 'Kreditingizni hisoblang',
-  'Калькулятор - Депозит': 'Kalkulyator - depozit',
   года: 'yil',
   'мес.': 'oy',
   'Первоначальный взнос': 'Dastlabki to`lov',

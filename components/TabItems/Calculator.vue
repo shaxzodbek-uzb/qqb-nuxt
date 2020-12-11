@@ -11,7 +11,7 @@
         <div class="calculator-header-left p-relative">
           <img src="~/static/img/svg/calc.png" class="p-absolute" alt />
           <h1>{{ $t('Рассчитайте свой кредит') }}</h1>
-          <span>{{ $t('Калькулятор - ') + credit.name }}</span>
+          <span>{{ $t('Калькулятор') + ' - ' + credit.name }}</span>
         </div>
 
         <div class="mobile-close-icon">
