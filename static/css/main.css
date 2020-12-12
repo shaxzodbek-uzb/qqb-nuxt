@@ -4460,10 +4460,10 @@ body {
 
 .modal-close {
   position: absolute;
-  top: -20px;
+  top: 0px;
   width: 40px;
   height: 40px;
-  right: -20px;
+  right: 0px;
   background: #fff;
   display: flex;
   align-items: center;
@@ -4477,6 +4477,34 @@ body {
   height: 20px;
   display: block;
   cursor: pointer;
+}
+
+.appeal-type-container {
+  background: #fff;
+  padding: 1.5rem 0 1rem;
+  overflow-x: auto;
+}
+
+.form-download-icon {
+  display: flex;
+  align-items: center;
+  color: rgba(var(--secondary-color), 1);
+  cursor: pointer;
+}
+
+.appeal-form .form-group-wrap {
+  border: 1px solid rgba(var(--secondary-color), 1);
+  border-radius: 4px;
+}
+
+.appeal-form .file-upload-area {
+  border-top-color: rgba(var(--secondary-color), 1);
+  border-right-color: rgba(var(--secondary-color), 1);
+  border-bottom-color: rgba(var(--secondary-color), 1);
+}
+
+.appeal-offset-left p a {
+  color: rgba(var(--secondary-color), 1) !important;
 }
 
 /***************** MEDIA ***************/
@@ -4765,6 +4793,10 @@ body {
   .hooper-container.scrolled .hooper-slide-2 .set-offset-slide,
   .hooper-container.scrolled .hooper-slide-3 .set-offset-slide {
     height: 725px;
+  }
+
+  .aspect-ratio {
+    padding-top: calc(50%);
   }
 
   .app-modal__content {

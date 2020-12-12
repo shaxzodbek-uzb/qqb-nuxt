@@ -5,6 +5,11 @@
         <h1 v-html="type.name"></h1>
 
         <p v-html="type.description"></p>
+        <!-- 
+        <a href="" class="form-download-icon">
+          <img src="~/static/img/svg/download.png" alt="" />
+          <span style="margin-left: 0.35rem;">Скачать форму заявку</span>
+        </a> -->
       </div>
     </div>
     <div class="col-xl-7 pt-60">
@@ -69,14 +74,7 @@
               :class="{ 'appeap-form-error': false }"
             >
               <span class="appeal-label d-block">{{ $t('Филиалы') }}</span>
-              <select
-                v-model="form.additional_params.branche.value"
-                class="d-block w-100 border-none"
-              >
-                <option v-for="item in branche_names" :key="item" :value="item">
-                  {{ item }}
-                </option>
-              </select>
+              <v-select :options="branche_names"></v-select>
 
               <img
                 class="form-error-img"

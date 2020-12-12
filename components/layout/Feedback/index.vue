@@ -17,6 +17,9 @@
 
         <div class="feedback-form p-relative bg-white rounded w-100">
           <div class="feedback-form-content">
+            <div class="modal-close pointer" @click="show = false">
+              <img src="~/static/img/svg/times-icon.png" alt="" />
+            </div>
             <div class="d-flex f-between">
               <h1>{{ $t('Обратная связь') }}</h1>
 
@@ -218,11 +221,16 @@ export default {
   },
   watch: {
     'form.additional_params.phone_number.value'(val) {
-        this.form.additional_params.phone_number.value = val.replace(/[^0-9]/g, '')
+      this.form.additional_params.phone_number.value = val.replace(
+        /[^0-9]/g,
+        ''
+      )
     },
     'form.title'(val) {
-        /^[a-zA-Z-.()& ]+$/.test(val) ? this.form.title = val : this.form.title = val.slice(0,-1)
-    }
+      ;/^[a-zA-Z-.()& ]+$/.test(val)
+        ? (this.form.title = val)
+        : (this.form.title = val.slice(0, -1))
+    },
   },
   methods: {
     submitForm() {

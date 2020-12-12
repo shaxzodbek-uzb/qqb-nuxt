@@ -67,14 +67,15 @@
               :class="{ 'appeap-form-error': false }"
             >
               <span class="appeal-label d-block">{{ $t('Филиалы') }}</span>
-              <select
+              <v-select :options="branche_names"></v-select>
+              <!-- <select
                 v-model="form.additional_params.branche.value"
                 class="d-block w-100 border-none"
               >
                 <option v-for="item in branche_names" :key="item" :value="item">
                   {{ item }}
                 </option>
-              </select>
+              </select> -->
 
               <img
                 class="form-error-img"

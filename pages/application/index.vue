@@ -5,7 +5,7 @@
     data-offset="top bottom"
   >
     <div class="appeal-offset-wrap w-100" data-offset="setLeftOffset">
-      <div class="d-flex">
+      <div class="appeal-type-container d-flex">
         <NuxtLink
           v-for="type in types"
           :key="type.id"
