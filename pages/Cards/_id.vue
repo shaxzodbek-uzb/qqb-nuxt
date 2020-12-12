@@ -129,7 +129,10 @@
       </div>
 
       <div class="container">
+          <br>
+        <div class="pluso" data-background="#ebebeb" data-options="medium,square,line,horizontal,counter,theme=04" data-services="vkontakte,odnoklassniki,facebook,twitter,google,moimir,email,print"></div>
         <div class="app-meta d-flex">
+
           <div
             class="app-breadcrumb-wrap d-flex align-center f-fill text-truncate"
           >
@@ -159,11 +162,13 @@
     </div>
 
     <div id="elementH"></div>
+    
   </div>
 </template>
 
 <script>
-import { setOffset, tabNavigation, print } from '~/utils/frontend'
+
+import { setOffset, tabNavigation, print, setPluso } from '~/utils/frontend'
 import Card from '~/components/TabItems/Cards'
 import Document from '~/components/TabItems/Document'
 import Faq from '~/components/TabItems/Faq'
@@ -178,6 +183,7 @@ export default {
   },
   mounted() {
     setOffset()
+    setPluso()
     tabNavigation()
     this.$axios.$get('/cards/' + this.$route.params.id).then((res) => {
       this.card = res.data.card

@@ -22,7 +22,9 @@
                 <div class="news-badge">
                   <img src="~/static/img/svg/calendar.png" alt />
                   <span>{{ deposit.created_at }}</span>
-                </div>
+                </div><br><br>
+                <div class="pluso" data-background="#ebebeb" data-options="medium,square,line,horizontal,counter,theme=04" data-services="vkontakte,odnoklassniki,facebook,twitter,google,moimir,email,print"></div>
+
               </div>
             </div>
           </div>
@@ -42,7 +44,7 @@
 </template>
 
 <script>
-import { setOffset } from '~/utils/frontend'
+import { setOffset, setPluso } from '~/utils/frontend'
 
 export default {
   data() {
@@ -52,6 +54,7 @@ export default {
   },
   mounted() {
     setOffset()
+    setPluso()
     let me = this
     this.$axios.$get(`/deposits/` + this.$route.params.id).then((res) => {
       me.deposit = res.data.deposit

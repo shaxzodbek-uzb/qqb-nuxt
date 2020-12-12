@@ -6,7 +6,9 @@
           <div class="about-credit-text">
             <h1>
               {{ $t('На что можно взять кредит') }}
-            </h1>
+            </h1><br>
+            <div class="pluso" data-background="#ebebeb" data-options="medium,square,line,horizontal,counter,theme=04" data-services="vkontakte,odnoklassniki,facebook,twitter,google,moimir,email,print"></div>
+
           </div>
         </div>
         <div class="col-xl-6">
@@ -18,6 +20,8 @@
 </template>
 
 <script>
+import { setPluso } from '~/utils/frontend'
+
 export default {
   props: {
     content: {
@@ -25,6 +29,9 @@ export default {
       type: String,
     },
   },
+  mounted(){
+      setPluso()
+  }
 }
 </script>
 

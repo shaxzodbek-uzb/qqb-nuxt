@@ -30,7 +30,7 @@
 
     <div class="row">
       <div class="col-xl-6" v-for="item in news" :key="item.id">
-        <router-link
+        <nuxt-link
           :to="localePath('/news/' + item.id)"
           class="news-items-2 transition rounded d-block"
         >
@@ -48,7 +48,7 @@
               {{ item.description }}
             </p>
           </div>
-        </router-link>
+        </nuxt-link>
       </div>
 
       <!-- <div class="col-xl-12">

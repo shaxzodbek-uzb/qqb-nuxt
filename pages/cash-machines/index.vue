@@ -11,7 +11,7 @@
           </router-link>
           <router-link
             class="title-route-items d-flex align-center"
-            :to="localePath('/cash_machines')"
+            :to="localePath('/cash-machines')"
           >
             <div class="route-swich">
               <div
@@ -40,7 +40,7 @@
               <div class="conent-select">
                 <span>{{ $t('Списком') }}</span>
                 <select v-model="region_name">
-                  <option value="">Все Банкоматы</option>
+                  <option value="">{{ $t('Все Банкоматы') }}</option>
                   <option v-for="item in regions" :key="item" :value="item">
                     {{ item }}
                   </option>
