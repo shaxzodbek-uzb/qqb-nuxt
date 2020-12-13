@@ -26,7 +26,7 @@
               <input
                 type="text"
                 class="d-block w-100"
-                placeholder="..."
+                placeholder="Имя и фамилия"
                 v-model="form.title"
               />
 
@@ -53,7 +53,7 @@
               <input
                 type="text"
                 class="d-block w-100"
-                placeholder="..."
+                placeholder="Паспортная серия"
                 v-model="form.additional_params.passport.value"
               />
 
@@ -74,7 +74,7 @@
               :class="{ 'appeap-form-error': false }"
             >
               <span class="appeal-label d-block">{{ $t('Филиалы') }}</span>
-              <v-select :options="branche_names"></v-select>
+              <v-select :options="branche_names" placeholder="Филиалы"></v-select>
 
               <img
                 class="form-error-img"

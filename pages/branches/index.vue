@@ -70,14 +70,14 @@
                     @bounds_changed="checkForMarkers"
                   >
                     <GMapMarker
-                      v-for="location in locations"
-                      :key="location.id"
+                      v-for="(location, index) in locations"
+                      :key="index"
                       :position="{ lat: location.lat, lng: location.lng }"
                       :options="{
                         icon:
                           'https://developers.google.com/maps/documentation/javascript/images/default-marker.png',
                       }"
-                      @click="currentLocation = location"
+                      @click="markerEvent(index)"
                     >
                       <GMapInfoWindow :options="{ maxWidth: 200 }">
                         <b>{{ location.name }}</b>
@@ -108,12 +108,12 @@
 
                       <div class="info-sidebar-content">
                         <div
-                          v-for="(item, index) in 10"
+                          v-for="(item, index) in locations"
                           :key="index"
                           @click="moveToMarker(index)"
                           class="info-content-items"
                         >
-                          <span>Головной офис {{ index }}</span>
+                          <span>{{ item.name }}</span>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="15.488"
@@ -185,25 +185,24 @@ export default {
     return {
       branches: [],
       region_name: '',
-      currentLocation: {},
-      locationsVisibleOnMap: '',
       locations: [
         {
           lat: 41.311081,
           lng: 69.240562,
           name: 'Tashkent',
+          title: 'Головной офис'
         },
         {
-          title: 'Alibaug',
           lat: 37.20237,
           lng: 67.31035,
           name: 'Surkhandaryo',
+          title: 'Головной офис 2'
         },
         {
-          title: 'Aurangabad',
           lat: 37.22417,
           lng: 43.76833,
           name: 'Qashqadaryo',
+          title: 'Головной офис 3'
         },
       ],
     }
@@ -240,13 +239,12 @@ export default {
           .getBounds()
           .contains(this.$refs.gMap.markers[i].getPosition())
       })
-
-      this.locationsVisibleOnMap = this.locations
-        .filter((l) => l.visible)
-        .map((l) => l.name)
-        .join(', ')
     },
-    moveToMarker(index) {},
+    moveToMarker(index) {
+        console.log(index)
+    },
+    markerEvent(index) {
+    }
   },
 }
 </script>

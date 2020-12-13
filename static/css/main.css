@@ -3347,6 +3347,18 @@ body {
   font-family: var(--regular);
 }
 
+.vs__selected-options input::placeholder {
+    color: #697582;
+}
+
+.vs__selected-options input::-ms-input-placeholder {
+    color: #697582;
+}
+
+.vs__selected-options input:-ms-input-placeholder {
+    color: #697582;
+}
+
 .subscribe-form input::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #fff;

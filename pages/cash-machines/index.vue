@@ -53,48 +53,122 @@
             <div role="tabpanel">
               <CashMachineList :cash_machines="filtered_cash_machines" />
             </div>
-            <div role="tabpanel">
-              <div style="height: 500px;">
-                <!-- <GMap
-                  ref="gMap"
-                  :cluster="{ options: { styles: clusterStyle } }"
-                  :center="{ lat: locations[0].lat, lng: locations[0].lng }"
-                  :options="{
-                    fullscreenControl: false,
-                    streetViewControl: false,
-                    mapTypeControl: false,
-                    zoomControl: true,
-                    gestureHandling: 'cooperative',
-                    styles: mapStyle,
-                  }"
-                  :zoom="6"
-                  @bounds_changed="checkForMarkers"
-                >
-                  <GMapMarker
-                    v-for="location in locations"
-                    :key="location.id"
-                    :position="{ lat: location.lat, lng: location.lng }"
+            <div class="map-pane" role="tabpanel">
+               <div class="aspect-ratio">
+                <div class="ratio-container">
+                  <GMap
+                    ref="gMap"
+                    :center="{ lat: locations[0].lat, lng: locations[0].lng }"
                     :options="{
-                      icon:
-                        location === currentLocation
-                          ? pins.selected
-                          : pins.notSelected,
+                      fullscreenControl: false,
+                      streetViewControl: false,
+                      mapTypeControl: false,
+                      zoomControl: true,
+                      gestureHandling: 'cooperative',
                     }"
-                    @click="currentLocation = location"
+                    :zoom="15"
+                    @bounds_changed="checkForMarkers"
                   >
-                    <GMapInfoWindow :options="{ maxWidth: 200 }">
-                      <b>{{ location.name }}</b>
-                      <br />
-                      <br />
-                      <code>
-                        Lat: {{ location.lat }},
+                    <GMapMarker
+                      v-for="location in locations"
+                      :key="location.id"
+                      :position="{ lat: location.lat, lng: location.lng }"
+                      :options="{
+                        icon:
+                          'https://developers.google.com/maps/documentation/javascript/images/default-marker.png',
+                      }"
+                      @click="currentLocation = location"
+                    >
+                      <GMapInfoWindow :options="{ maxWidth: 200 }">
+                        <b>{{ location.name }}</b>
                         <br />
-                        Lng: {{ location.lng }}
-                      </code>
-                    </GMapInfoWindow>
-                  </GMapMarker>
-                </GMap> -->
+                        <br />
+                        <code>
+                          Lat: {{ location.lat }},
+                          <br />
+                          Lng: {{ location.lng }}
+                        </code>
+                      </GMapInfoWindow>
+                    </GMapMarker>
+                  </GMap>
+                </div>
+
+                <!-- <div class="map-info"> -->
+                <div class="container">
+                  <div class="info-sidebar">
+                    <div class="sidebar-inner">
+                      <div class="sidebar-searchbar">
+                        <input type="text" placeholder="Поиск" />
+                        <img
+                          src="~/static/img/svg/search.png"
+                          alt="Search icon"
+                          style="width: 15px;"
+                        />
+                      </div>
+
+                      <div class="info-sidebar-content">
+                        <div
+                          v-for="(item, index) in 10"
+                          :key="index"
+                          @click="moveToMarker(index)"
+                          class="info-content-items"
+                        >
+                          <span>Головной офис {{ index }}</span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="15.488"
+                            height="18"
+                            viewBox="0 0 15.488 18"
+                          >
+                            <path
+                              id="Контур_2376"
+                              data-name="Контур 2376"
+                              d="M14.2,2.268A7.744,7.744,0,0,0,.977,7.744a7.471,7.471,0,0,0,1.2,3.8A16.912,16.912,0,0,0,4.74,14.732a26.944,26.944,0,0,0,3.69,3.074L8.721,18l.291-.194a26.952,26.952,0,0,0,3.69-3.074,16.911,16.911,0,0,0,2.561-3.184,7.471,7.471,0,0,0,1.2-3.8A7.693,7.693,0,0,0,14.2,2.268ZM8.721,13.251a5.507,5.507,0,1,1,5.507-5.507A5.513,5.513,0,0,1,8.721,13.251Z"
+                              transform="translate(-0.977 0)"
+                              fill="#6a7e9c"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- </div> -->
               </div>
+
+              <div class="container">
+                <div class="app-meta d-flex">
+                  <div
+                    class="app-breadcrumb-wrap d-flex align-center f-fill text-truncate"
+                  >
+                    <router-link to="/" class="d-flex align-center p-relative">
+                      <img
+                        src="~/static/img/svg/home.png"
+                        class="d-block"
+                        alt
+                      />
+                    </router-link>
+                    <router-link to="/" class="d-flex align-center p-relative">
+                      <span>Филиалы</span>
+                    </router-link>
+                    <router-link to="/" class="d-flex align-center p-relative">
+                      <span>
+                        На карте
+                      </span>
+                    </router-link>
+                  </div>
+
+                  <div class="app-meta__download d-flex align-center">
+                    <p>
+                      {{ $t('Скачать') }}
+                      <span>PDF,</span>
+                      <span>205.77 KB</span>
+                    </p>
+                    <div class="app-badge badge-danger">PDF</div>
+                  </div>
+                </div>
+              </div>
+            </div>
             </div>
           </div>
         </div>
@@ -112,6 +186,27 @@ export default {
     return {
       cash_machines: [],
       region_name: '',
+       currentLocation: {},
+      locationsVisibleOnMap: '',
+      locations: [
+        {
+          lat: 41.311081,
+          lng: 69.240562,
+          name: 'Tashkent',
+        },
+        {
+          title: 'Alibaug',
+          lat: 37.20237,
+          lng: 67.31035,
+          name: 'Surkhandaryo',
+        },
+        {
+          title: 'Aurangabad',
+          lat: 37.22417,
+          lng: 43.76833,
+          name: 'Qashqadaryo',
+        },
+      ],
     }
   },
   components: {
@@ -132,7 +227,6 @@ export default {
       )
     },
   },
-
   mounted() {
     setOffset()
     tabNavigation()
@@ -141,20 +235,19 @@ export default {
       this.cash_machines = res.data.cash_machines
     })
   },
+    methods: {
+      checkForMarkers() {
+        this.locations.forEach((location, i) => {
+          location.visible = this.$refs.gMap.map
+            .getBounds()
+            .contains(this.$refs.gMap.markers[i].getPosition())
+        })
 
-  //   methods: {
-  //     checkForMarkers() {
-  //       this.locations.forEach((location, i) => {
-  //         location.visible = this.$refs.gMap.map
-  //           .getBounds()
-  //           .contains(this.$refs.gMap.markers[i].getPosition())
-  //       })
-
-  //       this.locationsVisibleOnMap = this.locations
-  //         .filter((l) => l.visible)
-  //         .map((l) => l.name)
-  //         .join(', ')
-  //     },
-  //   },
+        this.locationsVisibleOnMap = this.locations
+          .filter((l) => l.visible)
+          .map((l) => l.name)
+          .join(', ')
+      },
+    },
 }
 </script>
