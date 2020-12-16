@@ -6,7 +6,7 @@
       <img src="~/static/img/svg/search.png" class="p-absolute" alt />
     </div>
 
-    <div class="card-medium" v-for="item in branches" :key="item.id">
+    <div class="card-medium" v-for="(item,index) in branches" :key="item.id">
       <div class="card-medium-header d-flex">
         <div class="branches-text">
           <h1>{{ item.name }}</h1>
@@ -17,7 +17,7 @@
         </button> -->
 
         <button
-          @click="openMapModal"
+          @click="openMapModal(index)"
           class="card-location-button secondary-color rounded pointer ml-auto"
         >
           <img
@@ -50,6 +50,24 @@
           </div>
           <div class="tariff-table-items d-flex">
             <div class="f-fill">
+              <p>{{ $t('Обслуживание клиентов') }}:</p>
+            </div>
+            <span>{{ item.additional_phone }}</span>
+          </div>
+          <div class="tariff-table-items d-flex">
+            <div class="f-fill">
+              <p>{{ $t('Дни работы') }}:</p>
+            </div>
+            <span>{{ item.work_days }}</span>
+          </div>
+          <div class="tariff-table-items d-flex">
+            <div class="f-fill">
+              <p>{{ $t('МФО') }}:</p>
+            </div>
+            <span>{{ item.mfo }}</span>
+          </div>
+          <div class="tariff-table-items d-flex">
+            <div class="f-fill">
               <p>{{ $t('Электронная почта') }}:</p>
             </div>
             <span>{{ item.email }}</span>
@@ -63,9 +81,10 @@
       <div class="app-modal__content">
         <div class="modal-aspect-ratio">
           <div class="modal-ratio__map">
-            <GMap
+
+            <GMap v-if="this.lat"
               ref="gMap"
-              :center="{ lat: 41.311081, lng: 69.240562 }"
+              :center="{ lat: this.lat, lng: this.lng }"
               :options="{
                 fullscreenControl: false,
                 streetViewControl: false,
@@ -76,7 +95,7 @@
               :zoom="15"
             >
               <GMapMarker
-                :position="{ lat: 41.311081, lng: 69.240562 }"
+                :position="{ lat: this.lat, lng: this.lng }"
                 :options="{
                   icon:
                     'https://developers.google.com/maps/documentation/javascript/images/default-marker.png',
@@ -106,18 +125,24 @@ export default {
     },
   },
   data() {
-    return {}
+    return {
+        lat: 0,
+        lng: 0
+    }
   },
   methods: {
-    openMapModal() {
+    openMapModal(index) {
       const $modal = document.querySelector('.app-modal')
 
       $modal.classList.add('active')
+      this.lat = this.branches[index].lat * 1.
+      this.lng = this.branches[index].long * 1.
     },
     closeMapModal() {
       const $modal = document.querySelector('.app-modal')
 
       $modal.classList.remove('active')
+      this.lat = 0
     },
   },
 }

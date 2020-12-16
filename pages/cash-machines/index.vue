@@ -16,7 +16,7 @@
             <div class="route-swich">
               <div
                 class="route-switch__circle child-center p-relative"
-                style="margin-left: auto;"
+                style="margin-left: auto"
               >
                 <img src="~/static/img/svg/switch-icon.png" alt />
               </div>
@@ -54,11 +54,15 @@
               <CashMachineList :cash_machines="filtered_cash_machines" />
             </div>
             <div class="map-pane" role="tabpanel">
-               <div class="aspect-ratio">
+              <div class="aspect-ratio">
                 <div class="ratio-container">
                   <GMap
+                    v-if="filtered_cash_machines.length"
                     ref="gMap"
-                    :center="{ lat: locations[0].lat, lng: locations[0].lng }"
+                    :center="{
+                      lat: filtered_cash_machines[0].lat * 1,
+                      lng: filtered_cash_machines[0].long * 1,
+                    }"
                     :options="{
                       fullscreenControl: false,
                       streetViewControl: false,
@@ -70,9 +74,12 @@
                     @bounds_changed="checkForMarkers"
                   >
                     <GMapMarker
-                      v-for="location in locations"
+                      v-for="location in filtered_cash_machines"
                       :key="location.id"
-                      :position="{ lat: location.lat, lng: location.lng }"
+                      :position="{
+                        lat: location.lat * 1,
+                        lng: location.long * 1,
+                      }"
                       :options="{
                         icon:
                           'https://developers.google.com/maps/documentation/javascript/images/default-marker.png',
@@ -80,13 +87,13 @@
                       @click="currentLocation = location"
                     >
                       <GMapInfoWindow :options="{ maxWidth: 200 }">
-                        <b>{{ location.name }}</b>
+                        <b>{{ location.branche.name }}</b>
                         <br />
                         <br />
                         <code>
                           Lat: {{ location.lat }},
                           <br />
-                          Lng: {{ location.lng }}
+                          Lng: {{ location.long }}
                         </code>
                       </GMapInfoWindow>
                     </GMapMarker>
@@ -102,18 +109,18 @@
                         <img
                           src="~/static/img/svg/search.png"
                           alt="Search icon"
-                          style="width: 15px;"
+                          style="width: 15px"
                         />
                       </div>
 
                       <div class="info-sidebar-content">
                         <div
-                          v-for="(item, index) in 10"
+                          v-for="(item, index) in filtered_cash_machines"
                           :key="index"
                           @click="moveToMarker(index)"
                           class="info-content-items"
                         >
-                          <span>Головной офис {{ index }}</span>
+                          <span>{{ item.branche.name }}</span>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="15.488"
@@ -152,9 +159,7 @@
                       <span>Филиалы</span>
                     </router-link>
                     <router-link to="/" class="d-flex align-center p-relative">
-                      <span>
-                        На карте
-                      </span>
+                      <span> На карте </span>
                     </router-link>
                   </div>
 
@@ -168,7 +173,6 @@
                   </div>
                 </div>
               </div>
-            </div>
             </div>
           </div>
         </div>
@@ -186,7 +190,7 @@ export default {
     return {
       cash_machines: [],
       region_name: '',
-       currentLocation: {},
+      currentLocation: {},
       locationsVisibleOnMap: '',
       locations: [
         {
@@ -235,19 +239,19 @@ export default {
       this.cash_machines = res.data.cash_machines
     })
   },
-    methods: {
-      checkForMarkers() {
-        this.locations.forEach((location, i) => {
-          location.visible = this.$refs.gMap.map
-            .getBounds()
-            .contains(this.$refs.gMap.markers[i].getPosition())
-        })
+  methods: {
+    checkForMarkers() {
+      this.locations.forEach((location, i) => {
+        location.visible = this.$refs.gMap.map
+          .getBounds()
+          .contains(this.$refs.gMap.markers[i].getPosition())
+      })
 
-        this.locationsVisibleOnMap = this.locations
-          .filter((l) => l.visible)
-          .map((l) => l.name)
-          .join(', ')
-      },
+      this.locationsVisibleOnMap = this.locations
+        .filter((l) => l.visible)
+        .map((l) => l.name)
+        .join(', ')
     },
+  },
 }
 </script>

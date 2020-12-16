@@ -212,5 +212,8 @@ export default {
   "Всего за кредит": "Jami kredit uchun",
   "Итого": "Jami",
   "Все Филиалы": "Barcha filiallar",
-  "Все Банкоматы": "Barcha bankomatlar"
+  "Все Банкоматы": "Barcha bankomatlar",
+  "Дни работы": "Ish kuni",
+  "Обслуживание клиентов": "\"Mijozga xizmat\"  axborot markazi",
+  "МФО": "MFO"
 }

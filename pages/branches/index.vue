@@ -57,8 +57,9 @@
               <div class="aspect-ratio">
                 <div class="ratio-container">
                   <GMap
+                    v-if="branches.length > 0"
                     ref="gMap"
-                    :center="{ lat: locations[0].lat, lng: locations[0].lng }"
+                    :center="{ lat: branches[0].lat * 1., lng: branches[0].long * 1. }"
                     :options="{
                       fullscreenControl: false,
                       streetViewControl: false,
@@ -70,9 +71,9 @@
                     @bounds_changed="checkForMarkers"
                   >
                     <GMapMarker
-                      v-for="(location, index) in locations"
+                      v-for="(branch, index) in filtered_branches"
                       :key="index"
-                      :position="{ lat: location.lat, lng: location.lng }"
+                      :position="{ lat: branch.lat * 1., lng: branch.long * 1. }"
                       :options="{
                         icon:
                           'https://developers.google.com/maps/documentation/javascript/images/default-marker.png',
@@ -80,13 +81,13 @@
                       @click="markerEvent(index)"
                     >
                       <GMapInfoWindow :options="{ maxWidth: 200 }">
-                        <b>{{ location.name }}</b>
+                        <b>{{ branch.name }}</b>
                         <br />
                         <br />
                         <code>
-                          Lat: {{ location.lat }},
+                          Lat: {{ branch.lat }},
                           <br />
-                          Lng: {{ location.lng }}
+                          Lng: {{ branch.long }}
                         </code>
                       </GMapInfoWindow>
                     </GMapMarker>
@@ -108,7 +109,7 @@
 
                       <div class="info-sidebar-content">
                         <div
-                          v-for="(item, index) in locations"
+                          v-for="(item, index) in filtered_branches"
                           :key="index"
                           @click="moveToMarker(index)"
                           class="info-content-items"
@@ -185,26 +186,6 @@ export default {
     return {
       branches: [],
       region_name: '',
-      locations: [
-        {
-          lat: 41.311081,
-          lng: 69.240562,
-          name: 'Tashkent',
-          title: 'Головной офис'
-        },
-        {
-          lat: 37.20237,
-          lng: 67.31035,
-          name: 'Surkhandaryo',
-          title: 'Головной офис 2'
-        },
-        {
-          lat: 37.22417,
-          lng: 43.76833,
-          name: 'Qashqadaryo',
-          title: 'Головной офис 3'
-        },
-      ],
     }
   },
   components: {
@@ -234,11 +215,11 @@ export default {
 
   methods: {
     checkForMarkers() {
-      this.locations.forEach((location, i) => {
-        location.visible = this.$refs.gMap.map
-          .getBounds()
-          .contains(this.$refs.gMap.markers[i].getPosition())
-      })
+    //   this.branches.forEach((location, i) => {
+    //     location.visible = this.$refs.gMap.map
+    //       .getBounds()
+    //       .contains(this.$refs.gMap.markers[i].getPosition())
+    //   })
     },
     moveToMarker(index) {
         console.log(index)
