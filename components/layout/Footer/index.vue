@@ -137,16 +137,16 @@
             <div class="col-lg-3 col-sm-6 col-6 footer-phone-cell">
               <div class="d-flex align-center">
                 <img src="/img/svg/phone-white.png" alt />
-                <span>{{ $t('Телефон') }}</span>
+                <span>{{ $t('Телефон доверия') }}</span>
               </div>
               <p>+998 (78) 150 93 39</p>
             </div>
             <div class="col-lg-3 col-sm-6 col-6 footer-phone-cell">
               <div class="d-flex align-center">
                 <img src="/img/svg/phone-white-2.png" alt />
-                <span>{{ $t('Факс') }}</span>
+                <span>{{ $t('Колл центр') }}</span>
               </div>
-              <p>+998 (78) 150 39 93</p>
+              <p>+998 (78) 150 10 01</p>
             </div>
             <div class="col-lg-3 col-sm-6 col-6 footer-phone-cell">
               <div class="d-flex align-center">
@@ -238,9 +238,9 @@
                 <a href="#" class="f-icon-items">
                   <img src="~static/img/icon/f-1.png" alt="" class="d-block" />
                 </a>
-                <a href="#" class="f-icon-items">
+                <!-- <a href="#" class="f-icon-items">
                   <img src="~static/img/icon/f-2.png" alt="" class="d-block" />
-                </a>
+                </a> -->
                 <a href="#" class="f-icon-items">
                   <img src="~static/img/icon/f-3.png" alt="" class="d-block" />
                 </a>

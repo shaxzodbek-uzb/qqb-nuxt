@@ -54,9 +54,9 @@ export default {
   },
   computed: {
     filtered_galleries() {
-      return this.galleries.filter((item) =>
-        item.name.toLowerCase().includes(this.filter_text.toLowerCase())
-    )
+        return this.galleries.filter((item) =>
+            item.name.toLowerCase().includes(this.filter_text.toLowerCase())
+        )
     },
   },
   mounted() {
