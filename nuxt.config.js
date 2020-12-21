@@ -40,7 +40,7 @@ export default {
         body: true,
       },
       {
-        src: '~/assets/orphus/orphus.js',
+        src: '~/assets/orphus.js',
         body: true,
       },
     ],

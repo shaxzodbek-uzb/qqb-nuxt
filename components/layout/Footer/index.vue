@@ -78,24 +78,21 @@
 
                 <div class="socials-meta">
                   <div class="social-wrap d-flex">
-                    <nuxt-link
-                      :to="localePath('/')"
-                      class="social-items child-center"
+                    <a
+                        href="https://www.facebook.com/official.qqb.uz/"
+                        target="_blank"
+                        class="social-items child-center"
                     >
                       <img src="/img/svg/white-fb.png" alt />
-                    </nuxt-link>
-                    <nuxt-link
-                      :to="localePath('/')"
-                      class="social-items child-center"
+                    </a>
+                    <a 
+                        href="https://t.me/QQBANK"
+                        target="_blank"
+                        class="social-items child-center"
                     >
-                      <img src="/img/svg/white-gp.png" alt />
-                    </nuxt-link>
-                    <nuxt-link
-                      :to="localePath('/')"
-                      class="social-items child-center"
-                    >
-                      <img src="/img/svg/white-tw.png" alt />
-                    </nuxt-link>
+                        <svg style="width: 20px; height: 20px;" data-name="Layer 2" id="Layer_2" viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg"><title/>
+                            <path fill="#fff" d="M230.9,31.8a8.74,8.74,0,0,0-8.82-1.49L21.61,107.64A8.77,8.77,0,0,0,21.69,124h0l47.47,17.71,18.47,59.4a8.75,8.75,0,0,0,13.89,4.19l27.23-22.2A5.12,5.12,0,0,1,135,183l49.11,35.65a8.75,8.75,0,0,0,5.14,1.68,8.94,8.94,0,0,0,3.17-.59,8.71,8.71,0,0,0,5.41-6.38l36-173.06A8.74,8.74,0,0,0,230.9,31.8Zm-3,7.24L192,212.1a2.7,2.7,0,0,1-1.7,2,2.73,2.73,0,0,1-2.62-.34L138.53,178.1a11.13,11.13,0,0,0-13.56.38l-27.24,22.2a2.73,2.73,0,0,1-4.36-1.32l-18.91-60.8a3,3,0,0,0-1.82-1.92L23.8,118.41a2.76,2.76,0,0,1,0-5.17L224.25,35.9a2.7,2.7,0,0,1,2.77.47A2.73,2.73,0,0,1,227.94,39ZM181.35,68.39l-95.47,58.8h0a12.65,12.65,0,0,0-5.51,14.19l10.32,36.27a5.43,5.43,0,0,0,5.25,4l.41,0a5.42,5.42,0,0,0,5-4.72L104.05,157a13.38,13.38,0,0,1,4.13-8L187,75.78a4.66,4.66,0,0,0-5.62-7.39ZM104.1,144.62a19.34,19.34,0,0,0-6,11.57l-2.35,17.36-9.62-33.82A6.62,6.62,0,0,1,89,132.3L173,80.59Z"/></svg>
+                    </a>
                   </div>
                   <div class="symbols-wrap d-flex">
                     <nuxt-link
@@ -248,7 +245,7 @@
                   <img src="~static/img/icon/f-4.png" alt="" class="d-block" />
                 </a>
                 <a href="#" class="f-icon-items">
-                  <a href="http://orphus.ru" id="orphus" target="_blank"><img alt="Orphus tizimi" src="https://orphus.ru/img/modern_blue.gif" border="0" width="88" height="" /></a>
+                  <a href="http://orphus.ru" id="orphus" target="_blank"><img alt="Orphus tizimi" src="https://orphus.ru/img/modern_blue.gif" border="0" width="88" height="27" /></a>
                 </a>
                 <a
                   href="http://www.uzrating.com/"
