@@ -76,7 +76,7 @@
                       :label="branch.id"
                       :options="{
                         icon:
-                          'https://developers.google.com/maps/documentation/javascript/images/default-marker.png',
+                          '~/static/img/marker.png',
                       }"
                     >
                       <GMapInfoWindow :options="{ maxWidth: 200 }">
