@@ -79,10 +79,7 @@
                         lat: location.lat * 1,
                         lng: location.long * 1,
                       }"
-                      :options="{
-                        icon:
-                          'https://developers.google.com/maps/documentation/javascript/images/default-marker.png',
-                      }"
+                      :options="{ icon: require('../../static/img/marker.png') }"
                       @click="currentLocation = location"
                     >
                       <GMapInfoWindow :options="{ maxWidth: 200 }">
@@ -231,6 +228,14 @@ export default {
     moveToMarker(item) {
         const {lat, long} = item
 
+        let items = document.querySelectorAll('.info-content-items')
+
+        items.forEach(item => item.classList.remove('active'))
+
+        event.target.closest('.info-content-items').classList.add('active')
+
+        this.$refs.gMap.map.setZoom(13)
+        
         this.$refs.gMap.map.setCenter({lat: +lat, lng: +long})
     },
   },

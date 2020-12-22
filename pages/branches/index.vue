@@ -74,10 +74,7 @@
                       :key="index"
                       :position="{ lat: branch.lat * 1., lng: branch.long * 1. }"
                       :label="branch.id"
-                      :options="{
-                        icon:
-                          '~/static/img/marker.png',
-                      }"
+                      :options="{ icon: require('../../static/img/marker.png') }"
                     >
                       <GMapInfoWindow :options="{ maxWidth: 200 }">
                         <b>{{ branch.name }}</b>
@@ -186,7 +183,7 @@ export default {
     return {
       branches: [],
       region_name: '',
-      filter_text: '',
+      filter_text: ''
     }
   },
   components: {
@@ -222,6 +219,14 @@ export default {
   methods: {
     moveToMarker(item) {
         const {lat, long} = item
+
+        let items = document.querySelectorAll('.info-content-items')
+
+        items.forEach(item => item.classList.remove('active'))
+
+        event.target.closest('.info-content-items').classList.add('active')
+
+        this.$refs.gMap.map.setZoom(13)
 
         this.$refs.gMap.map.setCenter({lat: +lat, lng: +long})
     },
