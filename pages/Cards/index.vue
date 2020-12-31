@@ -81,14 +81,14 @@
             </div>
           </nuxt-link>
 
-          <div class="card-load">
+          <!-- <div class="card-load">
             <button
               type="button"
               class="d-block w-100 rounded pointer transition"
             >
               {{ $t('Загрузить еще') }}
             </button>
-          </div>
+          </div> -->
         </div>
 
         <div class="app-meta d-flex">

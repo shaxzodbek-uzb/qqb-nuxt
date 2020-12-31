@@ -35,7 +35,8 @@
             <div class="currency-item">
               <span>{{ $t('Покупка') }}</span>
               <div class="currency-item__text d-flex align-center">
-                <img src="/img/svg/grow-up.png" alt="Icon" />
+                <img src="/img/svg/grow-up.png" alt="Icon" v-if="activeCurrency.buy_up"/>
+                <img src="/img/svg/grow-down.png" alt="Icon" v-else/>
                 <span>{{ activeCurrency.buy_rate }}</span>
               </div>
             </div>
@@ -43,7 +44,8 @@
             <div class="currency-item">
               <span>{{ $t('Продажа') }}</span>
               <div class="currency-item__text d-flex align-center">
-                <img src="/img/svg/grow-down.png" alt="Icon" />
+                <img src="/img/svg/grow-up.png" alt="Icon" v-if="activeCurrency.sell_up"/>
+                <img src="/img/svg/grow-down.png" alt="Icon" v-else/>
                 <span>{{ activeCurrency.sell_rate }}</span>
               </div>
             </div>
@@ -51,7 +53,8 @@
             <div class="currency-item">
               <span>{{ $t('Курс ЦБ') }}</span>
               <div class="currency-item__text d-flex align-center">
-                <img src="/img/svg/grow-down.png" alt="Icon" />
+                <img src="/img/svg/grow-up.png" alt="Icon" v-if="activeCurrency.cb_up"/>
+                <img src="/img/svg/grow-down.png" alt="Icon" v-else/>
                 <span>{{ activeCurrency.cb_rate }}</span>
               </div>
             </div>
@@ -102,6 +105,9 @@ export default {
       currency_rate: {
         currencies: [],
       },
+      prev_currency_rate: {
+          currencies: []
+      },
       active_currency_id: 0,
     }
   },
@@ -110,10 +116,21 @@ export default {
     this.$axios.$get('/currency-rates/last').then((res) => {
       me.currency_rate = res.data.currency_rate
       me.active_currency_id = me.currency_rate.currencies[0].id
+      me.prev_currency_rate = res.data.prev_currency_rate
     })
   },
   computed: {
     activeCurrency() {
+      let curr = {
+        name: '-',
+        slug: '-',
+        sell_rate: '-',
+        sell_up: true,
+        buy_rate: '-',
+        buy_up: true,
+        cb_rate: '-',
+        cb_up: true,
+      }
       for (
         let index = 0;
         index < this.currency_rate.currencies.length;
@@ -121,16 +138,26 @@ export default {
       ) {
         const element = this.currency_rate.currencies[index]
         if (element.id == this.active_currency_id) {
-          return element
+          curr.name = element.name
+          curr.slug = element.slug
+          curr.sell_rate = element.sell_rate
+          curr.buy_rate = element.buy_rate
+          curr.cb_rate = element.cb_rate
         }
       }
-      return {
-        name: '-',
-        slug: '-',
-        sell_rate: '-',
-        buy_rate: '-',
-        cb_rate: '-',
+      for (
+        let index = 0;
+        index < this.prev_currency_rate.currencies.length;
+        index++
+      ) {
+        const element = this.prev_currency_rate.currencies[index]
+        if (element.id == this.active_currency_id) {
+          curr.sell_up =curr.sell_rate > element.sell_rate
+          curr.buy_up =curr.buy_rate > element.buy_rate
+          curr.cb_up =curr.cb_rate > element.cb_rate
+        }
       }
+      return curr
     },
   },
 }
