@@ -1,8 +1,8 @@
 <template>
   <div class="filials-page-wrap" data-set="offset" data-offset="top bottom">
-    <div class="container">
+    <div class="">
       <div class="filials-page-container pt-60">
-        <div class="page-title-route d-flex align-center">
+        <div class="container page-title-route d-flex align-center">
           <router-link
             class="title-route-items d-flex align-center"
             :to="localePath('/branches')"
@@ -26,7 +26,7 @@
         </div>
 
         <div class="filials-tab-navigation tab-navigation--credit">
-          <div class="card-tab-header branches-header">
+          <div class="container card-tab-header branches-header">
             <div class="d-flex flex-wrap">
               <div
                 class="tab-items p-relative pointer active"
@@ -50,7 +50,7 @@
           </div>
 
           <div class="card-tab-content">
-            <div role="tabpanel">
+            <div class="container" role="tabpanel">
               <CashMachineList :cash_machines="filtered_cash_machines" />
             </div>
             <div class="map-pane" role="tabpanel">
@@ -71,7 +71,6 @@
                       gestureHandling: 'cooperative',
                     }"
                     :zoom="15"
-                    @bounds_changed="checkForMarkers"
                   >
                     <GMapMarker
                       v-for="location in filtered_cash_machines"
@@ -80,10 +79,7 @@
                         lat: location.lat * 1,
                         lng: location.long * 1,
                       }"
-                      :options="{
-                        icon:
-                          'https://developers.google.com/maps/documentation/javascript/images/default-marker.png',
-                      }"
+                      :options="{ icon: require('../../static/img/marker.png') }"
                       @click="currentLocation = location"
                     >
                       <GMapInfoWindow :options="{ maxWidth: 200 }">
@@ -91,9 +87,10 @@
                         <br />
                         <br />
                         <code>
-                          Lat: {{ location.lat }},
-                          <br />
-                          Lng: {{ location.long }}
+                            {{location.address}}
+                            <br />
+                            <br />
+                          {{location.phone}}
                         </code>
                       </GMapInfoWindow>
                     </GMapMarker>
@@ -105,7 +102,7 @@
                   <div class="info-sidebar">
                     <div class="sidebar-inner">
                       <div class="sidebar-searchbar">
-                        <input type="text" placeholder="Поиск" />
+                        <input type="text" placeholder="Поиск" v-model="filter_text" />
                         <img
                           src="~/static/img/svg/search.png"
                           alt="Search icon"
@@ -115,9 +112,9 @@
 
                       <div class="info-sidebar-content">
                         <div
-                          v-for="(item, index) in filtered_cash_machines"
+                          v-for="(item, index) in field_branches"
                           :key="index"
-                          @click="moveToMarker(index)"
+                          @click="moveToMarker(item)"
                           class="info-content-items"
                         >
                           <span>{{ item.branche.name }}</span>
@@ -190,27 +187,7 @@ export default {
     return {
       cash_machines: [],
       region_name: '',
-      currentLocation: {},
-      locationsVisibleOnMap: '',
-      locations: [
-        {
-          lat: 41.311081,
-          lng: 69.240562,
-          name: 'Tashkent',
-        },
-        {
-          title: 'Alibaug',
-          lat: 37.20237,
-          lng: 67.31035,
-          name: 'Surkhandaryo',
-        },
-        {
-          title: 'Aurangabad',
-          lat: 37.22417,
-          lng: 43.76833,
-          name: 'Qashqadaryo',
-        },
-      ],
+      filter_text: '',
     }
   },
   components: {
@@ -230,6 +207,11 @@ export default {
           v.branche.region === this.region_name
       )
     },
+    field_branches() {
+        return this.cash_machines.filter((item) =>
+            item.address.toLowerCase().includes(this.filter_text.toLowerCase())
+        )
+    },
   },
   mounted() {
     setOffset()
@@ -237,20 +219,24 @@ export default {
 
     this.$axios.$get('/cash-machines').then((res) => {
       this.cash_machines = res.data.cash_machines
+
+
+      console.log(res)
     })
   },
   methods: {
-    checkForMarkers() {
-      this.locations.forEach((location, i) => {
-        location.visible = this.$refs.gMap.map
-          .getBounds()
-          .contains(this.$refs.gMap.markers[i].getPosition())
-      })
+    moveToMarker(item) {
+        const {lat, long} = item
 
-      this.locationsVisibleOnMap = this.locations
-        .filter((l) => l.visible)
-        .map((l) => l.name)
-        .join(', ')
+        let items = document.querySelectorAll('.info-content-items')
+
+        items.forEach(item => item.classList.remove('active'))
+
+        event.target.closest('.info-content-items').classList.add('active')
+
+        this.$refs.gMap.map.setZoom(13)
+        
+        this.$refs.gMap.map.setCenter({lat: +lat, lng: +long})
     },
   },
 }

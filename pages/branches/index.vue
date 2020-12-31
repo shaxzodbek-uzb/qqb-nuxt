@@ -59,7 +59,7 @@
                   <GMap
                     v-if="branches.length > 0"
                     ref="gMap"
-                    :center="{ lat: branches[0].lat * 1., lng: branches[0].long * 1. }"
+                    :center="{ lat: 41.311081, lng: 69.240562 }"
                     :options="{
                       fullscreenControl: false,
                       streetViewControl: false,
@@ -67,27 +67,24 @@
                       zoomControl: true,
                       gestureHandling: 'cooperative',
                     }"
-                    :zoom="15"
-                    @bounds_changed="checkForMarkers"
+                    :zoom="10"
                   >
                     <GMapMarker
                       v-for="(branch, index) in filtered_branches"
                       :key="index"
                       :position="{ lat: branch.lat * 1., lng: branch.long * 1. }"
-                      :options="{
-                        icon:
-                          'https://developers.google.com/maps/documentation/javascript/images/default-marker.png',
-                      }"
-                      @click="markerEvent(index)"
+                      :label="branch.id"
+                      :options="{ icon: require('../../static/img/marker.png') }"
                     >
                       <GMapInfoWindow :options="{ maxWidth: 200 }">
                         <b>{{ branch.name }}</b>
                         <br />
                         <br />
                         <code>
-                          Lat: {{ branch.lat }},
-                          <br />
-                          Lng: {{ branch.long }}
+                            {{branch.address}}
+                            <br />
+                            <br />
+                          {{branch.phone}}
                         </code>
                       </GMapInfoWindow>
                     </GMapMarker>
@@ -99,7 +96,7 @@
                   <div class="info-sidebar">
                     <div class="sidebar-inner">
                       <div class="sidebar-searchbar">
-                        <input type="text" placeholder="Поиск" />
+                        <input type="text" placeholder="Поиск" v-model="filter_text" />
                         <img
                           src="~/static/img/svg/search.png"
                           alt="Search icon"
@@ -109,9 +106,9 @@
 
                       <div class="info-sidebar-content">
                         <div
-                          v-for="(item, index) in filtered_branches"
+                          v-for="(item, index) in field_branches"
                           :key="index"
-                          @click="moveToMarker(index)"
+                          @click="moveToMarker(item)"
                           class="info-content-items"
                         >
                           <span>{{ item.name }}</span>
@@ -186,6 +183,7 @@ export default {
     return {
       branches: [],
       region_name: '',
+      filter_text: ''
     }
   },
   components: {
@@ -202,6 +200,11 @@ export default {
         (v) => this.region_name === '' || v.region === this.region_name
       )
     },
+    field_branches() {
+        return this.branches.filter((item) =>
+            item.name.toLowerCase().includes(this.filter_text.toLowerCase())
+        )
+    },
   },
 
   mounted() {
@@ -214,18 +217,19 @@ export default {
   },
 
   methods: {
-    checkForMarkers() {
-    //   this.branches.forEach((location, i) => {
-    //     location.visible = this.$refs.gMap.map
-    //       .getBounds()
-    //       .contains(this.$refs.gMap.markers[i].getPosition())
-    //   })
+    moveToMarker(item) {
+        const {lat, long} = item
+
+        let items = document.querySelectorAll('.info-content-items')
+
+        items.forEach(item => item.classList.remove('active'))
+
+        event.target.closest('.info-content-items').classList.add('active')
+
+        this.$refs.gMap.map.setZoom(13)
+
+        this.$refs.gMap.map.setCenter({lat: +lat, lng: +long})
     },
-    moveToMarker(index) {
-        console.log(index)
-    },
-    markerEvent(index) {
-    }
   },
 }
 </script>

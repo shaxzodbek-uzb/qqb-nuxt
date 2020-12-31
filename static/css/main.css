@@ -4392,8 +4392,13 @@ body {
   margin-left: auto;
 }
 
-.info-content-items:hover {
+.info-content-items:hover,
+.info-content-items.active {
   color: rgba(var(--main-color), 1);
+}
+
+.info-content-items.active svg path {
+    fill: rgba(var(--main-color), 1);
 }
 
 .info-sidebar-content {
