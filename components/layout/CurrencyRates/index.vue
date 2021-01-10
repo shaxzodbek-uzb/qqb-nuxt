@@ -131,31 +131,35 @@ export default {
         cb_rate: '-',
         cb_up: true,
       }
-      for (
-        let index = 0;
-        index < this.currency_rate.currencies.length;
-        index++
-      ) {
-        const element = this.currency_rate.currencies[index]
-        if (element.id == this.active_currency_id) {
-          curr.name = element.name
-          curr.slug = element.slug
-          curr.sell_rate = element.sell_rate
-          curr.buy_rate = element.buy_rate
-          curr.cb_rate = element.cb_rate
-        }
-      }
-      for (
-        let index = 0;
-        index < this.prev_currency_rate.currencies.length;
-        index++
-      ) {
-        const element = this.prev_currency_rate.currencies[index]
-        if (element.id == this.active_currency_id) {
-          curr.sell_up =curr.sell_rate > element.sell_rate
-          curr.buy_up =curr.buy_rate > element.buy_rate
-          curr.cb_up =curr.cb_rate > element.cb_rate
-        }
+
+          for (
+            let index = 0;
+            index < this.currency_rate.currencies.length;
+            index++
+          ) {
+            const element = this.currency_rate.currencies[index]
+            if (element.id == this.active_currency_id) {
+              curr.name = element.name
+              curr.slug = element.slug
+              curr.sell_rate = element.sell_rate
+              curr.buy_rate = element.buy_rate
+              curr.cb_rate = element.cb_rate
+            }
+          }
+        
+      if(this.prev_currency_rate.currencies){
+          for (
+            let index = 0;
+            index < this.prev_currency_rate.currencies.length;
+            index++
+          ) {
+            const element = this.prev_currency_rate.currencies[index]
+            if (element.id == this.active_currency_id) {
+              curr.sell_up =curr.sell_rate > element.sell_rate
+              curr.buy_up =curr.buy_rate > element.buy_rate
+              curr.cb_up =curr.cb_rate > element.cb_rate
+            }
+          }
       }
       return curr
     },

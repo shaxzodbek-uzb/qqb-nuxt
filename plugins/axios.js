@@ -15,8 +15,8 @@ export default function ({ $axios, redirect, app }) {
   })
 
   $axios.setBaseURL(
-    config.dev ? 'https://admin.parkent.ru/api' : 'https://admin.parkent.ru/api'
-    // config.dev ? 'http://manage.qqb.test/api' : 'https://admin.parkent.ru/api'
+    // config.dev ? 'https://admin.parkent.ru/api' : 'https://admin.parkent.ru/api'
+    config.dev ? 'http://manage.qqb.test/api' : 'https://admin.parkent.ru/api'
   )
   $axios.setHeader('Content-Type', 'application/json')
   $axios.setHeader('Content-Language', app.i18n.locale)

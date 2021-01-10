@@ -14,7 +14,7 @@
         <div class="item-text f-fill">
           <h1>{{ document.name }}</h1>
           <span>
-            <!-- {{ document.mime }}, -->
+            {{ document.release_date }},
             {{ (document.size / 1024).toFixed(2) }} KB</span
           >
         </div>

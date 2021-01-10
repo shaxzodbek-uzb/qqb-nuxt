@@ -184,10 +184,10 @@
           </div>
 
           <div class="card-content-img p-relative rounded">
-            <div class="card-content-img-badges p-absolute d-flex">
+            <!-- <div class="card-content-img-badges p-absolute d-flex">
               <div class="app-badge badge-warning">UZS</div>
               <div class="app-badge badge-warning">UZD</div>
-            </div>
+            </div> -->
             <img
               :src="deposit.image"
               class="d-block w-100 h-100 p-absolute"
@@ -197,11 +197,11 @@
         </div>
       </router-link>
 
-      <div class="card-load">
+      <!-- <div class="card-load">
         <button type="button" class="d-block w-100 rounded pointer transition">
           {{ $t('Загрузить еще') }}
         </button>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>

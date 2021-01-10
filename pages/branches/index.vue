@@ -194,6 +194,8 @@ export default {
       return this.branches
         .map((branch) => branch.region)
         .filter((v, i, a) => a.indexOf(v) === i)
+        .sort()
+        .map((a) => a.substring(3))
     },
     filtered_branches() {
       return this.branches.filter(
