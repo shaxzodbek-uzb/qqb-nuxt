@@ -4707,6 +4707,10 @@ body {
     min-width: 1000px;
   }
 
+  .appeal-left-col {
+    height: auto !important;
+  }
+
   .header-row {
     justify-content: space-between;
     padding-top: 1rem;

@@ -7,7 +7,7 @@
     <div class="appeal-offset-wrap w-100" data-offset="setLeftOffset">
       <div class="container">
         <div class="row h-100">
-          <div class="col-xl-5 h-100 bg-white pt-60">
+          <div class="appeal-left-col col-xl-5 h-100 bg-white pt-60">
             <div class="appeal-offset-left">
               <h1>
                 {{ $t('Анонимное Обращние') }}
@@ -309,4 +309,10 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+@media (max-width: 1200px) {
+  .appeal-left-col {
+    height: auto !important;
+  }
+}
+</style>
